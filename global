@@ -296,7 +296,7 @@ Removendo um pacote instalado:
 
 	apt-get remove <pacote>
 
-		102.5 Use RPM and YUM pacoteage management
+		***** 102.5 Use RPM and YUM pacoteage management *****
 
 Listando os pacotes disponíveis para atualização: 
 
@@ -337,21 +337,10 @@ rpm2cpio
 /etc/yum.repos.d/
 yum
 zypper
+
 	***** 102.6 Linux as a virtualization guest *****
 
 Weight: 1
-
-Description: Candidates should understand the implications of virtualization and cloud computing on a Linux guest system.
-
-Key Knowledge Areas:
-
-Understand the general concept of virtual machines and containers.
-Understand common elements virtual machines in an IaaS cloud, such as computing instances, block storage and networking.
-Understand unique properties of a Linux system which have to changed when a system is cloned or used as a template.
-Understand how system images are used to deploy virtual machines, cloud instances and containers.
-Understand Linux extensions which integrate Linux with a virtualization product.
-Awareness of cloud-init.
-The following is a partial list of the used files, terms and utilities:
 
 Virtual machine
 Linux container
@@ -417,21 +406,135 @@ Ou digitando o caminho absoluto de qualquer lugar do sistema:
 
 	/home/linux/documentos/arquivo.sh
 
-Copiando diretórios ou todo conteúdo recursivamente:
+Como carregar uma variável de ambiente:
 
-	cp -R </arquivo> /temp
-	cp * /temp
+	NOME_VARIAVEL=valor
+
+	echo $NOME_VARIAVEL
+
+	bash
+
+	echo $NOME_VARIAVEL
+
+Tornando a variável global:
+
+	export NOME_VARIAVEL
+
+	export NOME_VARIAVEL=valor
+
+Listando variáveis locais e globais:
+
+	set | less
+
+Listando apenas variáveis globais:
+
+	env | less
+
+Alterando uma variável no momento de execução do shell atual:
+
+	env TESTE=Linux ./script.sh
+
+	echo $TESTE
+
+Excluindo uma variável:
+
+	unset NOME_VARIAVEL
+
+Algumas variáveis de ambiente definidas pelo sistema:
+
+	$HISTFILE, $HOSTNAME, $LANG, $LOGNAME, $PATH, $SHELL, $TERM
+
+Saiba o o diretório home do usuário atual:
+
+	echo $HOME
+
+	echo ~
+
+	echo ~root
+
+Saiba o PID do shell atual:
+
+	$$
+
+Saiba o PID do último processo executado em background:
+
+	$!
+
+Saiba o exit code do último processo executado:
+
+	ls /tmp
+
+	$?
+
+Se retornar 0 significa um comando correto e diferente disso deve ser um erro.
+
+Executando comandos em sequencia:
+
+	date ; ls ; clear
+
+Executando sem pular erros:
+
+	ls /tmp/ && date && echo $USER
+
+Executando a sequência mesmo com erros:
+
+	ls /tmp/test || echo Linux
+
+Histórico dos últimos comandos da sessão:
+
+	history
+
+	!19
+
+Repetindo o último comando:
+
+	!!
+
+	ls /tmp/
+
+	!!
+
+Limpando o arquivo de histórico:
+
+	history -c
+
+Localizando o arquivo de histórico:
+
+	set | grep HISTFILE
+
+	cat /home/user/.bash_history
+
+Localizando um comando no history através de pesquisa:
+
+	CTRL+R
+
+Utilizando o manual do sistema para consultar comandos do sistema:
+
+	type cp
+
+	type cd
+
+	man cp
+
+	man cd
+
+	info cp
+
+	whatis ls
+
+Caso não haja manual o comando é do próprio bash:
+
+	man bash
+
+Pesquisando por manuais baseado na descrição:
+
+	man -k "system info"
+
+	apropos "system info"
 
 	***** 103.2 Process text streams using filters *****
 
 Weight: 2
-
-Description: Candidates should be able to apply filters to text streams.
-
-Key Knowledge Areas:
-
-Send text files and output streams through text utility filters to modify the output using standard UNIX commands found in the GNU textutils package.
-The following is a partial list of the used files, terms and utilities:
 
 bzcat
 cat
@@ -460,18 +563,6 @@ Logins de todos os usuários do sistema contidos no arquivo passwd:
 	***** 103.3 Perform basic file management *****
 
 Weight: 4
-
-Description: Candidates should be able to use the basic Linux commands to manage files and directories.
-
-Key Knowledge Areas:
-
-Copy, move and remove files and directories individually.
-Copy multiple files and directories recursively.
-Remove files and directories recursively.
-Use simple and advanced wildcard specifications in commands.
-Using find to locate and act on files based on type, size, or time.
-Usage of tar, cpio and dd.
-The following is a partial list of the used files, terms and utilities:
 
 cp
 find
@@ -547,36 +638,23 @@ file globbing
 
 			extrair:
 		unrar x nomedoarquivo.rar
+
+Copiando diretórios ou todo conteúdo recursivamente:
+
+	cp -R </arquivo> /temp
+
+	cp * /temp
+
 	***** 103.4 Use streams, pipes and redirects *****
 
 Weight: 4
-
-Description: Candidates should be able to redirect streams and connect them in order to efficiently process textual data. Tasks include redirecting standard input, standard output and standard error, piping the output of one command to the input of another command, using the output of one command as arguments to another command and sending output to both stdout and a file.
-
-Key Knowledge Areas:
-
-Redirecting standard input, standard output and standard error.
-Pipe the output of one command to the input of another command.
-Use the output of one command as arguments to another command.
-Send output to both stdout and a file.
-The following is a partial list of the used files, terms and utilities:
 
 tee
 xargs
 
 103.5 Create, monitor and kill processes
+
 Weight: 4
-
-Description: Candidates should be able to perform basic process management.
-
-Key Knowledge Areas:
-
-Run jobs in the foreground and background.
-Signal a program to continue running after logout.
-Monitor active processes.
-Select and sort processes for display.
-Send signals to processes.
-The following is a partial list of the used files, terms and utilities:
 
 &
 bg
@@ -594,18 +672,10 @@ killall
 watch
 screen
 tmux
+
 	***** 103.6 Modify process execution priorities *****
 
 Weight: 2
-
-Description: Candidates should should be able to manage process execution priorities.
-
-Key Knowledge Areas:
-
-Know the default priority of a job that is created.
-Run a program with higher or lower priority than the default.
-Change the priority of a running process.
-The following is a partial list of the used files, terms and utilities:
 
 nice
 ps
@@ -616,36 +686,15 @@ top
 
 Weight: 3
 
-Description: Candidates should be able to manipulate files and text data using regular expressions. This objective includes creating simple regular expressions containing several notational elements as well as understanding the differences between basic and extended regular expressions. It also includes using regular expression tools to perform searches through a filesystem or file content.
-
-Key Knowledge Areas:
-
-Create simple regular expressions containing several notational elements.
-Understand the differences between basic and extended regular expressions.
-Understand the concepts of special characters, character classes, quantifiers and anchors.
-Use regular expression tools to perform searches through a filesystem or file content.
-Use regular expressions to delete, change and substitute text.
-The following is a partial list of the used files, terms and utilities:
-
 grep
 egrep
 fgrep
 sed
 regex(7)
+
 	***** 103.8 Basic file editing *****
 
 Weight: 3
-
-Description: Candidates should be able to edit text files using vi. This objective includes vi navigation, vi modes, inserting, editing, deleting, copying and finding text. It also includes awareness of other common editors and setting the default editor.
-
-Key Knowledge Areas:
-
-Navigate a document using vi.
-Understand and use vi modes.
-Insert, edit, delete, copy and find text in vi.
-Awareness of Emacs, nano and vim.
-Configure the standard editor.
-Terms and Utilities:
 
 vi
 /, ?
@@ -663,20 +712,6 @@ _	Topic 104: Devices, Linux arquivosystems, arquivosystem Hierarchy Standard
 	***** 104.1 Create partitions and filesystems *****
 
 Weight: 2
-
-Description: Candidates should be able to configure disk partitions and then create filesystems on media such as hard disks. This includes the handling of swap partitions.
-
-Key Knowledge Areas:
-
-Manage MBR and GPT partition tables
-Use various mkfs commands to create various filesystems such as:
-ext2/ext3/ext4
-XFS
-VFAT
-exFAT
-
-Basic feature knowledge of Btrfs, including multi-device filesystems, compression and subvolumes.
-The following is a partial list of the used files, terms and utilities:
 
 fdisk
 gdisk
@@ -709,15 +744,6 @@ montando a partição:
 	***** 104.2 Maintain the integrity of filesystems *****
 
 Weight: 2
-
-Description: Candidates should be able to maintain a standard filesystem, as well as the extra data associated with a journaling filesystem.
-
-Key Knowledge Areas:
-
-Verify the integrity of filesystems.
-Monitor free space and inodes.
-Repair simple filesystem problems.
-The following is a partial list of the used files, terms and utilities:
 
 du
 df
@@ -789,20 +815,11 @@ Exibindo o UUID de uma partição:
 
 Weight: 3
 
-Description: Candidates should be able to control file access through the proper use of permissions and ownerships.
-
-Key Knowledge Areas:
-
-Manage access permissions on regular and special files as well as directories.
-Use access modes such as suid, sgid and the sticky bit to maintain security.
-Know how to change the file creation mask.
-Use the group field to grant file access to group members.
-The following is a partial list of the used files, terms and utilities:
-
 chmod
 umask
 chown
 chgrp
+
 	***** 104.6 Create and change hard and symbolic links *****
 
 Weight: 2
@@ -823,15 +840,6 @@ ls
 	***** 104.7 Find system files and place files in the correct location *****
 
 Weight: 2
-
-Description: Candidates should be thoroughly familiar with the Filesystem Hierarchy Standard (FHS), including typical file locations and directory classifications.
-
-Key Knowledge Areas:
-
-Understand the correct locations of files under the FHS.
-Find files and commands on a Linux system.
-Know the location and purpose of important file and directories as defined in the FHS.
-The following is a partial list of the used files, terms and utilities:
 
 find
 locate
@@ -865,16 +873,6 @@ _	Topic 105: Shell e scripts de shell
 
 Weight: 4
 
-Description: Candidates should be able to customize shell environments to meet users' needs. Candidates should be able to modify global and user profiles.
-
-Key Knowledge Areas:
-
-Set environment variables (e.g. PATH) at login or when spawning a new shell.
-Write Bash functions for frequently used sequences of commands.
-Maintain skeleton directories for new user accounts.
-Set command search path with the proper directory.
-The following is a partial list of the used files, terms and utilities:
-
 .
 source
 /etc/bash.bashrc
@@ -894,19 +892,6 @@ alias
 	***** 105.2 Customize or write simple scripts *****
 
 Weight: 4
-
-Description: Candidates should be able to customize existing scripts, or write simple new Bash scripts.
-
-Key Knowledge Areas:
-
-Use standard sh syntax (loops, tests).
-Use command substitution.
-Test return values for success or failure or other information provided by a command.
-Execute chained commands.
-Perform conditional mailing to the superuser.
-Correctly select the script interpreter through the shebang (#!) line.
-Manage the location, ownership, execution and suid-rights of scripts.
-The following is a partial list of the used files, terms and utilities:
 
 for
 while
