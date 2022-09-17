@@ -368,16 +368,6 @@ _	Topic 103: GNU and Unix Commands
 
 Weight: 4
 
-Description: Candidates should be able to interact with shells and commands using the command line. The objective assumes the Bash shell.
-
-Key Knowledge Areas:
-
-Use single shell commands and one line command sequences to perform basic tasks on the command line.
-Use and modify the shell environment including defining, referencing and exporting environment variables.
-Use and edit command history.
-Invoke commands inside and outside the defined path.
-The following is a partial list of the used files, terms and utilities:
-
 bash
 echo
 env
@@ -392,6 +382,40 @@ uname
 history
 .bash_history
 Quoting
+
+Imprimindo o resultado na saída padrão:
+
+	echo Linux
+
+	echo "Linux"
+
+Imprimindo o conteúdo de uma variável:
+
+	echo $SHELL
+
+Trocando o shell para o bash:
+
+	bash
+
+Para desobrir o tipo de um comando:
+
+	type echo
+
+	type ls
+
+	type pwd
+
+Localizando os diretórios de consulta dos programas externos:
+
+	echo $PATH
+
+Executando um arquivo no mesmo diretório, que não pertence ao $PATH ou shell:
+
+	./arquivo.sh
+
+Ou digitando o caminho absoluto de qualquer lugar do sistema:
+
+	/home/linux/documentos/arquivo.sh
 
 Copiando diretórios ou todo conteúdo recursivamente:
 
