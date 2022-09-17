@@ -444,7 +444,7 @@ Algumas variáveis de ambiente definidas pelo sistema:
 
 	$HISTFILE, $HOSTNAME, $LANG, $LOGNAME, $PATH, $SHELL, $TERM
 
-Saiba o o diretório home do usuário atual:
+Saiba o diretório home do usuário atual:
 
 	echo $HOME
 
@@ -532,6 +532,46 @@ Pesquisando por manuais baseado na descrição:
 
 	apropos "system info"
 
+Comando que informa várias informações do sistema:
+
+	uname --help
+
+Criando um atalho para um comando:
+
+	alias
+
+	alias lt="ls /tmp"
+
+	lt
+
+	unalias lt
+
+Localiza o diretório onde está o comando:
+
+	which echo
+
+Imprimindo todos os arquivos do diretório local:
+
+	echo *
+
+Protegendo caracteres especiais, quoting:
+
+	echo "*"
+
+	echo "$NOME_VARIAVEL"
+
+Lembre-se que "" NÃO protege $ ` \
+
+Já '' e \ protegem todos os caracteres sem excessão:
+
+	echo '$NOME_VARIAVEL'
+
+	echo \$NOME_VARIAVEL
+
+	echo "Curso     Linux   LPI1"
+
+	echo Curso\ \ \ \ \ Linux\ \ \ LPI1
+
 	***** 103.2 Process text streams using filters *****
 
 Weight: 2
@@ -557,7 +597,74 @@ wc
 xzcat
 zcat
 
+O comando cat imprime o conteúdo de um texto na saída padrão:
+
+	cat -n file.txt
+
+	cat --help
+
+Imprime na ordem inversa:
+
+	tac file.txt
+
+Comando que mostra por padrão as 10 primeiras linhas do arquivo:
+
+	head file.txt
+
+	head -n2 file.txt
+
+Imprime o inverso do head:
+
+	tail file.txt
+
+	tail -n5 file.txt
+
+Com essa opção o tail aguarda e imprime o final do arquivo em tempo real, útil para logs:
+
+	tail -f file.txt
+
+Imprimindo o conteúdo de um texto de modo paginado:
+
+	less longfile.txt
+
+	cat longfile.txt | less
+
+A barra de espaço pula a página.
+
+Para realizar uma pesquisa com uma palavra:
+
+	/pesquisa
+
+O n busca a nova ocorrência. SHIFT+N busca a anterior.
+
+CTRL+G informa onde você está no arquivo.
+
+Comando que informa o número de linhas, palavras e bytes do arquivo:
+
+	wc file.txt
+
+O * imprime o resultado de todos os arquivos do diretório atual ou desejado:
+
+	cd /var/log && wc * | sort
+
+O sort ordena alfabeticamente, para inverter:
+
+	sort -r
+
+Ordenando pelo campo específico:
+
+	sort -k2 file.txt
+
+O delimitador é o espaço vazio.
+
+Imprime as linhas numeradas, descartando as linhas em branco:
+
+	nl file.txt
+
+	cat -b file.txt
+
 Logins de todos os usuários do sistema contidos no arquivo passwd:
+
 	cut -d : -f 1 /etc/passwd
 
 	***** 103.3 Perform basic file management *****
