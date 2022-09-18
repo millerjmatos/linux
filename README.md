@@ -8,5 +8,5 @@ O sistema pode ser utilizado tanto por usuário doméstico como para administra�
 
 # O que é Linux?
 
-No Linux o Kernel é o Sisteme Operacional. O Linux faz tudo o que você poderia, ou não, esperar de um Unix moderno e completo. Suporta multitarefas em tempo real, memória virtual, bibliotecas dinâmicas, rede TCP/IP, nomes de arquivos com até 255 caracteres e proteção entre processos, além muitas outras funcionalidades.
+No Linux o Kernel é o Sisteme Operacional. O Linux faz tudo o que você poderia esperar de um Unix moderno e completo, e muito mais! Suporta multitarefas em tempo real, memória virtual, bibliotecas dinâmicas, rede TCP/IP, nomes de arquivos com até 255 caracteres e proteção entre processos, além muitas outras funcionalidades.
 
