@@ -1,8 +1,10 @@
 ------------------------------------------------------------
-_	Topic 101: System Architecture
-------------------------------------------------------------
 
-	***** 101.1 Determine and configure hardware settings *****
+	* * * * * Topic 101: System Architecture * * * * *
+
+------------------------------------------------------------
+	* * * * * 101.1 Determine and configure hardware settings * * * * *
+------------------------------------------------------------
 
 Weight: 2
 
@@ -68,7 +70,9 @@ O insmod não carrega as dependências! O comando modprobe o faz:
 
 	lsmod | grep blue
 
-	***** 101.2 Boot the system *****
+------------------------------------------------------------
+	* * * * * 101.2 Boot the system * * * * *
+------------------------------------------------------------
 
 Weight: 3
 
@@ -94,7 +98,9 @@ init
 SysVinit
 systemd
 
-	***** 101.3 Change runlevels / boot targets and shutdown or reboot system *****
+------------------------------------------------------------
+	* * * * * 101.3 Change runlevels / boot targets and shutdown or reboot system * * * * *
+------------------------------------------------------------
 
 Weight: 3
 
@@ -122,22 +128,14 @@ systemctl
 wall
 
 ------------------------------------------------------------
-_	Topic 102: Linux Installation and pacoteage Management
+
+	* * * * * Topic 102: Linux Installation and pacoteage Management * * * * * 
+
+------------------------------------------------------------
+	* * * * * 102.1 Design hard disk layout * * * * *
 ------------------------------------------------------------
 
-	***** 102.1 Design hard disk layout *****
-
 Weight: 2
-
-Description: Candidates should be able to design a disk partitioning scheme for a Linux system.
-
-Key Knowledge Areas:
-
-Allocate filesystems and swap space to separate partitions or disks.
-Tailor the design to the intended use of the system.
-Ensure the /boot partition conforms to the hardware architecture requirements for booting.
-Knowledge of basic features of LVM.
-The following is a partial list of the used files, terms and utilities:
 
 / (root) filesystem
 /var filesystem
@@ -147,7 +145,10 @@ EFI System Partition (ESP)
 swap space
 mount points
 partitions
-	***** 102.2 Install a boot manager *****
+
+------------------------------------------------------------
+	* * * * * 102.2 Install a boot manager * * * * *
+------------------------------------------------------------
 
 Weight: 2
 
@@ -166,7 +167,9 @@ grub-install
 grub-mkconfig
 MBR
 
-	***** 102.3 Manage shared libraries *****
+------------------------------------------------------------
+	* * * * * 102.3 Manage shared libraries * * * * *
+------------------------------------------------------------
 
 Weight: 1
 
@@ -184,7 +187,9 @@ ldconfig
 /etc/ld.so.conf
 LD_LIBRARY_PATH
 
-	***** 102.4 Use Debian package management *****
+------------------------------------------------------------
+	* * * * * 102.4 Use Debian package management * * * * *
+------------------------------------------------------------	
 
 Weight: 3
 
@@ -296,13 +301,25 @@ Removendo um pacote instalado:
 
 	apt-get remove <pacote>
 
-		***** 102.5 Use RPM and YUM pacoteage management *****
+------------------------------------------------------------
+	* * * * * 102.5 Use RPM and YUM pacoteage management * * * * *
+------------------------------------------------------------
+
+Weight：  3
+
+rpm
+rpm2cpio
+/etc/yum.conf
+/etc/yum.repos.d/
+yum
+zypper
 
 Listando os pacotes disponíveis para atualização: 
 
 	yum check-update
 
 Atualizando o sistema:
+
 	yum update
 
 Instalando, removendo e pesquisando o pacote:
@@ -317,28 +334,7 @@ Arquivos de configuração dos repositórios:
 
 	/etc/yum.repos.d
 
-	***** 102.5 Use RPM and YUM package management *****
-
-Weight：  3
-
-Description: Candidates should be able to perform package management using RPM, YUM and Zypper.
-
-Key Knowledge Areas:
-
-Install, re-install, upgrade and remove packages using RPM, YUM and Zypper.
-Obtain information on RPM packages such as version, status, dependencies, integrity and signatures.
-Determine what files a package provides, as well as find which package a specific file comes from.
-Awareness of dnf.
-The following is a partial list of the used files, terms and utilities:
-
-rpm
-rpm2cpio
-/etc/yum.conf
-/etc/yum.repos.d/
-yum
-zypper
-
-	***** 102.6 Linux as a virtualization guest *****
+	* * * * * 102.6 Linux as a virtualization guest * * * * *
 
 Weight: 1
 
@@ -350,10 +346,12 @@ SSH host keys
 D-Bus machine id
 
 ------------------------------------------------------------
-_	Topic 103: GNU and Unix Commands
-------------------------------------------------------------
 
-	***** 103.1 Work on the command line *****
+	* * * * * Topic 103: GNU and Unix Commands * * * * *
+
+------------------------------------------------------------
+	* * * * * 103.1 Work on the command line * * * * *
+------------------------------------------------------------
 
 Weight: 4
 
@@ -394,9 +392,11 @@ Para desobrir o tipo de um comando:
 
 	type pwd
 
-Localizando os diretórios de consulta dos programas externos:
+Localizando os diretórios de consulta do seu PATH:
 
 	echo $PATH
+
+	env | grep "$PATH"
 
 Executando um arquivo no mesmo diretório, que não pertence ao $PATH ou shell:
 
@@ -455,6 +455,8 @@ Saiba o diretório home do usuário atual:
 Saiba o PID do shell atual:
 
 	$$
+
+	ps | grep bash
 
 Saiba o PID do último processo executado em background:
 
@@ -550,6 +552,8 @@ Localiza o diretório onde está o comando:
 
 	which echo
 
+	which tar
+
 Imprimindo todos os arquivos do diretório local:
 
 	echo *
@@ -572,7 +576,9 @@ Já '' e \ protegem todos os caracteres sem excessão:
 
 	echo Curso\ \ \ \ \ Linux\ \ \ LPI1
 
-	***** 103.2 Process text streams using filters *****
+------------------------------------------------------------
+	* * * * * 103.2 Process text streams using filters * * * * *
+------------------------------------------------------------
 
 Weight: 2
 
@@ -596,6 +602,30 @@ uniq
 wc
 xzcat
 zcat
+
+Gerando o hash de um arquivo:
+
+	sha256sum linux-debian-amd64.iso
+
+	sha512sum linux-debian-amd64.iso
+
+	md5sum linux-debian-amd64.iso
+
+O código gerado é único, e garante que aquele arquivio é identico ao original.
+
+Para testar se o download de uma .iso não foi corrompido:
+
+	sha512sum -c SHA256SUMS
+
+É preciso estar no mesmo diretório do aquivo hash e da .iso.
+
+Para imprimir o conteúdo de um arquivo texto compactado:
+
+	bzcat arquivo.txt.bz2
+
+	xzcat arquivo.txt.xz
+
+	zcat arquivo.txt.gz
 
 O comando cat imprime o conteúdo de um texto na saída padrão:
 
@@ -658,6 +688,12 @@ Ordenando pelo campo específico:
 	sort -k2 file.txt
 
 O delimitador é o espaço vazio.
+
+Ordenando pelo campo e especificando um delimitador:
+
+	sort -t: -k2 -g
+
+O -g ordena como números ao invés de como caracteres.
 
 Imprime as linhas numeradas, descartando as linhas em branco:
 
@@ -725,6 +761,18 @@ Imprimindo modificado a saída do texto utilizando strings:
 
 	cat file.txt | tr -d [:upper:]
 
+Imprimindo a saída sem repetições:
+
+	echo "Curso Liiiiinux" | tr -s i
+
+	echo "Curso        Linux" | tr -s " "
+
+Gerando um arquivo de texto no formato Linux, sem CRLF:
+
+	tr -d "\r" < ArquivoGeradoNoWindows.txt > NovoArquivoGerado.txt
+
+	file Arqui* NovoA*
+
 Imprimindo o arquivo removendo os 5 primeiros caracteres:
 
 	cut -c1-5 file.txt
@@ -761,7 +809,9 @@ Apagar linhas com uma ocorrência de string específica:
 
 	sed '/Nome/d' nomes.txt
 
-	***** 103.3 Perform basic file management *****
+------------------------------------------------------------
+	* * * * * 103.3 Perform basic file management * * * * *
+------------------------------------------------------------
 
 Weight: 4
 
@@ -785,60 +835,63 @@ xz
 unxz
 file globbing
 
-			_	tar:
+	_	tar:
 
-			compactando o conteúdo de /etc no diretório local:
+compactando o conteúdo de /etc no diretório local:
 
-		tar cvf diretc.tar /etc/
+	tar cvf diretc.tar /etc/
 
-			extraindo no diretório local:
+extraindo no diretório local:
 
-		tar -xvf diretc.tar
+	tar -xvf diretc.tar
 
-			compactando e comprimindo ao mesmo tempo o conteúdo de /etc no diretório local:
+compactando e comprimindo ao mesmo tempo o conteúdo de /etc no diretório local:
 
-		tar cvzf diretc.tar.gz /etc/
+	tar cvzf diretc.tar.gz /etc/
 
-		ou
+ou
 
-		tar cvjf diretc.tar.bz /etc/
+	tar cvjf diretc.tar.bz /etc/
 
-			extraindo:
+extraindo:
 
-		tar xvzf diretc.tar.gz /etc/
+	tar xvzf diretc.tar.gz /etc/
 
-		ou
+ou
 
-		tar xvjf diretc.tar.bz /etc/
+	tar xvjf diretc.tar.bz /etc/
 
-			_	gzip:
+gzip:
 
-			comprimir:
+comprimir:
 
-		gzip nomedoarquivo.tar
+	gzip nomedoarquivo.tar
 
-			extrair:
+extrair:
 
-		gunzip nomedoarquivo.tar.gz
+	gunzip nomedoarquivo.tar.gz
 
-			_	bz2:
+bz2:
 
-			comprimir:
+comprimir:
 
-		bzip2 nomedoarquivo.tar
+	bzip2 nomedoarquivo.tar
 
-			extrair:
+extrair:
 
-		bunzip nomedoarquivo.tar.bz2
+	bunzip nomedoarquivo.tar.bz2
 
-			_	zip:
+zip:
 
-			extrair:
-		unzip nomedoarquivo.zip
-			_	rar:
+extrair:
+	
+	unzip nomedoarquivo.zip
 
-			extrair:
-		unrar x nomedoarquivo.rar
+rar:
+
+extrair:
+
+	unrar x nomedoarquivo.rar
 
 Copiando diretórios ou todo conteúdo recursivamente:
 
@@ -846,7 +899,9 @@ Copiando diretórios ou todo conteúdo recursivamente:
 
 	cp * /temp
 
-	***** 103.4 Use streams, pipes and redirects *****
+------------------------------------------------------------
+	* * * * * 103.4 Use streams, pipes and redirects * * * * *
+------------------------------------------------------------
 
 Weight: 4
 
@@ -874,7 +929,9 @@ watch
 screen
 tmux
 
-	***** 103.6 Modify process execution priorities *****
+------------------------------------------------------------
+	* * * * * 103.6 Modify process execution priorities * * * * *
+------------------------------------------------------------
 
 Weight: 2
 
@@ -883,7 +940,9 @@ ps
 renice
 top 
 
-	***** 103.7 Search text files using regular expressions *****
+------------------------------------------------------------
+	* * * * * 103.7 Search text files using regular expressions * * * * *
+------------------------------------------------------------
 
 Weight: 3
 
@@ -893,7 +952,9 @@ fgrep
 sed
 regex(7)
 
-	***** 103.8 Basic file editing *****
+------------------------------------------------------------
+	* * * * * 103.8 Basic file editing * * * * *
+------------------------------------------------------------
 
 Weight: 3
 
@@ -905,12 +966,13 @@ d, p, y, dd, yy
 ZZ, :w!, :q!
 EDITOR
 
-
-------------------------------------------------------------
-_	Topic 104: Devices, Linux arquivosystems, arquivosystem Hierarchy Standard
 ------------------------------------------------------------
 
-	***** 104.1 Create partitions and filesystems *****
+	* * * * * Topic 104: Devices, Linux arquivosystems, arquivosystem Hierarchy Standard * * * * *
+
+------------------------------------------------------------
+	* * * * * 104.1 Create partitions and filesystems * * * * *
+------------------------------------------------------------
 
 Weight: 2
 
@@ -942,7 +1004,9 @@ montando a partição:
 	
 	mkfs -t ext4 /dev/sdb1 /mnt/media/pendrive
 
-	***** 104.2 Maintain the integrity of filesystems *****
+------------------------------------------------------------
+	* * * * * 104.2 Maintain the integrity of filesystems * * * * *
+------------------------------------------------------------
 
 Weight: 2
 
@@ -964,7 +1028,9 @@ Saber o espaço utilizado em disco por diretórios ou arquivos:
 		
 		du -shc *
 
-	***** 104.3 Control mounting and unmounting of filesystems *****
+------------------------------------------------------------
+	* * * * * 104.3 Control mounting and unmounting of filesystems * * * * *
+------------------------------------------------------------
 
 Weight: 3
 
@@ -1011,11 +1077,13 @@ Exibindo o UUID de uma partição:
 
 	dumpe2fs /dev/sdb2 -h
 
-	"Filesystem UUID:"
+"Filesystem UUID:".
 
-	***** 104.4 Removed *****
-
-	***** 104.5 Manage file permissions and ownership *****
+------------------------------------------------------------
+	* * * * * 104.4 Removed * * * * *
+------------------------------------------------------------
+	* * * * * 104.5 Manage file permissions and ownership * * * * *
+------------------------------------------------------------
 
 Weight: 3
 
@@ -1024,7 +1092,9 @@ umask
 chown
 chgrp
 
-	***** 104.6 Create and change hard and symbolic links *****
+------------------------------------------------------------
+	* * * * * 104.6 Create and change hard and symbolic links * * * * *
+------------------------------------------------------------
 
 Weight: 2
 
@@ -1041,7 +1111,9 @@ The following is a partial list of the used files, terms and utilities:
 ln
 ls
 
-	***** 104.7 Find system files and place files in the correct location *****
+------------------------------------------------------------
+	* * * * * 104.7 Find system files and place files in the correct location * * * * *
+------------------------------------------------------------
 
 Weight: 2
 
@@ -1053,27 +1125,29 @@ which
 type
 /etc/updatedb.conf
 
-			listando arquivos ou diretórios por tamanho:
+	listando arquivos ou diretórios por tamanho:
 		find <arquivo> -type f -size +1G
 		find . -type d -size -5M
 
-			listando arquivos por extensão:
+	listando arquivos por extensão:
 
 		find . -type f -name '*.pst'
 
-			deletando arquivos e diretórios:
+	deletando arquivos e diretórios:
 
 		find /home -type f -size +500M -delete
 
-			listando arquivos acessados ou modificados dias atrás por um usuário ou grupo:
+	listando arquivos acessados ou modificados dias atrás por um usuário ou grupo:
 		find / -type f -atime 7 -<user> <user>
 		find . -type f -mtime 30 -<group> <group>
 
 ------------------------------------------------------------
-_	Topic 105: Shell e scripts de shell
-------------------------------------------------------------
 
-	***** 105.1 Customize and use the shell environment *****
+	* * * * * Topic 105: Shell e scripts de shell * * * * * 
+
+------------------------------------------------------------
+	* * * * * 105.1 Customize and use the shell environment * * * * *
+------------------------------------------------------------
 
 Weight: 4
 
@@ -1093,7 +1167,9 @@ unset
 function
 alias
 
-	***** 105.2 Customize or write simple scripts *****
+------------------------------------------------------------
+	* * * * * 105.2 Customize or write simple scripts * * * * *
+------------------------------------------------------------
 
 Weight: 4
 
@@ -1108,10 +1184,12 @@ exec
 &&
 
 ------------------------------------------------------------
-_	Topic 106: User Interfaces and Desktops
-------------------------------------------------------------
 
-	***** 106.1 Install and configure X11 *****
+	* * * * * Topic 106: User Interfaces and Desktops * * * * * 
+
+------------------------------------------------------------
+	* * * * * 106.1 Install and configure X11 * * * * *
+------------------------------------------------------------
 
 Weight: 2
 
@@ -1123,7 +1201,9 @@ xauth
 DISPLAY
 X
 
-	***** 106.2 Graphical Desktops *****
+------------------------------------------------------------
+	* * * * * 106.2 Graphical Desktops * * * * *
+------------------------------------------------------------
 
 Weight: 1
 
@@ -1135,7 +1215,10 @@ XDMCP
 VNC
 Spice
 RDP
-	***** 106.3 Accessibility *****
+
+------------------------------------------------------------
+	* * * * * 106.3 Accessibility * * * * *
+------------------------------------------------------------
 
 Weight: 1
 
@@ -1151,10 +1234,12 @@ Gestures.
 Voice recognition.
 
 ------------------------------------------------------------
-_	Topic 107: Administrative Tasks
-------------------------------------------------------------
 
-	***** 107.1 Manage user and group accounts and related system files *****
+	* * * * * Topic 107: Administrative Tasks * * * * * 
+
+------------------------------------------------------------
+	* * * * * 107.1 Manage user and group accounts and related system files * * * * *
+------------------------------------------------------------
 
 Weight: 5
 
@@ -1171,70 +1256,72 @@ passwd
 useradd
 userdel
 usermod
-			adicionando um usuário no sistema:
+	adicionando um usuário no sistema:
 
 		adduser <user>
 
-			adicionando um grupo no sistema:
+	adicionando um grupo no sistema:
 
 		ddgroup <group>
 
-			adicionando um usuário criado em um grupo:
+	adicionando um usuário criado em um grupo:
 
 		adduser <user> <group>
 		gpasswd -a <user> <group>
 
-			alterando o grupo primário de um usuário:
+	alterando o grupo primário de um usuário:
 
 		usermod -g <group> <user>
 
-			alterando o grupo proprietário das pastas:
+	alterando o grupo proprietário das pastas:
 
 		chgrp <group> <arquivo>
 
-			alterando o usuário e/ou grupo dono de um diretório:
+	alterando o usuário e/ou grupo dono de um diretório:
 
 		chown -R <user> </arquivo>
 		chown -R <user>:<group> </arquivo>
 
-			removendo um usuário de um grupo:
+	removendo um usuário de um grupo:
 
 		gpasswd -d <user> <group>
 
-			removendo um usuário do sistema:
+	removendo um usuário do sistema:
 
 		userdel <user>
 
-			removendo um usuário do sistema e o diretório home:
+	removendo um usuário do sistema e o diretório home:
 
 		userdel -r <user>
 
-			removendo um grupo do sistema:
+	removendo um grupo do sistema:
 
 		groupdel <group>
 
-			trocando a senha de um usuário:
+	trocando a senha de um usuário:
 
 		passwd <user>
 
-			permitindo um usuário logar sem senha, pois remove a senha do mesmo:
+	permitindo um usuário logar sem senha, pois remove a senha do mesmo:
 
 		passwd -d <user>
 
-			exibindo as informações do usuário:
+	exibindo as informações do usuário:
 
 		finger <user>
 
-			editando as informações do usuário:
+	editando as informações do usuário:
 
 		chfn <user>
 
-			bloqueando e desbloqueando um usuário:
+	bloqueando e desbloqueando um usuário:
 
 		usermod -L <user>
 		usermod -U <user>
 
-	****** 107.2 Automate system administration tasks by scheduling jobs ******
+------------------------------------------------------------
+	* * * * * 107.2 Automate system administration tasks by scheduling jobs * * * * *
+------------------------------------------------------------
 
 Weight: 4
 
@@ -1252,15 +1339,17 @@ atrm
 systemctl
 systemd-run
 
-			editando o arquivo de configuração do crontab:
+	editando o arquivo de configuração do crontab:
 
 		vim /etc/crontab
 
-			agendando uma tarefa semanal de backup sábado às 19h:
+	agendando uma tarefa semanal de backup sábado às 19h:
 
 		00 19 * * 6 root rsync -Cravzp --delete <origem> <destino>
 
-	****** 107.3 Localisation and internationalisation ******
+------------------------------------------------------------
+	* * * * ** 107.3 Localisation and internationalisation * * * * **
+------------------------------------------------------------
 
 Weight: 3
 
@@ -1282,10 +1371,12 @@ ASCII
 Unicode
 
 ------------------------------------------------------------
-_	Topic 108: Essential System Services
-------------------------------------------------------------
 
-	****** 108.1 Maintain system time ******
+ * * * * * Topic 108: Essential System Services * * * * *
+
+------------------------------------------------------------
+	* * * * * 108.1 Maintain system time * * * * *
+------------------------------------------------------------
 
 Weight: 3
 
@@ -1302,11 +1393,11 @@ ntpdate
 chronyc
 pool.ntp.org
 
-			instalando e configurando o servidor NTP:
+	instalando e configurando o servidor NTP:
 
 		apt-get install ntp
 
-			editando o arquivo /etc/ntp.conf:
+	editando o arquivo /etc/ntp.conf:
 
 		pool st1.ntp.br
 		pool st2.ntp.br
@@ -1318,11 +1409,13 @@ pool.ntp.org
 
 		/etc/init.d ntp restart
 
-			verificando o status do serviço:
+	verificando o status do serviço:
 		ntpq -p
 		date
 
-	****** 108.2 System logging ******
+------------------------------------------------------------
+	* * * * * 108.2 System logging * * * * *
+------------------------------------------------------------
 
 Weight: 4
 
@@ -1337,7 +1430,9 @@ systemd-cat
 /etc/systemd/journald.conf
 /var/log/journal/
 
-	****** 108.3 Mail Transfer Agent (MTA) basics ******
+------------------------------------------------------------
+	* * * * * 108.3 Mail Transfer Agent (MTA) basics * * * * *
+------------------------------------------------------------
 
 Weight: 3
 
@@ -1350,7 +1445,9 @@ postfix
 sendmail
 exim
 
-	****** 108.4 Manage printers and printing ******
+------------------------------------------------------------
+	* * * * * 108.4 Manage printers and printing * * * * *
+------------------------------------------------------------
 
 Weight: 2
 
@@ -1359,10 +1456,13 @@ CUPS configuration files, tools and utilities
 lpd legacy interface (lpr, lprm, lpq)
 
 ------------------------------------------------------------
-_	109 – Networking Fundamentals
+
+	* * * * * Topic 109: Networking Fundamentals * * * * *
+
+------------------------------------------------------------
+	* * * * * 109.1 Fundamentals of internet protocols * * * * * 
 ------------------------------------------------------------
 
-109.1 Fundamentals of internet protocols
 Weight: 4
 
 Description: Candidates should demonstrate a proper understanding of TCP/IP network fundamentals.
@@ -1382,22 +1482,15 @@ IPv4, IPv6
 Subnetting
 TCP, UDP, ICMP
 
-			protocolos importantes e suas portas:
+	protocolos importantes e suas portas:
 
 		cat /etc/services
 
-109.2 Persistent network configuration
+------------------------------------------------------------
+	* * * * * 109.2 Persistent network configuration * * * * *
+------------------------------------------------------------
 
 Weight: 4
-
-Description: Candidates should be able to manage the persistent network configuration of a Linux host.
-
-Key Knowledge Areas:
-
-Understand basic TCP/IP host configuration.
-Configure ethernet and wi-fi network using NetworkManager.
-Awareness of systemd-networkd.
-The following is a partial list of the used files, terms and utilities:
 
 /etc/hostname
 /etc/hosts
@@ -1407,17 +1500,18 @@ nmcli
 hostnamectl
 ifup
 ifdown
-			visualizando o IP/MAC da interface:
+
+visualizando o IP/MAC da interface:
 
 		ifconfig
 		ip a show
 
-			reiniciando a placa de rede:
+reiniciando a placa de rede:
 
 		ifconfig eth0 down
 		ifconfig eth0 up
 
-			editando o /etc/network/interfaces:
+editando o /etc/network/interfaces:
 
 		auto lo
 		iface lo inet loopback
@@ -1430,18 +1524,20 @@ ifdown
 		gateway 192.168.x.x
 		dns-nameservers 8.8.8.8 8.8.4.4
 
-			mudando o hostname do computador:
+mudando o hostname do computador:
 
 		vim /etc/hostname
 		hostname
 
-			alterando MAC:
+alterando MAC:
 
 		ifconfig eth0 down
 		ip link set dev eth0 address 1A:2B:3C:55:66:00
 		ifconfig eth0 up
 
-109.3 Basic network troubleshooting
+------------------------------------------------------------
+	* * * * * 109.3 Basic network troubleshooting * * * * *
+------------------------------------------------------------
 
 Weight: 4
 
@@ -1459,29 +1555,20 @@ ifconfig
 netstat
 route
 
-			informando a rota dos pacotes:
+	informando a rota dos pacotes:
 		traceroute <url>
 
-			informando a rota dos pacotes sem definir nomes:
+	informando a rota dos pacotes sem definir nomes:
 		traceroute -n <url>
 
-			detectando uma máquina na rede:
+	detectando uma máquina na rede:
 		ping -c 10 192.168.1.1
 
-	****** 109.4 Configure client side DNS ******
+------------------------------------------------------------
+	* * * * * 109.4 Configure client side DNS * * * * *
+------------------------------------------------------------
 
 Weight: 2
-
-Description: Candidates should be able to configure DNS on a client host.
-
-Key Knowledge Areas:
-
-Query remote DNS servers.
-Configure local name resolution and use remote DNS servers.
-Modify the order in which name resolution is done.
-Debug errors related to name resolution.
-Awareness of systemd-resolved.
-The following is a partial list of the used files, terms and utilities:
 
 /etc/hosts
 /etc/resolv.conf
@@ -1490,28 +1577,18 @@ host
 dig
 getent
 
-			configurando o cliente de DNS:
+	configurando o cliente de DNS:
 		/etc/resolv.conf
 
 ------------------------------------------------------------
-_	Topic 110: Security
+
+	* * * * * Topic 110: Security * * * * * 
+
+------------------------------------------------------------
+	* * * * * 110.1 Perform security administration tasks * * * * *
 ------------------------------------------------------------
 
-	****** 110.1 Perform security administration tasks ******
-
 Weight: 3
-
-Description: Candidates should know how to review system configuration to ensure host security in accordance with local security policies.
-
-Key Knowledge Areas:
-
-Audit a system to find files with the suid/sgid bit set.
-Set or change user passwords and password aging information.
-Being able to use nmap and netstat to discover open ports on a system.
-Set up limits on user logins, processes and memory usage.
-Determine which users have logged in to the system or are currently logged in.
-Basic sudo configuration and usage.
-The following is a partial list of the used files, terms and utilities:
 
 find
 passwd
@@ -1527,31 +1604,33 @@ usermod
 ulimit
 who, w, last
 
-		/// Descobrindo os hosts da rede:
+Descobrindo os hosts da rede:
 
-nmap -sP 192.168.0.0/24
+	nmap -sP 192.168.0.0/24
 
-nmap -sP 192.168.0.*
+	nmap -sP 192.168.0.*
 
-		/// Descobrindo as portas abertas de um alvo: 
+Descobrindo as portas abertas de um alvo: 
 
-nmap -sT 192.168.0.10
+	nmap -sT 192.168.0.10
 
-nmap -Pn 192.168.0.20
+	nmap -Pn 192.168.0.20
 
-		/// Descobrindo se uma porta específica está aberta:
-nmap -p 80 192.168.0.0/24
+Descobrindo se uma porta específica está aberta:
 
-nmap -p 80 localhost
+	nmap -p 80 192.168.0.0/24
 
-nmap -p 21 192.168.1.1
+	nmap -p 80 localhost
 
-		/// Descobrindo o SO de um alvo:
+	nmap -p 21 192.168.1.1
 
-nmap -0 192.168.1.5
+Descobrindo o SO de um alvo:
 
+	nmap -0 192.168.1.5
 
-	****** 110.2 Setup host security ******
+------------------------------------------------------------
+	* * * * * 110.2 Setup host security * * * * *
+------------------------------------------------------------
 
 Weight: 3
 
@@ -1575,7 +1654,9 @@ systemd.socket
 /etc/hosts.allow
 /etc/hosts.deny
 
-	****** 110.3 Securing data with encryption ******
+------------------------------------------------------------
+	* * * * * 110.3 Securing data with encryption * * * * *
+------------------------------------------------------------
 
 Weight: 4
 
