@@ -985,10 +985,12 @@ xfs_repair
 xfs_fsr
 xfs_db
 
-			saber o espaço utilizado em disco, por diretórios ou arquivos:
+Saber o espaço utilizado em disco por diretórios ou arquivos:
 
 		du -sh *
+		
 		du -sh </arquivo>
+		
 		du -shc *
 
 	***** 104.3 Control mounting and unmounting of filesystems *****
@@ -1030,9 +1032,9 @@ Montando e desmontando uma partição manualmente:
 
 	umount /dev/sdb2
 
-	ou
+ou
 
-	umount /temp/teste_mount
+	umount /tmp/teste_mount
 
 Exibindo o UUID de uma partição:
 
@@ -1041,6 +1043,7 @@ Exibindo o UUID de uma partição:
 	"Filesystem UUID:"
 
 	***** 104.4 Removed *****
+
 	***** 104.5 Manage file permissions and ownership *****
 
 Weight: 3
@@ -1141,18 +1144,6 @@ _	Topic 106: User Interfaces and Desktops
 
 Weight: 2
 
-Description: Candidates should be able to install and configure X11.
-
-Key Knowledge Areas:
-
-Understanding of the X11 architecture.
-Basic understanding and knowledge of the X Window configuration file.
-Overwrite specific aspects of Xorg configuration, such as keyboard layout.
-Understand the components of desktop environments, such as display managers and window managers.
-Manage access to the X server and display applications on remote X servers.
-Awareness of Wayland.
-The following is a partial list of the used files, terms and utilities:
-
 /etc/X11/xorg.conf
 /etc/X11/xorg.conf.d/
 ~/.xsession-errors
@@ -1165,14 +1156,6 @@ X
 
 Weight: 1
 
-Description: Candidates should be aware of major Linux desktops. Furthermore, candidates should be aware of protocols used to access remote desktop sessions.
-
-Key Knowledge Areas:
-
-Awareness of major desktop environments
-Awareness of protocols to access remote desktop sessions
-The following is a partial list of the used files, terms and utilities:
-
 KDE
 Gnome
 Xfce
@@ -1184,14 +1167,6 @@ RDP
 	***** 106.3 Accessibility *****
 
 Weight: 1
-
-Description: Demonstrate knowledge and awareness of accessibility technologies.
-
-Key Knowledge Areas:
-
-Basic knowledge of visual settings and themes.
-Basic knowledge of assistive technology.
-The following is a partial list of the used files, terms and utilities:
 
 High Contrast/Large Print Desktop Themes.
 Screen Reader.
@@ -1211,15 +1186,6 @@ _	Topic 107: Administrative Tasks
 	***** 107.1 Manage user and group accounts and related system files *****
 
 Weight: 5
-
-Description: Candidates should be able to add, remove, suspend and change user accounts.
-
-Key Knowledge Areas:
-
-Add, modify and remove users and groups.
-Manage user/group info in password/group databases.
-Create and manage special purpose and limited accounts.
-The following is a partial list of the used files, terms and utilities:
 
 /etc/passwd
 /etc/shadow
@@ -1301,15 +1267,6 @@ usermod
 
 Weight: 4
 
-Description: Candidates should be able to use cron and systemd timers to run jobs at regular intervals and to use at to run jobs at a specific time.
-
-Key Knowledge Areas:
-
-Manage cron and at jobs.
-Configure user access to cron and at services.
-Understand systemd timer units.
-The following is a partial list of the used files, terms and utilities:
-
 /etc/cron.{d,daily,hourly,monthly,weekly}/
 /etc/at.deny
 /etc/at.allow
@@ -1336,14 +1293,6 @@ systemd-run
 
 Weight: 3
 
-Description: Candidates should be able to localize a system in a different language than English. As well, an understanding of why LANG=C is useful when scripting.
-
-Key Knowledge Areas:
-
-Configure locale settings and environment variables.
-Configure timezone settings and environment variables.
-The following is a partial list of the used files, terms and utilities:
-
 /etc/timezone
 /etc/localtime
 /usr/share/zoneinfo/
@@ -1368,18 +1317,6 @@ _	Topic 108: Essential System Services
 	****** 108.1 Maintain system time ******
 
 Weight: 3
-
-Description: Candidates should be able to properly maintain the system time and synchronize the clock via NTP.
-
-Key Knowledge Areas:
-
-Set the system date and time.
-Set the hardware clock to the correct time in UTC.
-Configure the correct timezone.
-Basic NTP configuration using ntpd and chrony.
-Knowledge of using the pool.ntp.org service.
-Awareness of the ntpq command.
-The following is a partial list of the used files, terms and utilities:
 
 /usr/share/zoneinfo/
 /etc/timezone
@@ -1418,22 +1355,6 @@ pool.ntp.org
 
 Weight: 4
 
-Description: Candidates should be able to configure rsyslog. This objective also includes configuring the logging daemon to send log output to a central log server or accept log output as a central log server. Use of the systemd journal subsystem is covered. Also, awareness of syslog and syslog-ng as alternative logging systems is included.
-
-Key Knowledge Areas:
-
-Basic configuration of rsyslog.
-Understanding of standard facilities, priorities and actions.
-Query the systemd journal.
-Filter systemd journal data by criteria such as date, service or priority.
-Configure persistent systemd journal storage and journal size.
-Delete old systemd journal data.
-Retrieve systemd journal data from a rescue system or file system copy.
-Understand interaction of rsyslog with systemd-journald.
-Configuration of logrotate.
-Awareness of syslog and syslog-ng.
-Terms and Utilities:
-
 /etc/rsyslog.conf
 /var/log/
 logger
@@ -1449,15 +1370,6 @@ systemd-cat
 
 Weight: 3
 
-Description: Candidates should be aware of the commonly available MTA programs and be able to perform basic forward and alias configuration on a client host. Other configuration files are not covered.
-
-Key Knowledge Areas:
-
-Create e-mail aliases.
-Configure e-mail forwarding.
-Knowledge of commonly available MTA programs (postfix, sendmail, exim) (no configuration).
-Terms and Utilities:
-
 ~/.forward
 sendmail emulation layer commands
 newaliases
@@ -1470,16 +1382,6 @@ exim
 	****** 108.4 Manage printers and printing ******
 
 Weight: 2
-
-Description: Candidates should be able to manage print queues and user print jobs using CUPS and the LPD compatibility interface.
-
-Key Knowledge Areas:
-
-Basic CUPS configuration (for local and remote printers).
-Manage user print queues.
-Troubleshoot general printing problems.
-Add and remove jobs from configured printer queues.
-The following is a partial list of the used files, terms and utilities:
 
 CUPS configuration files, tools and utilities
 /etc/cups/
@@ -1514,6 +1416,7 @@ TCP, UDP, ICMP
 		cat /etc/services
 
 109.2 Persistent network configuration
+
 Weight: 4
 
 Description: Candidates should be able to manage the persistent network configuration of a Linux host.
@@ -1568,17 +1471,8 @@ ifdown
 		ifconfig eth0 up
 
 109.3 Basic network troubleshooting
+
 Weight: 4
-
-Description: Candidates should be able to troubleshoot networking issues on client hosts.
-
-Key Knowledge Areas:
-
-Manually configure network interfaces, including viewing and changing the configuration of network interfaces using iproute2.
-Manually configure routing, including viewing and changing routing tables and setting the default route using iproute2.
-Debug problems associated with the network configuration.
-Awareness of legacy net-tools commands.
-The following is a partial list of the used files, terms and utilities:
 
 ip
 hostname
