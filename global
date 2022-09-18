@@ -1,3 +1,32 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@millerjmatos 
+millerjmatos
+/
+lpic-1
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+lpic-1/global
+@millerjmatos
+millerjmatos Update global
+Latest commit 8bdc005 5 hours ago
+ History
+ 1 contributor
+1627 lines (1064 sloc)  30.4 KB
+
 ------------------------------------------------------------
 _	Topic 101: System Architecture
 ------------------------------------------------------------
@@ -643,6 +672,8 @@ Comando que informa o número de linhas, palavras e bytes do arquivo:
 
 	wc file.txt
 
+	wc -l file.txt
+
 O * imprime o resultado de todos os arquivos do diretório atual ou desejado:
 
 	cd /var/log && wc * | sort
@@ -663,9 +694,101 @@ Imprime as linhas numeradas, descartando as linhas em branco:
 
 	cat -b file.txt
 
+Imprime apenas os dados que ocorreram uma única vez:
+
+	uniq file.txt
+
+Como é preciso que estejam em ordem sequêncial, podemos usar outra opção para resolver:
+
+	sort file.txt | uniq
+
+Se quiser imprimir apenas o que estiver duplicado:
+
+	sort file.txt | uniq -d
+
+Para informar a quantidade de cada ocorrência:
+
+	sort file.txt | uniq -c
+
+Imprimindo o conteúdo de um texto em formato octal:
+
+	od file.txt
+
+Em hexa:
+
+	od -tx file.txt
+
+	od --help
+
+Para juntar dois arquivos de texto utilizando uma coluna como índice:
+
+	join codigo-aluno.txt notas-aluno.txt
+
+Juntando os dois arquivos linha por linha:
+
+	paste codigo-aluno.txt notas-aluno.txt
+
+Dividindo o arquivo:
+
+	wc -l longfile.txt
+
+	split -l20 longfile.txt
+
+	ls -l
+ 
+	split -l20 longfile.txt novo_arquivo_
+
+	wc -l novo_arquivo_*
+
+Imprimindo modificado a saída do texto utilizando strings:
+
+	cat file.txt | tr a-z A-Z
+
+	cat file.txt | tr -d A
+
+	tr --help
+
+	cat file.txt | tr [:upper:] [:lower:]
+
+	cat file.txt | ' ' '_'
+
+	cat file.txt | tr -d [:upper:]
+
+Imprimindo o arquivo removendo os 5 primeiros caracteres:
+
+	cut -c1-5 file.txt
+
+Caracteres em posições específicos:
+
+	cut -c1,2,5 file.txt
+
+De um caracter específico em diante:
+
+	cut -c5- file.txt
+
+Definindo um delimitador:
+
+	cut -d" " -f1 file.txt
+
 Logins de todos os usuários do sistema contidos no arquivo passwd:
 
-	cut -d : -f 1 /etc/passwd
+	cut -d: -f1 /etc/passwd
+
+Alterando um string por outra com o sed:
+
+	sed 's/Nome/NovoNome/' nomes.txt
+
+Para não pular a linha ao fazer a alteração, utilizamos a flag global:
+
+	sed 's/Nome/NovoNome/g' nomes.txt
+
+Apagar linhas em um range:
+
+	sed '3,5 d' nomes.txt
+
+Apagar linhas com uma ocorrência de string específica:
+
+	sed '/Nome/d' nomes.txt
 
 	***** 103.3 Perform basic file management *****
 
@@ -1625,3 +1748,18 @@ Future changes to the objective will/may include:
 
 Remove ifup/ifdown and legacy net-tools command
 Remove TCP wrappers
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+You have unread notifications
