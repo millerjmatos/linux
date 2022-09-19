@@ -223,7 +223,7 @@ Esvaziando o diretório de cache "/var/cache/apt/archives":
 
 	apt-get clean
 
-Listando os pacotes instalados: 
+Imprimindo os pacotes instalados: 
 
 	dpkg -l
 
@@ -237,7 +237,7 @@ Para obter informações sobre o pacote:
 
 	dpkg -s bash
 
-Listando os arquivos que estão dentro do pacote:
+Imprimindo os arquivos que estão dentro do pacote:
 
 	dpkg -I bash
 
@@ -249,7 +249,7 @@ Instalando um pacote .deb:
 
 	dpkg -i --force-all <pacote.deb>
 
-Listando os arquivos instalados por um pacote específico:
+Imprimindo os arquivos instalados por um pacote específico:
 
 	dpkg -L bash
 
@@ -281,7 +281,7 @@ Pesquisando pacotes por nome:
 
 	apt-cache search <pacote>
 
-Listando informações do pacote: 
+Imprimindo informações do pacote: 
 
 	apt-cache show <pacote>
 
@@ -305,7 +305,7 @@ Removendo um pacote instalado:
 	* * * * * 102.5 Use RPM and YUM pacoteage management * * * * *
 ------------------------------------------------------------
 
-Weight：  3
+Weight： 3
 
 rpm
 rpm2cpio
@@ -314,7 +314,77 @@ rpm2cpio
 yum
 zypper
 
-Listando os pacotes disponíveis para atualização: 
+Imprimindo os pacotes instalados na máquina:
+
+	rpm -qa
+
+	rpm -qa bash
+
+Imprimindo informações de um pacote:
+
+	rpm -qi bash
+
+Imprimindo os arquivos que pertencem a instalação:
+
+	rpm -ql bash
+
+Imprimindo os arquivos de configuração da instalação:
+
+	rpm -qc bash
+
+Imprimindo os arquivos de documentação da instalação:
+
+	rpm -qd bash
+
+Imprimindo o programa que instalou determinando pacote:
+
+	rpm -qf /etc/skel/.bashrc
+
+Imprimindo quais são os arquivos de um determinado pacote:
+
+	rpm -qlp arquivo.rpm
+
+Imprimindo informações de um pacote:
+
+	rpm -qip arquivo.rpm
+
+Instalando um pacote:
+
+	rpm -i arquivo.rpm
+
+Atualizando uma versão de um pacote já instalado:
+
+	rpm -U arquivo.rpm
+
+As opções -i e -U são geralmente acompanhadas de -vh.
+
+Instalando um pacote com dependências:
+
+	rpm -ivh --nodeps arquivo.rpm
+
+Forçando a instalação:
+
+	rpm -ivh --force arquivo.rpm
+
+Simulando uma instalação antes de realizar:
+
+	rpm -ivh --test arquivo.rpm
+
+Verificando a integridade de um pacote:
+
+	rpm -V arquivo.rpm
+
+Se retornar alguma mensagem, há algum erro.
+
+Desisntalando um programa:
+
+	rpm -evh NomeDoPrograma
+
+Ignorando dependências usadas por outro programa:
+
+	rpm -evh --nodeps NomeDoPrograma
+
+Imprimindo os pacotes disponíveis para atualização:
 
 	yum check-update
 
@@ -334,7 +404,9 @@ Arquivos de configuração dos repositórios:
 
 	/etc/yum.repos.d
 
+------------------------------------------------------------
 	* * * * * 102.6 Linux as a virtualization guest * * * * *
+------------------------------------------------------------
 
 Weight: 1
 
@@ -422,11 +494,11 @@ Tornando a variável global:
 
 	export NOME_VARIAVEL=valor
 
-Listando variáveis locais e globais:
+Imprimindo variáveis locais e globais:
 
 	set | less
 
-Listando apenas variáveis globais:
+Imprimindo apenas variáveis globais:
 
 	env | less
 
@@ -982,7 +1054,7 @@ parted
 mkfs
 mkswap
 
-listando as partições:  
+Imprimindo as partições:  
 
 	lsblk
 
@@ -1125,11 +1197,11 @@ which
 type
 /etc/updatedb.conf
 
-	listando arquivos ou diretórios por tamanho:
+	Imprimindo arquivos ou diretórios por tamanho:
 		find <arquivo> -type f -size +1G
 		find . -type d -size -5M
 
-	listando arquivos por extensão:
+	Imprimindo arquivos por extensão:
 
 		find . -type f -name '*.pst'
 
@@ -1137,7 +1209,7 @@ type
 
 		find /home -type f -size +500M -delete
 
-	listando arquivos acessados ou modificados dias atrás por um usuário ou grupo:
+	Imprimindo arquivos acessados ou modificados dias atrás por um usuário ou grupo:
 		find / -type f -atime 7 -<user> <user>
 		find . -type f -mtime 30 -<group> <group>
 
