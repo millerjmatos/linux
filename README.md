@@ -2,7 +2,7 @@
 
 Desde sua criação, em 17 de setembro de 1991, o Linux tem sido constantemente atualizado com a ajuda dos próprios usuários. Dessa forma, além dos baixos custos, a praticidade transformou-se num dos principais atrativos do sistema, e assim um número crescente de empresas e usuários comuns começaram a adotá-lo!
 
-Idealizado por Linus Torvalds, jovem estudante da Universidade de Helsinki, o Linux nasceu visando ser um sistema aberto e acessível a usuários do munto inteiro. Torvalds deu início ao seu trabalho inspirado no Unix (sistema operacional utilizado ainda hoje em mainframes, computadores alto desempenho). Com a ajuda de programadores de diversos países, chegou a diferentes versões do Linux (palavra criada com a junção dos nomes Linus e Unix).
+Idealizado por Linus Torvalds, jovem estudante da Universidade de Helsinki, o Linux nasceu visando ser um sistema aberto e acessível a usuários do munto inteiro. Torvalds deu início ao seu trabalho inspirado no Unix (sistema operacional utilizado ainda hoje em mainframes, computadores de alto desempenho). Com a ajuda de programadores de diversos países, chegou a diferentes versões do Linux (palavra criada com a junção dos nomes Linus e Unix).
 
 O sistema pode ser utilizado, tanto por usuário doméstico, como para administração de rede ou no desenvolvimento de aplicativos. A versão inicial do kernel (0.01) consistia em cerca de 10 mil linhas de código, em 2022, o kernel Linux v5.8 abrange mais de 28 milhões de linhas, alimenta desde nossos smartphones, até servidores, supercomputadores e sistemas em Marte.
 
