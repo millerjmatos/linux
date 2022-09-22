@@ -76,17 +76,6 @@ O insmod não carrega as dependências! O comando modprobe o faz:
 
 Questões: 3
 
-Description: Candidates should be able to guide the system through the booting process.
-
-Key Knowledge Areas:
-
-Provide common commands to the boot loader and options to the kernel at boot time.
-Demonstrate knowledge of the boot sequence from BIOS/UEFI to boot completion.
-Understanding of SysVinit and systemd.
-Awareness of Upstart.
-Check boot events in the log files.
-The following is a partial list of the used files, terms and utilities:
-
 dmesg
 journalctl
 BIOS
@@ -103,18 +92,6 @@ systemd
 ------------------------------------------------------------
 
 Questões: 3
-
-Description: Candidates should be able to manage the SysVinit runlevel or systemd boot target of the system. This objective includes changing to single user mode, shutdown or rebooting the system. Candidates should be able to alert users before switching runlevels / boot targets and properly terminate processes. This objective also includes setting the default SysVinit runlevel or systemd boot target. It also includes awareness of Upstart as an alternative to SysVinit or systemd.
-
-Key Knowledge Areas:
-
-Set the default runlevel or boot target.
-Change between runlevels / boot targets including single user mode.
-Shutdown and reboot from the command line.
-Alert users before switching runlevels / boot targets or other major system events.
-Properly terminate processes.
-Awareness of acpid.
-The following is a partial list of the used files, terms and utilities:
 
 /etc/inittab
 shutdown
@@ -152,16 +129,6 @@ partitions
 
 Questões: 2
 
-Description: Candidates should be able to select, install and configure a boot manager.
-
-Key Knowledge Areas:
-
-Providing alternative boot locations and backup boot options.
-Install and configure a boot loader such as GRUB Legacy.
-Perform basic configuration changes for GRUB 2.
-Interact with the boot loader.
-The following is a partial list of the used files, terms and utilities:
-
 menu.lst, grub.cfg and grub.conf
 grub-install
 grub-mkconfig
@@ -172,15 +139,6 @@ MBR
 ------------------------------------------------------------
 
 Questões: 1
-
-Description: Candidates should be able to determine the shared libraries that executable programs depend on and install them when necessary.
-
-Key Knowledge Areas:
-
-Identify shared libraries.
-Identify the typical locations of system libraries.
-Load shared libraries.
-The following is a partial list of the used files, terms and utilities:
 
 ldd
 ldconfig
