@@ -6,7 +6,7 @@
 	* * * * * 101.1 Determine and configure hardware settings * * * * *
 ------------------------------------------------------------
 
-Weight: 2
+Questões: 2
 
 /sys/
 /proc/
@@ -74,7 +74,7 @@ O insmod não carrega as dependências! O comando modprobe o faz:
 	* * * * * 101.2 Boot the system * * * * *
 ------------------------------------------------------------
 
-Weight: 3
+Questões: 3
 
 Description: Candidates should be able to guide the system through the booting process.
 
@@ -102,7 +102,7 @@ systemd
 	* * * * * 101.3 Change runlevels / boot targets and shutdown or reboot system * * * * *
 ------------------------------------------------------------
 
-Weight: 3
+Questões: 3
 
 Description: Candidates should be able to manage the SysVinit runlevel or systemd boot target of the system. This objective includes changing to single user mode, shutdown or rebooting the system. Candidates should be able to alert users before switching runlevels / boot targets and properly terminate processes. This objective also includes setting the default SysVinit runlevel or systemd boot target. It also includes awareness of Upstart as an alternative to SysVinit or systemd.
 
@@ -135,7 +135,7 @@ wall
 	* * * * * 102.1 Design hard disk layout * * * * *
 ------------------------------------------------------------
 
-Weight: 2
+Questões: 2
 
 / (root) filesystem
 /var filesystem
@@ -150,7 +150,7 @@ partitions
 	* * * * * 102.2 Install a boot manager * * * * *
 ------------------------------------------------------------
 
-Weight: 2
+Questões: 2
 
 Description: Candidates should be able to select, install and configure a boot manager.
 
@@ -171,7 +171,7 @@ MBR
 	* * * * * 102.3 Manage shared libraries * * * * *
 ------------------------------------------------------------
 
-Weight: 1
+Questões: 1
 
 Description: Candidates should be able to determine the shared libraries that executable programs depend on and install them when necessary.
 
@@ -191,7 +191,7 @@ LD_LIBRARY_PATH
 	* * * * * 102.4 Use Debian package management * * * * *
 ------------------------------------------------------------	
 
-Weight: 3
+Questões: 3
 
 /etc/apt/sources.list
 dpkg
@@ -320,6 +320,14 @@ Imprimindo os pacotes instalados na máquina:
 
 	rpm -qa bash
 
+Imprimindo as dependências necessárias para instalar o pacote:
+
+	rpm -qR bash
+
+Se o pacote não estiver instalando ainda:
+
+	rpm -qpR file-2.5.90.x86.rpm
+
 Imprimindo informações de um pacote:
 
 	rpm -qi bash
@@ -408,7 +416,7 @@ Arquivos de configuração dos repositórios:
 	* * * * * 102.6 Linux as a virtualization guest * * * * *
 ------------------------------------------------------------
 
-Weight: 1
+Questões: 1
 
 Virtual machine
 Linux container
@@ -425,7 +433,7 @@ D-Bus machine id
 	* * * * * 103.1 Work on the command line * * * * *
 ------------------------------------------------------------
 
-Weight: 4
+Questões: 4
 
 bash
 echo
@@ -652,7 +660,7 @@ Já '' e \ protegem todos os caracteres sem excessão:
 	* * * * * 103.2 Process text streams using filters * * * * *
 ------------------------------------------------------------
 
-Weight: 2
+Questões: 2
 
 bzcat
 cat
@@ -885,7 +893,7 @@ Apagar linhas com uma ocorrência de string específica:
 	* * * * * 103.3 Perform basic file management * * * * *
 ------------------------------------------------------------
 
-Weight: 4
+Questões: 4
 
 cp
 find
@@ -906,6 +914,26 @@ bunzip2
 xz
 unxz
 file globbing
+
+Navegando para o home do usuário atual:
+
+	cd ~
+
+Imprimindo os arquivos ocultos do diretório:
+
+	ls -a
+
+	ls -la
+
+Imprimindo recursivamente o conteúdo de cada diretório:
+
+	ls -lR
+
+Imprimindo o tipo do arquivo:
+
+	file arquivo.txt
+
+Tem seu nome iniciado por ponto.
 
 	_	tar:
 
@@ -975,14 +1003,14 @@ Copiando diretórios ou todo conteúdo recursivamente:
 	* * * * * 103.4 Use streams, pipes and redirects * * * * *
 ------------------------------------------------------------
 
-Weight: 4
+Questões: 4
 
 tee
 xargs
 
 103.5 Create, monitor and kill processes
 
-Weight: 4
+Questões: 4
 
 &
 bg
@@ -1005,7 +1033,7 @@ tmux
 	* * * * * 103.6 Modify process execution priorities * * * * *
 ------------------------------------------------------------
 
-Weight: 2
+Questões: 2
 
 nice
 ps
@@ -1016,7 +1044,7 @@ top
 	* * * * * 103.7 Search text files using regular expressions * * * * *
 ------------------------------------------------------------
 
-Weight: 3
+Questões: 3
 
 grep
 egrep
@@ -1028,7 +1056,7 @@ regex(7)
 	* * * * * 103.8 Basic file editing * * * * *
 ------------------------------------------------------------
 
-Weight: 3
+Questões: 3
 
 vi
 /, ?
@@ -1046,7 +1074,7 @@ EDITOR
 	* * * * * 104.1 Create partitions and filesystems * * * * *
 ------------------------------------------------------------
 
-Weight: 2
+Questões: 2
 
 fdisk
 gdisk
@@ -1198,7 +1226,7 @@ Montando a partição:
 	* * * * * 104.2 Maintain the integrity of filesystems * * * * *
 ------------------------------------------------------------
 
-Weight: 2
+Questões: 2
 
 du
 df
@@ -1222,7 +1250,7 @@ Saber o espaço utilizado em disco por diretórios ou arquivos:
 	* * * * * 104.3 Control mounting and unmounting of filesystems * * * * *
 ------------------------------------------------------------
 
-Weight: 3
+Questões: 3
 
 /etc/fstab
 /media/
@@ -1231,7 +1259,7 @@ umount
 blkid
 lsblk
 
-Exibindo as partições montadas:
+Imprimindo as partições montadas:
 
 	df -h
 
@@ -1263,7 +1291,7 @@ ou
 
 	umount /tmp/teste_mount
 
-Exibindo o UUID de uma partição:
+Imprimindo o UUID de uma partição:
 
 	dumpe2fs /dev/sdb2 -h
 
@@ -1275,7 +1303,7 @@ Exibindo o UUID de uma partição:
 	* * * * * 104.5 Manage file permissions and ownership * * * * *
 ------------------------------------------------------------
 
-Weight: 3
+Questões: 3
 
 chmod
 umask
@@ -1286,7 +1314,7 @@ chgrp
 	* * * * * 104.6 Create and change hard and symbolic links * * * * *
 ------------------------------------------------------------
 
-Weight: 2
+Questões: 2
 
 Description: Candidates should be able to create and manage hard and symbolic links to a file.
 
@@ -1305,7 +1333,7 @@ ls
 	* * * * * 104.7 Find system files and place files in the correct location * * * * *
 ------------------------------------------------------------
 
-Weight: 2
+Questões: 2
 
 find
 locate
@@ -1339,7 +1367,7 @@ type
 	* * * * * 105.1 Customize and use the shell environment * * * * *
 ------------------------------------------------------------
 
-Weight: 4
+Questões: 4
 
 .
 source
@@ -1361,7 +1389,7 @@ alias
 	* * * * * 105.2 Customize or write simple scripts * * * * *
 ------------------------------------------------------------
 
-Weight: 4
+Questões: 4
 
 for
 while
@@ -1381,7 +1409,7 @@ exec
 	* * * * * 106.1 Install and configure X11 * * * * *
 ------------------------------------------------------------
 
-Weight: 2
+Questões: 2
 
 /etc/X11/xorg.conf
 /etc/X11/xorg.conf.d/
@@ -1395,7 +1423,7 @@ X
 	* * * * * 106.2 Graphical Desktops * * * * *
 ------------------------------------------------------------
 
-Weight: 1
+Questões: 1
 
 KDE
 Gnome
@@ -1410,7 +1438,7 @@ RDP
 	* * * * * 106.3 Accessibility * * * * *
 ------------------------------------------------------------
 
-Weight: 1
+Questões: 1
 
 High Contrast/Large Print Desktop Themes.
 Screen Reader.
@@ -1431,7 +1459,7 @@ Voice recognition.
 	* * * * * 107.1 Manage user and group accounts and related system files * * * * *
 ------------------------------------------------------------
 
-Weight: 5
+Questões: 5
 
 /etc/passwd
 /etc/shadow
@@ -1496,7 +1524,7 @@ usermod
 
 		passwd -d <user>
 
-	exibindo as informações do usuário:
+	Imprimindo as informações do usuário:
 
 		finger <user>
 
@@ -1513,7 +1541,7 @@ usermod
 	* * * * * 107.2 Automate system administration tasks by scheduling jobs * * * * *
 ------------------------------------------------------------
 
-Weight: 4
+Questões: 4
 
 /etc/cron.{d,daily,hourly,monthly,weekly}/
 /etc/at.deny
@@ -1541,7 +1569,7 @@ systemd-run
 	* * * * ** 107.3 Localisation and internationalisation * * * * **
 ------------------------------------------------------------
 
-Weight: 3
+Questões: 3
 
 /etc/timezone
 /etc/localtime
@@ -1568,7 +1596,7 @@ Unicode
 	* * * * * 108.1 Maintain system time * * * * *
 ------------------------------------------------------------
 
-Weight: 3
+Questões: 3
 
 /usr/share/zoneinfo/
 /etc/timezone
@@ -1607,7 +1635,7 @@ pool.ntp.org
 	* * * * * 108.2 System logging * * * * *
 ------------------------------------------------------------
 
-Weight: 4
+Questões: 4
 
 /etc/rsyslog.conf
 /var/log/
@@ -1624,7 +1652,7 @@ systemd-cat
 	* * * * * 108.3 Mail Transfer Agent (MTA) basics * * * * *
 ------------------------------------------------------------
 
-Weight: 3
+Questões: 3
 
 ~/.forward
 sendmail emulation layer commands
@@ -1639,7 +1667,7 @@ exim
 	* * * * * 108.4 Manage printers and printing * * * * *
 ------------------------------------------------------------
 
-Weight: 2
+Questões: 2
 
 CUPS configuration files, tools and utilities
 /etc/cups/
@@ -1653,7 +1681,7 @@ lpd legacy interface (lpr, lprm, lpq)
 	* * * * * 109.1 Fundamentals of internet protocols * * * * * 
 ------------------------------------------------------------
 
-Weight: 4
+Questões: 4
 
 Description: Candidates should demonstrate a proper understanding of TCP/IP network fundamentals.
 
@@ -1680,7 +1708,7 @@ TCP, UDP, ICMP
 	* * * * * 109.2 Persistent network configuration * * * * *
 ------------------------------------------------------------
 
-Weight: 4
+Questões: 4
 
 /etc/hostname
 /etc/hosts
@@ -1729,7 +1757,7 @@ alterando MAC:
 	* * * * * 109.3 Basic network troubleshooting * * * * *
 ------------------------------------------------------------
 
-Weight: 4
+Questões: 4
 
 ip
 hostname
@@ -1758,7 +1786,7 @@ route
 	* * * * * 109.4 Configure client side DNS * * * * *
 ------------------------------------------------------------
 
-Weight: 2
+Questões: 2
 
 /etc/hosts
 /etc/resolv.conf
@@ -1778,7 +1806,7 @@ getent
 	* * * * * 110.1 Perform security administration tasks * * * * *
 ------------------------------------------------------------
 
-Weight: 3
+Questões: 3
 
 find
 passwd
@@ -1822,7 +1850,7 @@ Descobrindo o SO de um alvo:
 	* * * * * 110.2 Setup host security * * * * *
 ------------------------------------------------------------
 
-Weight: 3
+Questões: 3
 
 Description: Candidates should know how to set up a basic level of host security.
 
@@ -1848,7 +1876,7 @@ systemd.socket
 	* * * * * 110.3 Securing data with encryption * * * * *
 ------------------------------------------------------------
 
-Weight: 4
+Questões: 4
 
 Description: The candidate should be able to use public key techniques to secure data and communication.
 
