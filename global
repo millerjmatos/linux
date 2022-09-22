@@ -1864,24 +1864,3 @@ ssh_known_hosts
 gpg
 gpg-agent
 ~/.gnupg/
-
-Future Change Considerations
-Future changes to the objective will/may include:
-
-Remove ifup/ifdown and legacy net-tools command
-Remove TCP wrappers
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-You have unread notifications
