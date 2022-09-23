@@ -282,7 +282,7 @@ Imprimindo as dependências necessárias para instalar o pacote:
 
 	rpm -qR bash
 
-Se o pacote não estiver instalando ainda:
+Se o pacote não estiver instalado (avulso):
 
 	rpm -qpR file-2.5.90.x86.rpm
 
@@ -947,69 +947,125 @@ Especificando a data de modificação no formato AAAAMMDDhhmm:
 
 	touch -t 202209220925 arquivovazio.txt
 
-	_	tar:
+Removendo um arquivo:
 
-compactando o conteúdo de /etc no diretório local:
+	rm arquivo
 
-	tar cvf diretc.tar /etc/
+	rm -i arquivo
 
-extraindo no diretório local:
+Removendo um diretório:
 
-	tar -xvf diretc.tar
+	rm -r diretorio/
 
-compactando e comprimindo ao mesmo tempo o conteúdo de /etc no diretório local:
+	rmdir diretorio/
 
-	tar cvzf diretc.tar.gz /etc/
+O rmdir só remove diretório vazio.
 
-ou
+Criando um diretório:
 
-	tar cvjf diretc.tar.bz /etc/
+	mkdir Linux
 
-extraindo:
+	mkdir Linux/Distros
 
-	tar xvzf diretc.tar.gz /etc/
+Criando uma estrutura de diretórios:
 
-ou
+	mkdir -p Cursos/Linux/Distros/Suse
 
-	tar xvjf diretc.tar.bz /etc/
+Imprimindo arquivos por nome:
 
-gzip:
+	find /home/ -name Linux
 
-comprimir:
+Imprimindo arquivos de um usuário:
 
-	gzip nomedoarquivo.tar
+	find /home/ -user liveuser
 
-extrair:
+Imprimindo arquivos por tamanho:
+		
+	find /home/ -type f -size +1G
 
-	gunzip nomedoarquivo.tar.gz
+Imprimindo diretórios por tamanho:
 
-bz2:
-
-comprimir:
-
-	bzip2 nomedoarquivo.tar
-
-extrair:
-
-	bunzip nomedoarquivo.tar.bz2
-
-zip:
-
-extrair:
+	find /home/ -type d -size +100M
 	
-	unzip nomedoarquivo.zip
+	find . -type d -size -5M
 
-rar:
+Imprimindo arquivos por extensão:
 
-extrair:
+	find . -type f -name '*.pst'
 
-	unrar x nomedoarquivo.rar
+Deletando arquivos e diretórios:
 
-Copiando diretórios ou todo conteúdo recursivamente:
+	find /home/ -type f -size +500M -delete
 
-	cp -R </arquivo> /temp
+Imprimindo arquivos acessados há 7 dias pelo usuário por extensão:
 
-	cp * /temp
+	find /home/ -atime -7 -user muller -name '*.pdf'
+
+Imprimindo arquivos alterados a 1 dia:
+
+	find /home/ -ctime -1
+
+Imprimindo arquivos modificados entre 30 e 90 dias pelo grupo vendas:
+	
+	find /home/ -type f -mtime +30 -mtime -90 -group vendas
+
+Agrupando o conteúdo do /tmp/ no diretório atual:
+
+	tar cpvf backup.tar /tmp/
+
+	tar tf backup.tar
+
+Desagrupando o conteúdo do aqruivo .tar no diretório local:
+
+	tar xvf backup.tar
+
+Compactando com o gzip:
+
+	gzip backup.tar
+
+	gzip -k backup.tar
+
+Descompactando o arquivo tar.gz:
+
+	gunzip backup.tar.gz
+
+	gzip -d backup.tar.gz
+
+Agrupando e compactando ao mesmo tempo com gzip:
+
+	tar zcpvf backup.tgz /tmp/
+
+Compactando com o bzip2:
+
+	bzip2 backup.tar
+
+	bzip2 -k backup.tar
+
+Descompactando o arquivo tar.bz2:
+
+	bunzip2 backup.tar.bz2
+
+	bzip2 -d backup.tar.bz2
+
+Agrupando e compactando ao mesmo tempo com bzip2:
+
+	tar jcpvf backup.tbz /tmp/
+
+Compactando com o xz:
+
+	xz backup.tar.xz
+
+	xz -k backup.tar.xz
+
+Descompactando o arquivo tar.xz
+
+	unxz backup.tar.xz
+
+	xz -d backup.tar.xz
+
+Agrupando e compactando ao mesmo tempo com xz:
+
+	tar Jcpvf backup.txz /tmp/
 
 ------------------------------------------------------------
 	* * * * * 103.4 Use streams, pipes and redirects * * * * *
@@ -1354,22 +1410,6 @@ whereis
 which
 type
 /etc/updatedb.conf
-
-	Imprimindo arquivos ou diretórios por tamanho:
-		find <arquivo> -type f -size +1G
-		find . -type d -size -5M
-
-	Imprimindo arquivos por extensão:
-
-		find . -type f -name '*.pst'
-
-	deletando arquivos e diretórios:
-
-		find /home -type f -size +500M -delete
-
-	Imprimindo arquivos acessados ou modificados dias atrás por um usuário ou grupo:
-		find / -type f -atime 7 -<user> <user>
-		find . -type f -mtime 30 -<group> <group>
 
 ------------------------------------------------------------
 
