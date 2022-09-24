@@ -468,7 +468,7 @@ Imprimindo apenas variáveis globais:
 
 	env | less
 
-Alterando uma variável no momento de execução do shell atual:
+Editando uma variável no momento de execução do shell atual:
 
 	env TESTE=Linux ./script.sh
 
@@ -831,7 +831,7 @@ Logins de todos os usuários do sistema contidos no arquivo passwd:
 
 	cut -d: -f1 /etc/passwd
 
-Alterando um string por outra com o sed:
+Editando um string por outra com o sed:
 
 	sed 's/Nome/NovoNome/' nomes.txt
 
@@ -931,15 +931,15 @@ Criando um arquivo vazio:
 
 	file arquivovazio.txt
 
-Alterando o rótudo de tempo de um arquivo já existente:
+Editando o rótudo de tempo de um arquivo já existente:
 
 	touch arquivovazio.txt
 
-Alterando a data de acesso de um arquivo já existente:
+Editando a data de acesso de um arquivo já existente:
 
 	touch -a arquivovazio.txt
 
-Alterando a data de modificação de um arquivo já existente:
+Editando a data de modificação de um arquivo já existente:
 
 	touch -m arquivovazio.txt
 
@@ -1559,15 +1559,15 @@ usermod
 		adduser <user> <group>
 		gpasswd -a <user> <group>
 
-	alterando o grupo primário de um usuário:
+	Editando o grupo primário de um usuário:
 
 		usermod -g <group> <user>
 
-	alterando o grupo proprietário das pastas:
+	Editando o grupo proprietário das pastas:
 
 		chgrp <group> <arquivo>
 
-	alterando o usuário e/ou grupo dono de um diretório:
+	Editando o usuário e/ou grupo dono de um diretório:
 
 		chown -R <user> </arquivo>
 		chown -R <user>:<group> </arquivo>
@@ -1772,9 +1772,9 @@ IPv4, IPv6
 Subnetting
 TCP, UDP, ICMP
 
-	protocolos importantes e suas portas:
+Protocolos importantes e suas portas:
 
-		cat /etc/services
+	cat /etc/services
 
 ------------------------------------------------------------
 	* * * * * 109.2 Persistent network configuration * * * * *
@@ -1791,39 +1791,61 @@ hostnamectl
 ifup
 ifdown
 
-visualizando o IP/MAC da interface:
+Imprimindo o nome da máquina:
 
-		ifconfig
-		ip a show
+	cat /etc/hostname
 
-reiniciando a placa de rede:
+	hostname
 
-		ifconfig eth0 down
-		ifconfig eth0 up
+	hostnamectl
 
-editando o /etc/network/interfaces:
+Editando o nome da máquina:
 
-		auto lo
-		iface lo inet loopback
+	hostnamectl set-hostname novonome-pc
 
-		definindo IP fixo:
-		auto eth0
-		iface eth0 inet static
-		address 192.168.x.x
-		netmask 255.255.x.x
-		gateway 192.168.x.x
-		dns-nameservers 8.8.8.8 8.8.4.4
+Criando uma relação estática entre ip e hostname:
 
-mudando o hostname do computador:
+	cat /etc/hosts
 
-		vim /etc/hostname
-		hostname
+	vim /etc/hosts
 
-alterando MAC:
+		192.168.1.112 srv-linux
 
-		ifconfig eth0 down
-		ip link set dev eth0 address 1A:2B:3C:55:66:00
-		ifconfig eth0 up
+		192.168.1.100 pc01 pc01.minharede.local
+
+	ping srv-linux
+
+Criando uma relação de consulta quando uma informação é requisitada:
+
+	cat /etc/nsswitch.conf
+
+Arquivo Network Services Switch.
+
+Criando uma relação estática de rede:
+
+	vim /etc/networks
+
+		rede-local	192.168.0.0
+
+Editando os servidores de DNS utilizados pelo sistema:
+
+	cat /etc/resolv.conf
+
+	vim /etc/resolv.conf
+
+		nameserver 192.168.0.65
+		nameserver 208.67.222.222
+		nameserver 208.67.220.220
+		nameserver 1.1.1.1
+
+	ls -l /etc/resolv.conf
+
+Nas distribuições atuais esse arquivo é dinâmico.
+Antes de alterar manualmente precisa desativar o netconfig:
+
+	vim /etc/sysconfig/network/config
+
+		NETCONFIG_DNS_POLICY=""
 
 ------------------------------------------------------------
 	* * * * * 109.3 Basic network troubleshooting * * * * *
@@ -1845,14 +1867,46 @@ ifconfig
 netstat
 route
 
-	informando a rota dos pacotes:
-		traceroute <url>
+Informando a rota dos pacotes:
 
-	informando a rota dos pacotes sem definir nomes:
-		traceroute -n <url>
+	traceroute <url>
 
-	detectando uma máquina na rede:
-		ping -c 10 192.168.1.1
+Informando a rota dos pacotes sem definir nomes:
+
+	traceroute -n <url>
+
+Visualizando o IP/MAC da interface:
+	
+	ip a show
+
+	ifconfig
+
+Reiniciando a placa de rede:
+
+	ifconfig eth0 down
+	
+	ifconfig eth0 up
+
+Editando o /etc/network/interfaces:
+
+	auto lo
+	iface lo inet loopback
+
+	definindo IP fixo:
+	auto eth0
+	iface eth0 inet static
+	address 192.168.x.x
+	netmask 255.255.x.x
+	gateway 192.168.x.x
+	dns-nameservers 8.8.8.8 8.8.4.4
+
+Editando MAC:
+
+	ifconfig eth0 down
+	
+	ip link set dev eth0 address 1A:2B:3C:55:66:00
+	
+	ifconfig eth0 up
 
 ------------------------------------------------------------
 	* * * * * 109.4 Configure client side DNS * * * * *
