@@ -1096,6 +1096,62 @@ Questões: 4
 tee
 xargs
 
+Alterando a saída padrão:
+
+	ls -l > saida.out
+
+	ls -l 1> saida.out
+
+	echo Linux > saida.out
+
+Se o arquivo já existir ele será substituído.
+
+Inserindo a saída no final do arquivo:
+
+	echo Linux1 > saida.out
+	
+	echo Linux2 > saida.out
+
+	cat saida.out
+
+Alterando a saída de erro:
+
+	ls -l /tmp/arquivo_desconhecido 2> saida.out
+
+Inserindo a saída de erro no final do arquivo:
+	
+	ls -l /tmp/arquivo_desconhecido 2>> saida.out
+
+Redirecionando a saída padrão e de erro para o mesmo arquivo:
+
+	ls -l {Linux,LINUX}2 > saida.out 2>&1 
+
+	mail -s "Assunto" sysadmin@mullertec.com.br < conteudo_do_email.txt
+
+Redirecionando o arquivo pela entrada:
+
+	cat linux.txt | tr 'a-z' 'A-Z'
+
+	tr 'a-z' 'A-Z' < linux.txt
+
+Alterando o aquivo e exibindo na saída padrão:
+
+	ls -l /tmp/ | tee arquivo.log
+
+	sort linux.txt | tee resultado.log
+
+Executando comandos recebidos pela entrada padrão:
+
+	find /home/ -type f -name '*.pdf' | xargs ls -l
+
+	find /home/ -type f -size +1G | xargs rm -v
+
+Imprimindo na saída padrão o resultado de um comando:
+
+	echo "A versão do kernel é: " `uname -r`
+
+	echo "A versão do kernel é: $(uname -r)
+
 103.5 Create, monitor and kill processes
 
 Questões: 4
@@ -1846,6 +1902,46 @@ Antes de alterar manualmente precisa desativar o netconfig:
 	vim /etc/sysconfig/network/config
 
 		NETCONFIG_DNS_POLICY=""
+
+Imprimindo o status das configurações de rede:
+
+	systemctl status NetworkManager 
+
+Arquivo de configuração:
+
+	cat /etc/NetworkManager
+
+Imprimindo informações das interfaces disponíveis:
+
+	nmcli
+
+	nmcli device
+
+	nmcli connection
+
+Derrubando e subindo uma conexão:
+
+	nmcli connection down eth01
+
+	nmcli device
+
+	nmcli connection up eth01
+
+Adicionando um nova conexão:
+
+	nmcli connection add type ethernet con-name NovaRede ifname eth02 ip4 172.22.22.100/24 gw4 172.22.22.254
+
+	cd /etc/NetworkManager/system-connections/
+
+	ls -la
+
+	cat NovaRede
+
+Deletando uma conexão:
+
+	nmcli connection del NovaRede
+
+	nmcli connection --help
 
 ------------------------------------------------------------
 	* * * * * 109.3 Basic network troubleshooting * * * * *
