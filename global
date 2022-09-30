@@ -1209,6 +1209,88 @@ Imprimindo o ID do processo:
 
 	pgrep --help
 
+Imprimindo todos os sinais que são possíveis enviar aos processos:
+
+	kill -l
+
+Encerrando um processo:
+
+	pgrep firefox
+
+	ps -aux | grep firefox
+
+	kill -s SIGKILL <PID>
+
+	kill -s 9 <PID>
+
+	kill -9 <PID>
+
+	kill -SIGKILL <PID>
+
+	kill <PID>
+
+O kill sem nenhum parâmetro envia o sinal 15 SIGTERM.
+
+Encerrando processos através do nome:
+
+	killall firefox
+
+	killall java
+
+	pkill firefox
+
+Reiniciando um processo:
+
+	kill -1 samba
+
+	pkill -1 firefox -u muller
+
+Imprimindo o tempo de atividade do sistema:
+
+	uptime
+
+Imprimindo a quantidade de memória e swap utilizada pelo sistema:
+
+	free -m
+
+Executando novas abas no mesmo terminal:
+
+	apt-get install screen
+
+	screen
+
+	top
+
+	CTRL+A c 
+
+	ls -l /tmp/
+
+	CTRL+A c
+
+	echo "terceira aba"
+
+Para alternar entre as abas:
+
+	CTRL+A n
+
+Saindo do screen:
+
+	CTRL+A d
+
+	screen -ls
+
+Voltando para a sessão ativa do screen:
+
+	screen -r
+
+Fechando uma aba dentro do screen:
+
+	exit
+
+Abrindo uma sessão do screen diretamente com o comando:
+
+	screen top
+
 ------------------------------------------------------------
 	* * * * * 103.6 Modify process execution priorities * * * * *
 ------------------------------------------------------------
