@@ -1291,6 +1291,44 @@ Abrindo uma sessão do screen diretamente com o comando:
 
 	screen top
 
+Executando um programa em background:
+
+	firefox &
+
+	wget -q http://www.mullertec.com.br &
+
+Imprimindo os programas rodando em background:
+
+	jobs
+
+	jobs -l
+
+Parando um programa rodando em foreground:
+
+	gnome-calculator
+
+	CTRL+Z
+
+	jobs
+
+	jobs -l
+
+Executando o último processo em background ou especificando:
+
+	bg
+
+	bg 2
+
+Executando o último processo em forefround ou especificando:
+
+	fg
+
+	fg 2
+
+Executando um programa desconectado do terminal atual:
+
+	nohup firefox &
+
 ------------------------------------------------------------
 	* * * * * 103.6 Modify process execution priorities * * * * *
 ------------------------------------------------------------
