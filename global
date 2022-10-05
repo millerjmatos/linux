@@ -1329,6 +1329,57 @@ Executando um programa desconectado do terminal atual:
 
 	nohup firefox &
 
+Executando um programa periódicamente:
+
+	watch free -h
+
+	watch "ps -aux | grep firefox"
+
+	watch -n5 date
+
+Executando multiplas janelas de terminal simultaneamente:
+
+	sudo apt install tmux
+
+Criando uma nova tela:
+	
+	CTRL+B c
+
+Renomeando um janela:
+
+	CTRL+B ,
+
+Navegando para a janela específica, anterior, próxima e última:
+
+	CTRL+B 2
+
+	CTRL+B p
+
+	CTRL+B n
+
+	CTRL+B l
+
+O asterisco representa a janela atual.
+
+
+Procurando uma janela:
+
+	CTRL+B f
+
+Listando todas as janelas abertas:
+
+	CTRL+B w
+
+Criando um painel:
+
+	CTRL+B %
+
+Navegando entre os paineis ou encerrando algum:
+
+	CTRL+B "seta para direira ou esquerda"
+
+	exit
+
 ------------------------------------------------------------
 	* * * * * 103.6 Modify process execution priorities * * * * *
 ------------------------------------------------------------
