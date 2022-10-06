@@ -1361,7 +1361,6 @@ Navegando para a janela específica, anterior, próxima e última:
 
 O asterisco representa a janela atual.
 
-
 Procurando uma janela:
 
 	CTRL+B f
@@ -1374,11 +1373,51 @@ Criando um painel:
 
 	CTRL+B %
 
-Navegando entre os paineis ou encerrando algum:
+	CTRL+B "
+
+Navegando entre os paineis:
 
 	CTRL+B "seta para direira ou esquerda"
 
+	CTRL+B o
+
+Redimensionando um painel:
+
+	CTRL+B CTRL+"seta para direira ou esquerda"
+
+Encerrando o tmux:
+
 	exit
+
+	CTRL+B d
+
+	CTRL+B $
+
+	tmux ls
+
+	tmux kill-session -t number_connection
+
+Acessando um tmux bg ou criando um novo:
+
+	tmx new -s new_connection
+
+	tmux attach -t new_connection
+
+Definindo a prioridade de um processo:
+
+	nice -n 10 firefox &
+
+	nice -n -15 qps &
+
+O nice vai de -20 até 19. Quanto < maior a prioridade!
+
+Alterando a prioridade de um processo em execução:
+
+	renice -n -16 17779
+
+	renice -n -5 -u muller
+
+	renice -n -10 -g diretoria
 
 ------------------------------------------------------------
 	* * * * * 103.6 Modify process execution priorities * * * * *
