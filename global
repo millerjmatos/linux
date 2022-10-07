@@ -847,6 +847,8 @@ Apagar linhas com uma ocorrência de string específica:
 
 	sed '/Nome/d' nomes.txt
 
+	sed '/^#/d' nomes.txt
+
 ------------------------------------------------------------
 	* * * * * 103.3 Perform basic file management * * * * *
 ------------------------------------------------------------
@@ -1403,6 +1405,17 @@ Acessando um tmux bg ou criando um novo:
 
 	tmux attach -t new_connection
 
+------------------------------------------------------------
+	* * * * * 103.6 Modify process execution priorities * * * * *
+------------------------------------------------------------
+
+Questões: 2
+
+nice
+ps
+renice
+top 
+
 Definindo a prioridade de um processo:
 
 	nice -n 10 firefox &
@@ -1420,17 +1433,6 @@ Alterando a prioridade de um processo em execução:
 	renice -n -10 -g diretoria
 
 ------------------------------------------------------------
-	* * * * * 103.6 Modify process execution priorities * * * * *
-------------------------------------------------------------
-
-Questões: 2
-
-nice
-ps
-renice
-top 
-
-------------------------------------------------------------
 	* * * * * 103.7 Search text files using regular expressions * * * * *
 ------------------------------------------------------------
 
@@ -1441,6 +1443,68 @@ egrep
 fgrep
 sed
 regex(7)
+
+Pesquisando em um arquivo de texto:
+
+	grep Linux arquivo.txt
+
+Contando a ocorrência:
+
+	grep -c Linux arquivo.txt
+
+Pesquisando em varios arquivos de texto:
+
+	grep Linux *
+
+	grep Linux arq*
+
+	grep -i Linux *
+
+Imprimindo recursivamente:
+
+	grep -r Linux *.txt
+
+Pesquisando com o egrep:
+
+	egrep "b[aei]g" arquivo.txt
+
+	egrep "b[a-u]g" arquivo.txt
+
+Imprimindo pelo final da linha:
+
+	egrep "^Linux$" arquivo.txt
+
+Imprimindo pelo início da linha:
+
+	egrep "^#" arquivo.txt
+
+	egrep "^Linux" arquivo.txt
+
+Imprimindo pelo início da linha e que não contém algo:
+
+	egrep -v "^#" arquivo.txt
+
+Não exige o caractere anterior ou que haja algo "*":
+
+	egrep "b[a-i]g*" arquivo.txt
+
+	egrep "b[a-i]g*e" arquivo.txt
+
+Não exige o caractere anterior ou imprime se ele repetir mais vezes "?":
+
+	egrep "b[a-i]g?" arquivo.txt
+
+Exige com o caractere anterior uma ou mais vezes "+":
+
+	egrep "b[a-i]g+" arquivo.txt
+
+Imprime com ao menos um caractere após "." ou dois ".." ou três "...":
+
+	egrep "b[a-i]g." arquivo.txt
+
+Imprimindo linhas que contenham uma determinada palavra:
+
+	egrep '\bLinux\b' arquivo.txt
 
 ------------------------------------------------------------
 	* * * * * 103.8 Basic file editing * * * * *
