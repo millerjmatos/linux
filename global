@@ -1872,6 +1872,17 @@ VNC
 Spice
 RDP
 
+O xrdp é uma alternativa para acessar estações Linux através do MS RDP. 
+Site: http://xrdp.org/
+
+Instalação:
+
+	apt install xrdp
+
+	systemctl enable xrdp
+
+	ufw allow from any to any port 3389 proto tcp
+
 ------------------------------------------------------------
 	* * * * * 106.3 Accessibility * * * * *
 ------------------------------------------------------------
@@ -2438,3 +2449,85 @@ ssh_known_hosts
 gpg
 gpg-agent
 ~/.gnupg/
+
+Arquivo de configuração do cliente ssh:
+
+	/etc/ssh/ssh_config
+
+Instalando o ssh server:
+
+	apt install openssh-server
+
+	dpkg -l | grep ssh
+
+Arquivo de configuração do servidor ssh:
+
+	/etc/ssh/sshd_config
+
+Conectando em um servidor ssh:
+
+	ssh muller@192.168.222.50
+
+	ssh manager@10.0.30.5:22
+
+	ssh user@172.16.1.80 -p 22443
+
+	ssh user@srv-linux -p 22
+
+Arquivo que contém os hosts conhecidos:
+
+	ls -la /home/user/.ssh/
+
+	cat known_hosts
+
+Gerando uma chave pública com o gpg:
+
+	gpg --gen-key
+
+	gpg --list-keys
+
+	gpg --expert --full-gen-key
+
+Arquivo que contém as informações das chaves:
+
+	ls -la /home/user/.gnupg/
+
+Exportando a chave pública:
+
+	gpg --list-keys
+
+	gpg --export "Muller Jorge" > key.muller.pub
+
+	gpg --export --armor "Muller Jorge" > key.muller.pub.asc
+
+	gpg --export --armor "Muller Jorge" --output key.muller.pub.asc
+
+Exportando a chave pública através de um servidor:
+
+	gpg --keyserver keys.openpgp.org --send-keys <ID>
+
+Desfazendo:
+
+	gpg --keyserver keys.openpgp.org --gen-revoke <ID>
+
+Importando a chave pública (máquina cliente):
+
+	gpg --import chave-muller.pub
+
+	gpg --list-keys
+
+Importando a chave pública através de um servidor (máquina cliente):
+
+	gpg --keyserver keys.openpgp.org --recv-keys <ID>
+
+	gpg --list-keys
+
+Encriptando um arquivo (não necessita de chaves):
+
+	gpg -c arquivo.txt
+
+	gpg -ac arquivo.txt
+
+Decriptando:
+
+	gpg arquivo.txt.gpg
