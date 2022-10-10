@@ -33,7 +33,7 @@ Criando um repositório local:
 O conteúdo do projeto fica dentro do diretório .git
 O .git é o repositório onde ficam os containers. 
 
-Imprimindo a árvore de status:
+Imprimindo todas as modificações:
 
 	git status
 
@@ -47,7 +47,7 @@ Adicionando arquivos ao container:
 
 	git add a.txt b.txt
 
-	git add *
+	git add .
 
 	git status
 
@@ -86,6 +86,8 @@ Imprimindo o grafo de commits:
 	git log --graph
 
 	git log --graph --oneline
+
+	git log --graph --oneline --all
 
 Adicionando ao container e inserindo o commit diretamente:
 
@@ -159,3 +161,22 @@ Desfazendo um commit:
 	git reset --hard <hash>
 
 	git log --oneline
+
+Criando uma nova ramificação do projeto:
+
+	git checkout -b teste
+
+	git branch
+
+Nesse momento todos os commits serão atribuidos a nova ramificação (ex. teste).
+
+Mesclando as ramificações:
+
+	git merge <nome_do_ramo_a_fundir_com_o_ramo_master>
+
+	git status
+
+	git add .
+
+	git commit -m "05 - Fusão dos ramos e resolução dos conflitos."
+	
