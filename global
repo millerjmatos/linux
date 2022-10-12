@@ -1520,6 +1520,74 @@ d, p, y, dd, yy
 ZZ, :w!, :q!
 EDITOR
 
+Verificando a versão do vi:
+
+	vi --version
+
+Instalando o vi melhorado:
+
+	apt install vim
+
+Editando o arquivo com o vi:
+
+	vi arquivo.txt
+
+Pesquisando Linux dentro do arquivo:
+
+	/Linux
+
+A cada Enter o cursor irá a próxima ocorrência.
+
+Buscabdi uma ocorrência no sentido do início:
+
+	SHIFT+N
+
+	?Linux
+
+Entrando no modo de inserção no local do cursor:
+
+	i
+
+Saindo do modo de inserção:
+
+	ESC
+
+Recortando uma linha e entrando no modo de inserção:
+
+	cc
+
+Colando o recorte no local do cursor:
+
+	p
+
+Recortando uma ou mais linhas sem entrar no modo de inserção:
+
+	dd
+
+	d3d
+
+Copiando uma ou mais linhas:
+
+	yy
+
+	y3y
+
+Salvando e saindo do arquivo:
+
+	:wq
+
+	:x
+
+	ZZ
+
+Abrindo o vi/vim com um buffer vazio:
+
+	vi
+
+Para sair e salvar o arquivo:
+
+		:wq nome_do_arquivo.txt
+
 ------------------------------------------------------------
 
 	* * * * * Topic 104: Devices, Linux arquivosystems, arquivosystem Hierarchy Standard * * * * *
