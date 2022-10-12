@@ -1832,6 +1832,16 @@ umask
 chown
 chgrp
 
+Editando o usuário e/ou o grupo dono do arquivo:
+
+	chown -R user arquivo.txt
+	
+	chown -R user:group /home/user/Linux/
+
+Editando o grupo proprietário de um arquivo:
+
+	chgrp group arquivo.txt
+
 ------------------------------------------------------------
 	* * * * * 104.6 Create and change hard and symbolic links * * * * *
 ------------------------------------------------------------
@@ -1991,68 +2001,62 @@ passwd
 useradd
 userdel
 usermod
-	adicionando um usuário no sistema:
 
-		adduser <user>
+Adicionando um usuário no sistema:
 
-	adicionando um grupo no sistema:
+	adduser <user>
 
-		ddgroup <group>
+Adicionando um grupo no sistema:
 
-	adicionando um usuário criado em um grupo:
+	ddgroup <group>
 
-		adduser <user> <group>
-		gpasswd -a <user> <group>
+Adicionando um usuário criado em um grupo:
 
-	Editando o grupo primário de um usuário:
+	adduser <user> <group>
+	
+	gpasswd -a <user> <group>
 
-		usermod -g <group> <user>
+Editando o grupo primário de um usuário:
 
-	Editando o grupo proprietário das pastas:
+	usermod -g <group> <user>
 
-		chgrp <group> <arquivo>
-
-	Editando o usuário e/ou grupo dono de um diretório:
-
-		chown -R <user> </arquivo>
-		chown -R <user>:<group> </arquivo>
-
-	removendo um usuário de um grupo:
+Removendo um usuário de um grupo:
 
 		gpasswd -d <user> <group>
 
-	removendo um usuário do sistema:
+Removendo um usuário do sistema:
 
-		userdel <user>
+	userdel <user>
 
-	removendo um usuário do sistema e o diretório home:
+Removendo um usuário do sistema e o diretório home:
 
-		userdel -r <user>
+	userdel -r <user>
 
-	removendo um grupo do sistema:
+Removendo um grupo do sistema:
 
-		groupdel <group>
+	groupdel <group>
 
-	trocando a senha de um usuário:
+Trocando a senha de um usuário:
 
-		passwd <user>
+	passwd <user>
 
-	permitindo um usuário logar sem senha, pois remove a senha do mesmo:
+Permitindo um usuário logar sem senha, pois remove a senha do mesmo:
 
-		passwd -d <user>
+	passwd -d <user>
 
-	Imprimindo as informações do usuário:
+Imprimindo as informações do usuário:
 
-		finger <user>
+	finger <user>
 
-	editando as informações do usuário:
+Editando as informações do usuário:
 
-		chfn <user>
+	chfn <user>
 
-	bloqueando e desbloqueando um usuário:
+Bloqueando e desbloqueando um usuário:
 
-		usermod -L <user>
-		usermod -U <user>
+	usermod -L <user>
+		
+	usermod -U <user>
 
 ------------------------------------------------------------
 	* * * * * 107.2 Automate system administration tasks by scheduling jobs * * * * *
