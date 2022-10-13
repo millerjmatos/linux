@@ -1846,7 +1846,7 @@ No tty1 como root:
 
 	chmod o+x /bin/ls
 
-Exemplos:
+Alterando o arquivo: 
 
 -rw-rw-r-- user manager linux.txt
 
