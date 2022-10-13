@@ -1832,6 +1832,36 @@ umask
 chown
 chgrp
 
+Mudando as permissões de acesso a um arquivo:
+
+	ls -l /bin/ls
+
+	chmod o-x /bin/ls
+
+Efetue login em outro terminal com usuário comum.
+Execute o comando ls e verifique que o user não
+tem permissão para executar o programa.
+
+No tty1 como root:
+
+	chmod o+x /bin/ls
+
+Exemplos:
+
+-rw-rw-r-- user manager linux.txt
+
+	chmod g-w linux.txt
+	
+		-rw-r--r-- user manager linux.txt
+
+	chmod a+x linux.txt
+
+			-rwxr-xr-x user manager linux.txt
+
+	chmod ug+w linux.txt 
+
+				-rwxrwxr-x user manager linux.txt
+		
 Editando o usuário e/ou o grupo dono do arquivo:
 
 	chown -R user arquivo.txt
