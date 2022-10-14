@@ -1854,21 +1854,22 @@ No tty1 como root:
 
 	chmod o+x /bin/ls
 
-Alterando o arquivo: 
-
 -rw-rw-r-- user manager linux.txt
+Removendo escrita ao grupo dono: 
 
 	chmod g-w linux.txt
 	
-		-rw-r--r-- user manager linux.txt
+-rw-r--r-- user manager linux.txt
+Adicionando execução a todos:
 
 	chmod a+x linux.txt
 
-			-rwxr-xr-x user manager linux.txt
+-rwxr-xr-x user manager linux.txt
+Adicionando escrita ao usuário e grupo dono:
 
 	chmod ug+w linux.txt 
 
-				-rwxrwxr-x user manager linux.txt
+-rwxrwxr-x user manager linux.txt
 		
 Editando o usuário e/ou o grupo dono do arquivo:
 
