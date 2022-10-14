@@ -1586,7 +1586,15 @@ Abrindo o vi/vim com um buffer vazio:
 
 Para sair e salvar o arquivo:
 
-		:wq nome_do_arquivo.txt
+	:wq nome_do_arquivo.txt
+
+Alterando o editor padrão do sistema:
+
+	select-editor
+
+	export EDITOR=vim
+
+	crontab -e
 
 ------------------------------------------------------------
 
