@@ -1154,7 +1154,6 @@ Imprimindo na saída padrão o resultado de um comando:
 
 	echo "A versão do kernel é: $(uname -r)
 
-
 ------------------------------------------------------------
 	 * * * * * 103.5 Create, monitor and kill processes  * * * * *
 ------------------------------------------------------------
