@@ -1742,7 +1742,7 @@ No padrão GPT, teoricamente, não há limitação no número de partições.
 	
 	cfdisk /dev/sdb
 
-Formatando a partição:
+Formatando a partição e definindo o sistema de arquivos:
 
 	mkfs -t ext4 /dev/sdb1
 	
@@ -1751,6 +1751,78 @@ Montando a partição:
 	mkdir  /mnt/media/pendrive
 	
 	mkfs -t ext4 /dev/sdb1 /mnt/media/pendrive
+
+Particionando o disco com o formato GPT:
+
+	gdisk /dev/sdc
+
+		Command: ?
+
+		Command: n
+
+		Partition number: "Enter" default
+
+		First sector: "Enter" default
+
+		Last sector: +2G
+
+		Hex code or GUID: "Enter" default
+
+		Command: p
+
+		Command: w
+
+		Do you want to proceed?: yes
+
+Verificando o sistema de arquivos de uma partição:
+
+	file -s /dev/sdb1
+
+	df -T /dev/sdb1
+
+Formatando a partição e definindo como swap:
+
+	mkswap /dev/sdb3
+
+	cat /proc/swaps
+
+	swapon /dev/sdb3
+
+	cat /proc/swaps
+
+Utilizando o parted:
+
+	parted /dev/sdc
+
+		Listando as partições: p
+
+Redimensionando uma partição em 1 gigabyte:
+
+		resizepart <number> <new_end>
+
+		resizepart 2 1GB
+
+		p
+
+		saindo: quit
+
+	fdisk -l /dev/sdc
+
+O gparted é a versão gráfica do parted:
+
+	apt install gparted
+
+	gparted &
+
+Utilizando exFAT em um pendrive previamente montado:
+
+	apt install exfat-fuse exfat-utils
+
+	umount /dev/sdc1
+
+	mkfs -t exfat /dev/sdc1
+
+	mount /dev/sdc1 /media/pendrive
 
 ------------------------------------------------------------
 	* * * * * 104.2 Maintain the integrity of filesystems * * * * *
@@ -1770,11 +1842,15 @@ xfs_db
 
 Saber o espaço utilizado em disco por diretórios ou arquivos:
 
-		du -sh *
+	du -sh *
 		
-		du -sh </arquivo>
+	du -sh </arquivo>
 		
-		du -shc *
+	du -shc *
+
+Imprimindo as partições montadas:
+
+	df -h
 
 ------------------------------------------------------------
 	* * * * * 104.3 Control mounting and unmounting of filesystems * * * * *
@@ -1788,12 +1864,6 @@ mount
 umount
 blkid
 lsblk
-
-Imprimindo as partições montadas:
-
-	df -h
-
-	mount
 
 Arquivo de configuração das partições que serão montadas no boot:
 
