@@ -468,7 +468,7 @@ Imprimindo apenas variáveis globais:
 
 	env | less
 
-Editando uma variável no momento de execução do shell atual:
+Definindo uma variável no momento de execução do shell atual:
 
 	env TESTE=Linux ./script.sh
 
@@ -831,7 +831,7 @@ Logins de todos os usuários do sistema contidos no arquivo passwd:
 
 	cut -d: -f1 /etc/passwd
 
-Editando um string por outra com o sed:
+Definindo um string por outra com o sed:
 
 	sed 's/Nome/NovoNome/' nomes.txt
 
@@ -933,15 +933,15 @@ Criando um arquivo vazio:
 
 	file arquivovazio.txt
 
-Editando o rótudo de tempo de um arquivo já existente:
+Definindo o rótudo de tempo de um arquivo já existente:
 
 	touch arquivovazio.txt
 
-Editando a data de acesso de um arquivo já existente:
+Definindo a data de acesso de um arquivo já existente:
 
 	touch -a arquivovazio.txt
 
-Editando a data de modificação de um arquivo já existente:
+Definindo a data de modificação de um arquivo já existente:
 
 	touch -m arquivovazio.txt
 
@@ -1530,7 +1530,7 @@ Instalando o vi melhorado:
 
 	apt install vim
 
-Editando o arquivo com o vi:
+Definindo o arquivo com o vi:
 
 	vi arquivo.txt
 
@@ -1953,16 +1953,73 @@ Resultado = -rwxrwxr-x user manager linux.txt
 Alterando a permissão recurssivamente no diretório:
 
 	chmod -R /home/user/diretorioLinux
-		
-Editando o usuário e/ou o grupo dono do arquivo:
-
-	chown -R user arquivo.txt
 	
-	chown -R user:group /home/user/Linux/
+Executando um arquivo com as permissões do dono (user) SUID:
 
-Editando o grupo proprietário de um arquivo:
+	ls -l /home/user/Linux/Script.sh
 
-	chgrp group arquivo.txt
+		-rwxrwxr-x user manual Script.sh
+	
+	chmod u+s Script.sh
+
+	chmod 4775 Script.sh
+
+	ls -l /home/user/Linux/Script.sh
+
+		-rwsrwxr-x user manual Script.sh
+		
+Executando um arquivo com as permissões do grupo GUID:
+	
+	chmod g+s Script.sh
+
+	chmod 2775 Script.sh
+
+	ls -l /home/user/Linux/Script.sh
+
+		-rwsrwsr-x user manual Script.
+
+Definindo o grupo dos arquivos criados em um "diretório":
+
+	chmod g+s /home/user/
+	
+	chmod 
+
+	cd /home/user/Linux/
+
+Entre com outro usuário e faça o teste:
+
+	touch arquivo.txt
+
+	ls -l /home/user/Linux/arquivo.txt
+
+O sticky bit define que um diretório ou arquivo só pode ser excluído ou editado pelo dono:
+	
+	chmod o+t arquivo.txt
+	
+	chmod 5775 arquivo.txt
+
+	ls -l arquivo.txt
+
+		-rwsrwsr-t user manual arquivo.txt
+
+s: possui permissão de execução.
+S: não possui permissão de execução.
+t: possui permissão de execução.
+T: não possui permissão de execução.
+
+Definindo a permissão padrão do sistema com o umask:
+
+	umask
+
+Definindo o usuário e/ou o grupo dono do arquivo ou diretório:
+
+	chown user arquivo.txt
+
+	chown :suporte arquivo.txt
+	
+	chown -R user:group /home/user/Linux
+
+	chgrp -R suporte /home/user/Linux
 
 ------------------------------------------------------------
 	* * * * * 104.6 Create and change hard and symbolic links * * * * *
@@ -2138,7 +2195,7 @@ Adicionando um usuário criado em um grupo:
 	
 	gpasswd -a <user> <group>
 
-Editando o grupo primário de um usuário:
+Definindo o grupo primário de um usuário:
 
 	usermod -g <group> <user>
 
@@ -2170,7 +2227,7 @@ Imprimindo as informações do usuário:
 
 	finger <user>
 
-Editando as informações do usuário:
+Definindo as informações do usuário:
 
 	chfn <user>
 
@@ -2200,7 +2257,7 @@ atrm
 systemctl
 systemd-run
 
-	editando o arquivo de configuração do crontab:
+	Definindo o arquivo de configuração do crontab:
 
 		vim /etc/crontab
 
@@ -2258,7 +2315,7 @@ pool.ntp.org
 
 		apt-get install ntp
 
-	editando o arquivo /etc/ntp.conf:
+	Definindo o arquivo /etc/ntp.conf:
 
 		pool st1.ntp.br
 		pool st2.ntp.br
@@ -2370,7 +2427,7 @@ Imprimindo o nome da máquina:
 
 	hostnamectl
 
-Editando o nome da máquina:
+Definindo o nome da máquina:
 
 	hostnamectl set-hostname novonome-pc
 
@@ -2398,7 +2455,7 @@ Criando uma relação estática de rede:
 
 		rede-local	192.168.0.0
 
-Editando os servidores de DNS utilizados pelo sistema:
+Definindo os servidores de DNS utilizados pelo sistema:
 
 	cat /etc/resolv.conf
 
@@ -2498,7 +2555,7 @@ Reiniciando a placa de rede:
 	
 	ifconfig eth0 up
 
-Editando o /etc/network/interfaces:
+Definindo o /etc/network/interfaces:
 
 	auto lo
 	iface lo inet loopback
@@ -2511,7 +2568,7 @@ Editando o /etc/network/interfaces:
 	gateway 192.168.x.x
 	dns-nameservers 8.8.8.8 8.8.4.4
 
-Editando MAC:
+Definindo MAC:
 
 	ifconfig eth0 down
 	
