@@ -229,7 +229,7 @@ Configurando e corrigindo erros causados por dependências:
 
 	dpkg --configure -a
 
-Encontrando um pacote pelo:
+Encontrando um pacote instalado:
 
 	dpkg --list
 
@@ -1842,18 +1842,23 @@ xfs_repair
 xfs_fsr
 xfs_db
 
-Saber o espaço utilizado em disco por diretórios ou arquivos:
-
-	du -sh *
-		
-	du -sh </arquivo>
-		
-	du -shc *
-
 Imprimindo as partições montadas:
 
 	df -h
 
+	df -hT
+
+Imprimindo o espaço utilizado em disco por diretórios ou arquivos:
+
+	du -sh *
+		
+	du -sh /home/user/
+		
+	du -shc *
+
+	du -ah *
+
+	du -shc /home/user/
 ------------------------------------------------------------
 	* * * * * 104.3 Control mounting and unmounting of filesystems * * * * *
 ------------------------------------------------------------
