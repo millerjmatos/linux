@@ -2045,6 +2045,26 @@ The following is a partial list of the used files, terms and utilities:
 ln
 ls
 
+Criando um link físico para o arquivo:
+
+	ln Script.sh Link-hard
+
+	ls -li Script.sh Link-hard
+
+Note que ambos possuem o mesmo inode.
+A edição de qualquer um refletirá no outro!
+Não funciona em diretórios.
+
+Crinando um link físico para o arquivo:
+
+	ln -s Script.sh Link-simbolico
+
+	ls -li Script.sh Link-hard
+
+Note a diferença no inode.
+Similar a um atalho!
+As permissões sempre são 777.
+
 ------------------------------------------------------------
 	* * * * * 104.7 Find system files and place files in the correct location * * * * *
 ------------------------------------------------------------
