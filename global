@@ -1098,7 +1098,7 @@ Questões: 4
 tee
 xargs
 
-Alterando a saída padrão:
+Definindo a saída padrão:
 
 	ls -l > saida.out
 
@@ -1116,7 +1116,7 @@ Inserindo a saída no final do arquivo:
 
 	cat saida.out
 
-Alterando a saída de erro:
+Definindo a saída de erro:
 
 	ls -l /tmp/arquivo_desconhecido 2> saida.out
 
@@ -1136,7 +1136,7 @@ Redirecionando o arquivo pela entrada:
 
 	tr 'a-z' 'A-Z' < linux.txt
 
-Alterando o aquivo e exibindo na saída padrão:
+Definindo o aquivo e exibindo na saída padrão:
 
 	ls -l /tmp/ | tee arquivo.log
 
@@ -1426,7 +1426,7 @@ Definindo a prioridade de um processo:
 
 O nice vai de -20 até 19. Quanto < maior a prioridade!
 
-Alterando a prioridade de um processo em execução:
+Definindo a prioridade de um processo em execução:
 
 	renice -n -16 17779
 
@@ -1590,7 +1590,7 @@ Para sair e salvar o arquivo:
 
 	:wq nome_do_arquivo.txt
 
-Alterando o editor padrão do sistema:
+Definindo o editor padrão do sistema:
 
 	select-editor
 
@@ -1614,9 +1614,11 @@ parted
 mkfs
 mkswap
 
-Imprimindo os discos e as partições em cada disco:
+Imprimindo os discos e as partições de cada um deles:
 
 	fdisk -l
+
+	parted -l
 
 	lsblk
 
@@ -1859,6 +1861,38 @@ Imprimindo o espaço utilizado em disco por diretórios ou arquivos:
 	du -ah *
 
 	du -shc /home/user/
+
+Verificando a integridade do sistema de arquivos:
+
+	parted -l
+
+	fsck /dev/sdb1
+
+	fsck -t ext4 /dev/sdb1
+
+A partição não deve estar montada!
+
+Imprimindo as informação sobre o sistema de arquivos:
+
+	tune2fs -l /dev/sdb1 | less
+
+Definindo um label para a partição com o tune2fs:
+
+	tune2fs -L "Pendrive" /dev/sdb1
+
+	dumpe2fs -h /dev/sdb1
+
+Definindo o tempo de checagem (check interval):
+
+	tune2fs -i 7d /dev/sdb1
+
+O xfs_admin é o comando equivalente para sistema de arquivos XFS.
+Os comandos são similares ao tune2fs.
+
+Instalação:
+
+	apt install xfs*
+
 ------------------------------------------------------------
 	* * * * * 104.3 Control mounting and unmounting of filesystems * * * * *
 ------------------------------------------------------------
@@ -1900,7 +1934,7 @@ ou
 
 Imprimindo o UUID de uma partição:
 
-	dumpe2fs /dev/sdb2 -h
+	dumpe2fs -h /dev/sdb2
 
 "Filesystem UUID:".
 
@@ -1917,7 +1951,7 @@ umask
 chown
 chgrp
 
-Mudando as permissões de acesso a um arquivo:
+Definindo as permissões de acesso a um arquivo:
 
 	ls -l /bin/ls
 
@@ -1955,7 +1989,7 @@ ou
 
 Resultado = -rwxrwxr-x user manager linux.txt
 
-Alterando a permissão recurssivamente no diretório:
+Definindo a permissão recurssivamente no diretório:
 
 	chmod -R /home/user/diretorioLinux
 	
@@ -2582,16 +2616,17 @@ Reiniciando a placa de rede:
 
 Definindo o /etc/network/interfaces:
 
-	auto lo
-	iface lo inet loopback
+		auto lo
+		iface lo inet loopback
 
-	definindo IP fixo:
-	auto eth0
-	iface eth0 inet static
-	address 192.168.x.x
-	netmask 255.255.x.x
-	gateway 192.168.x.x
-	dns-nameservers 8.8.8.8 8.8.4.4
+Definindo IP fixo:
+
+		auto eth0
+		iface eth0 inet static
+		address 192.168.x.x
+		netmask 255.255.x.x
+		gateway 192.168.x.x
+		dns-nameservers 8.8.8.8 8.8.4.4
 
 Definindo MAC:
 
