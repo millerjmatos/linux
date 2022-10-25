@@ -2183,6 +2183,161 @@ exec
 ||
 &&
 
+Criando o primeiro script:
+
+	vi script.sh
+
+		clear
+		echo "+++++++++++ Meu primeiro script +++++++++++"
+		echo ""
+		uptime
+		free -m
+		echo "fim do script"
+
+		:wq
+
+Executando o script no bash atual:
+
+	source script.sh
+
+Executando em outro bash:
+
+	chmod a+x script.sh
+
+	.	script.sh
+
+	./ /home/user/Scripts/script.sh
+
+Executando e fechando a sessão atual:
+
+	exec script.sh
+
+Adicionando o script ao $PATH:
+
+	vi ~/.profile
+
+		PATH="$HOME/Scripts:$HOME/bin:$HOME/.local/bin:$PATH"
+
+Essa edição precisa de um novo login para surgir efeito!
+
+Caso queira contrário:
+
+	echo $PATH
+
+	PATH=/home/user/Scripts:<colar saída do PATH>
+
+Testando:
+
+	script.sh
+
+Definindo o bash/copilador no script com o shebang.
+
+Na primeira linha do script:
+
+	#!/bin/bash
+ou
+	#!/usr/bin/python2
+
+Declarando variáveis:
+
+	vi script.sh
+
+		#!/bin/bash
+		clear
+		echo "+++++++++++ Meu primeiro script +++++++++++"
+		echo " "
+		echo "O meu script se chama $0"
+		echo "Esse script recebeu $# parametros que sao: $1 e $2"
+		echo " "
+		uptime
+		free -m
+		echo "fim do script"
+
+		:wq
+
+	script.sh 2205 Muller
+
+	script.sh 10
+
+	vi script.sh
+
+		#!/bin/bash
+		clear
+		echo "+++++++++++ Meu primeiro script +++++++++++"
+		echo " "
+		echo "O meu script se chama $0"
+		echo "Esse script recebeu $# parametros que sao: $1 e $2"
+		echo " "
+		echo -n "Digite um numero de 0 a 10: "
+		read VAR1
+		echo "O valor digitado foi $VAR1"
+		echo "fim do script!"
+
+		:wq
+
+	script.sh 1 2
+
+	vi script.sh
+
+		#!/bin/bash
+		clear
+		echo "+++++++++++ Meu primeiro script +++++++++++"
+		echo " "
+		echo "O meu script se chama $0"
+		echo "Esse script recebeu $# parametros que sao: $1 e $2"
+		echo " "
+		echo -n "Digite um numero de 0 a 10: "
+		read VAR1
+		echo "O valor digitado foi $VAR1"
+		echo "fim do script!"
+
+		:wq
+
+	script.sh 2 3
+
+	vi script.sh
+
+		#!/bin/bash
+		clear
+		echo "+++++++++++ Meu primeiro script +++++++++++"
+		echo " "
+		echo "O meu script se chama $0"
+		echo "Esse script recebeu $# parametros que sao: $1 e $2"
+		echo " "
+		echo -n "Digite um numero de 0 a 10: "
+		read VAR1
+		echo "O valor digitado foi $VAR1"
+		echo "fim do script!"
+
+		:wq
+
+	vi script.sh
+
+		#!/bin/bash
+		clear
+		VAR2="Curso Linux"
+		VAR3=10
+		VAR4=`cat /etc/passwd |wc -l`
+		VAR5=$(date +%H)
+		echo "+++++++++++ Meu primeiro script +++++++++++"
+		echo " "
+		echo "O meu script se chama $0"
+		echo "Esse script recebeu $# parametros que sao: $1 e $2"
+		echo " "
+		echo -n "Digite um numero de 0 a 10: "
+		read VAR1
+		echo "O valor digitado foi $VAR1"
+		echo " "
+		echo "O arquivo /etc/passwd possui $VAR4 linhas e a hora atual é $VAR5"
+		echo " "
+		echo "Esse curso é nota $VAR3"
+		echo " "
+		echo "fim do script!"
+
+		:wq
+
+	script.sh 3 4
+
 ------------------------------------------------------------
 
 	* * * * * Topic 106: User Interfaces and Desktops * * * * * 
