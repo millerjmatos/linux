@@ -134,6 +134,44 @@ grub-install
 grub-mkconfig
 MBR
 
+Imprimindo as imagens do kernel:
+
+	cd /boot/
+
+	ls -l
+
+Imprimindo os arquivos de configuração do grub:
+
+	cd /boot/grub/
+
+	ls -l
+
+Imprimindo a versão do grub:
+
+	update-grub --version
+
+Editando os arquivos de configuração do grub:
+
+	cd /etc/default/
+
+	ls -l
+
+	vi grub
+
+Após edição é necessário atualizar o grub:
+
+	update-grub
+
+	ls -l /boot/grub/grub.cfg
+
+Realizando o backup do grub:
+
+	dd if=/dev/sda of=copia.mbr bs=1 count=512
+
+Restaurando o backup:
+
+	dd if=copia.mbr of=/dev/sda
+
 ------------------------------------------------------------
 	* * * * * 102.3 Manage shared libraries * * * * *
 ------------------------------------------------------------
@@ -1140,7 +1178,7 @@ Redirecionando o arquivo pela entrada:
 
 	tr 'a-z' 'A-Z' < linux.txt
 
-Definindo o aquivo e exibindo na saída padrão:
+Definindo o aquivo e imprimindo na saída padrão:
 
 	ls -l /tmp/ | tee arquivo.log
 
