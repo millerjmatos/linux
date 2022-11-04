@@ -183,6 +183,49 @@ ldconfig
 /etc/ld.so.conf
 LD_LIBRARY_PATH
 
+Imprimindo quais as bibliotecas utilizadas pelo programa:
+
+	whereis vi
+
+	ldd /usr/bin/vi
+
+Todos os arquivos terminados em .so são bibliotecas!
+
+O comando ldconfig atualiza as configurações em /etc/ld.so.cache
+
+Principais arquivos de configuração:
+
+	ls -ld /etc/ld.so*
+
+Imprimindo todas as bibliotecas utilizadas pelo sistema:
+
+	ldconfig -p |less
+
+Adicionando o diretório e as bibliotecas contidas; em /etc/ld.so.cache:
+
+	mkdir /tmp/lib
+
+	ldconfig -p |grep "/tmp/lib"
+
+	vi /etc/ld.so.conf
+
+		include /etc/ld.so.conf.d/*.conf
+		/temp/lib/
+
+		:wq
+
+	ldconfig
+
+	ldconfig -p |grep "/tmp/lib"
+
+	ls -l /etc/ld.so.cache
+
+Adicionando o diretório e as bibliotecas contidas, na sessão atual:
+
+	export LD_LIBRARY_PATH=/tmp/lib/
+
+	env | grep LIBRARY
+
 ------------------------------------------------------------
 	* * * * * 102.4 Use Debian package management * * * * *
 ------------------------------------------------------------	
