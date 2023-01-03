@@ -260,6 +260,8 @@ Pesquisando pacotes por nome:
 
 	apt-cache search <pacote>
 
+	apt search youtube
+
 Imprimindo informações do pacote: 
 
 	apt-cache show <pacote>
@@ -302,7 +304,7 @@ Para obter informações sobre o pacote:
 
 	dpkg -s brave-browser
 
-Imprimindo os arquivos que estão dentro do pacote:
+Imprimindo informações de um pacote não instalado:
 
 	dpkg -I brave-browser_amd64.deb
 
@@ -341,6 +343,20 @@ Encontrando um pacote instalado:
 	dpkg --list
 
 	dpkg --list | grep <nome>
+
+Atualizando configurações de um pacote instalado:
+
+	dpkg -l | grep tzdata
+
+	dpkg-reconfigure tzdata
+
+	dpkg-reconfigure keyboard-configuration
+
+Imprimindo um menu gerenciador do apt:
+
+	apt install dselect
+
+	dselect
 
 ------------------------------------------------------------
 	* * * * * 102.5 Use RPM and YUM pacoteage management * * * * *
