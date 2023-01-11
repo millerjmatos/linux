@@ -469,6 +469,10 @@ Arquivos de configuração dos repositórios:
 
 	/etc/yum.repos.d
 
+Verificando se o pacote está instalado:
+
+	yum list installed | grep firewalld
+
 ------------------------------------------------------------
 	* * * * * 102.6 Linux as a virtualization guest * * * * *
 ------------------------------------------------------------
