@@ -17,3 +17,11 @@
 # Reiniciando o serviço:
 
     service ssh restart
+
+# Ativando o serviço na inicialização:
+
+    systemctl status ssh
+
+    systemctl enable ssh
+
+    systemctl status ssh
