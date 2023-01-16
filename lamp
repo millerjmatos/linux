@@ -14,7 +14,7 @@
 
 # Instalando o MySQL:
 
-    apt update & upgrade
+    apt update && upgrade
 
     apt-get install mysql-server mysql-client
 
