@@ -16,7 +16,7 @@
 
 # Editando o arquivo motd:
 
-# Mensagem exibinda após o login.
+# Mensagem exibida após o login.
 
     cd /etc/
 
