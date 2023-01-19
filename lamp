@@ -1,4 +1,4 @@
-# Instalando o banco de dados (no Debian 10):
+# Instalando o banco de dados (no Debian 11):
 
     apt install wget
 
@@ -19,3 +19,29 @@
     apt-get install mysql-server mysql-client
 
     service mysql status
+
+# Acessando o banco de dados:
+
+    mysql -h localhost -u root -p
+
+        show databases;
+
+# Para sair:
+
+        CTRL + D
+
+# Instalando o servidor HTTP:
+
+    apt-get install apache2
+
+    service apache2 status
+
+    cd /var/www/html/ && ls
+
+# Instalando o PHP:
+
+    apt-get install php
+
+    php -v
+
+
