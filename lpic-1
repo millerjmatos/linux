@@ -2213,9 +2213,9 @@ Definindo o usuário e/ou o grupo dono do arquivo ou diretório:
 
 	chown :suporte arquivo.txt
 	
-	chown -R user:group /home/user/Linux
+	chown user:group -R /home/user/Linux
 
-	chgrp -R suporte /home/user/Linux
+	chgrp suporte -R /home/user/Linux
 
 ------------------------------------------------------------
 	* * * * * 104.6 Create and change hard and symbolic links * * * * *
@@ -2710,13 +2710,17 @@ Adicionando um usuário sem diretório home:
 
 	useradd -no-create-home <user>
 
+Adicionando um usuário e seu diretório pessoal:
+
+	useradd <user> -d /home/linux/
+
 Definindo o grupo primário de um usuário:
 
 	usermod -g <group> <user>
 
 Removendo um usuário de um grupo:
 
-		gpasswd -d <user> <group>
+	gpasswd -d <user> <group>
 
 Removendo um usuário do sistema:
 

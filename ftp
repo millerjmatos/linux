@@ -41,5 +41,3 @@
     passwd webmaster
 
     chown webmaster -R /var/www/html/
-
-
