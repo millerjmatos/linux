@@ -2704,6 +2704,12 @@ Adicionando um usuário criado em um grupo:
 	
 	gpasswd -a <user> <group>
 
+Adicionando um usuário sem diretório home:
+
+	useradd -M <user>
+
+	useradd -no-create-home <user>
+
 Definindo o grupo primário de um usuário:
 
 	usermod -g <group> <user>
