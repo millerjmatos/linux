@@ -501,6 +501,10 @@ Os camandos são praticamente os mesmos:
 
 	dnf list
 
+O gerenciador de pacotes no Suse é o zypper:
+
+	zypper --help
+
 ------------------------------------------------------------
 	* * * * * 102.6 Linux as a virtualization guest * * * * *
 ------------------------------------------------------------
