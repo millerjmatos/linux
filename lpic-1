@@ -449,6 +449,12 @@ Ignorando dependências usadas por outro programa:
 
 	rpm -evh --nodeps NomeDoPrograma
 
+Descompactando arquivos .RPM:
+
+	rpm2cpio linux-5.x86_64.rpm > linux-5.cpio
+
+	cpio -id < linux-5.cpio
+
 Imprimindo os pacotes disponíveis para atualização:
 
 	yum check-update
@@ -456,6 +462,12 @@ Imprimindo os pacotes disponíveis para atualização:
 Atualizando o sistema:
 
 	yum update
+
+Atualizando o sistema e removendo pacotes obsoletos:
+
+	yum upgrade
+
+	yum update --obsolete
 
 Instalando, removendo e pesquisando o pacote:
 
@@ -469,9 +481,25 @@ Arquivos de configuração dos repositórios:
 
 	/etc/yum.repos.d
 
-Verificando se o pacote está instalado:
+Verificando os pacotes instalados:
+
+	yum list
 
 	yum list installed | grep firewalld
+
+O dnf é uma melhoria do yum e já vem como padrão no Fedora:
+
+	which yum
+
+	ls -l /usr/bin/yum
+
+Os camandos são praticamente os mesmos:
+
+	dnf <install remove search> <arquivo>
+
+	dnf --help
+
+	dnf list
 
 ------------------------------------------------------------
 	* * * * * 102.6 Linux as a virtualization guest * * * * *
