@@ -1,8 +1,8 @@
-# Instalando o serviço:
+Instalando o serviço:
 
     apt-get install openssh-server
 
-# Perminto acesso via usuário root:
+Perminto acesso via usuário root:
 
     cd /etc/ssh/
 
@@ -14,11 +14,11 @@
 
     :wq
 
-# Reiniciando o serviço:
+Reiniciando o serviço:
 
     service ssh restart
 
-# Ativando o serviço na inicialização:
+Ativando o serviço na inicialização:
 
     systemctl status ssh
 

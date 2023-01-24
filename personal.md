@@ -1,4 +1,4 @@
-# Editando o arquivo issue:
+Editando o arquivo issue:
 
     cd /etc/
 
@@ -14,9 +14,9 @@
 
     reboot
 
-# Editando o arquivo motd:
+Editando o arquivo motd:
 
-# Mensagem exibida após o login.
+Mensagem exibida após o login.
 
     cd /etc/
 
@@ -30,7 +30,7 @@
 
     :wq
 
-# Identificando e selecionando os serviços que carregam na inicialização:
+Identificando e selecionando os serviços que carregam na inicialização:
 
     apt-get install rcconf
 

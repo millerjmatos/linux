@@ -1,4 +1,4 @@
-# Criando os diretórios que vão receber os dispositivos:
+Criando os diretórios que vão receber os dispositivos:
 
     cd /mnt/
 
@@ -6,20 +6,20 @@
 
     mkdir hd_externo
 
-# Descobrindo os dispositivos:
+Descobrindo os dispositivos:
 
     fdisk -l
 
-# Montando:
+Montando:
 
     mount /dev/sdb1 /mount/pendrive
 
-# Caso o sistema de arquivos seja NTFS:
+Caso o sistema de arquivos seja NTFS:
 
     apt-get install ntfs-3g
 
     mount -t ntfs-3g /dev/sdc1 /mnt/hd_externo
 
-# Demontando:
+Demontando:
 
     umount /dev/sdb1 && umount /dev/sdc1

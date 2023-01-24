@@ -2,40 +2,40 @@
 _	MUDANDO SENHA DE ADMINISTRADOR DO WINDOWS USANDO O LINUX
 ------------------------------------------------------------
 
-# Baixe o SystemRescue: https://www.system-rescue-cd.org/
-# Dê boot por ele na máquina que tem o Windows.
+Baixe o SystemRescue: https://www.system-rescue-cd.org/
+Dê boot por ele na máquina que tem o Windows.
 
-# Liste as partições do HD com: 
+Liste as partições do HD com: 
 
 	fdisk -l
 
-# Localize a partição do Windows. Por exemplo: "/dev/sda1".
+Localize a partição do Windows. Por exemplo: "/dev/sda1".
 
-# Monte o dispositivo na partição apropriada:
+Monte o dispositivo na partição apropriada:
 
 	ntfs-3g /dev/sda1 /mnt/windows
 
-# Liste o sistema: 
+Liste o sistema: 
 
 	df -hm
 
-# Perceba se vai aparecer o "/mnt/windows".
-# Se sim, entre no diretório "config":
+Perceba se vai aparecer o "/mnt/windows".
+Se sim, entre no diretório "config":
 
 	cd /mnt/windows/Windows/System32/config
 
-# Liste os usuários: 
+Liste os usuários: 
 
 	chntpw -l sam
 
-# Manipule o usuário desejado, no caso, o Administrador (ou Administrator, se aparecer assim na lista).
+Manipule o usuário desejado, no caso, o Administrador (ou Administrator, se aparecer assim na lista).
 
 	chntpw -u administrador sam
 
-# Siga as opções para limpar a senha..
+Siga as opções para limpar a senha..
 
-# Opção número 1. 
+Opção número 1. 
             
-# Reinicie o computador, inicie pelo Windows e faça login como Administrador sem usar senha. 
+Reinicie o computador, inicie pelo Windows e faça login como Administrador sem usar senha. 
 
-# Depois crie uma nova senha.
+Depois crie uma nova senha.
