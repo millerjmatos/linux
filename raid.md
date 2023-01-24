@@ -56,9 +56,7 @@ Adicionar disco novo substituto ao array:
 
 	mdadm /dev/md0 -a /dev/
 
-
 #### DESFAZENDO O RAID:
-
 
 Desmontando o array:
 
