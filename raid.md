@@ -1,5 +1,5 @@
 ------------------------------------------------------------
-### _	RAID 1
+### _	RAID 1:
 ------------------------------------------------------------
 
 ### Instalando a ferramenta:
@@ -8,7 +8,7 @@
 
 ### Discos do exemplo: 
 
-/dev/sdb & /dev/sdc
+	/dev/sdb & /dev/sdc
 
 ### Criando as novas partições primárias com tamanhos iguais e tipo raid (fd):
 
@@ -33,11 +33,14 @@
 ### Formatando e montando o RAID:
 
 	mkfs -t ext4 /dev/md0
+	
 	mkdir /raid
+	
 	mount -t ext4 /dev/md0 /raid
+	
 	df -h
 ------------------------------------------------------------
-### _	RESOLVENDO FALHA NO DISCO
+### _	RESOLVENDO FALHA NO DISCO:
 ------------------------------------------------------------
 
 ### Verificar o status do array:
@@ -57,7 +60,7 @@
 	mdadm /dev/md0 -a /dev/
 
 ------------------------------------------------------------
-### _	DESFAZENDO O RAID
+### _	DESFAZENDO O RAID:
 ------------------------------------------------------------
 
 ### Desmontando o array:
