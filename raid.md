@@ -1,6 +1,4 @@
-
-	# _	RAID 1:
-
+##		RAID 1:
 
 ##### Instalando a ferramenta:
 
@@ -40,8 +38,7 @@
 	
 	df -h
 
-# _	RESOLVENDO FALHA NO DISCO:
-
+##		RESOLVENDO FALHA NO DISCO:
 
 ##### Verificar o status do array:
 
@@ -60,7 +57,7 @@
 	mdadm /dev/md0 -a /dev/
 
 
-# _	DESFAZENDO O RAID:
+##		DESFAZENDO O RAID:
 
 
 ##### Desmontando o array:
