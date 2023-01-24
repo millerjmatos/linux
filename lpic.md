@@ -454,7 +454,7 @@ Descompactando arquivos .RPM:
 	rpm2cpio linux-5.x86_64.rpm > linux-5.cpio
 
 	cpio -id < linux-5.cpio
-
+ 
 Imprimindo os pacotes disponíveis para atualização:
 
 	yum check-update
@@ -2732,17 +2732,19 @@ usermod
 
 Adicionando um usuário no sistema:
 
-	adduser <user>
+	useradd <user>
 
 Adicionando um grupo no sistema:
 
-	ddgroup <group>
+	groupadd <group>
 
 Adicionando um usuário criado em um grupo:
 
 	adduser <user> <group>
 	
 	gpasswd -a <user> <group>
+
+	usermod -a -G <group> <user>
 
 Adicionando um usuário sem diretório home:
 
@@ -2795,6 +2797,12 @@ Bloqueando e desbloqueando um usuário:
 	usermod -L <user>
 		
 	usermod -U <user>
+
+Imprimindo os grupos e seus usuários:
+
+	getent group
+
+	groups <user>
 
 ------------------------------------------------------------
 	* * * * * 107.2 Automate system administration tasks by scheduling jobs * * * * *
