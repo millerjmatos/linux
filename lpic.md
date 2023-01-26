@@ -2762,6 +2762,8 @@ Definindo o grupo primário de um usuário:
 
 Removendo um usuário de um grupo:
 
+	usermod -G <group> <user>
+
 	gpasswd -d <user> <group>
 
 Removendo um usuário do sistema:
