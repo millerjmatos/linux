@@ -1,6 +1,6 @@
-SCRIPT MAIS ELABORADO:
-
 #!/bin/bash
+
+# SCRIPT MAIS ELABORADO
 
 echo "Insira seu peso (em kg):"
 read weight
@@ -24,15 +24,3 @@ then
 else
     echo "Obesidade"
 fi
-
-SCRIPT SIMPLES:
-
-#!/bin/bash
-
-echo "Informe sua altura (em metros):"
-read altura
-echo "Informe seu peso (em kg):"
-read peso
-
-imc=$(echo "$peso / ($altura * $altura)" | bc -l)
-echo "Seu IMC é: $imc"
