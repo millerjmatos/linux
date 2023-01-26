@@ -191,17 +191,27 @@ Imprimindo quais as bibliotecas utilizadas pelo programa:
 
 Todos os arquivos terminados em .so são bibliotecas!
 
-O comando ldconfig atualiza as configurações em /etc/ld.so.cache
+O comando ldconfig atualiza as configurações em:
+
+	/etc/ld.so.cache
 
 Principais arquivos de configuração:
 
 	ls -ld /etc/ld.so*
 
+A variável LD_LIBRARY_PATH é geralmente configurada no arquivo de configuração do sistema:
+
+	/etc/environment
+	
+	/etc/ld.so.conf
+
 Imprimindo todas as bibliotecas utilizadas pelo sistema:
 
 	ldconfig -p |less
 
-Adicionando o diretório e as bibliotecas contidas; em /etc/ld.so.cache:
+Adicionando o diretório e as bibliotecas contidas em: 
+
+	/etc/ld.so.cache
 
 	mkdir /tmp/lib
 
