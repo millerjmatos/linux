@@ -10,9 +10,13 @@ Perminto acesso via usuário root:
 
     vim /etc/ssh/sshd_config
 
+        :set number
+
+Linha 38:
+
         PermitRootLogin yes
 
-    :wq
+        :wq
 
 Reiniciando o serviço:
 
