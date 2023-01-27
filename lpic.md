@@ -536,6 +536,34 @@ Guest drivers
 SSH host keys
 D-Bus machine id
 
+Imprimindo informações detalhadas sobre o hardware do sistema:
+
+	dmidecode -t system
+
+	lshw -class system
+
+Listando os contêineres ativos e inativos no sistema:
+
+	docker ps -a
+
+Iniciando um container do CentOS usando o docker:
+
+	docker run -it centos
+
+		exit
+
+	docker run -it centos bash
+
+Removendo uma imagem do docker do sistema:
+
+	docker images
+
+	docker rmi <IMAGE ID>
+
+Comando comuns são:
+
+	docker <stop rm> <CONTAINER ID>
+
 ------------------------------------------------------------
 
 	* * * * * Topic 103: GNU and Unix Commands * * * * *
