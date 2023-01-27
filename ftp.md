@@ -36,7 +36,7 @@ Após alterações, reiniciar o serviço:
 
 Usuário para administração do FTP:
 
-    useradd webmaster -d /var/www/html/ -s /bin/false
+    useradd webmaster -m -d /var/www/html/ -s /bin/false
 
     passwd webmaster
 

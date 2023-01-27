@@ -2742,8 +2742,12 @@ usermod
 
 Adicionando um usuário no sistema:
 
-	useradd <user>
+	useradd -m -d /home/user -s /bin/bash <user>
 
+	useradd <user> -m -d /home/user -s /bin/bash
+
+	passwd <user>
+	
 Adicionando um grupo no sistema:
 
 	groupadd <group>
