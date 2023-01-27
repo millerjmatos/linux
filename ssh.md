@@ -24,8 +24,6 @@ Reiniciando o serviço:
 
 Ativando o serviço na inicialização:
 
-    systemctl status ssh
+    systemctl enable sshd
 
-    systemctl enable ssh
-
-    systemctl status ssh
+    systemctl status sshd
