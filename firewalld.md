@@ -1,4 +1,4 @@
-Firewalld é um firewall dinâmico para o sistema operacional Linux. Ele é projetado para substituir o firewall tradicional iptables e oferecer recursos adicionais, como regras de firewall baseadas em zones (zonas) e suporte para interfaces de rede dinâmicas. o Firewalld é padrão nos sistemas Red Hat, CentOS e Fedora.
+Firewalld é um firewall dinâmico para o sistema operacional Linux. Ele é projetado para substituir o firewall tradicional iptables e oferecer recursos adicionais, como regras de firewall baseadas em zones (zonas) e suporte para interfaces de rede dinâmicas. O Firewalld é padrão nos sistemas Red Hat, CentOS e Fedora.
 
 Verificando se o firewalld está ativo:
 
