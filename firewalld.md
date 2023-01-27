@@ -1,3 +1,5 @@
+#### Firewalld é um firewall dinâmico para o sistema operacional Linux. Ele é projetado para substituir o firewall tradicional iptables e oferecer recursos adicionais, como regras de firewall baseadas em zones (zonas) e suporte para interfaces de rede dinâmicas.
+
 Verificando se o firewalld está ativo:
 
     firewall-cmd --state
@@ -27,5 +29,3 @@ Listando todos os serviços disponíveis:
 Listando a zona padrão atual:
 
     firewall-cmd --get-default-zone
-
-# Firewalld é um firewall dinâmico para o sistema operacional Linux. Ele é projetado para substituir o firewall tradicional iptables e oferecer recursos adicionais, como regras de firewall baseadas em zones (zonas) e suporte para interfaces de rede dinâmicas.
