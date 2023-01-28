@@ -30,6 +30,20 @@ Configurando o vsftpd:
 
         :wq
 
+Liberando o vsftpd no firewalld:
+
+    firewall-cmd --add-service=ftp --permanent
+
+    firewall-cmd --reload
+
 Após alterações, reiniciar o serviço:
 
     systemctl restart vsftpd
+
+Imprimindo se o SELinux (Security-Enhanced Linux) está ativado ou desativado:
+
+    sestatus
+
+Criando a regra de liberação no SELinux:
+
+    setsebool -P ftpd_full_access on
