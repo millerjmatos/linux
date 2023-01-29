@@ -35,9 +35,29 @@ Usuário para administração do FTP:
 
     chown webmaster -R /var/www/html/
 
-    
-     
+Configurando IP fixo no servidor:
 
+    nmtui
+
+        Editar uma conexão > Editar
+
+            CONFIGURAÇÃO IPv4: Manual
+        
+            Endereços: 192.168.0.10/24
+
+            Gateway: 192.168.0.1
+
+            Servidores DNS: 192.168.0.1
+                            208.67.222.222
+
+            CONFIGURAÇÃO IPv6: Ignorar
+
+            OK > Voltar
+
+        Cancelar
+
+    reboot
+    
     apt install wget
 
     wget https://repo.mysql.com/mysql-apt-config_0.8.24-1_all.deb -O mysql-apt-config.deb
