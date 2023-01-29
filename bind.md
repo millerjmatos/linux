@@ -65,4 +65,41 @@ Liberando o serviço no firewall:
 
     systemctl status named
 
+Criando as zonas de dominio, ex.:
 
+    vim /etc/named.conf
+
+Linha 60:
+
+zone "mullertec.com.br" {
+    type master;
+    file "/var/named/db.mullertec.com.br";
+};
+
+    :wq
+
+    cd /var/named/ && ls && pwd
+
+    vim db.mullertec.com.br
+
+$TTL                86400
+@                   IN SOA  ns1.mullertec.com.br. webmaster.mullertec.com.br. (
+                    1       ; Serial
+                    86400   ; Refresh
+                    86400   ; Retry
+                    86400   ; Expire
+                    86400 ) ; Negative Cache TTL
+;
+@                   IN NS       ns1.mullertec.com.br.
+ns1                 IN A        192.168.0.20
+webserver           IN A        192.168.0.10
+mullertec.com.br.   IN A        192.168.0.10
+www                 IN CNAME    webserver
+
+    :wq
+
+    named-checkconf /etc/named.conf
+
+    named-checkzone mullertec.com.br /var/named/db.mullertec.com.br
+    
+    systemctl restart named
