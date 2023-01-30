@@ -1,6 +1,6 @@
 O Apache é um software de servidor HTTP amplamente utilizado que fornece recursos avançados, incluindo suporte a vários protocolos e linguagens, sistemas de autenticação de usuários e gerenciamento de diretórios.
 
-##### Em Linux Debian 11
+### Em Linux Debian 11
 
 Instalando o servidor HTTP:
 

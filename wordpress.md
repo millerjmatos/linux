@@ -1,6 +1,6 @@
 WordPress é um sistema de gerenciamento de conteúdo (CMS) baseado em PHP e MySQL, utilizado para criar e gerenciar websites e blogs. É open-source, o que significa que é de código aberto e pode ser baixado e modificado gratuitamente. Com uma ampla gama de temas e plugins disponíveis, o WordPress é altamente personalizável e pode ser usado para criar uma variedade de sites, desde blogs pessoais até sites corporativos e e-commerces.
 
-##### Em Linux Debian 11
+### Em Linux Debian 11
 
 Instale previamente o banco de dados de sua preferência, no caso o MySQL Server.
 

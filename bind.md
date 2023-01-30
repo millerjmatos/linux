@@ -1,3 +1,5 @@
+### Em CentOS 7
+
 Instando o bind:
 
     yum install bind
