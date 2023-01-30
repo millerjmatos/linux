@@ -1,4 +1,7 @@
-##### Em Linux Debian 11
+#### Em Linux Debian 11
+
+MySQL Community Server 8.0.32
+Site: https://dev.mysql.com/downloads/mysql/
 
     apt install wget
 
@@ -16,7 +19,7 @@ Instalando o MySQL:
 
     apt-get update
 
-    apr-get upgrade
+    apt-get upgrade
 
     apt-get install mysql-server mysql-client
 
@@ -28,11 +31,11 @@ Instalando o MySQL:
 
 Verificando a versão:
 
-_ Server:
+-> Server:
 
     mysqld --version
 
-_ Client:
+-> Client:
 
     mysql --version
 
