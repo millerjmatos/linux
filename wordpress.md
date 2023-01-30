@@ -14,7 +14,7 @@ Instalando o WordPress:
 
 Crie um banco de dados chamado 'wordpress'.
 
-Vamos baixar a versão mais recente e em português: https://br.wordpress.com/
+Baixe a versão mais recente em pt-br: https://br.wordpress.com/
 
     cd /var/www/html/
 
@@ -38,6 +38,6 @@ Um ajuste:
 
 Inserir a linha:
 
-        define ( 'FS_METHOD', 'direct' );
+    define ( 'FS_METHOD', 'direct' );
 
-        :wq
+    :wq
