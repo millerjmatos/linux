@@ -12,7 +12,7 @@ Instalando o servidor FTP:
 
 Alterando o arquivo de configuração:
 
-    cp /etc/proftpd/proftpd.conf /etc/proftpd/proftpd.bkp
+    cp /etc/proftpd/proftpd.conf /etc/proftpd/proftpd.conf.bkp
 
     vim proftpd.conf
 
