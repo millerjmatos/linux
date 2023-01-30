@@ -2,6 +2,8 @@ WordPress é um sistema de gerenciamento de conteúdo (CMS) baseado em PHP e MyS
 
 ##### Em Linux Debian 11
 
+Instale previamente o banco de dados de sua preferência, no caso o MySQL Server.
+
 Entrando no MySQL:
 
     mysql -h localhost -u root -p
@@ -10,11 +12,9 @@ Entrando no MySQL:
 
 Instalando o WordPress:
 
-Primeiro crie um banco de dados chamado 'wordpress'.
+Crie um banco de dados chamado 'wordpress'.
 
-Vamos baixar a versão mais recenete e em português em:
-
-https://br.wordpress.com/
+Vamos baixar a versão mais recente e em português: https://br.wordpress.com/
 
     cd /var/www/html/
 
@@ -24,19 +24,19 @@ https://br.wordpress.com/
 
     chmod -R 777 wordpress
 
-Abrir no navegador <IP>/wordpress
+Abrir no navegador IP/wordpress
 
 Após as configurações pela interface web o serviço já está pronto.
 
-Para acessar o painel de configuração no navegador é: <IP>/wordpress/wp-admin
+Para acessar o painel de configuração no navegador é: IP/wordpress/wp-admin
 
-Um último ajuste:
+Um ajuste:
 
     cd /var/www/html/wordpress/
 
     vim wp-config.php
 
-Inserir a linha a seguir:
+Inserir a linha:
 
         define ( 'FS_METHOD', 'direct' );
 
