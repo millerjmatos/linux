@@ -1,39 +1,7 @@
 ### Em CentOS 7
 Kernel 3.10.0-1160.el7.x86_64
 
-Instalando o servidor HTTP:
 
-    yum install -y httpd
-
-    systemctl status httpd
-
-    systemctl start httpd
-
-    systemctl enable httpd
-
-    cd /var/www/ && ls
-
-    firewall-cmd --permanent --list-all
-
-    firewall-cmd --add-service=http --permanent
- 
-    systemctl restart firewalld
-
-Criando a estrutura de pastas:
-
-    cd /var/www/html/
-
-    mkdir -p /var/www/html/mullertec/public_html
-
-Usuário para administração do FTP:
-
-    useradd -M webmaster
-
-    passwd webmaster
-
-    usermod -d /var/www/html/ webmaster
-
-    chown webmaster -R /var/www/html/
 
 Configurando IP fixo no servidor:
 
@@ -57,36 +25,8 @@ Configurando IP fixo no servidor:
         Cancelar
 
     reboot
-    
-    apt install wget
 
-    wget https://repo.mysql.com/mysql-apt-config_0.8.24-1_all.deb -O mysql-apt-config.deb
 
-    apt install lsb-release gnupg
-
-    dpkg -i mysql-apt-config.deb
-
-Se precisar selecionar uma versão específica e precisar alterar a configuração:
-
-    dpkg-reconfigure mysql-apt-config
-
-Instalando o MySQL:
-
-    apt update && upgrade
-
-    yum install -y mysql-server mysql-client
-
-    service mysql status
-
-Acessando o banco de dados:
-
-    mysql -h localhost -u root -p
-
-        show databases;
-
-Para sair:
-
-        CTRL + D
 
 Instalando o PHP:
 

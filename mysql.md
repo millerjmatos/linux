@@ -48,3 +48,23 @@ Acessando o banco de dados:
 Para sair:
 
         CTRL + D
+
+### Em CentOS 7
+
+Instalando o MySQL:
+
+    apt update && upgrade
+
+    yum install -y mysql-server mysql-client
+
+    service mysql status
+
+Acessando o banco de dados:
+
+    mysql -h localhost -u root -p
+
+        show databases;
+
+Para sair:
+
+        CTRL + D
