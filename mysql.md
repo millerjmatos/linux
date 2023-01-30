@@ -45,25 +45,23 @@ Acessando o banco de dados:
 
         show databases;
 
-Para sair:
+Crie um banco de dados chamado 'wordpress':
 
-        CTRL + D
-
-### Em CentOS 7
-
-Instalando o MySQL:
-
-    apt update && upgrade
-
-    yum install -y mysql-server mysql-client
-
-    service mysql status
-
-Acessando o banco de dados:
-
-    mysql -h localhost -u root -p
+        create database wordpress;
 
         show databases;
+
+Criando o usuário do banco de dados:
+
+        use wordpress;
+
+        create user 'admin'@'localhost' identified by 'P@ssword';
+
+Amarrando o usuário ao banco de dados desejado, ex.:
+
+        grant all privileges on wordpress.*to 'admin'@'localhost';
+
+        flush privileges;
 
 Para sair:
 

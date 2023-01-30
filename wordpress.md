@@ -10,9 +10,15 @@ Entrando no MySQL:
 
         show databases;
 
-Instalando o WordPress:
+Crie um banco de dados chamado 'wordpress':
 
-Crie um banco de dados chamado 'wordpress'.
+        create database wordpress;
+
+        show databases;
+
+        CTRL + D
+
+Instalando o WordPress:
 
 Baixe a versão mais recente em pt-br: https://br.wordpress.com/
 
