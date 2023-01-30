@@ -84,19 +84,19 @@ zone "mullertec.com.br" {
 
     vim db.mullertec.com.br
 
-$TTL                86400
-@                   IN SOA  ns1.mullertec.com.br. webmaster.mullertec.com.br. (
-                    1       ; Serial
-                    86400   ; Refresh
-                    86400   ; Retry
-                    86400   ; Expire
-                    86400 ) ; Negative Cache TTL
-;
-@                   IN NS       ns1.mullertec.com.br.
-ns1                 IN A        192.168.0.20
-webserver           IN A        192.168.0.10
-mullertec.com.br.   IN A        192.168.0.10
-www                 IN CNAME    webserver
+        $TTL                86400
+        @                   IN SOA  ns1.mullertec.com.br. webmaster.mullertec.com.br. (
+                            1       ; Serial
+                            86400   ; Refresh
+                            86400   ; Retry
+                            86400   ; Expire
+                            86400 ) ; Negative Cache TTL
+        ;
+        @                   IN NS       ns1.mullertec.com.br.
+        ns1                 IN A        192.168.0.20
+        webserver           IN A        192.168.0.10
+        mullertec.com.br.   IN A        192.168.0.10
+        www                 IN CNAME    webserver
 
     :wq
 
