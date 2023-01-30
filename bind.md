@@ -80,7 +80,7 @@ zone "mullertec.com.br" {
 
     :wq
 
-    cd /var/named/ && ls && pwd
+        cd /var/named/ && ls && pwd
 
     vim db.mullertec.com.br
 
