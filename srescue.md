@@ -1,3 +1,5 @@
+SystemRescueCD é um sistema operacional de recuperação de sistema baseado em Linux. Ele é projetado para ajudar os usuários a solucionar problemas no sistema, recuperar dados ou realizar manutenção em sistemas baseados em Linux. O SystemRescueCD vem com uma ampla gama de ferramentas, incluindo programas de recuperação de dados, verificação de disco, ferramentas de backup e gerenciamento de partições.
+
 ------------------------------------------------------------
 _	MUDANDO SENHA DE ADMINISTRADOR DO WINDOWS USANDO O LINUX
 ------------------------------------------------------------
