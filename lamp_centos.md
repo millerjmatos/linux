@@ -1,4 +1,4 @@
-Instalando o banco de dados no CentOS 7
+Em Linux CentOS 7
 Kernel 3.10.0-1160.el7.x86_64
 
 Instalando o servidor HTTP:
