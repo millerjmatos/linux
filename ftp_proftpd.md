@@ -6,7 +6,7 @@ Instalando o ftp:
 
     apt-get install proftpd
 
-    service proftpd status
+    systemctl status proftpd
 
     cp /etc/proftpd/proftpd.conf /etc/proftpd/proftpd.bkp
 
@@ -16,27 +16,19 @@ Alterando o arquivo de configuração:
 
     :set number
 
-Linha 11:
+    Linha 11: UseIPv6 off
 
-    off
+    Linha 17: ServerName "webserver"
 
-Linha 17:
+    Linha 39: DefaultRoot ~
 
-    "webserver"
-
-Linha 39:
-
-    DefaultRoot ~
-
-Linha 43:
-
-    RequireValidShell   off
+    Linha 43: RequireValidShell off
 
     :wq
 
 Após alterações, reiniciar o serviço:
 
-    service proftpd restart
+    systemctl restart proftpd
 
 Usuário para administração do FTP:
 
