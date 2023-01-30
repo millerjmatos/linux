@@ -2,7 +2,7 @@
 
 ProFTPD é uma escolha para ambientes mais complexos e requer configurações avançadas já o vsftpd é uma boa escolha para ambientes menos complexos.
 
-Instalando o ftp:
+Instalando o servidor ftp:
 
     apt-get install proftpd
 
