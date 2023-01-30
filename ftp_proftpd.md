@@ -8,23 +8,25 @@ Instalando o servidor FTP:
 
     systemctl status proftpd
 
-    cp /etc/proftpd/proftpd.conf /etc/proftpd/proftpd.bkp
+    systemctl enable proftpd
 
 Alterando o arquivo de configuração:
 
+    cp /etc/proftpd/proftpd.conf /etc/proftpd/proftpd.bkp
+
     vim proftpd.conf
 
-    :set number
+        :set number
 
-    Linha 11: UseIPv6 off
+        Linha 11: UseIPv6 off
 
-    Linha 17: ServerName "webserver"
+        Linha 17: ServerName "webserver"
 
-    Linha 39: DefaultRoot ~
+        Linha 39: DefaultRoot ~
 
-    Linha 43: RequireValidShell off
+        Linha 43: RequireValidShell off
 
-    :wq
+        :wq
 
 Após alterações, reiniciar o serviço:
 
