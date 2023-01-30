@@ -26,6 +26,16 @@ Instalando o MySQL:
 
     systemctl enable mysql
 
+Verificando a versão:
+
+_ Server:
+
+    mysqld --version
+
+_ Client:
+
+    mysql --version
+
 Acessando o banco de dados:
 
     mysql -h localhost -u root -p

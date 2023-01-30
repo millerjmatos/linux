@@ -1,3 +1,5 @@
+##### Em Linux Debian 11
+
 Instalando o serviço:
 
     apt-get install openssh-server
@@ -12,7 +14,7 @@ Perminto acesso via usuário root:
 
         :set number
 
-Linha 38:
+Linha 34:
 
         PermitRootLogin yes
 
@@ -20,7 +22,7 @@ Linha 38:
 
 Reiniciando o serviço:
 
-    service ssh restart
+    systemctl restart sshd
 
 Ativando o serviço na inicialização:
 
