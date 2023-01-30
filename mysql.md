@@ -14,11 +14,17 @@ Se precisar selecionar uma versão específica e precisar alterar a configuraç�
 
 Instalando o MySQL:
 
-    apt update && upgrade
+    apt-get update
+
+    apr-get upgrade
 
     apt-get install mysql-server mysql-client
 
-    service mysql status
+    systemctl status mysql
+
+    systemctl start mysql
+
+    systemctl enable mysql
 
 Acessando o banco de dados:
 
