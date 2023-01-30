@@ -44,6 +44,10 @@ Imprimindo se o SELinux (Security-Enhanced Linux) está ativado ou desativado:
 
     sestatus
 
+Imprimindo os booleans disponíveis e seus estados atuais:
+
+    semanage boolean -l
+
 Criando a regra de liberação no SELinux:
 
     setsebool -P ftpd_full_access on
