@@ -80,7 +80,9 @@ zone "mullertec.com.br" {
 
     :wq
 
-        cd /var/named/ && ls && pwd
+    cd /var/named/ && ls && pwd
+
+Editando o arquivo db.:
 
     vim db.mullertec.com.br
 
@@ -99,6 +101,8 @@ zone "mullertec.com.br" {
         www                 IN CNAME    webserver
 
     :wq
+
+Conferindo:
 
     named-checkconf /etc/named.conf
 
