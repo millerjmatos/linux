@@ -73,16 +73,16 @@ Criando as zonas de dominio, ex.:
 
 Linha 60:
 
-zone "mullertec.com.br" {
-    type master;
-    file "/var/named/db.mullertec.com.br";
-};
+    zone "mullertec.com.br" {
+        type master;
+        file "/var/named/db.mullertec.com.br";
+    };
 
     :wq
 
-    cd /var/named/ && ls && pwd
-
 Editando o arquivo db.:
+
+    cd /var/named/ && ls && pwd
 
     vim db.mullertec.com.br
 
