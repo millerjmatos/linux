@@ -2782,11 +2782,19 @@ Adicionando um grupo no sistema:
 
 Adicionando um usuário criado em um grupo:
 
+	usermod -a -G <group> <user>
+	
 	adduser <user> <group>
 	
 	gpasswd -a <user> <group>
 
-	usermod -a -G <group> <user>
+Removendo um usuário de um grupo:
+
+	gpasswd -d <user> <group>
+
+Definindo o grupo primário de um usuário:
+
+	usermod -g <group> <user>
 
 Adicionando um usuário sem diretório home:
 
@@ -2797,16 +2805,6 @@ Adicionando um usuário sem diretório home:
 Adicionando um usuário e seu diretório pessoal:
 
 	useradd <user> -d /home/linux/
-
-Definindo o grupo primário de um usuário:
-
-	usermod -g <group> <user>
-
-Removendo um usuário de um grupo:
-
-	usermod -G <group> <user>
-
-	gpasswd -d <user> <group>
 
 Removendo um usuário do sistema:
 
