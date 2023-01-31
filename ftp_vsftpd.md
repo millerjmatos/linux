@@ -48,6 +48,8 @@ Imprimindo se o SELinux (Security-Enhanced Linux) está ativado ou desativado:
 
 Imprimindo os booleans disponíveis e seus estados atuais:
 
+    dnf install policycoreutils-python
+
     semanage boolean -l
 
 Criando a regra de liberação no SELinux:
