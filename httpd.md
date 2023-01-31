@@ -33,3 +33,26 @@ Usuário para administração do FTP:
     usermod -d /var/www/html/ webmaster
 
     chown webmaster -R /var/www/html/
+
+Configurando virtual hosts:
+
+    cd /etc/httpd/conf/ && cp httpd.conf httpd.conf.bkp
+
+    vim httpd.conf
+
+        :set number
+
+        Linha 354: 
+        
+            <VirtualHost *:80>
+            ServerName mullertec.com.br
+            ServerAlias www.mullertec.com.br
+            DocumentRoot "/var/www/html/mullertec/"
+            </VirtualHost>
+
+        :wq
+
+    systemctl restart httpd
+
+    
+    
