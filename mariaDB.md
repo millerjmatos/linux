@@ -4,11 +4,11 @@ Instalando o banco de dados:
 
     yum install mariadb-server
 
-    systemctl status mariadb-server
+    systemctl status mariadb
 
-    systemctl start mariadb-server
+    systemctl start mariadb
 
-    systemctl enable mariadb-server
+    systemctl enable mariadb
 
     mysql_secure_installation
 
@@ -21,12 +21,6 @@ Permitir que o usuário *root do banco de dados* acesse remotamente? sim.
 Remover o banco de dados teste? sim.
 
 Recarregar o sistema e aplicar as alterações de segurança? sim.
-
-Entrando no MariaDB::
-
-    mysql -h localhost -u root -p
-
-        show databases;
 
 Acessando o banco de dados:
 
