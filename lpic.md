@@ -70,6 +70,12 @@ O insmod não carrega as dependências! O comando modprobe o faz:
 
 	lsmod | grep blue
 
+Imprimindo informações sobre os dispositivos USB conectados ao sistema:
+
+	lsusb
+
+	lsusb -s 001:001 -v
+
 ------------------------------------------------------------
 	* * * * * 101.2 Boot the system * * * * *
 ------------------------------------------------------------
