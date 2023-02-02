@@ -146,6 +146,74 @@ systemctl
 /usr/lib/systemd/
 wall
 
+Contém scripts de inicialização do sistema:
+
+	/etc/init.d/
+
+Alterando o status/operação de algum serviço:
+
+	/etc/init.d/cups status
+
+	/etc/init.d/cups restart
+
+O equivalente (systemd) em:
+
+	/usr/lib/systemd/system/
+
+	/lib/systemd/system/
+
+Descobrindo o gerenciador de serviços/inicialização do sistema (systemd ou sysvinit):
+
+	ps -p 1
+
+Imprimindo o runlevel atual do sistemam:
+
+	runlevel
+
+Para trocar o runlevel (sysvinit):
+
+	telinit <runlevel>
+
+	init <runlevel>
+
+	telinit --help
+
+Imprimindo todas as unidades carregadas na memória:
+
+	systemctl list-unit-files
+
+Imprimindo o target atual do sistema:
+
+	systemctl get-default
+
+Definindo target default (systemd):
+
+	systemctl set-default multi-user.target
+
+Trocando o target para o modo de segurança:
+
+	ls -l /lib/systemd/system/ | grep runlevel
+
+	systemctl isolate rescue.target
+
+	systemctl isolate runlevel1.target
+
+Alterando o status/operação de algum serviço (systemd):
+
+	systemctl <status start stop reload restart enable disable> <service>
+
+Agendando o reboot para daqui 10m:
+
+	shutdown -r +10
+
+Cancelar o comando shutdown:
+
+	shutdown -c
+
+Enviando uma mensagem para todos os usuários do sistema:
+
+	wall "Olá!"
+
 ------------------------------------------------------------
 
 	* * * * * Topic 102: Linux Installation and pacoteage Management * * * * * 
@@ -1408,7 +1476,7 @@ Imprimindo os processos ativos nesse terminal:
 
 	ps
 
-Incluindo usuários e horário do processo:
+Incluindo os processos associados ao usuário atual:
 
 	ps -u
 
@@ -1416,9 +1484,9 @@ Incluindo processos não associados ao terminal:
 
 	ps -ux | less
 
-Incluindo todos os processos:
+Incluindo todos os processos do sistema:
 
-	ps -aux | less
+	ps aux | less
 
 Imprimindo os processos em formato de "árvore":
 
