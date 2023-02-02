@@ -42,6 +42,8 @@ Configurando:
 
     rclone sync /home/ mullertec:/mullertec/
 
+Agendando a sincronização:
+
     vim /etc/crontab
 	
         00 12,18 * * * root rclone sync /home/ mullertec:/mullertec/
