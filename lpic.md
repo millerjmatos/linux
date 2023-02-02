@@ -166,6 +166,8 @@ Descobrindo o gerenciador de serviços/inicialização do sistema (systemd ou sy
 
 	ps -p 1
 
+	stat /proc/1/exe
+
 Imprimindo o runlevel atual do sistemam:
 
 	runlevel
@@ -198,9 +200,15 @@ Trocando o target para o modo de segurança:
 
 	systemctl isolate runlevel1.target
 
+Imprimindo a quantidade de targets existentes:
+
+	ls -l /lib/systemd/system/*target|wc -l
+
+	systemctl list-unit-files --type=target
+
 Alterando o status/operação de algum serviço (systemd):
 
-	systemctl <status start stop reload restart enable disable> <service>
+	systemctl <status start stop reload restart enable disable is-enabled> <service>
 
 Agendando o reboot para daqui 10m:
 
