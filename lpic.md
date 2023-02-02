@@ -121,6 +121,14 @@ init
 SysVinit
 systemd
 
+Identificando o kernel carregado no boot:
+
+	dmesg | head
+
+	dmesg | grep BOOT_IMAGE
+
+	journalctl -b | grep BOOT_IMAGE
+
 ------------------------------------------------------------
 	* * * * * 101.3 Change runlevels / boot targets and shutdown or reboot system * * * * *
 ------------------------------------------------------------
