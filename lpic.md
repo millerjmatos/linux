@@ -46,17 +46,27 @@ Para saber detalhes de um módulo:
 
 	lsmod
 
+	lsmod |grep snd
+
 	modinfo <módulo>
 
-Para remover um módulo carregado:
+	modinfo snd
 
-	ls | grep mouse
+Para remover um módulo carregado:
 
 	modinfo psmouse
 
 	rmmod psmouse
 
 	modprobe -r psmouse
+
+Carregando e removendo um módulo:
+
+	modprobe batman-adv
+
+	lsmod |grep batman
+
+	modprobe -r batman-adv
 
 Nesse momento o mouse não funciona mais na máquina. Para reverter:
 
@@ -69,6 +79,8 @@ O insmod não carrega as dependências! O comando modprobe o faz:
 	modprobe bluecard_cs
 
 	lsmod | grep blue
+
+O modprobe é uma ferramenta mais avançada do que insmod e rmmod, que são usados para gerenciar módulos do kernel no Linux. 
 
 Imprimindo informações sobre os dispositivos USB conectados ao sistema:
 
