@@ -861,9 +861,9 @@ Limpando o arquivo de histórico:
 
 	history -c
 
-Localizando o arquivo de histórico:
+Localizando o arquivo de histórico .bash_history:
 
-	set | grep HISTFILE
+	set | grep <HISTFILE history>
 
 	cat /home/user/.bash_history
 
