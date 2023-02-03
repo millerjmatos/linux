@@ -110,6 +110,16 @@ Imprimindo os IRQ associados aos dispositivos de hardware:
 
 A IRQ 1 é geralmente associada ao teclado devido à sua prioridade na entrada de dados.
 
+Imprimindo informações dos dispositivos SCSI:
+
+	cat /proc/scsi/scsi
+
+	lsblk -d
+
+Dameon responsável por tratar eventos relacionados ao gerenciamento de energia:
+
+	acpid
+
 ------------------------------------------------------------
 	* * * * * 101.2 Boot the system * * * * *
 ------------------------------------------------------------
