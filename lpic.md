@@ -141,6 +141,10 @@ Em sistemas que utilizam a BIOS, onde estão as informações utilizadas durante
 
 	MBR
 
+Imprimindo os logs de boot do sistema em systemd-journal:
+
+	journalctl -b
+
 Identificando o kernel carregado no boot:
 
 	dmesg | head
