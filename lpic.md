@@ -769,19 +769,23 @@ Ou digitando o caminho absoluto de qualquer lugar do sistema:
 
 Como carregar uma variável de ambiente:
 
-	NOME_VARIAVEL=valor
+	<NOME_VARIAVEL>=valor
 
-	echo $NOME_VARIAVEL
+	echo $<NOME_VARIAVEL>
 
 	bash
 
-	echo $NOME_VARIAVEL
+	echo $<NOME_VARIAVEL>
 
-Tornando a variável global:
+Criando uma variável global:
 
-	export NOME_VARIAVEL
+	export <NOME_VARIAVEL>
 
-	export NOME_VARIAVEL=valor
+	export <NOME_VARIAVEL>=valor
+
+	export NOME="Muller Jorge"
+
+	echo $NOME
 
 Imprimindo variáveis locais e globais:
 
@@ -799,7 +803,7 @@ Definindo uma variável no momento de execução do shell atual:
 
 Excluindo uma variável:
 
-	unset NOME_VARIAVEL
+	unset <NOME_VARIAVEL>
 
 Algumas variáveis de ambiente definidas pelo sistema:
 
@@ -933,15 +937,15 @@ Protegendo caracteres especiais, quoting:
 
 	echo "*"
 
-	echo "$NOME_VARIAVEL"
+	echo "$<NOME_VARIAVEL>"
 
 Lembre-se que "" NÃO protege $ ` \
 
 Já '' e \ protegem todos os caracteres sem excessão:
 
-	echo '$NOME_VARIAVEL'
+	echo '$<NOME_VARIAVEL>'
 
-	echo \$NOME_VARIAVEL
+	echo \$<NOME_VARIAVEL>
 
 	echo "Curso     Linux   LPI1"
 
