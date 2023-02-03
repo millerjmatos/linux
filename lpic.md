@@ -787,6 +787,8 @@ Criando uma variável global:
 
 	echo $NOME
 
+	echo "O Conteúdo da Variável '$NOME' é: $NOME"
+
 Imprimindo variáveis locais e globais:
 
 	set | less
