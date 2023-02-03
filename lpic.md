@@ -815,7 +815,7 @@ Saiba o diretório home do usuário atual:
 
 Saiba o PID do shell atual:
 
-	$$
+	echo $$
 
 	ps | grep bash
 
@@ -899,6 +899,10 @@ Comando que informa várias informações do sistema:
 
 	uname --help
 
+Imprimindo o release do kernel:
+
+	uname -r
+
 Criando um atalho para um comando:
 
 	alias
@@ -909,9 +913,15 @@ Criando um atalho para um comando:
 
 	unalias lt
 
-Localiza o diretório onde está o comando:
+Imprimindo o diretório onde está o comando:
 
 	which echo
+
+	which tar
+
+O comando which pesquisa no PATH da sessão atual:
+
+	env | grep PATH
 
 	which tar
 
@@ -2535,12 +2545,6 @@ O comando whreis é mais restrito, e não pesquisa no /home:
 	whreis fsck
 
 	whereis ls
-
-O comando which pesquisa no PATH da sessão atual:
-
-	env | grep PATH
-
-	which tar
 
 O comando type exibe algumas informações de comandos:
 
