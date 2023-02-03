@@ -80,7 +80,7 @@ O insmod não carrega as dependências! O comando modprobe o faz:
 
 	lsmod | grep blue
 
-O modprobe é uma ferramenta mais avançada do que insmod e rmmod, que são usados para gerenciar módulos do kernel no Linux. 
+O modprobe é uma ferramenta mais avançada do que insmod e rmmod, usados para gerenciar módulos do kernel no Linux. 
 
 Imprimindo informações sobre os dispositivos USB conectados ao sistema:
 
@@ -107,6 +107,8 @@ O modelo da CPU:
 Imprimindo os IRQ associados aos dispositivos de hardware:
 
 	cat /proc/interrupts
+
+A IRQ 1 é geralmente associada ao teclado devido à sua prioridade na entrada de dados.
 
 ------------------------------------------------------------
 	* * * * * 101.2 Boot the system * * * * *
