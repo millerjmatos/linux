@@ -104,6 +104,10 @@ O modelo da CPU:
 
 	cat /proc/cpuinfo
 
+Imprimindo os IRQ associados aos dispositivos de hardware:
+
+	cat /proc/interrupts
+
 ------------------------------------------------------------
 	* * * * * 101.2 Boot the system * * * * *
 ------------------------------------------------------------
@@ -120,6 +124,10 @@ initramfs
 init
 SysVinit
 systemd
+
+Em sistemas que utilizam a BIOS, onde estão as informações utilizadas durante a fase do boot:
+
+	MBR
 
 Identificando o kernel carregado no boot:
 
@@ -162,7 +170,7 @@ O equivalente (systemd) em:
 
 	/lib/systemd/system/
 
-Descobrindo o gerenciador de serviços/inicialização do sistema (systemd ou sysvinit):
+Exibindo o gerenciador de serviços/inicialização do sistema (systemd ou sysvinit):
 
 	ps -p 1
 
@@ -3304,7 +3312,7 @@ Definindo MAC:
 	
 	ifconfig eth0 up
 
-Descobrindo o IP externo:
+Exibindo o IP externo:
 
 	curl ifconfig.me
 
@@ -3348,19 +3356,19 @@ usermod
 ulimit
 who, w, last
 
-Descobrindo os hosts da rede:
+Exibindo os hosts da rede:
 
 	nmap -sP 192.168.0.0/24
 
 	nmap -sP 192.168.0.*
 
-Descobrindo as portas abertas de um alvo: 
+Exibindo as portas abertas de um alvo: 
 
 	nmap -sT 192.168.0.10
 
 	nmap -Pn 192.168.0.20
 
-Descobrindo se uma porta específica está aberta:
+Exibindo se uma porta específica está aberta:
 
 	nmap -p 80 192.168.0.0/24
 
@@ -3368,7 +3376,7 @@ Descobrindo se uma porta específica está aberta:
 
 	nmap -p 21 192.168.1.1
 
-Descobrindo o SO de um alvo:
+Exibindo o SO de um alvo:
 
 	nmap -0 192.168.1.5
 
