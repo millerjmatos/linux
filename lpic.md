@@ -3304,6 +3304,10 @@ Definindo MAC:
 	
 	ifconfig eth0 up
 
+Descobrindo o IP externo:
+
+	curl ifconfig.me
+
 ------------------------------------------------------------
 	* * * * * 109.4 Configure client side DNS * * * * *
 ------------------------------------------------------------
