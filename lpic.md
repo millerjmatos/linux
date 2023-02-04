@@ -1030,6 +1030,12 @@ Com essa opção o tail aguarda e imprime o final do arquivo em tempo real, úti
 
 	tail -f file.txt
 
+Imprimindo as últimas 15 linhas do /etc/passwd, com o nome do usuário e seu ID, e ordenado pelo ID numérico:
+
+	tail -n 15 /etc/passwd | cut -d":" -f1,3 | sort -t ":" -k2 -g
+
+sort -t define o delimitador ; -k2 o campo referência para o ordenamento ; -g ordena como números ao invés de como caracteres
+
 Imprimindo o conteúdo de um texto de modo paginado:
 
 	less longfile.txt
@@ -1051,6 +1057,10 @@ Comando que informa o número de linhas, palavras e bytes do arquivo:
 	wc file.txt
 
 	wc -l file.txt
+
+O número de linhas do arquivo /etc/passwd sem contar linhas que contenham a palavra "daemon":
+
+	grep -v "daemon" /etc/passwd | wc -l
 
 O * imprime o resultado de todos os arquivos do diretório atual ou desejado:
 
@@ -1378,7 +1388,11 @@ Descompactando o arquivo tar.gz:
 
 Agrupando e compactando ao mesmo tempo com gzip:
 
-	tar zcpvf backup.tgz /tmp/
+	tar zcpfv backup.tgz /tmp/
+
+Descompactando tar.gz com o tar para o diretório local:
+
+	tar zxpfv backup.tgz -C .
 
 Compactando com o bzip2:
 
