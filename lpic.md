@@ -1366,7 +1366,7 @@ Imprimindo arquivos modificados entre 30 e 90 dias pelo grupo vendas:
 
 Agrupando o conteúdo do /tmp/ no diretório atual:
 
-	tar cpvf backup.tar /tmp/
+	tar cpfv backup.tar /tmp/
 
 	tar tf backup.tar
 
@@ -1408,7 +1408,7 @@ Descompactando o arquivo tar.bz2:
 
 Agrupando e compactando ao mesmo tempo com bzip2:
 
-	tar jcpvf backup.tbz /tmp/
+	tar jcpfv backup.tbz /tmp/
 
 Compactando com o xz:
 
@@ -1424,7 +1424,7 @@ Descompactando o arquivo tar.xz
 
 Agrupando e compactando ao mesmo tempo com xz:
 
-	tar Jcpvf backup.txz /tmp/
+	tar Jcpfv backup.txz /tmp/
 
 Agrupando através de uma saída:
 
