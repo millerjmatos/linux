@@ -1188,6 +1188,8 @@ Para não pular a linha ao fazer a alteração, utilizamos a flag global:
 
 	sed 's/Nome/NovoNome/g' nomes.txt
 
+	sed 's/Linux/LINUX/g' nomes.txt > nomes2.txt
+
 Apagar linhas em um range:
 
 	sed '3,5 d' nomes.txt
@@ -1830,6 +1832,10 @@ Pesquisando em varios arquivos de texto:
 Imprimindo recursivamente:
 
 	grep -r Linux *.txt
+
+Imprimindo o nome e o caminho do arquivo que contenham "eth0":
+
+	grep -lr eth0 /etc/*
 
 Pesquisando com o egrep:
 
