@@ -1773,6 +1773,8 @@ Definindo a prioridade de um processo:
 
 O nice vai de -20 até 19. Quanto < maior a prioridade!
 
+O valor padrão é 0
+
 Definindo a prioridade de um processo em execução:
 
 	renice -n -16 17779
