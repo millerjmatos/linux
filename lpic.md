@@ -1505,6 +1505,8 @@ Definindo o aquivo e imprimindo na saída padrão:
 
 	sort linux.txt | tee resultado.log
 
+	ls -l ~ | tee list.out
+
 Executando comandos recebidos pela entrada padrão:
 
 	find /home/ -type f -name '*.pdf' | xargs ls -l
