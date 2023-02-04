@@ -1364,6 +1364,10 @@ Imprimindo arquivos modificados entre 30 e 90 dias pelo grupo vendas:
 	
 	find /home/ -type f -mtime +30 -mtime -90 -group vendas
 
+Imprimindo os arquivos do /var cujo nome termine com ".gz" e que foram modificados até 2 dias atrás:
+
+	find /var -type f -name "*.gz" -mtime -2
+
 Agrupando o conteúdo do /tmp/ no diretório atual:
 
 	tar cpfv backup.tar /tmp/
