@@ -265,6 +265,12 @@ swap space
 mount points
 partitions
 
+Imprimindo as informações de swap e memória:
+
+	cat /proc/swaps
+
+	free -m
+
 ------------------------------------------------------------
 	* * * * * 102.2 Install a boot manager * * * * *
 ------------------------------------------------------------
@@ -325,11 +331,13 @@ ldconfig
 /etc/ld.so.conf
 LD_LIBRARY_PATH
 
-Imprimindo quais as bibliotecas utilizadas pelo programa:
+Imprimindo quais/quantas bibliotecas utilizadas pelo programa:
 
 	whereis vi
 
 	ldd /usr/bin/vi
+
+	ldd /usr/bin/vi | wc -l
 
 Todos os arquivos terminados em .so são bibliotecas!
 
@@ -350,6 +358,8 @@ A variável LD_LIBRARY_PATH é geralmente configurada no arquivo de configuraç�
 Imprimindo todas as bibliotecas utilizadas pelo sistema:
 
 	ldconfig -p |less
+
+	ldconfig -p |head
 
 Adicionando o diretório e as bibliotecas contidas em: 
 
@@ -1599,10 +1609,6 @@ Reiniciando um processo:
 Imprimindo o tempo de atividade do sistema:
 
 	uptime
-
-Imprimindo a quantidade de memória e swap utilizada pelo sistema:
-
-	free -m
 
 Executando novas abas no mesmo terminal:
 
