@@ -458,6 +458,8 @@ Imprimindo os pacotes instalados:
 
 	dpkg --get-selections
 
+	dpkg --get-selections | wc -l
+
 Para obter informações sobre o pacote:
 
 	dpkg -l brave-browser
