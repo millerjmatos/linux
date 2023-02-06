@@ -50,3 +50,11 @@ Reiniciando o serviço:
     systemctl restart smbd
 
     systemctl status smbd
+
+Crie os usuários do banco de dados samba com o comando:
+
+    smbpasswd -a <USER>
+
+Verifique os usuários criados no samba do sistema:
+
+    pdbedit -L
