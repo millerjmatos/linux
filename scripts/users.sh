@@ -21,7 +21,7 @@ smb_password="smb@smb"
 users=(gerencia vendas tecnologia)
 for user in "${users[@]}"; do
   useradd -m -p "$encrypted_password" "$user"
-  chmod 2770 /home/"$user"
+  chmod 2770 -R /home/"$user"
   (echo "$smb_password"; echo "$smb_password") | smbpasswd -a "$user"
 done
 
