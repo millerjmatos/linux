@@ -15,11 +15,14 @@
 password="P@ssword"
 encrypted_password=$(echo "$password" | openssl passwd -1 -stdin)
 
+# Define a senha padrão para usuários no Samba
+smb_password="smb@smb"
+
 users=(gerencia vendas tecnologia)
 for user in "${users[@]}"; do
   useradd -m -p "$encrypted_password" "$user"
   chmod 2770 /home/"$user"
-  smbpasswd -a "$user"
+  (echo "$smb_password"; echo "$smb_password") | smbpasswd -a "$user"
 done
 
 # Adição do usuário muller a todos os grupos
