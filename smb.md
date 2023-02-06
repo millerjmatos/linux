@@ -34,7 +34,7 @@ Editando:
         browseable = no		
         comment = meus dados    
         path = /home/%U 
-        valid users = %S    
+        valid users = %S @muller    
         writable = yes  
 
         [publica]
