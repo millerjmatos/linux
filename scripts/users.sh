@@ -4,7 +4,8 @@
 
 # Inclui um usuário 'master' em cada grupo criado.
 
-# Define uma permissão a cada diretório home dos usuário criados, e que dá ao proprietário e ao grupo 
+# Define uma permissão a cada diretório home dos usuário criados, 
+# e que dá ao proprietário e ao grupo 
 # completos privilégios de leitura, escrita e execução no diretório, 
 # mas não permite que outros usuários tenham acesso!
 
