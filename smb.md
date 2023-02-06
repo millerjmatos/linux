@@ -43,7 +43,20 @@ Editando:
         path = /home/publica    
         writable = yes  
 
+        [java]
+        browseable = yes	
+        comment = dados da equipe java
+        path = /home/java	
+        valid users = @muller %S    
+        writable = yes
+
         :wq
+
+A seção [publica] está em um diretório que precisa ser criado e com permissão total:
+
+    chmod ugo=rwx /home/publica
+
+A seção [java] é um diretório visível e acessível pelo usuário autenticado, incluindo o usuário muller.
 
 Reiniciando o serviço:
 
