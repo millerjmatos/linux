@@ -9,6 +9,7 @@ encrypted_password=$(echo "$password" | openssl passwd -1 -stdin)
 users=(gerencia vendas tecnologia)
 for user in "${users[@]}"; do
   useradd -m -p "$encrypted_password" "$user"
+  chmod 2770 /home/"$user"
 done
 
 # Adição do usuário muller a todos os grupos
