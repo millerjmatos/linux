@@ -2422,7 +2422,7 @@ Resultado = -rwxrwxr-x user manager linux.txt
 
 Definindo a permissão recurssivamente no diretório:
 
-	chmod -R 755 /home/user/diretorio
+	chmod 755 -R /home/user/diretorio
 	
 Executando um arquivo com as permissões do dono (user) SUID:
 
