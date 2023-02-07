@@ -19,7 +19,9 @@ Editando:
     vim smb.conf
 
         [global]
-        browseable = yes    
+        browseable = yes 
+        create mask = 2770    
+        directory mask = 2770   
         encrypt passwords = yes 
         log file = /var/log/samba/samba-log-%m  
         max log size = 500  
@@ -38,9 +40,7 @@ Editando:
         writable = yes  
 
         [publica]
-        browseable = yes    
-        create mask = 0777  
-        directory mask = 0777   
+        browseable = yes       
         comment = livre acesso  
         path = /home/publica    
         writable = yes  
