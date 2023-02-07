@@ -2620,6 +2620,18 @@ unset
 function
 alias
 
+Editando o arquivo de configuração do shell bash com um apelido para comando de rede:
+
+	vim /etc/bash.bashrc
+
+		alias inet="ip -br -c a"
+
+		:wq
+
+	source /etc/bash.bashrc
+
+	inet
+
 ------------------------------------------------------------
 	* * * * * 105.2 Customize or write simple scripts * * * * *
 ------------------------------------------------------------
