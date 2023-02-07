@@ -40,7 +40,9 @@ Editando:
         writable = yes  
 
         [publica]
-        browseable = yes       
+        browseable = yes      
+        create mask = 0777    
+        directory mask = 0777    
         comment = livre acesso  
         path = /home/publica    
         writable = yes  
