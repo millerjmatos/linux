@@ -58,7 +58,7 @@ A seção [publica] está em um diretório que precisa ser criado e com permiss�
 
     chmod ugo=rwx /home/publica
 
-A seção [java] é um diretório visível e acessível pelo usuário autenticado, e incluindo o usuário muller.
+A seção [java] é um diretório visível por usuários autenticados, e também acessível ao usuário muller.
 
 Reiniciando o serviço:
 
