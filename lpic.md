@@ -2009,7 +2009,7 @@ Particionando o disco:
 
 	fdisk /dev/sdb
 
-		Command: f
+		Command: F
 
 		Command: n
 
@@ -2161,9 +2161,9 @@ Particionando o disco com o formato GPT:
 
 Verificando o sistema de arquivos de uma partição:
 
-	file -s /dev/sdb1
+	lsblk -f
 
-	df -T /dev/sdb1
+	parted -l
 
 Formatando a partição e definindo como swap:
 
