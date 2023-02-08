@@ -2076,6 +2076,7 @@ Quinta partição:
 		Command: n
 
 		Adding logical partition 5
+
 		First sector: "Enter" default
 
 		Last sector: +500M
@@ -2087,6 +2088,7 @@ Sexta partição:
 		Command: n
 
 		Adding logical partition 6
+		
 		First sector: "Enter" default
 
 		Last sector: +1G
