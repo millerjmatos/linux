@@ -2088,7 +2088,7 @@ Sexta partição:
 		Command: n
 
 		Adding logical partition 6
-		
+
 		First sector: "Enter" default
 
 		Last sector: +1G
@@ -2237,13 +2237,11 @@ Imprimindo o espaço utilizado em disco por diretórios ou arquivos:
 
 	du -sh *
 		
-	du -sh /home/user/
+	du -sh /home/*
 		
 	du -shc *
 
 	du -ah *
-
-	du -shc /home/user/
 
 Verificando a integridade do sistema de arquivos:
 
