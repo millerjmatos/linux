@@ -2243,19 +2243,13 @@ Imprimindo o espaço utilizado em disco por diretórios ou arquivos:
 
 	du -ah *
 
-Verificando a integridade do sistema de arquivos:
-
-	parted -l
-
-	fsck /dev/sdb1
-
-	fsck -t ext4 /dev/sdb1
-
 A partição não deve estar montada!
 
-Imprimindo as informação sobre o sistema de arquivos:
+Imprimindo as informações sobre o sistema de arquivos:
 
 	tune2fs -l /dev/sdb1 | less
+
+	tune2fs -l /dev/sdb1 | grep <"Block count" "created">
 
 Definindo um label para a partição com o tune2fs:
 
@@ -2267,8 +2261,13 @@ Definindo o tempo de checagem (check interval):
 
 	tune2fs -i 7d /dev/sdb1
 
-O xfs_admin é o comando equivalente para sistema de arquivos XFS.
-Os comandos são similares ao tune2fs.
+O xfs_admin é o comando equivalente para sistema de arquivos XFS. Os comandos são similares ao tune2fs.
+
+Verificando a integridade do sistema de arquivos:
+
+	fsck /dev/sdb1
+
+	fsck -t ext4 /dev/sdb1
 
 Instalação e utilização:
 
@@ -2359,11 +2358,11 @@ Imprimindo o UUID de uma partição:
 
 Definindo uma nova partição o /etc/fstab:
 
-	/dev/sdb3	/mnt/pendrive	auto	defaults	0	<fsck>
+	/dev/sdb3	/mnt/pendrive	auto	defaults	0	0
 
 ou
 
-	UUID=9c5d6d45-74da-4932-be67-eb63a562c778 /mnt/pendrive	auto	defaults	0	3
+	UUID=9c5d6d45-74da-4932-be67-eb63a562c778 /mnt/pendrive	auto	defaults	0	0
 
 A última opção é o número da ordem do fsck, no Linux é executado por padrão no boot!
 
