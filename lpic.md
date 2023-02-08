@@ -174,7 +174,7 @@ Contém scripts de inicialização do sistema:
 
 	/etc/init.d/
 
-Alterando o status/operação de algum serviço:
+Definindo o status/operação de algum serviço:
 
 	/etc/init.d/cups status
 
@@ -230,7 +230,7 @@ Imprimindo a quantidade de targets existentes:
 
 	systemctl list-unit-files --type=target
 
-Alterando o status/operação de algum serviço (systemd):
+Definindo o status/operação de algum serviço (systemd):
 
 	systemctl <status start stop reload restart enable disable is-enabled> <service>
 
@@ -2476,9 +2476,17 @@ S: não possui permissão de execução.
 t: possui permissão de execução.
 T: não possui permissão de execução.
 
-Definindo a permissão padrão do sistema com o umask:
+Imprimindo a permissão padrão do sistema:
 
 	umask
+
+Definindo a permissão do sistema:
+
+	umask <0000>
+
+Em uma sessão em que o valor do umask é 0002 (666 - 002 = 664):
+
+	-rw-rw-r--
 
 Definindo o usuário e/ou o grupo dono do arquivo ou diretório:
 
