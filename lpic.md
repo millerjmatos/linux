@@ -2627,17 +2627,44 @@ unset
 function
 alias
 
-Editando o arquivo de configuração do shell bash com um apelido para comando de rede:
+O comando source no Linux serve para executar um script de shell no shell atual. Ao invocar o comando source, você está carregando as variáveis, funções e configurações do script para o ambiente atual, sem precisar abrir um novo shell. Outra forma é:
+
+	. script.sh
+
+Editando o arquivo de configuração do ambiente bash com o comando alias:
 
 	vim /etc/bash.bashrc
 
 		alias inet="ip -br -c a"
+
+		alias dt="date +%H:%M"
 
 		:wq
 
 	source /etc/bash.bashrc
 
 	inet
+
+	dt
+
+Imprimindo todos os alias do bash atual e do ambiente::
+
+	alias
+
+Usando o comando function, ex.:
+
+	function f01 {
+		date;
+		uptime;
+		uname -a;
+		inet;
+		cat /etc/os-release
+		echo "fim da funcao"
+	}
+
+	f01
+
+	set
 
 ------------------------------------------------------------
 	* * * * * 105.2 Customize or write simple scripts * * * * *
