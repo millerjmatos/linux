@@ -271,6 +271,16 @@ Imprimindo as informações de swap e memória:
 
 	free -m
 
+	swapon -s
+
+Desligando a unidade de swap atual:
+
+	swapoff /dev/sdX
+
+Montando todas as partições swap contidas em /etc/fstab
+
+	swapon -a
+
 ------------------------------------------------------------
 	* * * * * 102.2 Install a boot manager * * * * *
 ------------------------------------------------------------
@@ -2313,6 +2323,8 @@ mount
 umount
 blkid
 lsblk
+
+
 
 Arquivo de configuração das partições que serão montadas no boot:
 
