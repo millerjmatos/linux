@@ -2631,7 +2631,11 @@ O comando source no Linux serve para executar um script de shell no shell atual.
 
 	. script.sh
 
-Editando o arquivo de configuração do ambiente bash, aplicado a todos os usuários:
+Todos os arquivos e diretórios presentes nesse diretório serão incluídos no diretório home de novos usuários criados no sistema, inclusive os arquivos de configuração locais, de cada usuário:
+
+	/etc/skel/
+
+Editando o arquivo para toda nova sessão de shell bash, aplicado a todos os usuários:
 
 	vim /etc/bash.bashrc
 
