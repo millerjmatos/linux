@@ -277,7 +277,7 @@ Desligando a unidade de swap atual:
 
 	swapoff /dev/sdX
 
-Montando todas as partições swap contidas em /etc/fstab:
+Habilitando todas as partições swap contidas em /etc/fstab:
 
 	swapon -a
 
