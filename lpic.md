@@ -2631,7 +2631,7 @@ O comando source no Linux serve para executar um script de shell no shell atual.
 
 	. script.sh
 
-Editando o arquivo de configuração do ambiente bash com o comando alias:
+Editando o arquivo de configuração do ambiente bash, aplicado a todos os usuários:
 
 	vim /etc/bash.bashrc
 
