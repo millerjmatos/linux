@@ -24,11 +24,17 @@ Iniciando uma imagem como um container:
 
 	podman run -it -d alpine
 
-Opção -d: iniciar em segundo plano.
+Opção -d: inicia em segundo plano.
 
 Removendo, parando e inciando um conteiner:
 
     podman <rm stop start> <CONTAINER ID>
+
+    podman rm -f <CONTAINER ID>
+
+    podman ps
+
+    podman ps -a
 
 Removendo uma imagem do sistema:
 
