@@ -444,6 +444,14 @@ Imprimindo as dependências de um pacote:
 
 	apt-cache depends <pacote>
 
+Realizando o download, sem a instalação:
+
+	apt-get install <pacote> --download-only
+
+O arquivos serão enviados para o diretório: 
+
+	/var/cache/apt/archives/
+
 Pesquisando por repositórios mais rápidos: 
 
 	apt-get install netselect-apt
@@ -3174,7 +3182,7 @@ ntpdate
 chronyc
 pool.ntp.org
 
-	instalando e configurando o servidor NTP:
+	Instalando e configurando o servidor NTP:
 
 		apt-get install ntp
 
