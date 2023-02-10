@@ -145,6 +145,8 @@ Imprimindo os logs de boot do sistema em systemd-journal:
 
 	journalctl -b
 
+	dmesg
+
 Identificando o kernel carregado no boot:
 
 	dmesg | head
