@@ -60,4 +60,20 @@ Redirecionando portas:
 
     podman ps
 
-    podman run -it -d -p6001:80 --name nginx <IMAGE>
+    podman run -it -d -p6001:80 --name my-nginx <IMAGE>
+
+Executando um comando sem acessar o container:
+
+    podman exec -it my-nginx cat /etc/passwd
+
+    podman exec -it <CONTAINER ID> find / -name nginx
+
+Mapeando um volume:
+
+    podman run -it -d nginx
+
+    podman run -it -d -p5003:80 -v /root/site/:/usr/share/nginx/html/ --name map-nginx nginx
+
+
+
+
