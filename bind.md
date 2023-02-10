@@ -1,3 +1,5 @@
+Bind (Berkeley Internet Name Domain) é um serviço de resolução de nomes de domínio (DNS) open source para sistemas operacionais Unix e Linux. Ele é usado para traduzir nomes de domínios em endereços IP e fornecer informações sobre serviços, como endereços de correio eletrônico e servidores de nomes de máquina. Bind é amplamente utilizado como servidor DNS em redes corporativas, provedores de serviços de Internet e em outros ambientes de rede. 
+
 ### Em CentOS 7
 
 Instando o bind:
