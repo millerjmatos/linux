@@ -20,9 +20,13 @@ Iniciando uma imagem como um container:
 
 	podman run -it -d docker.io/library/ubuntu:latest
 
-		exit
-
 Opção -d: inicia em segundo plano.
+
+Acessando o conteiner:
+
+    podman run -it docker.io/library/ubuntu:latest /bin/bash
+
+        exit
 
 Removendo, parando e inciando um conteiner:
 
