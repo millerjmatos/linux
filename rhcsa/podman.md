@@ -72,8 +72,5 @@ Mapeando um volume:
 
     podman run -it -d nginx
 
-    podman run -it -d -p5003:80 -v /root/site/:/usr/share/nginx/html/ --name map-nginx nginx
-
-
-
+    podman run -it -d -p8003:80 -v /root/site/:/usr/share/nginx/html/ --name map-nginx nginx
 
