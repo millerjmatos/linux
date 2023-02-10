@@ -8,6 +8,8 @@ Imprimindo contêineres ativos no sistema:
 
 	podman ps
 
+    podman container ls
+
 Imprimindo todos os contêineres do sistema:
 
     podman ps -a
@@ -26,6 +28,8 @@ Acessando o container:
 
     podman run -it docker.io/library/ubuntu:latest /bin/bash
 
+    podman exec -it <NAMES CONTAINER ID > bash  
+
         exit
 
 Removendo, parando e inciando um container:
@@ -34,16 +38,18 @@ Removendo, parando e inciando um container:
 
     podman rm -f <CONTAINER ID>
 
+    podman rm -f $(podman ps -qa)
+
     podman ps
 
     podman ps -a
+
+Baixando uma imagem:
+
+    podman pull <IMAGE>
 
 Removendo uma imagem do sistema:
 
 	podman images
 
 	podman rmi <IMAGE ID>
-
-Baixando uma imagem:
-
-    podman pull <IMAGE>
