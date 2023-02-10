@@ -188,7 +188,7 @@ O equivalente (systemd) em:
 
 	/lib/systemd/system/
 
-Exibindo o gerenciador de serviços/inicialização do sistema (systemd ou sysvinit):
+Exibindo o gerenciador de serviços/inicialização do sistema (systemd ou SysVinit):
 
 	ps -p 1
 
@@ -206,7 +206,7 @@ Imprimindo o runlevel atual do sistema:
 
 		6: reboot.
 
-Para trocar o runlevel (sysvinit):
+Para trocar o runlevel (SysVinit):
 
 	telinit <runlevel>
 
