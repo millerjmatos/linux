@@ -53,3 +53,11 @@ Removendo uma imagem do sistema:
 	podman images
 
 	podman rmi <IMAGE ID>
+
+Redirecionando portas:
+
+    podman run -it -d nginx
+
+    podman ps
+
+    podman run -it -d -p6001:80 --name nginx <IMAGE>
