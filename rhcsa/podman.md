@@ -14,15 +14,13 @@ Imprimindo todos os contêineres do sistema:
 
 Pesquisando por um conteiner:
 
-    podman search alpine
+    podman search ubuntu
 
 Iniciando uma imagem como um container:
 
-	podman run -it alpine
+	podman run -it -d docker.io/library/ubuntu:latest
 
 		exit
-
-	podman run -it -d alpine
 
 Opção -d: inicia em segundo plano.
 
