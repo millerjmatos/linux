@@ -12,7 +12,7 @@ Imprimindo todos os contêineres do sistema:
 
     podman ps -a
 
-Pesquisando por um conteiner:
+Pesquisando por um container:
 
     podman search ubuntu
 
@@ -22,13 +22,13 @@ Iniciando uma imagem como um container:
 
 Opção -d: inicia em segundo plano.
 
-Acessando o conteiner:
+Acessando o container:
 
     podman run -it docker.io/library/ubuntu:latest /bin/bash
 
         exit
 
-Removendo, parando e inciando um conteiner:
+Removendo, parando e inciando um container:
 
     podman <rm stop start> <CONTAINER ID>
 
