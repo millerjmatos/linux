@@ -1,3 +1,5 @@
+O httpd (Apache HTTP Server) é um servidor web open source para sistemas operacionais Unix e Linux. Ele é amplamente utilizado para hospedar sites e aplicativos web na Internet. O httpd suporta vários protocolos, incluindo HTTP e HTTPS, e oferece recursos avançados, como processamento de conteúdo dinâmico, autenticação de usuários, segurança, gerenciamento de carga, etc. Além disso, o httpd é altamente personalizável através de módulos adicionais e é compatível com várias linguagens de programação, como PHP, Python, Ruby, etc.
+
 ### Em CentOS 7
 
 Instalando o servidor HTTP:
