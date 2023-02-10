@@ -194,9 +194,17 @@ Exibindo o gerenciador de serviços/inicialização do sistema (systemd ou sysvi
 
 	stat /proc/1/exe
 
-Imprimindo o runlevel atual do sistemam:
+Imprimindo o runlevel atual do sistema:
 
 	runlevel
+
+		0: halt.
+
+		1: rescue mode.
+
+		5: multi user with X Windows System service.
+
+		6: reboot.
 
 Para trocar o runlevel (sysvinit):
 
