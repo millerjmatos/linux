@@ -1132,6 +1132,10 @@ Imprime apenas os dados que ocorreram uma única vez:
 
 	uniq file.txt
 
+Imprimindo as linhas duplicadas:
+
+	uniq -d file.txt
+
 Como é preciso que estejam em ordem sequêncial, podemos usar outra opção para resolver:
 
 	sort file.txt | uniq
