@@ -11,4 +11,4 @@ echo "fim do script"
 
 # Execute:
 
-    # ./script.sh valor01 valor02
+    # ./script01.sh valor01 valor02

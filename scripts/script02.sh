@@ -10,6 +10,6 @@ read VAR1
 echo "O valor digitado foi $VAR1"
 echo "fim do script!"
 
-# Exceute:
+# Execute:
 
-    # ./script.sh valor01 valor02
+    # ./script02.sh
