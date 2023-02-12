@@ -10,5 +10,6 @@ free -m
 echo "fim do script"
 
 
-# Digite: 
-# script.sh 2205 Muller
+# Execute:
+
+# ./script.sh valor01 valor02
