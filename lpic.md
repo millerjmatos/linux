@@ -1046,29 +1046,29 @@ Para imprimir o conteúdo de um arquivo texto compactado:
 
 O comando cat imprime o conteúdo de um texto na saída padrão:
 
-	cat -n file.txt
+	cat -n arquivo.txt
 
 	cat --help
 
 Imprime na ordem inversa:
 
-	tac file.txt
+	tac arquivo.txt
 
 Comando que mostra por padrão as 10 primeiras linhas do arquivo:
 
-	head file.txt
+	head arquivo.txt
 
-	head -n2 file.txt
+	head -n2 arquivo.txt
 
 Imprime o inverso do head:
 
-	tail file.txt
+	tail arquivo.txt
 
-	tail -n5 file.txt
+	tail -n5 arquivo.txt
 
 Com essa opção o tail aguarda e imprime o final do arquivo em tempo real, útil para logs:
 
-	tail -f file.txt
+	tail -f arquivo.txt
 
 Imprimindo as últimas 15 linhas do /etc/passwd, com o nome do usuário e seu ID, e ordenado pelo ID numérico:
 
@@ -1078,9 +1078,9 @@ sort -t define o delimitador ; -k2 o campo referência para o ordenamento ; -g o
 
 Imprimindo o conteúdo de um texto de modo paginado:
 
-	less longfile.txt
+	less longarquivo.txt
 
-	cat longfile.txt | less
+	cat longarquivo.txt | less
 
 A barra de espaço pula a página.
 
@@ -1094,9 +1094,9 @@ CTRL+G informa onde você está no arquivo.
 
 Comando que informa o número de linhas, palavras e bytes do arquivo:
 
-	wc file.txt
+	wc arquivo.txt
 
-	wc -l file.txt
+	wc -l arquivo.txt
 
 O número de linhas do arquivo /etc/passwd sem contar linhas que contenham a palavra "daemon":
 
@@ -1112,7 +1112,7 @@ O sort ordena alfabeticamente, para inverter:
 
 Ordenando pelo campo específico:
 
-	sort -k2 file.txt
+	sort -k2 arquivo.txt
 
 O delimitador é o espaço vazio.
 
@@ -1124,13 +1124,13 @@ O -g ordena como números ao invés de como caracteres.
 
 Imprime as linhas numeradas, descartando as linhas em branco:
 
-	nl file.txt
+	nl arquivo.txt
 
-	cat -b file.txt
+	cat -b arquivo.txt
 
 Imprime apenas os dados que ocorreram uma única vez:
 
-	uniq file.txt
+	uniq arquivo.txt
 
 Imprimindo as linhas duplicadas:
 
@@ -1138,23 +1138,23 @@ Imprimindo as linhas duplicadas:
 
 Como é preciso que estejam em ordem sequêncial, podemos usar outra opção para resolver:
 
-	sort file.txt | uniq
+	sort arquivo.txt | uniq
 
 Se quiser imprimir apenas o que estiver duplicado:
 
-	sort file.txt | uniq -d
+	sort arquivo.txt | uniq -d
 
 Para informar a quantidade de cada ocorrência:
 
-	sort file.txt | uniq -c
+	sort arquivo.txt | uniq -c
 
 Imprimindo o conteúdo de um texto em formato octal:
 
-	od file.txt
+	od arquivo.txt
 
 Em hexa:
 
-	od -tx file.txt
+	od -tx arquivo.txt
 
 	od --help
 
@@ -1168,29 +1168,29 @@ Juntando os dois arquivos linha por linha:
 
 Dividindo o arquivo:
 
-	wc -l longfile.txt
+	wc -l longarquivo.txt
 
-	split -l20 longfile.txt
+	split -l20 longarquivo.txt
 
 	ls -l
  
-	split -l20 longfile.txt novo_arquivo_
+	split -l20 longarquivo.txt novo_arquivo_
 
 	wc -l novo_arquivo_*
 
 Imprimindo modificado a saída do texto utilizando strings:
 
-	cat file.txt | tr a-z A-Z
+	cat arquivo.txt | tr a-z A-Z
 
-	cat file.txt | tr -d A
+	cat arquivo.txt | tr -d A
 
 	tr --help
 
-	cat file.txt | tr [:upper:] [:lower:]
+	cat arquivo.txt | tr [:upper:] [:lower:]
 
-	cat file.txt | ' ' '_'
+	cat arquivo.txt | ' ' '_'
 
-	cat file.txt | tr -d [:upper:]
+	cat arquivo.txt | tr -d [:upper:]
 
 Imprimindo a saída sem repetições:
 
@@ -1206,19 +1206,19 @@ Gerando um arquivo de texto no formato Linux, sem CRLF:
 
 Imprimindo o arquivo removendo os 5 primeiros caracteres:
 
-	cut -c1-5 file.txt
+	cut -c1-5 arquivo.txt
 
 Caracteres em posições específicos:
 
-	cut -c1,2,5 file.txt
+	cut -c1,2,5 arquivo.txt
 
 De um caracter específico em diante:
 
-	cut -c5- file.txt
+	cut -c5- arquivo.txt
 
 Definindo um delimitador:
 
-	cut -d" " -f1 file.txt
+	cut -d" " -f1 arquivo.txt
 
 Logins de todos os usuários do sistema contidos no arquivo passwd:
 
@@ -1874,6 +1874,10 @@ Pesquisando em varios arquivos de texto:
 	grep Linux arq*
 
 	grep -i Linux *
+
+Imprimindo o número de linhas vazias em um arquivo:
+
+	grep -c "^$" arquivo.txt
 
 Imprimindo recursivamente:
 
