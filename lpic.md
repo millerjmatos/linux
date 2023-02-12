@@ -2007,6 +2007,8 @@ Recortando uma ou mais linhas sem entrar no modo de inserção:
 
 	dd
 
+	20dd
+
 	d3d
 
 Copiando uma ou mais linhas:
@@ -2637,7 +2639,7 @@ Diretórios que podem ser montados:
 
 		/usr/sbin -> comandos não essenciais
 
-		/usr/share/man -> fontes do man
+		/usr/share/man -> fontes do man de todos os programas instalados
 
 	/var -> arquivos de log e dinâmicos
 
