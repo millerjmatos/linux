@@ -2695,7 +2695,9 @@ unset
 function
 alias
 
-O comando source no Linux serve para executar um script de shell no shell atual. Ao invocar o comando source, você está carregando as variáveis, funções e configurações do script para o ambiente atual, sem precisar abrir um novo shell. Outra forma é:
+O comando bash executa o script em um processo separado!
+
+O comando source no Linux serve para executar um script de shell no shell atual. Outro comando equivalente é:
 
 	. script.sh
 
@@ -2754,19 +2756,6 @@ exec
 ||
 &&
 
-Criando o primeiro script:
-
-	vi script.sh
-
-		clear
-		echo "+++++++++++ Meu primeiro script +++++++++++"
-		echo ""
-		uptime
-		free -m
-		echo "fim do script"
-
-		:wq
-
 Executando o script no bash atual:
 
 	source script.sh
@@ -2778,6 +2767,8 @@ Executando em outro bash:
 	.	script.sh
 
 	./ /home/user/Scripts/script.sh
+
+	bash ./script.sh
 
 Executando e fechando a sessão atual:
 
