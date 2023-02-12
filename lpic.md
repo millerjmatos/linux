@@ -1612,9 +1612,15 @@ Ao se pressionar "CTRL + C" o sinal 2 é enviado, interromper e encerrar:
 
 	SIGINT
 
-Ao se pressionar "CTRL + Z" o sinal 20 é enviado, interromper sem encerrar:
+Ao se pressionar "CTRL + Z" o sinal 20 (SIGSTP) é enviado, interromper sem encerrar:
 
-	SIGSTP
+	top
+
+	CTRL + Z
+
+	jobs
+
+	fg
 
 Encerrando um processo:
 
@@ -1830,6 +1836,16 @@ Definindo a prioridade de um processo em execução:
 	renice -n -5 -u muller
 
 	renice -n -10 -g diretoria
+
+Usando o comando top:
+
+	top
+
+		r
+
+			<PID>
+
+				< -20 ~ 19 >
 
 ------------------------------------------------------------
 	* * * * * 103.7 Search text files using regular expressions * * * * *
