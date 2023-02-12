@@ -1608,9 +1608,13 @@ Imprimindo todos os sinais que são possíveis enviar aos processos:
 
 	kill -l
 
-O sinal 2 é enviado ao se pressionar CTRL + C:
+Ao se pressionar "CTRL + C" o sinal 2 é enviado, interromper e encerrar:
 
 	SIGINT
+
+Ao se pressionar "CTRL + Z" o sinal 20 é enviado, interromper sem encerrar:
+
+	SIGSTP
 
 Encerrando um processo:
 
