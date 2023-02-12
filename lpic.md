@@ -2697,7 +2697,7 @@ alias
 
 O comando bash executa o script em um processo separado!
 
-O comando source no Linux serve para executar um script de shell no shell atual. Outro comando equivalente é:
+O comando source no Linux serve para executar um script dentro do shell atual. Outro comando equivalente:
 
 	. script.sh
 
