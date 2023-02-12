@@ -2295,6 +2295,10 @@ Imprimindo as partições montadas:
 
 	df -hT
 
+Imprimindo a utilização de inodes na partição:
+
+	df -i /var/
+
 Imprimindo o espaço utilizado em disco por diretórios ou arquivos:
 
 	du -sh *
