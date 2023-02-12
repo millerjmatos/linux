@@ -1610,7 +1610,7 @@ Imprimindo todos os sinais que são possíveis enviar aos processos:
 
 O sinal 2 é enviado ao se pressionar CTRL + C:
 
-	SIGNIT
+	SIGINT
 
 Encerrando um processo:
 
