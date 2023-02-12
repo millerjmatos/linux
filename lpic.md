@@ -1134,7 +1134,7 @@ Imprime apenas os dados que ocorreram uma única vez:
 
 Imprimindo as linhas duplicadas:
 
-	uniq -d file.txt
+	uniq -d
 
 Como é preciso que estejam em ordem sequêncial, podemos usar outra opção para resolver:
 
@@ -1607,6 +1607,10 @@ Imprimindo o ID do processo:
 Imprimindo todos os sinais que são possíveis enviar aos processos:
 
 	kill -l
+
+O sinal 2 enviando ao se pressionar CTRL + C:
+
+	SIGNIT
 
 Encerrando um processo:
 
