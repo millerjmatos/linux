@@ -141,6 +141,8 @@ Em sistemas que utilizam a BIOS, onde estão as informações utilizadas durante
 
 	MBR
 
+Inclui as informações das tabelas de partições e do bootloader (GRUB).
+
 Imprimindo os logs de boot do sistema em systemd-journal:
 
 	journalctl -b
@@ -217,6 +219,10 @@ Para trocar o runlevel (SysVinit):
 Imprimindo todas as unidades carregadas na memória:
 
 	systemctl list-unit-files
+
+Imprimindo os pontos de montagem ativos pelo systemd:
+
+	systemctl list-units --type=mount	
 
 Imprimindo o target atual do sistema:
 
@@ -331,6 +337,16 @@ Após edição é necessário atualizar o grub:
 	update-grub
 
 	ls -l /boot/grub/grub.cfg
+
+Após o uso dos comandos update-grub ou grub-mkconfig é que o arquivo grub.cfg será atualizado pelo GRUB:
+
+	/boot/grub/grub.cfg
+
+As configurações do GRUB podem ser feitas em:
+
+	/etc/default/grub
+
+Só então e efetivamente serão utilizados pelo GRUB!
 
 Realizando o backup do grub:
 
@@ -1050,6 +1066,12 @@ O comando cat imprime o conteúdo de um texto na saída padrão:
 
 	cat --help
 
+Imprime as linhas não brancas numeradas:
+
+	cat -b arquivo.txt
+	
+	nl arquivo.txt
+
 Imprime na ordem inversa:
 
 	tac arquivo.txt
@@ -1078,9 +1100,9 @@ sort -t define o delimitador ; -k2 o campo referência para o ordenamento ; -g o
 
 Imprimindo o conteúdo de um texto de modo paginado:
 
-	less longarquivo.txt
+	less arquivo.txt
 
-	cat longarquivo.txt | less
+	cat arquivo.txt | less
 
 A barra de espaço pula a página.
 
@@ -1122,12 +1144,6 @@ Ordenando pelo campo e especificando um delimitador:
 
 O -g ordena como números ao invés de como caracteres.
 
-Imprime as linhas numeradas, descartando as linhas em branco:
-
-	nl arquivo.txt
-
-	cat -b arquivo.txt
-
 Imprime apenas os dados que ocorreram uma única vez:
 
 	uniq arquivo.txt
@@ -1168,15 +1184,17 @@ Juntando os dois arquivos linha por linha:
 
 Dividindo o arquivo:
 
-	wc -l longarquivo.txt
+	wc -l arquivo.txt
 
-	split -l20 longarquivo.txt
+	split -l20 arquivo.txt
 
 	ls -l
  
-	split -l20 longarquivo.txt novo_arquivo_
+	split -l20 arquivo.txt novo_arquivo_
 
 	wc -l novo_arquivo_*
+
+Sem nenhum parâmetro, o split dividirá um arquivo em outros arquivos de 1000 linhas cada!
 
 Imprimindo modificado a saída do texto utilizando strings:
 
@@ -1370,9 +1388,11 @@ Imprimindo diretórios por tamanho:
 	
 	find . -type d -size -5M
 
-Imprimindo arquivos por extensão:
+Imprimindo arquivos por extensão/string:
 
 	find . -type f -name '*.pst'
+
+	find /home/ -name "arq*csv"
 
 Deletando arquivos e diretórios:
 
@@ -1873,7 +1893,21 @@ Pesquisando em varios arquivos de texto:
 
 	grep Linux arq*
 
+Imprimindo a pesquisa ignorando diferenças entre maiúsculas/minúsculas:
+
 	grep -i Linux *
+
+Imprimindo todas as linhas que iniciam com a string:
+
+	grep "^<STRING>" arquivo.txt
+
+Imprimindo todas as linhas que terminam com a string:
+
+	grep "<STRING>$" arquivo.txt
+
+Imprimindo todas as linhas que NÃO correspondem com a string:
+
+	grep -v Linux arquivo.txt
 
 Imprimindo o número de linhas vazias em um arquivo:
 
@@ -1994,6 +2028,10 @@ Entrando no modo de inserção no local do cursor:
 Saindo do modo de inserção:
 
 	ESC
+
+Entrando no modo de inserção na linha abaixo:
+
+	o
 
 Recortando uma linha e entrando no modo de inserção:
 
@@ -2552,7 +2590,13 @@ Definindo a permissão do sistema:
 
 	umask <0000>
 
-Em uma sessão em que o valor do umask é 0002 (666 - 002 = 664):
+Em uma sessão em que o valor do umask é 0002:
+
+777 - 002 = 775 (diretórios)
+
+666 - 002 = 664 (arquivos)
+
+	drwxrwxr-x
 
 	-rw-rw-r--
 
@@ -2561,10 +2605,14 @@ Definindo o usuário e/ou o grupo dono do arquivo ou diretório:
 	chown user arquivo.txt
 
 	chown :suporte arquivo.txt
+
+	chown .suporte arquivo.txt
 	
 	chown user:group -R /home/user/Linux
 
 	chgrp suporte -R /home/user/Linux
+
+	chgrp suporte arquivo.txt
 
 ------------------------------------------------------------
 	* * * * * 104.6 Create and change hard and symbolic links * * * * *
@@ -2619,13 +2667,13 @@ which
 type
 /etc/updatedb.conf
 
-Diretórios que podem ser montados:
+Diretórios que sempre devem estar na mesma partição (/):
 
-	/root
-	
-	/boot
-	
-	/tmp
+	/etc	/sbin	/bin	/lib	/media	/mnt	/proc	/sys	/dev	
+
+Diretórios que podem ser montados em outras partições:
+
+	/root	/boot	/tmp
 	
 	/home
 
@@ -2651,6 +2699,8 @@ Diretórios que podem ser montados:
 
 		/var/mail
 
+O locate utiliza uma base de dados interna que contém a localização de todos os arquivos do sistema.
+
 Imprimindo a busca com o locate:
 
 	locate rpm *.pdf
@@ -2659,11 +2709,13 @@ Atualizando a base de dados do locate:
 
 	updatedb
 
-O comando whreis é mais restrito, e não pesquisa no /home:
+O comando whereis é mais restrito, e não pesquisa no /home:
 
 	whreis fsck
 
 	whereis ls
+
+O whereis localiza os arquivos binarios, bibliotecas, códigos-fonte e manuais.
 
 O comando type exibe algumas informações de comandos:
 
