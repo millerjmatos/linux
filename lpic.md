@@ -460,10 +460,6 @@ Pesquisando pacotes por nome:
 
 	apt search youtube
 
-Imprimindo informações do pacote: 
-
-	apt-cache show <pacote>
-
 Imprimindo as dependências de um pacote: 
 
 	apt-cache depends <pacote>
@@ -504,17 +500,17 @@ Imprimindo os pacotes instalados:
 
 	dpkg --get-selections | wc -l
 
-Para obter informações sobre o pacote:
+Imprimindo informações do pacote: 
 
-	dpkg -l brave-browser
+	apt-cache show <pacote>
 
-	dpkg --get-selections | grep brave-browser
+	dpkg -l firefox
 
-	dpkg -s brave-browser
+	dpkg -s firefox
 
 Imprimindo informações de um pacote não instalado:
 
-	dpkg -I brave-browser_amd64.deb
+	dpkg -I firefox_amd64.deb
 
 	dpkg --contents <pacote.deb>
 
