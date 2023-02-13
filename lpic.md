@@ -2414,8 +2414,6 @@ umount
 blkid
 lsblk
 
-
-
 Arquivo de configuração das partições que serão montadas no boot:
 
 	/etc/fstab
