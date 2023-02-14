@@ -196,6 +196,10 @@ Exibindo o gerenciador de serviços/inicialização do sistema (systemd ou SysVi
 
 	stat /proc/1/exe
 
+Arquivo de configuração onde é definido o runlevel do sistema:
+
+	 /etc/inittab
+
 Imprimindo o runlevel atual do sistema:
 
 	runlevel
