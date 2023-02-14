@@ -2059,6 +2059,14 @@ Salvando e saindo do arquivo:
 
 	ZZ
 
+Posicionando o cursor no início da última linha:
+
+	:$
+
+Numerando as linhas do arquivo:
+
+	:set number
+
 Abrindo o vi/vim com um buffer vazio:
 
 	vi
