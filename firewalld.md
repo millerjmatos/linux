@@ -12,6 +12,8 @@ Verificando as regras existentes:
 
     firewall-cmd --permanent --list-all
 
+    firewall-cmd --list-services
+
 Removendo um serviço:
 
     firewall-cmd --remove-service=dhcpv6-client --permanent
