@@ -1300,6 +1300,12 @@ Imprimindo todos os detalhes dos arquivos/diretórios, ordenados de forma que os
 
 	ls -latr
 
+São comandos equivalentes:
+
+	ls -l
+
+	ll
+
 Imprimindo o tipo do arquivo:
 
 	file arquivo.txt
@@ -3439,6 +3445,12 @@ su
 usermod
 ulimit
 who, w, last
+
+Imprimindo informações dos usuários que estão atualmente conectados ao sistema:
+
+	who
+
+	w
 
 Exibindo os hosts da rede:
 
