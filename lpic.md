@@ -258,6 +258,10 @@ Agendando o reboot para daqui 10m:
 
 	shutdown -r +10
 
+Agendando o reboot para 19h:
+
+	shutdown -r 19:00
+
 Cancelar o comando shutdown:
 
 	shutdown -c
@@ -1282,6 +1286,10 @@ Imprimindo recursivamente o conteúdo de cada diretório:
 
 	ls -lR
 
+Imprimindo todos os detalhes dos arquivos/diretórios, ordenados de forma que os arquivos mais novos apareçam no final da listagem:
+
+	ls -latr
+
 Imprimindo o tipo do arquivo:
 
 	file arquivo.txt
@@ -1879,6 +1887,8 @@ fgrep
 sed
 regex(7)
 
+O comando fgrep apenas faz filtros por strings de texto, mas não interpreta expressões regulares. Todos os outros comandos aceitam expressões regulares.
+
 Pesquisando em um arquivo de texto:
 
 	grep Linux arquivo.txt
@@ -2015,7 +2025,7 @@ Pesquisando Linux dentro do arquivo:
 
 A cada Enter o cursor irá a próxima ocorrência.
 
-Buscabdi uma ocorrência no sentido do início:
+Busca uma ocorrência no sentido do início (baixo para cima):
 
 	SHIFT+N
 
@@ -2381,6 +2391,14 @@ Verificando a integridade do sistema de arquivos:
 
 	fsck -t ext4 /dev/sdb1
 
+Sem fazer nenhum alteração:
+
+	fsck -n /dev/sdb1
+
+Aceitando todas as operações
+
+	fsck -y /dev/sdb1
+
 Instalação e utilização:
 
 	apt install xfs*
@@ -2388,6 +2406,8 @@ Instalação e utilização:
 	mkfs -t xfs /dev/sdb1
 
 	mount /dev/sdb1 /mnt/xfs/
+
+Para descobrir o sistema de arquivos de um diretório:
 
 	df -T /dev/sdb1
 
@@ -2405,7 +2425,7 @@ Verificando bugs:
 
 		quit
 
-Desfragmentando um sistema de arquivos XFS:
+Desfragmentando um sistema de arquivos (FileSystem Reorganizer):
 
 	xfs_fsr /dev/sdb1
 
@@ -2723,7 +2743,7 @@ O comando whereis é mais restrito, e não pesquisa no /home:
 
 O whereis localiza os arquivos binarios, bibliotecas, códigos-fonte e manuais.
 
-O comando type exibe algumas informações de comandos:
+O comando type é utilizado para indicar se um determinado comando é interno ao shell, externo ou até mesmo se é um alias:
 
 	type bash
 
