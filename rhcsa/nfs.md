@@ -49,3 +49,17 @@ Utilitário que exporta diretórios para acesso NFS:
 Utilitário que mostra quais sistemas de arquivos estão exportados por um servidor NFS:
 
     showmount -e 10.0.55.2
+
+> Configurando o cliente.
+
+Instale o pacote nfs-utils.
+
+Montando o compartilhamento exportado no servidor:
+
+    mkdir -p /mnt/nfs
+
+    mount -t nfs 10.0.55.2:/nfs3    /mnt/nfs
+
+    df -hT
+
+    mount |grep nfs
