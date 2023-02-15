@@ -137,11 +137,13 @@ init
 SysVinit
 systemd
 
-Em sistemas que utilizam a BIOS, onde estão as informações utilizadas durante a fase do boot:
+Em sistemas que utilizam a BIOS, as informações utilizadas durante a fase do boot estão em:
 
 	MBR
 
 Inclui as informações das tabelas de partições e do bootloader (GRUB).
+
+Durante o processo de inicialização de um Linux, o processo responsável por selecionar e executar o kernel e o initrd é o bootloader.
 
 Imprimindo os logs de boot do sistema em systemd-journal:
 
@@ -398,6 +400,14 @@ A variável LD_LIBRARY_PATH é geralmente configurada no arquivo de configuraç�
 	/etc/environment
 	
 	/etc/ld.so.conf
+
+Essa variável é usada pelo sistema operacional Linux para encontrar bibliotecas compartilhadas (arquivos com extensão .so) que são necessárias para executar um determinado programa. 
+
+Pode ser configurada para definir temporariamente a localização de uma biblioteca.
+
+Se a biblioteca está localizada em /home/usuario/minha_biblioteca:
+
+	export LD_LIBRARY_PATH=/home/usuario/minha_biblioteca
 
 Imprimindo todas as bibliotecas utilizadas pelo sistema:
 
@@ -2520,8 +2530,8 @@ Definindo as permissões de acesso a um arquivo:
 	chmod o-x /bin/ls
 
 Efetue login em outro terminal com usuário comum.
-Execute o comando ls e verifique que o user não
-tem permissão para executar o programa.
+
+Execute o comando ls e verifique que o user não tem permissão para executar o programa.
 
 No tty1 como root:
 
