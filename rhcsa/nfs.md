@@ -63,3 +63,5 @@ Montando o compartilhamento exportado no servidor:
     df -hT
 
     mount |grep nfs
+
+Ideal realizar a montagem manual antes de colocar no fstab!
