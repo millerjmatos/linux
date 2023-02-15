@@ -1,3 +1,5 @@
+O pacote nfs-utils é um conjunto de utilitários que permitem que um sistema Linux atue como um cliente ou servidor do protocolo Network File System (NFS). O NFS é um protocolo que permite que sistemas operacionais compartilhem arquivos e diretórios em uma rede.
+
 Instale o pacote nfs-utils:
 
     yum search nfs
@@ -30,14 +32,20 @@ Verificando o deamon do nfs server:
 
 Criando um compartilhamento:
 
-    mkdir -p /nfs
+    mkdir -p /nfs{1,2,3}
 
-    
+    vim /etc/exports
 
+        /nfs1        10.0.55.20(rw,no_root_squash)    
+        /nfs2       10.0.55.111(rw,no_root_squash) 
+        /nfs3       10.0.55.0/24(rw,no_root_squash) 
 
+        :wq
 
+Utilitário que exporta diretórios para acesso NFS:
 
+    exportfs -rav
 
+Utilitário que mostra quais sistemas de arquivos estão exportados por um servidor NFS:
 
-
-
+    showmount -e 10.0.55.2
