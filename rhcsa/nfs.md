@@ -81,5 +81,3 @@ Editando o arquivo fstab, ex.:
     mount -a
 
     systemctl reboot
-        
-
