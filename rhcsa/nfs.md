@@ -36,9 +36,9 @@ Criando um compartilhamento:
 
     vim /etc/exports
 
-        /nfs1        10.0.55.20(rw,no_root_squash)    
-        /nfs2       10.0.55.111(rw,no_root_squash) 
-        /nfs3       10.0.55.0/24(rw,no_root_squash) 
+        /nfs1        192.168.10.20(rw,no_root_squash)    
+        /nfs2       192.168.10.222(rw,no_root_squash) 
+        /nfs3       192.168.10.0/24(rw,no_root_squash) 
 
         :wq
 
@@ -48,7 +48,7 @@ Utilitário que exporta diretórios para acesso NFS:
 
 Utilitário que mostra quais sistemas de arquivos estão exportados por um servidor NFS:
 
-    showmount -e 10.0.55.2
+    showmount -e 192.168.10.2
 
 > Configurando o cliente.
 
@@ -58,10 +58,28 @@ Montando o compartilhamento exportado no servidor:
 
     mkdir -p /mnt/nfs
 
-    mount -t nfs 10.0.55.2:/nfs3    /mnt/nfs
+    mount -t nfs 192.168.10.2:/nfs3    /mnt/nfs
 
     df -hT
 
     mount |grep nfs
 
 Ideal realizar a montagem manual antes de colocar no fstab!
+
+> Deixando a configuração persistente.
+
+Editando o arquivo fstab, ex.:
+
+    vim /etc/fstab
+
+        192.168.10.2:/nfs3/        /nfs_publico/        nfs        rw,sync        0 0        
+
+        :wq
+
+    systemctl daemon-reload
+
+    mount -a
+
+    systemctl reboot
+        
+
