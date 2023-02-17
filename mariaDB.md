@@ -1,3 +1,5 @@
+O MariaDB é um sistema de gerenciamento de banco de dados de código aberto que é uma bifurcação (fork) do MySQL, criado por seus desenvolvedores originais após a sua aquisição pela Oracle. O MariaDB é altamente compatível com o MySQL. O MariaDB é usado por muitas empresas e organizações para armazenar e gerenciar dados, e é conhecido por sua escalabilidade, segurança e confiabilidade.
+
 ### Em CentOS 7
 
 Instalando o banco de dados:
