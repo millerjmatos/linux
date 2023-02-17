@@ -36,3 +36,22 @@ Tornando a configuração permanente:
 
     reboot
 
+> Redimensionado a área de swap.
+
+Desativando a área de swap ativa:
+
+    swapoff /minha_area_swap
+
+Redimensionando:
+
+    dd if=/dev/zero of=/minha_area_swap bs=1M count=1024
+
+Formatando:
+
+    mkswap /minha_area_swap
+
+Ativando a área de swap:
+
+    swapon /minha_area_swap
+
+    free -mh
