@@ -4,6 +4,8 @@ Instalando o serviço:
 
     apt-get install openssh-server
 
+    ssh -V
+
 Perminto acesso via usuário root:
 
     cd /etc/ssh/
