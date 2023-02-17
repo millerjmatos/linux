@@ -44,7 +44,7 @@ Desativando a área de swap ativa:
 
 Redimensionando:
 
-    dd if=/dev/zero of=/minha_area_swap bs=1M count=1024
+    dd if=/dev/zero of=/minha_area_swap bs=1M count=4096    
 
 Formatando:
 
