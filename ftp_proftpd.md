@@ -1,8 +1,8 @@
 O ProFTPD é um servidor FTP de código aberto para sistemas operacionais Unix-like, como Linux e FreeBSD. Ele fornece um ambiente seguro e confiável para transferência de arquivos através de protocolos FTP, FTPS e SFTP. O ProFTPD é altamente configurável, permitindo que os sysadmins personalizem a autenticação, permissões de usuário, logins, mensagens de erro e outros aspectos do servidor.
 
-### Em Linux Debian 11
-
 ProFTPD é uma escolha para ambientes mais complexos e requer configurações avançadas já o vsftpd é uma boa escolha para ambientes menos complexos.
+
+### Em Linux Debian 11
 
 Instalando o servidor FTP:
 
