@@ -1,3 +1,7 @@
+O vsftpd é um software de servidor FTP (File Transfer Protocol) para sistemas Linux/Unix. Ele é amplamente utilizado para permitir a transferência de arquivos de um servidor para um cliente, seja na mesma rede ou na internet. O vsftpd é conhecido por sua segurança e estabilidade, e oferece recursos avançados, como criptografia SSL/TLS, e autenticação virtual de usuários.
+
+ProFTPD é uma escolha para ambientes mais complexos e requer configurações avançadas já o vsftpd é uma boa escolha para ambientes menos complexos.
+
 ### Em CentOS 7
 
 Instalando o ftp no CentOS:
