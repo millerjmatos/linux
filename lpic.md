@@ -1656,6 +1656,10 @@ Ao se pressionar "CTRL + C" o sinal 2 é enviado, interromper e encerrar:
 
 	SIGINT
 
+Sem nenhum parâmetro o kill envia o sinal de código 15
+
+	 SIGTERM	
+
 Ao se pressionar "CTRL + Z" o sinal 20 (SIGSTP) é enviado, interromper sem encerrar:
 
 	top
