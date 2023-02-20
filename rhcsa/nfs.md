@@ -81,3 +81,31 @@ Editando o arquivo fstab, ex.:
     mount -a
 
     systemctl reboot
+
+> Editando o arquivo de configuração.
+
+Arquivo de configuração:
+
+    /etc/nfs.conf
+
+Pode editá-lo utilizando o utilitário:
+
+    nfsconf 
+
+Algumas configurações:
+
+    nfsconf --set nfsd vers2 n
+
+    nfsconf --set nfsd vers3 n
+
+    nfsconf --set nfsd vers4 y
+
+    nfsconf --set nfsd vers4.0 y
+
+    nfsconf --set nfsd vers4.1 y
+
+    nfsconf --set nfsd vers4.2 y
+
+    nfsconf --set nfsd udp n    
+
+    nfsconf --set nfsd tcp y    
