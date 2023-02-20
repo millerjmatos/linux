@@ -52,7 +52,7 @@ Utilitário que mostra quais sistemas de arquivos estão exportados por um servi
 
 > Configurando o cliente.
 
-Instale o pacote nfs-utils.
+Instale o pacote nfs-utils ou nfs-common
 
 Montando o compartilhamento exportado no servidor:
 
