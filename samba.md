@@ -1,3 +1,7 @@
+O Samba é um software livre que permite compartilhar arquivos e impressoras entre sistemas operacionais Linux e Windows em uma rede. Ele implementa o protocolo SMB/CIFS (Server Message Block / Common Internet File System), que é usado pelo Windows para compartilhar arquivos e recursos em redes locais.
+
+O Samba pode ser usado em um servidor Linux para compartilhar arquivos com computadores Windows em uma rede, permitindo que os usuários acessem e modifiquem arquivos em um ambiente Windows usando as mesmas ferramentas e interfaces que usariam em um ambiente Windows.
+
 ### Em Linux Debian 11
 
 Instalando o samba:
