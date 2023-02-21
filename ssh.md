@@ -1,3 +1,7 @@
+O SSH (Secure Shell) é um protocolo de rede criptografado usado para conexões seguras em uma rede não confiável, como a Internet. 
+
+O OpenSSH é um software de código aberto que implementa o protocolo SSH. Ele é usado principalmente em sistemas Unix-like, como Linux e macOS, para fornecer acesso remoto seguro ao shell e transferência de arquivos segura (SFTP) entre computadores.
+
 ### Em Linux Debian 11
 
 Instalando o serviço:
