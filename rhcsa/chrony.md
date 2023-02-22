@@ -19,6 +19,8 @@ Para permitir consultas internas:
 
     systemctl restart chronyd
 
+    systemctl status chronyd
+
 Opcional, servidores do Brasil:
 
     vim /etc/chrony.conf
@@ -38,8 +40,6 @@ Liberando o firewalld:
     firewall-cmd --add-service=ntp --permanent
 
     firewall-cmd --reload
-
-    systemctl status chronyd
 
 Verificando o funcionamento:
 
