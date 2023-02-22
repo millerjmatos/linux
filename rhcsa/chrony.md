@@ -10,7 +10,7 @@ Edite o arquivo de configuração:
 
     vim /etc/chrony.conf
 
-Descomentando a linha para permitir consultas internas:
+Para permitir consultas internas:
 
         Allow NTP client access from local network.
         allow 10.0.0.0/24
@@ -19,15 +19,7 @@ Descomentando a linha para permitir consultas internas:
 
     systemctl restart chronyd
 
-Liberando o firewalld:
-
-    firewall-cmd --add-service=ntp --permanent
-
-    firewall-cmd --reload
-
-    systemctl status chronyd
-
-> Servidores do Brasil, opcional.
+Opcional, servidores do Brasil:
 
     vim /etc/chrony.conf
 
@@ -40,3 +32,19 @@ Liberando o firewalld:
         server gps.ntp.br iburst nts
 
         :wq 
+
+Liberando o firewalld:
+
+    firewall-cmd --add-service=ntp --permanent
+
+    firewall-cmd --reload
+
+    systemctl status chronyd
+
+Verificando o funcionamento:
+
+    chronyc -N authdata
+
+    chronyc sources
+
+    chronyc tracking
