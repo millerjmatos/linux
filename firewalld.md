@@ -24,6 +24,10 @@ Adicionando um serviço:
 
     firewall-cmd --add-service=<NOME DO SERVIÇO> --permanent
 
+Adicionando uma porta:
+
+    firewall-cmd --add-port=11443/tcp --permanent   
+
 Listando todos os serviços disponíveis:
 
     firewall-cmd --get-services
