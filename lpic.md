@@ -3357,6 +3357,18 @@ ifconfig
 netstat
 route
 
+Instalando o utilitário ifconfig:
+
+	apt install net-tools
+
+Imprimindo informações de sockets e conexões ativas:
+
+	ss -tp
+
+	netstat -tp
+
+	netstat -putan
+
 Informando a rota dos pacotes:
 
 	traceroute <url>
@@ -3370,6 +3382,16 @@ Visualizando o IP/MAC da interface:
 	ip a show
 
 	ifconfig
+
+Imprimindo a tabela de roteamento:
+
+	ip r
+
+Imprimindo os saltos até o destino:
+
+	tracepath mullertec.com.br
+
+	tracepath -n lpi.org
 
 Reiniciando a placa de rede:
 
