@@ -141,7 +141,9 @@ Em sistemas que utilizam a BIOS, as informações utilizadas durante a fase do b
 
 	MBR
 
-Inclui as informações das tabelas de partições e do bootloader (GRUB).
+> Inclui as informações das tabelas de partições e do bootloader (GRUB).
+
+> O particionamento MBR permite no máximo 4 partições primárias, ou 3 primárias e 1 estendida. Na partição estendida são associadas as partições lógicas.
 
 Durante o processo de inicialização de um Linux, o processo responsável por selecionar e executar o kernel e o initrd é o bootloader:
 
@@ -615,6 +617,10 @@ Imprimindo os arquivos que pertencem a instalação:
 
 	rpm -ql bash
 
+Imprimindo o programa que instalou determinando pacote:
+
+	rpm -qf /etc/skel/.bashrc
+
 Imprimindo os arquivos de configuração da instalação:
 
 	rpm -qc bash
@@ -622,10 +628,6 @@ Imprimindo os arquivos de configuração da instalação:
 Imprimindo os arquivos de documentação da instalação:
 
 	rpm -qd bash
-
-Imprimindo o programa que instalou determinando pacote:
-
-	rpm -qf /etc/skel/.bashrc
 
 Imprimindo quais são os arquivos de um determinado pacote:
 
