@@ -1849,16 +1849,15 @@ Acessando um tmux bg ou criando um novo:
 
 Questões: 2
 
-nice
-ps
-renice
-top 
+	nice, ps, renice, top 
 
 Definindo a prioridade de um processo:
 
 	nice -n 10 firefox &
 
 	nice -n -15 qps &
+
+	nice --20 watch -n5 free -m &
 
 O nice vai de -20 até 19. Quanto < maior a prioridade!
 
