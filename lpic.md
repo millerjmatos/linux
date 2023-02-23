@@ -613,7 +613,7 @@ Imprimindo informações de um pacote:
 
 	rpm -qi bash
 
-Imprimindo os arquivos que pertencem a instalação:
+Imprimindo os arquivos que pertencem/instalados pelo pacote:
 
 	rpm -ql bash
 
