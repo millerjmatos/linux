@@ -3561,20 +3561,6 @@ gpg
 gpg-agent
 ~/.gnupg/
 
-Arquivo de configuração do cliente ssh:
-
-	/etc/ssh/ssh_config
-
-Instalando o ssh server:
-
-	apt install openssh-server
-
-	dpkg -l | grep ssh
-
-Arquivo de configuração do servidor ssh:
-
-	/etc/ssh/sshd_config
-
 Conectando em um servidor ssh:
 
 	ssh muller@192.168.222.50
