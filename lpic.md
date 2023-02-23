@@ -334,6 +334,8 @@ Imprimindo os arquivos de configuração do grub:
 
 	ls -l
 
+> Lembre-se de que modificar diretamente o arquivo /boot/grub/grub.cfg não é recomendado.
+
 Imprimindo a versão do grub:
 
 	update-grub --version
@@ -359,6 +361,18 @@ E são obtidos as informações nos arquivos de configuração em:
 	/etc/default/grub
 
 	/etc/grub.d/*
+
+O parâmetro que indica o kernel que deve ser utilizado durante o boot:
+
+	linux
+
+O parâmetro que indica ao kernel que não exiba mensagens durante o boot:
+
+	quiet
+
+O parâmetro que indica o caminho do initial ramdisk que o GRUB deve carregar:
+
+	initdr
 
 Realizando o backup do grub:
 
