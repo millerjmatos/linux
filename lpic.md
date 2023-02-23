@@ -2707,6 +2707,10 @@ Diretórios que sempre devem estar na mesma partição (/):
 
 	/etc	/sbin	/bin	/lib	/media	/mnt	/proc	/sys	/dev	
 
+São partições virtuais que são montadas dinamicamente pelo sistema:
+
+	/proc	/sys	/dev	
+
 Diretórios que podem ser montados em outras partições:
 
 	/root	/boot	/tmp
