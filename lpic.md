@@ -143,7 +143,9 @@ Em sistemas que utilizam a BIOS, as informações utilizadas durante a fase do b
 
 Inclui as informações das tabelas de partições e do bootloader (GRUB).
 
-Durante o processo de inicialização de um Linux, o processo responsável por selecionar e executar o kernel e o initrd é o bootloader.
+Durante o processo de inicialização de um Linux, o processo responsável por selecionar e executar o kernel e o initrd é o bootloader:
+
+	Bios > MBR > Bootloader > Kernel > Initrd, Init > Runlevel
 
 Imprimindo os logs de boot do sistema em systemd-journal:
 
