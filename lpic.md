@@ -334,29 +334,27 @@ Imprimindo a versão do grub:
 
 	update-grub --version
 
-Editando os arquivos de configuração do grub:
-
-	cd /etc/default/
-
-	ls -l
-
-	vi grub
-
-Após edição é necessário atualizar o grub:
+Atualizando o grub:
 
 	update-grub
 
-	ls -l /boot/grub/grub.cfg
+	update-grub > /boot/grub/grub.conf
 
-Após o uso dos comandos update-grub ou grub-mkconfig é que o arquivo grub.cfg será atualizado pelo GRUB:
+	grub.mkconfig > /boot/grub/grub.conf
+
+	grub.mkconfig -o /boot/grub/grub.conf
+
+Após o uso dos comandos update-grub ou grub-mkconfig é que o arquivo grub.cfg será atualizado:
 
 	/boot/grub/grub.cfg
 
-As configurações do GRUB podem ser feitas em:
+	ls -l /boot/grub/grub.cfg
+
+E são obtidos as informações nos arquivos de configuração em:
 
 	/etc/default/grub
 
-Só então e efetivamente serão utilizados pelo GRUB!
+	/etc/grub.d/*
 
 Realizando o backup do grub:
 
