@@ -3387,7 +3387,7 @@ Imprimindo a tabela de roteamento:
 
 	ip r
 
-Imprimindo os saltos até o destino:
+Imprimindo os saltos até o destino: 
 
 	tracepath mullertec.com.br
 
