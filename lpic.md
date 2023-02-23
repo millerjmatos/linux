@@ -1,6 +1,8 @@
-> Topic 101: System Architecture
+	* * * * * Topic 101: System Architecture * * * * * 
 
-101.1 Determine and configure hardware settings
+------------------------------------------------------------
+	* * * * * 101.1 Determine and configure hardware settings * * * * * 
+------------------------------------------------------------
 
 Questões: 2
 
@@ -112,7 +114,9 @@ Dameon responsável por tratar eventos relacionados ao gerenciamento de energia:
 
 	acpid
 
-101.2 Boot the system
+------------------------------------------------------------
+	* * * * * 101.2 Boot the system	* * * * * 
+------------------------------------------------------------
 
 Questões: 3
 
@@ -144,7 +148,9 @@ Identificando o kernel carregado no boot:
 
 	journalctl -b | grep BOOT_IMAGE
 
-101.3 Change runlevels / boot targets and shutdown or reboot system
+------------------------------------------------------------
+	* * * * * 101.3 Change runlevels / boot targets and shutdown or reboot system * * * * * 
+------------------------------------------------------------
 
 Questões: 3
 
