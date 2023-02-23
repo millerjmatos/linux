@@ -693,7 +693,7 @@ Atualizando o sistema e removendo pacotes obsoletos:
 
 Instalando, removendo e pesquisando o pacote:
 
-	yum <install remove search> <arquivo>
+	yum <erase install remove search> <arquivo>
 
 Arquivo de configuração principal:
 
