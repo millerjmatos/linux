@@ -1,24 +1,16 @@
-------------------------------------------------------------
+> Topic 101: System Architecture
 
-	* * * * * Topic 101: System Architecture * * * * *
-
-------------------------------------------------------------
-	* * * * * 101.1 Determine and configure hardware settings * * * * *
-------------------------------------------------------------
+101.1 Determine and configure hardware settings
 
 Questões: 2
 
-/sys/
-/proc/
-/dev/
-modprobe
-lsmod
-lspci
-lsusb
+	/sys/, /proc/, /dev/
+
+	modprobe, lsmod, lspci, lsusb
 
 Onde ficam os módulos:
 
-	cd /lib/modules/
+	/lib/modules/*
 
 Cada conjunto de módulos é associado a uma versão de kernel:
 
