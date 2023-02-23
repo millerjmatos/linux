@@ -6,7 +6,7 @@ Imprimindo informações dos volumes físicos:
 
     pvdisplay
 
-Implimindo informações dos grupos de volumes:
+Imprimindo informações dos grupos de volumes:
 
     vgdisplay
 
