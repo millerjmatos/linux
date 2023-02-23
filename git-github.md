@@ -20,12 +20,6 @@ Configuração básica para os commits:
 
 	git config user.email
 
-Configurando o editor:
-
-	git config core.editor
-
-	git config --global core.editor "<caminho_do_editor>"
-
 Criando um repositório local:
 
 	git init
