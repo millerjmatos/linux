@@ -134,6 +134,12 @@ Durante o processo de inicialização de um Linux, o processo responsável por s
 
 	Bios > MBR > Bootloader > Kernel > Initrd, Init > Runlevel
 
+O UEFI obtém as informações dos BootLoader diretamente da partição ESP (EFI System Partition), que é por padrão montada em:
+
+	 /boot/efi/*
+	 
+Ele é utilizado no lugar da BIOS e não utiliza MBR.
+
 Imprimindo os logs de boot do sistema em systemd-journal:
 
 	journalctl -b
