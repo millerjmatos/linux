@@ -112,30 +112,19 @@ Dameon responsável por tratar eventos relacionados ao gerenciamento de energia:
 
 	acpid
 
-------------------------------------------------------------
-	* * * * * 101.2 Boot the system * * * * *
-------------------------------------------------------------
+101.2 Boot the system
 
 Questões: 3
 
-dmesg
-journalctl
-BIOS
-UEFI
-bootloader
-kernel
-initramfs
-init
-SysVinit
-systemd
+	dmesg, journalctl, BIOS, UEFI, bootloader, kernel, initramfs, init, SysVinit, systemd
 
 Em sistemas que utilizam a BIOS, as informações utilizadas durante a fase do boot estão em:
 
 	MBR
 
-> Inclui as informações das tabelas de partições e do bootloader (GRUB).
+Inclui as informações das tabelas de partições e do bootloader (GRUB).
 
-> O particionamento MBR permite no máximo 4 partições primárias, ou 3 primárias e 1 estendida. Na partição estendida são associadas as partições lógicas.
+O particionamento MBR permite no máximo 4 partições primárias, ou 3 primárias e 1 estendida. Na partição estendida são associadas as partições lógicas.
 
 Durante o processo de inicialização de um Linux, o processo responsável por selecionar e executar o kernel e o initrd é o bootloader:
 
@@ -155,22 +144,12 @@ Identificando o kernel carregado no boot:
 
 	journalctl -b | grep BOOT_IMAGE
 
-------------------------------------------------------------
-	* * * * * 101.3 Change runlevels / boot targets and shutdown or reboot system * * * * *
-------------------------------------------------------------
+101.3 Change runlevels / boot targets and shutdown or reboot system
 
 Questões: 3
 
-/etc/inittab
-shutdown
-init
-/etc/init.d/
-telinit
-systemd
-systemctl
-/etc/systemd/
-/usr/lib/systemd/
-wall
+	/etc/inittab, /etc/init.d/, /etc/systemd/, /usr/lib/systemd/
+	shutdown, init, telinit, systemd, systemctl, wall
 
 Contém scripts de inicialização do sistema:
 
@@ -244,7 +223,7 @@ Trocando o target para o modo de segurança:
 
 Imprimindo a quantidade de targets existentes:
 
-	ls -l /lib/systemd/system/*target|wc -l
+	ls -l /lib/systemd/system/*target | wc -l
 
 	systemctl list-unit-files --type=target
 
