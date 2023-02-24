@@ -6,9 +6,14 @@
 
 Questões: 2
 
-	/sys/, /proc/, /dev/
+Principais Áreas de Conhecimento:
 
-	modprobe, lsmod, lspci, lsusb
+	Habilitar e desabilitar periféricos integrados.
+	Diferenciar entre vários tipos de dispositivos de armazenamento.
+	Determinar os recursos de hardware para os dispositivos.
+	Ferramentas e utilitários para a listar várias informações de hardware (por exemplo, lsusb, lspci, etc...).
+	Ferramentas e utilitários para manipular dispositivos USB.
+	Compreensão conceitual de sysfs, udev e dbus.
 
 Onde ficam os módulos:
 
@@ -120,7 +125,13 @@ Dameon responsável por tratar eventos relacionados ao gerenciamento de energia:
 
 Questões: 3
 
-	dmesg, journalctl, BIOS, UEFI, bootloader, kernel, initramfs, init, SysVinit, systemd
+Principais Áreas de Conhecimento:
+
+	Fornecer os comandos e opções mais comuns para o gerenciador de inicialização e para o kernel durante a inicialização.
+	Demonstrar conhecimento sobre a sequência de inicialização do BIOS/UEFI até sua conclusão.
+	Entendimento do SysVinit e do systemd.
+	Noções do Upstart.
+	Conferir os arquivos de log dos eventos de inicialização.
 
 Em sistemas que utilizam a BIOS, as informações utilizadas durante a fase do boot estão em:
 
@@ -160,8 +171,14 @@ Identificando o kernel carregado no boot:
 
 Questões: 3
 
-	/etc/inittab, /etc/init.d/, /etc/systemd/, /usr/lib/systemd/
-	shutdown, init, telinit, systemd, systemctl, wall
+Principais Áreas de Conhecimento:
+
+	Definir o runlevel padrão e o alvo de boot padrão.
+	Alternar entre os runlevels/targets de boot, incluindo o modo single user (usuário único).
+	Desligar e reiniciar através da linha de comando.
+	Alertar os usuários antes de mudar o runlevel/target de boot ou outro evento de sistema que acarrete uma mudança significativa.
+	Terminar apropriadamente os processos.
+	Noções de acpid.
 
 Contém scripts de inicialização do sistema:
 
@@ -269,11 +286,12 @@ Enviando uma mensagem para todos os usuários do sistema:
 
 Questões: 2
 
-	/ (root) filesystem
-	/var filesystem
-	/home filesystem
-	/boot filesystem
-	EFI System Partition (ESP), swap space, mount points, partitions
+Principais Áreas de Conhecimento:
+
+	Distribuir os sistemas de arquivos e o espaço de swap para separar partições ou discos.
+	Adaptar o projeto para o uso pretendido do sistema.
+	Garantir que a partição /boot esteja em conformidade com os requisitos de arquitetura de hardware para a inicialização.
+	Conhecimento das características básicas do LVM.
 
 Imprimindo as informações de swap e memória:
 
@@ -297,7 +315,12 @@ Habilitando todas as partições swap contidas em /etc/fstab:
 
 Questões: 2
 
-	menu.lst, grub.cfg and grub.conf, grub-install, grub-mkconfig, MBR
+Principais Áreas de Conhecimento:
+
+	Fornecer locais de boot alternativos e backup das opções de boot.
+	Instalar e configurar um gerenciador de inicialização como o GRUB Legacy.
+	Realizar mudanças na configuração básica do GRUB 2.
+	Interagir com o carregador de boot.
 
 Imprimindo as imagens do kernel:
 
@@ -365,8 +388,11 @@ Restaurando o backup:
 
 Questões: 1
 
-	ldd, ldconfig, LD_LIBRARY_PATH
-	/etc/ld.so.conf
+Principais Áreas de Conhecimento:
+
+	Identificar as bibliotecas compartilhadas.
+	Identificar onde geralmente essas bibliotecas se localizam no sistema.
+	Carregar as bibliotecas compartilhadas.
 
 Imprimindo quais/quantas bibliotecas utilizadas pelo programa:
 
@@ -438,6 +464,13 @@ Adicionando o diretório e as bibliotecas contidas, na sessão atual:
 ------------------------------------------------------------	
 
 Questões: 3
+
+Principais Áreas de Conhecimento:
+
+	Instalar, atualizar e desinstalar os pacotes binários Debian.
+	Encontrar pacotes contendo um arquivo específico ou bibliotecas que podem estar instaladas ou não.
+	Obter informações sobre pacotes como versão, conteúdo, dependências, integridade do pacote e status da instalação (estando o pacote instalado ou não).
+	Noções do apt
 
 Arquivo que lista as fontes de onde o apt obterá os pacotes: 
 
@@ -575,11 +608,14 @@ Imprimindo um menu gerenciador do apt:
 	* * * * * 102.5 Use RPM and YUM pacoteage management * * * * *
 ------------------------------------------------------------
 
-Weight： 3
+Questões： 3
 
-	rpm, rpm2cpio, yum, zypper
-	/etc/yum.conf
-	/etc/yum.repos.d/
+Principais Áreas de Conhecimento:
+
+	Instalar, reinstalar, atualizar e remover pacotes usando RPM, YUM e Zypper.
+	Obter informações dos pacotes RPM tais como versão, status, dependências, integridade e assinaturas.
+	Determinar quais arquivos um pacote fornece, bem como encontrar de qual pacote um arquivo específico vem.
+	Noções do dnf.
 
 Imprimindo os pacotes instalados na máquina:
 
@@ -729,12 +765,14 @@ Atualizando o sistema:
 
 Questões: 1
 
-	Virtual machine
-	Linux container
-	Application container
-	Guest drivers
-	SSH host keys
-	D-Bus machine id
+Principais Áreas de Conhecimento:
+
+	Entender o conceito geral de máquinas virtuais e contêineres.
+	Entender elementos comuns em máquinas virtuais numa nuvem IaaS, como instâncias computacionais, armazenamento em bloco e rede.
+	Entender as propriedades exclusivas de um sistema Linux que precisam ser alteradas quando um sistema é clonado ou utilizado como modelo.
+	Entender como imagens de sistema são utilizadas para implementar máquinas virtuais, instâncias de nuvem e contêineres.
+	Entender as extensões do Linux que integram o Linux com uma solução de virtualização.
+	Noções de cloud-init.
 
 Imprimindo informações detalhadas sobre o hardware do sistema:
 
@@ -774,7 +812,12 @@ Comando comuns são:
 
 Questões: 4
 
-	bash, echo, env, export, pwd, set, unset, type, which, man, uname, history, .bash_history, Quoting
+Principais Áreas de Conhecimento:
+
+	Usar comandos simples de shell e sequências de comandos de apenas uma linha para executar tarefas básicas na linha de comando.
+	Usar e modificar o ambiente de shell incluindo definir, fazer referência e exportar variáveis de ambiente.
+	Usar e editar o histórico de comandos.
+	Invocar comandos de dentro e de fora do caminho definido
 
 Imprimindo o resultado na saída padrão:
 
@@ -1004,7 +1047,9 @@ Já '' e \ protegem todos os caracteres sem excessão:
 
 Questões: 2
 
-	bzcat, cat, cut, head, less, md5sum, nl, od, paste, sed, sha256sum, sha512sum, sort, split, tail, tr, uniq, wc, xzcat, zcat
+Principais Áreas de Conhecimento:
+
+	Enviar arquivos de texto e saídas de fluxo de textos através de filtros para modificar a saída usando comandos padrão UNIX encontrados no pacote GNU textutils.
 
 Gerando o hash de um arquivo:
 
@@ -1218,25 +1263,14 @@ Logins de todos os usuários do sistema contidos no arquivo passwd:
 
 Questões: 4
 
-cp
-find
-mkdir
-mv
-ls
-rm
-rmdir
-touch
-tar
-cpio
-dd
-file
-gzip
-gunzip
-bzip2
-bunzip2
-xz
-unxz
-file globbing
+Principais Áreas de Conhecimento:
+
+	Copiar, mover e remover arquivos e diretórios individualmente.
+	Copiar múltiplos arquivos e diretórios recursivamente.
+	Remover arquivos e diretórios recursivamente.
+	Uso simples e avançado dos caracteres curinga nos comandos.
+	Usar o comando find para localizar e tratar arquivos tomando como base o tipo, o tamanho ou a data.
+	Uso dos utilitários tar, cpio e dd.
 
 Navegando para o home do usuário atual:
 
@@ -1484,8 +1518,12 @@ Copiando uma partição, byte a byte:
 
 Questões: 4
 
-tee
-xargs
+Principais Áreas de Conhecimento:
+
+	Redirecionamento da entrada padrão, da saída padrão e dos erros padrão.
+	Canalização (piping) da saída de um comando à entrada de outro comando.
+	Usar a saída de um comando como argumento para outro comando.
+	Enviar a saída de um comando simultaneamente para a saída padrão e um arquivo.
 
 Definindo a saída padrão:
 
@@ -1551,22 +1589,13 @@ Imprimindo na saída padrão o resultado de um comando:
 
 Questões: 4
 
-&
-bg
-fg
-jobs
-kill
-nohup
-ps
-top
-free
-uptime
-pgrep
-pkill
-killall
-watch
-screen
-tmux
+Principais Áreas de Conhecimento:
+
+	Executar processos em primeiro e segundo plano.
+	Marcar um programa para que continue a rodar depois do logout.
+	Monitorar processos ativos.
+	Selecionar e ordenar processos para serem exibidos.
+	Enviar sinais para os processos.
 
 Imprimindo os processos ativos nesse terminal:
 
@@ -1818,7 +1847,11 @@ Acessando um tmux bg ou criando um novo:
 
 Questões: 2
 
-	nice, ps, renice, top 
+Principais Áreas de Conhecimento:
+
+	Saber a prioridade padrão de um processo que é criado.
+	Executar um programa com maior ou menor prioridade do que o padrão.
+	Mudar a prioridade de um processo em execução.
 
 Definindo a prioridade de um processo:
 
@@ -1856,11 +1889,13 @@ Usando o comando top:
 
 Questões: 3
 
-grep
-egrep
-fgrep
-sed
-regex(7)
+Principais Áreas de Conhecimento:
+
+	Criar expressões regulares contendo vários elementos.
+	Entender a diferença entre expressões regulares básicas e estendidas.
+	Entender os conceitos de caracteres especiais, classes de caracteres, quantificadores e âncoras.
+	Usar ferramentas de expressão regular para realizar pesquisas pelo sistema de arquivos ou no conteúdo de um arquivo.
+	Utilizar expressões regulares para apagar, alterar e substituir texto.
 
 O comando fgrep apenas faz filtros por strings de texto, mas não interpreta expressões regulares. Todos os outros comandos aceitam expressões regulares.
 
@@ -1974,13 +2009,13 @@ Imprimindo linhas que contenham uma determinada palavra:
 
 Questões: 3
 
-vi
-/, ?
-h,j,k,l
-i, o, a
-d, p, y, dd, yy
-ZZ, :w!, :q!
-EDITOR
+Principais Áreas de Conhecimento:
+
+	Navegar pelo documento usando o vi.
+	Usar os modos básicos do vi.
+	Inserir, editar, deletar, copiar e encontrar texto.
+	Noções de Emacs, nano e vim.
+	Configurar o editor padrão.
 
 Verificando a versão do vi:
 
@@ -2082,11 +2117,15 @@ Definindo o editor padrão do sistema:
 
 Questões: 2
 
-fdisk
-gdisk
-parted
-mkfs
-mkswap
+Principais Áreas de Conhecimento:
+
+	Gerenciar tabela de partição MBR e GPT
+	Usar vários comandos mkfs para criar sistemas de arquivos tais como:
+	ext2/ext3/ext4
+	XFS
+	VFAT
+	exFAT
+	Conhecimento básico dos recursos do Btrfs, incluindo sistema de arquivos em multidispositivos, compressão e subvolumes.
 
 Imprimindo os discos e as partições de cada um deles:
 
@@ -2308,15 +2347,11 @@ Utilizando exFAT em um pendrive previamente montado:
 
 Questões: 2
 
-du
-df
-fsck
-e2fsck
-mke2fs
-tune2fs
-xfs_repair
-xfs_fsr
-xfs_db
+Principais Áreas de Conhecimento:
+
+	Verificar a integridade dos sistemas de arquivos.
+	Monitorar os espaços livres e inodes.
+	Reparar problemas simples dos sistemas de arquivos.
 
 Imprimindo as partições montadas:
 
@@ -2412,12 +2447,13 @@ Funciona com o sistema de arquivos montado!
 
 Questões: 3
 
-/etc/fstab
-/media/
-mount
-umount
-blkid
-lsblk
+Principais Áreas de Conhecimento:
+
+	Montar e desmontar manualmente sistemas de arquivos.
+	Configurar a montagem dos sistemas de arquivos no início do sistema.
+	Configurar sistemas de arquivos removíveis e montáveis pelo usuário.
+	Utilização de etiquetas (labels) e UUIDs para identificar e montar sistemas de arquivos.
+	Noções de unidades de montagem do systemd.
 
 Arquivo de configuração das partições que serão montadas no boot:
 
@@ -2481,10 +2517,12 @@ A partição de swap não precisa ser montada, portanto none!
 
 Questões: 3
 
-chmod
-umask
-chown
-chgrp
+Principais Áreas de Conhecimento:
+
+	Gerenciar permissões de acesso a arquivos comuns e especiais, bem como aos diretórios.
+	Usar os modos de acesso tais como suid, sgid e o sticky bit (bit de aderência) para manter a segurança.
+	Saber como mudar a máscara de criação de arquivo.
+	Usar o campo de grupo para conceder acesso para grupos de trabalho.
 
 Definindo as permissões de acesso a um arquivo:
 
@@ -2619,18 +2657,12 @@ Definindo o usuário e/ou o grupo dono do arquivo ou diretório:
 
 Questões: 2
 
-Description: Candidates should be able to create and manage hard and symbolic links to a file.
+Principais Áreas de Conhecimento:
 
-Key Knowledge Areas:
-
-Create links.
-Identify hard and/or soft links.
-Copying versus linking files.
-Use links to support system administration tasks.
-The following is a partial list of the used files, terms and utilities:
-
-ln
-ls
+	Criar links.
+	Identificar links simbólicos e/ou hardlinks.
+	Copiar arquivos versus criar links de arquivos.
+	Usar links para dar suporte a tarefas de administração do sistema.
 
 Criando um link físico para o arquivo:
 
@@ -2639,7 +2671,9 @@ Criando um link físico para o arquivo:
 	ls -li script.sh Link-hard
 
 Note que ambos possuem o mesmo inode.
+
 A edição de qualquer um refletirá no outro!
+
 Não funciona em diretórios.
 
 Criando um link simbólico para o arquivo:
@@ -2649,8 +2683,12 @@ Criando um link simbólico para o arquivo:
 	ls -li script.sh Link-hard
 
 Note a diferença no inode.
+
 Similar a um atalho!
-As permissões sempre são 777.
+
+As permissões sempre são 777
+
+Se deletar o link principal o simbólico estará quebrado.
 
 ------------------------------------------------------------
 	* * * * * 104.7 Find system files and place files in the correct location * * * * *
@@ -2658,13 +2696,11 @@ As permissões sempre são 777.
 
 Questões: 2
 
-find
-locate
-updatedb
-whereis
-which
-type
-/etc/updatedb.conf
+Principais Áreas de Conhecimento:
+
+	Entender a localização correta dos arquivos dentro do FHS.
+	Encontrar arquivos e comandos em um sistema Linux.
+	Conhecer a localização e a finalidade de arquivos e diretórios importantes definidos no FHS.
 
 Diretórios que sempre devem estar na mesma partição (/):
 
