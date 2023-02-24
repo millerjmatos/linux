@@ -2770,21 +2770,12 @@ O comando type é utilizado para indicar se um determinado comando é interno ao
 
 Questões: 4
 
-.
-source
-/etc/bash.bashrc
-/etc/profile
-env
-export
-set
-unset
-~/.bash_profile
-~/.bash_login
-~/.profile
-~/.bashrc
-~/.bash_logout
-function
-alias
+Principais Áreas de Conhecimento:
+
+	Definir variáveis de ambiente (por exemplo, PATH) no início da sessão ou quando abrir um novo shell.
+	Escrever funções Bash para sequências de comandos frequentemente usadas.
+	Manter o esqueleto de diretórios (skeleton) para novas contas de usuários.
+	Definir os caminhos de busca de comandos para apontar para os diretórios corretos.
 
 O comando bash executa o script em um processo separado!
 
@@ -2837,15 +2828,15 @@ Usando o comando function, ex.:
 
 Questões: 4
 
-for
-while
-test
-if
-read
-seq
-exec
-||
-&&
+Principais Áreas de Conhecimento:
+
+	Usar a sintaxe padrão sh (repetição, testes).
+	Usar a substituição de comandos.
+	Valores retornados por um sucesso ou falha de teste ou outra informação fornecida por um comando.
+	Executar comandos encadeados.
+	Enviar mensagens para o superusuário.
+	Selecionar corretamente o interpretador de script através da linha shebang (#!).
+	Gerenciar a localização, propriedade, permissão e permissão suid dos scripts.
 
 Executando o script no bash atual:
 
@@ -2901,13 +2892,14 @@ ou
 
 Questões: 2
 
-/etc/X11/xorg.conf
-/etc/X11/xorg.conf.d/
-~/.xsession-errors
-xhost
-xauth
-DISPLAY
-X
+Principais Áreas de Conhecimento:
+
+	Entendimento da arquitetura do X11.
+	Entendimento e conhecimento básico do arquivo de configuração do X Window.
+	Substituir aspectos específicos da configuração do Xorg, como o layout de teclado.
+	Entendimento dos componentes de um ambiente de desktop, como gerenciadores de display e gerenciadores de janelas.
+	Controlar o acesso ao servidor X e exibir aplicativos em servidores X remotos.
+	Noções do Wayland.
 
 ------------------------------------------------------------
 	* * * * * 106.2 Graphical Desktops * * * * *
@@ -2915,14 +2907,10 @@ X
 
 Questões: 1
 
-KDE
-Gnome
-Xfce
-X11
-XDMCP
-VNC
-Spice
-RDP
+Principais Áreas de Conhecimento:
+
+	Noções dos principais ambientes de desktop.
+	Noções dos protocolos utilizados para acessar sessões de desktop remoto.
 
 O xrdp é uma alternativa para acessar estações Linux através do MS RDP. 
 Site: http://xrdp.org/
@@ -2941,16 +2929,10 @@ Instalação:
 
 Questões: 1
 
-High Contrast/Large Print Desktop Themes.
-Screen Reader.
-Braille Display.
-Screen Magnifier.
-On-Screen Keyboard.
-Sticky/Repeat keys.
-Slow/Bounce/Toggle keys.
-Mouse keys.
-Gestures.
-Voice recognition.
+Principais Áreas de Conhecimento:
+
+	Conhecimento básico das configurações visuais e temas.
+	Conhecimento básico das tecnologias assistivas.
 
 ------------------------------------------------------------
 
@@ -2962,19 +2944,11 @@ Voice recognition.
 
 Questões: 5
 
-/etc/passwd
-/etc/shadow
-/etc/group
-/etc/skel/
-chage
-getent
-groupadd
-groupdel
-groupmod
-passwd
-useradd
-userdel
-usermod
+Principais Áreas de Conhecimento:
+
+	Adicionar, modificar e remover usuários e grupos.
+	Gerenciar informações de usuários/grupos em banco de dados senhas/grupos.
+	Criar e administrar contas com propósitos especiais e contas limitadas.
 
 Adicionando um usuário no sistema:
 
@@ -3060,27 +3034,19 @@ Imprimindo os grupos e seus usuários:
 
 Questões: 4
 
-/etc/cron.{d,daily,hourly,monthly,weekly}/
-/etc/at.deny
-/etc/at.allow
-/etc/crontab
-/etc/cron.allow
-/etc/cron.deny
-/var/spool/cron/
-crontab
-at
-atq
-atrm
-systemctl
-systemd-run
+Principais Áreas de Conhecimento:
 
-	Definindo o arquivo de configuração do crontab:
+	Gerenciar tarefas usando cron e at.
+	Configurar o acesso dos usuários a serviços cron e at.
+	Entender os unidades temporizadoras (timers) do systemd.
 
-		vim /etc/crontab
+Definindo o arquivo de configuração do crontab:
 
-	agendando uma tarefa semanal de backup sábado às 19h:
+	vim /etc/crontab
 
-		00 19 * * 6 root rsync -Cravzp --delete <origem> <destino>
+Agendando uma tarefa semanal de backup sábado às 19h:
+
+	00 19 * * 6 root rsync -Cravzp --delete <origem> <destino>
 
 ------------------------------------------------------------
 	* * * * ** 107.3 Localisation and internationalisation * * * * **
@@ -3088,22 +3054,10 @@ systemd-run
 
 Questões: 3
 
-/etc/timezone
-/etc/localtime
-/usr/share/zoneinfo/
-LC_*
-LC_ALL
-LANG
-TZ
-/usr/bin/locale
-tzselect
-timedatectl
-date
-iconv
-UTF-8
-ISO-8859
-ASCII
-Unicode
+Principais Áreas de Conhecimento:
+
+	Configurar idioma e variáveis de ambiente.
+	Configurar fuso horário e variáveis de ambiente.
 
 ------------------------------------------------------------
 
@@ -3115,24 +3069,16 @@ Unicode
 
 Questões: 3
 
-/usr/share/zoneinfo/
-/etc/timezone
-/etc/localtime
-/etc/ntp.conf
-/etc/chrony.conf
-date
-hwclock
-timedatectl
-ntpd
-ntpdate
-chronyc
-pool.ntp.org
+Principais Áreas de Conhecimento:
 
-	Instalando e configurando o servidor NTP:
+	Definir a data e a hora do sistema.
+	Definir o relógio do hardware com a hora correta em UTC.
+	Configurar o fuso horário correto.
+	Configuração básica do NTP usando o ntpd e o chrony.
+	Conhecimento de como usar o serviço pool.ntp.org.
+	Noções do comando ntpq.
 
-		apt-get install ntp
-
-	Definindo o arquivo /etc/ntp.conf:
+Definindo o arquivo /etc/ntp.conf:
 
 		pool st1.ntp.br
 		pool st2.ntp.br
@@ -3140,13 +3086,16 @@ pool.ntp.org
 		pool gps.ntp.br
 
 		ou
+
 		servers pool.ntp.br
 
 		/etc/init.d ntp restart
 
-	verificando o status do serviço:
-		ntpq -p
-		date
+Verificando o status do serviço:
+
+	ntpq -p
+		
+	date
 
 ------------------------------------------------------------
 	* * * * * 108.2 System logging * * * * *
@@ -3154,16 +3103,17 @@ pool.ntp.org
 
 Questões: 4
 
-/etc/rsyslog.conf
-/var/log/
-logger
-logrotate
-/etc/logrotate.conf
-/etc/logrotate.d/
-journalctl
-systemd-cat
-/etc/systemd/journald.conf
-/var/log/journal/
+Principais Áreas de Conhecimento:
+
+	Configuração básica do rsyslog.
+	Entendimento das facilidades (facilities), prioridades (priorities) e ações padrão.
+	Consultar o diário (journal) do systemd.
+	Filtrar o diário (journal) do systemd utilizando critérios como data, serviço ou prioridade.
+	Apagar informações antigas do diário (journal) do systemd.
+	Recuperar as informações do diário (journal) do systemd a partir de um sistema em manutenção ou uma cópia do sistema de arquivos.
+	Entender a interação entre o rsyslog e o systemd-journald.
+	Configuração do logrotate.
+	Noções do syslog e do syslog-ng.
 
 ------------------------------------------------------------
 	* * * * * 108.3 Mail Transfer Agent (MTA) basics * * * * *
@@ -3171,14 +3121,11 @@ systemd-cat
 
 Questões: 3
 
-~/.forward
-sendmail emulation layer commands
-newaliases
-mail
-mailq
-postfix
-sendmail
-exim
+Principais Áreas de Conhecimento:
+
+	Criar aliases de e-mail.
+	Configurar o redirecionamento de e-mail.
+	Conhecimento sobre os programas MTA comumente usados (postfix, sendmail, qmail, exim) (não é cobrada a configuração desses programas)
 
 ------------------------------------------------------------
 	* * * * * 108.4 Manage printers and printing * * * * *
@@ -3186,9 +3133,12 @@ exim
 
 Questões: 2
 
-CUPS configuration files, tools and utilities
-/etc/cups/
-lpd legacy interface (lpr, lprm, lpq)
+Principais Áreas de Conhecimento:
+
+	Configuração básica do CUPS (para impressoras locais e remotas).
+	Gerenciar a fila de impressão do usuário.
+	Resolução de problemas gerais de impressão.
+	Adicionar e remover trabalhos da fila de impressão de impressoras configuradas.
 
 ------------------------------------------------------------
 
@@ -3200,22 +3150,14 @@ lpd legacy interface (lpr, lprm, lpq)
 
 Questões: 4
 
-Description: Candidates should demonstrate a proper understanding of TCP/IP network fundamentals.
+Principais Áreas de Conhecimento:
 
-Key Knowledge Areas:
-
-Demonstrate an understanding of network masks and CIDR notation.
-Knowledge of the differences between private and public "dotted quad" IP addresses.
-Knowledge about common TCP and UDP ports and services (20, 21, 22, 23, 25, 53, 80, 110, 123, 139, 143, 161, 162, 389, 443, 465, 514, 636, 993, 995).
-Knowledge about the differences and major features of UDP, TCP and ICMP.
-Knowledge of the major differences between IPv4 and IPv6.
-Knowledge of the basic features of IPv6.
-The following is a partial list of the used files, terms and utilities:
-
-/etc/services
-IPv4, IPv6
-Subnetting
-TCP, UDP, ICMP
+	Demonstrar um conhecimento adequado sobre máscaras de rede e a notação CIDR.
+	Conhecimento sobre as diferenças entre endereços públicos de IP e reservados para uso de redes privadas (notação "dotted quad").
+	Conhecimento sobre as portas e serviços TCP e UDP mais comuns (20, 21, 22, 23, 25, 53, 80, 110, 123, 139, 143, 161, 162, 389, 443, 465, 514, 636, 993, 995).
+	Conhecimento sobre as diferenças e principais características dos protocolos UDP, TCP e ICMP.
+	Conhecimento das principais diferenças entre IPv4 e IPv6.
+	Conhecimento sobre as características básicas do IPv6.
 
 Protocolos importantes e suas portas:
 
@@ -3227,14 +3169,11 @@ Protocolos importantes e suas portas:
 
 Questões: 4
 
-/etc/hostname
-/etc/hosts
-/etc/nsswitch.conf
-/etc/resolv.conf
-nmcli
-hostnamectl
-ifup
-ifdown
+Principais Áreas de Conhecimento:
+
+	Configuração básica de um host TCP/IP.
+	Configurar a ethernet e a rede wi-fi usando o NetworkManager.
+	Noções do systemd-networkd.
 
 Imprimindo o nome da máquina:
 
@@ -3286,7 +3225,8 @@ Definindo os servidores de DNS utilizados pelo sistema:
 	ls -l /etc/resolv.conf
 
 Nas distribuições atuais esse arquivo é dinâmico.
-Antes de alterar manualmente precisa desativar o netconfig:
+
+Antes de alterar manualmente é precisa desativar o netconfig:
 
 	vim /etc/sysconfig/network/config
 
@@ -3338,19 +3278,12 @@ Deletando uma conexão:
 
 Questões: 4
 
-ip
-hostname
-ss
-ping
-ping6
-traceroute
-traceroute6
-tracepath
-tracepath6
-netcat
-ifconfig
-netstat
-route
+Principais Áreas de Conhecimento:
+
+	Configuração manual de interfaces de rede, incluindo verificar e alterar a configuração de interfaces de rede usando o iproute2.
+	Configuração manual de tabelas de roteamento, incluindo verificar e alterar a tabela de rotas e definir a rota padrão usando o iproute2.
+	Solucionar problemas associados com a configuração da rede.
+	Noções dos comandos legados do net-tools.
 
 Instalando o utilitário ifconfig:
 
@@ -3426,12 +3359,13 @@ Exibindo o IP externo:
 
 Questões: 2
 
-/etc/hosts
-/etc/resolv.conf
-/etc/nsswitch.conf
-host
-dig
-getent
+Principais Áreas de Conhecimento:
+
+	Consultar servidores DNS remotos.
+	Configurar a resolução local de nomes e o uso de servidores DNS remotos.
+	Modificar a ordem em que a resolução de nomes é feita.
+	Identificar erros relacionados à resolução de nomes.
+	Noções do systemd-resolved.
 
 Configurando o cliente de DNS:
 
@@ -3451,19 +3385,14 @@ Limpando o cache de resolução de nomes do systemd-resolved:
 
 Questões: 3
 
-find
-passwd
-fuser
-lsof
-nmap
-chage
-netstat
-sudo
-/etc/sudoers
-su
-usermod
-ulimit
-who, w, last
+Principais Áreas de Conhecimento:
+
+	Auditar um sistema para encontrar arquivos com os bits suid/sgid ligados.
+	Definir ou modificar as senhas dos usuários e as informações de expiração das senhas.
+	Ser capaz de usar o nmap e o netstat para descobrir portas abertas em um sistema.
+	Definir limites sobre os logins do usuário, processos e uso de memória.
+	Determinar quais usuários se conectaram ao sistema ou estão conectados no momento.
+	Uso e configuração básica do sudo.
 
 Imprimindo informações dos usuários que estão atualmente conectados ao sistema:
 
@@ -3501,25 +3430,11 @@ Exibindo o SO de um alvo:
 
 Questões: 3
 
-Description: Candidates should know how to set up a basic level of host security.
+Principais Áreas de Conhecimento:
 
-Key Knowledge Areas:
-
-Awareness of shadow passwords and how they work.
-Turn off network services not in use.
-Understand the role of TCP wrappers.
-The following is a partial list of the used files, terms and utilities:
-
-/etc/nologin
-/etc/passwd
-/etc/shadow
-/etc/xinetd.d/
-/etc/xinetd.conf
-systemd.socket
-/etc/inittab
-/etc/init.d/
-/etc/hosts.allow
-/etc/hosts.deny
+	Saber que existem senhas sombreadas (shadow) e como elas funcionam.
+	Desligar os serviços de rede que não estão em uso.
+	Entender a função do TCP wrappers.
 
 ------------------------------------------------------------
 	* * * * * 110.3 Securing data with encryption * * * * *
@@ -3527,34 +3442,13 @@ systemd.socket
 
 Questões: 4
 
-Description: The candidate should be able to use public key techniques to secure data and communication.
+Principais Áreas de Conhecimento:
 
-Key Knowledge Areas:
-
-Perform basic OpenSSH 2 client configuration and usage.
-Understand the role of OpenSSH 2 server host keys.
-Perform basic GnuPG configuration, usage and revocation.
-Use GPG to encrypt, decrypt, sign and verify files.
-Understand SSH port tunnels (including X11 tunnels).
-The following is a partial list of the used files, terms and utilities:
-
-ssh
-ssh-keygen
-ssh-agent
-ssh-add
-~/.ssh/id_rsa and id_rsa.pub
-~/.ssh/id_dsa and id_dsa.pub
-~/.ssh/id_ecdsa and id_ecdsa.pub
-~/.ssh/id_ed25519 and id_ed25519.pub
-/etc/ssh/ssh_host_rsa_key and ssh_host_rsa_key.pub
-/etc/ssh/ssh_host_dsa_key and ssh_host_dsa_key.pub
-/etc/ssh/ssh_host_ecdsa_key and ssh_host_ecdsa_key.pub
-/etc/ssh/ssh_host_ed25519_key and ssh_host_ed25519_key.pub
-~/.ssh/authorized_keys
-ssh_known_hosts
-gpg
-gpg-agent
-~/.gnupg/
+	Fazer uso e realizar a configuração básica do cliente OpenSSH 2.
+	Entender a finalidade das chaves de servidor no OpenSSH 2.
+	Configuração básica do GnuPG, seu uso e revogação.
+	Usar o GPG para criptografar, descriptografar e verificar arquivos.
+	Entender os túneis de porta do SSH (incluindo túneis X11).
 
 Conectando em um servidor ssh:
 
