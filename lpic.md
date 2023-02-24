@@ -269,14 +269,11 @@ Enviando uma mensagem para todos os usuários do sistema:
 
 Questões: 2
 
-/ (root) filesystem
-/var filesystem
-/home filesystem
-/boot filesystem
-EFI System Partition (ESP)
-swap space
-mount points
-partitions
+	/ (root) filesystem
+	/var filesystem
+	/home filesystem
+	/boot filesystem
+	EFI System Partition (ESP), swap space, mount points, partitions
 
 Imprimindo as informações de swap e memória:
 
@@ -300,10 +297,7 @@ Habilitando todas as partições swap contidas em /etc/fstab:
 
 Questões: 2
 
-menu.lst, grub.cfg and grub.conf
-grub-install
-grub-mkconfig
-MBR
+	menu.lst, grub.cfg and grub.conf, grub-install, grub-mkconfig, MBR
 
 Imprimindo as imagens do kernel:
 
@@ -317,7 +311,7 @@ Imprimindo os arquivos de configuração do grub:
 
 	ls -l
 
-> Lembre-se de que modificar diretamente o arquivo /boot/grub/grub.cfg não é recomendado.
+Lembre-se de que modificar diretamente o arquivo /boot/grub/grub.cfg não é recomendado.
 
 Imprimindo a versão do grub:
 
@@ -371,10 +365,8 @@ Restaurando o backup:
 
 Questões: 1
 
-ldd
-ldconfig
-/etc/ld.so.conf
-LD_LIBRARY_PATH
+	ldd, ldconfig, LD_LIBRARY_PATH
+	/etc/ld.so.conf
 
 Imprimindo quais/quantas bibliotecas utilizadas pelo programa:
 
@@ -585,12 +577,9 @@ Imprimindo um menu gerenciador do apt:
 
 Weight： 3
 
-rpm
-rpm2cpio
-/etc/yum.conf
-/etc/yum.repos.d/
-yum
-zypper
+	rpm, rpm2cpio, yum, zypper
+	/etc/yum.conf
+	/etc/yum.repos.d/
 
 Imprimindo os pacotes instalados na máquina:
 
@@ -740,12 +729,12 @@ Atualizando o sistema:
 
 Questões: 1
 
-Virtual machine
-Linux container
-Application container
-Guest drivers
-SSH host keys
-D-Bus machine id
+	Virtual machine
+	Linux container
+	Application container
+	Guest drivers
+	SSH host keys
+	D-Bus machine id
 
 Imprimindo informações detalhadas sobre o hardware do sistema:
 
@@ -785,20 +774,7 @@ Comando comuns são:
 
 Questões: 4
 
-bash
-echo
-env
-export
-pwd
-set
-unset
-type
-which
-man
-uname
-history
-.bash_history
-Quoting
+	bash, echo, env, export, pwd, set, unset, type, which, man, uname, history, .bash_history, Quoting
 
 Imprimindo o resultado na saída padrão:
 
@@ -1028,26 +1004,7 @@ Já '' e \ protegem todos os caracteres sem excessão:
 
 Questões: 2
 
-bzcat
-cat
-cut
-head
-less
-md5sum
-nl
-od
-paste
-sed
-sha256sum
-sha512sum
-sort
-split
-tail
-tr
-uniq
-wc
-xzcat
-zcat
+	bzcat, cat, cut, head, less, md5sum, nl, od, paste, sed, sha256sum, sha512sum, sort, split, tail, tr, uniq, wc, xzcat, zcat
 
 Gerando o hash de um arquivo:
 
