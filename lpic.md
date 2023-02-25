@@ -59,6 +59,10 @@ Para remover um módulo carregado:
 
 	modprobe -r psmouse
 
+Nesse momento o mouse não funciona mais na máquina. Para reverter:
+
+	insmod <caminho completo informado no campo filename do comando modinfo psmouse>
+
 Carregando e removendo um módulo:
 
 	modprobe batman-adv
@@ -66,10 +70,6 @@ Carregando e removendo um módulo:
 	lsmod |grep batman
 
 	modprobe -r batman-adv
-
-Nesse momento o mouse não funciona mais na máquina. Para reverter:
-
-	insmod <caminho completo informado no campo filename do comando modinfo psmouse>
 
 O insmod não carrega as dependências! O comando modprobe o faz:
 
