@@ -87,6 +87,10 @@ Imprimindo informações sobre os dispositivos USB conectados ao sistema:
 
 	lsusb -s 001:001 -v
 
+Quantidade de devices conectados em seu barramento USB:
+
+	lsusb | wc -l
+
 O dispositivo de aúdio que está sendo utilizado pelo sistema:
 
 	lspci | grep Audio
@@ -94,10 +98,6 @@ O dispositivo de aúdio que está sendo utilizado pelo sistema:
 O IRQ utilizado pelo dispositivo de aúdio/multimídia:
 
 	lspci -s 01:00.1 -v
-
-Quantidade de devices conectados em seu barramento USB:
-
-	lsusb | wc -l
 
 O modelo da CPU:
 
