@@ -63,14 +63,6 @@ Nesse momento o mouse não funciona mais na máquina. Para reverter:
 
 	insmod <caminho completo informado no campo filename do comando modinfo psmouse>
 
-Carregando e removendo um módulo:
-
-	modprobe batman-adv
-
-	lsmod |grep batman
-
-	modprobe -r batman-adv
-
 O insmod não carrega as dependências! O comando modprobe o faz:
 
 	lsmod | grep blue
@@ -78,6 +70,14 @@ O insmod não carrega as dependências! O comando modprobe o faz:
 	modprobe bluecard_cs
 
 	lsmod | grep blue
+
+Carregando e removendo um módulo:
+
+	modprobe batman-adv
+
+	lsmod |grep batman
+
+	modprobe -r batman-adv
 
 O modprobe é uma ferramenta mais avançada do que insmod e rmmod, usados para gerenciar módulos do kernel no Linux. 
 
