@@ -137,7 +137,7 @@ Principais Áreas de Conhecimento:
 
 Em sistemas que utilizam a BIOS, as informações utilizadas durante a fase do boot estão em:
 
-	MBR
+	MBR (Master Boot Record)
 
 Inclui as informações das tabelas de partições e do bootloader (GRUB).
 
@@ -182,7 +182,13 @@ Principais Áreas de Conhecimento:
 	Terminar apropriadamente os processos.
 	Noções de acpid.
 
-Contém scripts de inicialização do sistema:
+Exibindo o gerenciador de serviços/inicialização do sistema (systemd ou SysVinit):
+
+	ps -p 1
+
+	stat /proc/1/exe
+
+Contém scripts de inicialização do sistema (SysVinit):
 
 	/etc/init.d/
 
@@ -196,15 +202,7 @@ O equivalente (systemd) em:
 
 	/usr/lib/systemd/system/
 
-	/lib/systemd/system/
-
-Exibindo o gerenciador de serviços/inicialização do sistema (systemd ou SysVinit):
-
-	ps -p 1
-
-	stat /proc/1/exe
-
-Arquivo de configuração onde é definido o runlevel do sistema:
+Arquivo de configuração onde é definido o runlevel do sistema (SysVinit):
 
 	 /etc/inittab
 
@@ -246,7 +244,7 @@ Definindo target default (systemd):
 
 Trocando o target para o modo de segurança:
 
-	ls -l /lib/systemd/system/ | grep runlevel
+	ls -l /usr/lib/systemd/system/ | grep runlevel
 
 	systemctl isolate rescue.target
 
@@ -269,6 +267,10 @@ Agendando o reboot para daqui 10m:
 Agendando o reboot para 19h:
 
 	shutdown -r 19:00
+
+Agendando o desligamente para 20h:
+
+	shutdown -rP 20:00
 
 Cancelar o comando shutdown:
 
@@ -346,11 +348,11 @@ Atualizando o grub:
 
 	update-grub
 
-	update-grub > /boot/grub/grub.conf
+	update-grub > /boot/grub/grub.cfg
 
-	grub.mkconfig > /boot/grub/grub.conf
+	grub.mkconfig > /boot/grub/grub.cfg
 
-	grub.mkconfig -o /boot/grub/grub.conf
+	grub.mkconfig -o /boot/grub/grub.cfg
 
 Após o uso dos comandos update-grub ou grub-mkconfig é que o arquivo grub.cfg será atualizado:
 
@@ -374,7 +376,7 @@ O parâmetro que indica ao kernel que não exiba mensagens durante o boot:
 
 O parâmetro que indica o caminho do initial ramdisk que o GRUB deve carregar:
 
-	initdr
+	initrd
 
 Realizando o backup do grub:
 
@@ -536,9 +538,13 @@ Removendo todos os arquivos em seu cache que estão desatualizados no repositór
 
 	apt-get autoclean
 
-Imprimindo os pacotes instalados: 
+Imprimindo informações de pacotes instalados: 
 
 	dpkg -l
+
+	dpkg --list
+
+	dpkg --list | grep <nome>
 
 	dpkg --get-selections
 
@@ -585,12 +591,6 @@ Removendo todos os arquivos e rastros de um pacote:
 Configurando e corrigindo erros causados por dependências:
 
 	dpkg --configure -a
-
-Encontrando um pacote instalado:
-
-	dpkg --list
-
-	dpkg --list | grep <nome>
 
 Atualizando configurações de um pacote instalado:
 
@@ -2706,7 +2706,7 @@ Principais Áreas de Conhecimento:
 
 Diretórios que sempre devem estar na mesma partição (/):
 
-	/etc	/sbin	/bin	/lib	/media	/mnt	/proc	/sys	/dev	
+	/etc	/sbin	/bin	/proc	/sys	/dev	
 
 São partições virtuais que são montadas dinamicamente pelo sistema:
 
