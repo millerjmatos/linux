@@ -31,7 +31,9 @@ Todos os arquivos terminados com a extensão *.ko são módulos/drivers para alg
 
 Arquivo onde podemos definir módulos a serem carregados pelo sistema manualmente:
 
-	cat /etc/modules
+	/etc/modules/*
+
+	/lib/modules/*
 
 Lista os módulos que estão carregados no momento:
 
