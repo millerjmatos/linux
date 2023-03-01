@@ -35,3 +35,51 @@ Ativando o serviço na inicialização:
     systemctl enable sshd
 
     systemctl status sshd
+
+Conexão com chave pública.
+
+No cliente:
+
+    vim /etc/ssh/ssh_config
+
+        IdentityFile ~/.ssh/id_rsa
+        IdentityFile ~/.ssh/id_dsa
+        IdentityFile ~/.ssh/id_ecdsa
+
+        :x
+
+    systemctl restart ssh
+
+    systemctl status ssh
+
+No servidor:
+
+    vim /etc/ssh/sshd_config
+
+        PubkeyAuthentication yes
+
+        AuthorizedKeysFile      .ssh/authorized_keys
+
+        :x
+
+    systemctl restart sshd
+
+    systemctl status ssh.status
+
+Criando o par de chaves no lado cliente:
+
+    ssh-keygen
+
+    ll /home/muller/.ssh
+
+O arquivo .pub deve ser exportado para o servidor ssh de destino.
+
+Exportando, ex.:
+
+    ssh-copy-id muller@192.168.0.100
+
+O comando irá criar o arquivo ~/.ssh/authorized_keys com a chave pública do cliente.
+
+Conectar sem senha:
+
+    ssh user@ip_or_host

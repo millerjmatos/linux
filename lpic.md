@@ -3470,6 +3470,8 @@ Arquivo que contém os hosts conhecidos:
 
 	cat known_hosts
 
+O SSH usa dois arquivos de configuração principais, ssh_config e sshd_config. O arquivo ssh_config é o arquivo de configuração do cliente SSH. O arquivo sshd_config é o arquivo de configuração do servidor SSH.
+
 Gerando uma chave pública com o gpg:
 
 	gpg --gen-key
