@@ -78,7 +78,7 @@ Exportando, ex.:
 
     ssh-copy-id muller@192.168.0.100
 
-O comando irá criar o arquivo ~/.ssh/authorized_keys com a chave pública do cliente.
+O utilitário irá criar o arquivo ~/.ssh/authorized_keys com a chave pública do cliente.
 
 Conectar sem senha:
 
