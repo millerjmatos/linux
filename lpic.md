@@ -3203,11 +3203,9 @@ Criando uma relação estática entre ip e hostname:
 
 	ping srv-linux
 
-Criando uma relação de consulta quando uma informação é requisitada:
+Arquivo Network Services Switch:
 
 	cat /etc/nsswitch.conf
-
-Arquivo Network Services Switch.
 
 Criando uma relação estática de rede:
 
@@ -3228,13 +3226,13 @@ Definindo os servidores de DNS utilizados pelo sistema:
 
 	ls -l /etc/resolv.conf
 
-Nas distribuições atuais esse arquivo é dinâmico.
-
 Antes de alterar manualmente é precisa desativar o netconfig:
 
 	vim /etc/sysconfig/network/config
 
 		NETCONFIG_DNS_POLICY=""
+
+Nas distribuições modernas esse arquivo é dinâmico, nosso foco é a utilização do gerenciador de redes NetWorkManager.
 
 Imprimindo o status das configurações de rede:
 
@@ -3242,7 +3240,7 @@ Imprimindo o status das configurações de rede:
 
 Arquivo de configuração:
 
-	cat /etc/NetworkManager
+	cat /etc/NetworkManager/NetworkManager.conf	
 
 Imprimindo informações das interfaces disponíveis:
 
