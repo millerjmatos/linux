@@ -167,6 +167,10 @@ Identificando o kernel carregado no boot:
 
 	journalctl -b | grep BOOT_IMAGE
 
+O arquivo do /proc que contém os parâmetros enviados ao kernel no momento do boot:
+
+	cmdline
+
 ------------------------------------------------------------
 	* * * * * 101.3 Change runlevels / boot targets and shutdown or reboot system * * * * * 
 ------------------------------------------------------------
@@ -570,23 +574,21 @@ Instalando um pacote .deb:
 
 	dpkg -i --force-all <pacote.deb>
 
-Imprimindo os arquivos instalados por um pacote específico:
+Imprimindo os arquivos instalados por um pacote (--listfiles):
 
 	dpkg -L bash
 
-Para saber a origem de um pacote:
+Imprimindo as origens de um pacote (--search):
 
-	dpkg -S /user/share/menu/bash
+	dpkg -S bash
 
 Removendo um pacote: 
 
 	dpkg -r <pacote>
 
-Removendo todos os arquivos e rastros de um pacote:
+Removendo todos os arquivos e rastros de um pacote (--purge):
 
 	dpkg -P <pacote>
-
-	dpkg --purge <pacote>
 
 Configurando e corrigindo erros causados por dependências:
 
