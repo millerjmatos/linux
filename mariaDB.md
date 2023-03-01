@@ -44,7 +44,7 @@ Criando o usuário do banco de dados:
 
 Amarrando o usuário ao banco de dados desejado, ex.:
 
-        grant all privileges on wordpress.*to 'admin'@'localhost';
+        grant all privileges on wordpress.* to 'admin'@'localhost';
 
         flush privileges;
 
