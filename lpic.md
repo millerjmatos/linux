@@ -3262,9 +3262,11 @@ Adicionando um nova conexão:
 
 	nmcli connection add type ethernet con-name NovaRede ifname eth02 ip4 172.22.22.100/24 gw4 172.22.22.254
 
-	cd /etc/NetworkManager/system-connections/
+	nmcli connection up NovaRede
 
-	ls -la
+	nmcli device show eth2	
+
+	cd /etc/NetworkManager/system-connections/
 
 	cat NovaRede
 
