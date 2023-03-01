@@ -14,11 +14,11 @@ Instalando o banco de dados:
 
     mysql_secure_installation
 
-Defina a senha do *root do banco de dados*.
+Defina a senha do root do banco de dados.
 
 Remover o acesso de usuários anônimos? sim.
 
-Permitir que o usuário *root do banco de dados* acesse remotamente? sim.
+Permitir que o usuário root do banco de dados* acesse remotamente? sim.
 
 Remover o banco de dados teste? sim.
 
