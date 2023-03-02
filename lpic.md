@@ -3276,13 +3276,17 @@ Definindo o DNS da interface:
 
 	nmcli con modify ethX +ipv4.dns 8.8.4.4 +ipv4.dns 208.67.222.222 +ipv4.dns 208.67.220.220 
 
-	nmcli connection down ethX ; nmcli connection up ethX	
+	nmcli con reload 
+
+	nmcli con down ethX ; nmcli con up ethX	
 
 	nmcli device
 
 	nmcli con modify ethX -ipv4.dns 8.8.4.4 
 
-	nmcli connection down ethX ; nmcli connection up ethX	
+	nmcli con reload 
+
+	nmcli con down ethX ; nmcli con up ethX	
 
 	nmtui
 
