@@ -1941,9 +1941,9 @@ Imprimindo recursivamente:
 
 	grep -r Linux *.txt
 
-Imprimindo o nome e o caminho do arquivo que contenham "eth0":
+Imprimindo o nome e o caminho do arquivo que contenham "ethX":
 
-	grep -lr eth0 /etc/*
+	grep -lr ethX /etc/*
 
 Definindo um string por outra com o sed:
 
@@ -3226,12 +3226,6 @@ Definindo os servidores de DNS utilizados pelo sistema:
 
 	ls -l /etc/resolv.conf
 
-Antes de alterar manualmente é precisa desativar o netconfig:
-
-	vim /etc/sysconfig/network/config
-
-		NETCONFIG_DNS_POLICY=""
-
 Nas distribuições modernas esse arquivo é dinâmico, nosso foco é a utilização do gerenciador de redes NetWorkManager.
 
 Imprimindo o status das configurações de rede:
@@ -3252,11 +3246,11 @@ Imprimindo informações das interfaces disponíveis:
 
 Derrubando e subindo uma conexão:
 
-	nmcli connection down eth01
+	nmcli connection down ethX
 
 	nmcli device
 
-	nmcli connection up eth01
+	nmcli connection up ethX
 
 Adicionando um nova conexão:
 
@@ -3274,7 +3268,23 @@ Deletando uma conexão:
 
 	nmcli connection del NovaRede
 
-	nmcli connection --help
+Recarregando todas as conexões:
+
+	nmcli connection reload 
+
+Definindo o DNS da interface:
+
+	nmcli con modify ethX +ipv4.dns 8.8.4.4 +ipv4.dns 208.67.222.222 +ipv4.dns 208.67.220.220 
+
+	nmcli connection down ethX ; nmcli connection up ethX	
+
+	nmcli device
+
+	nmcli con modify ethX -ipv4.dns 8.8.4.4 
+
+	nmcli connection down ethX ; nmcli connection up ethX	
+
+	nmtui
 
 ------------------------------------------------------------
 	* * * * * 109.3 Basic network troubleshooting * * * * *
@@ -3303,11 +3313,9 @@ Imprimindo informações de sockets e conexões ativas:
 
 Informando a rota dos pacotes:
 
-	traceroute <url>
+	<tracepath tracerouth> mullertec.com.br
 
-Informando a rota dos pacotes sem definir nomes:
-
-	traceroute -n <url>
+	<tracepath tracerouth> -n lpi.org
 
 Visualizando o IP/MAC da interface:
 	
@@ -3319,17 +3327,11 @@ Imprimindo a tabela de roteamento:
 
 	ip r
 
-Imprimindo os saltos até o destino: 
+Reiniciando uma interface:
 
-	tracepath mullertec.com.br
+	nmcli connection down ethX ; nmcli connection up ethX	
 
-	tracepath -n lpi.org
-
-Reiniciando a placa de rede:
-
-	ifconfig eth0 down
-	
-	ifconfig eth0 up
+	ifconfig ethX down ; ifconfig ethX up
 
 Definindo o /etc/network/interfaces:
 
@@ -3338,8 +3340,8 @@ Definindo o /etc/network/interfaces:
 
 Definindo IP fixo:
 
-		auto eth0
-		iface eth0 inet static
+		auto ethX
+		iface ethX inet static
 		address 192.168.x.x
 		netmask 255.255.x.x
 		gateway 192.168.x.x
@@ -3347,11 +3349,11 @@ Definindo IP fixo:
 
 Definindo MAC:
 
-	ifconfig eth0 down
+	ifconfig ethX down
 	
-	ip link set dev eth0 address 1A:2B:3C:55:66:00
+	ip link set dev ethX address 1A:2B:3C:55:66:00
 	
-	ifconfig eth0 up
+	ifconfig ethX up
 
 Exibindo o IP externo:
 
