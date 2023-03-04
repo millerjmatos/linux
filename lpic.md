@@ -3315,6 +3315,8 @@ Imprimindo informações de sockets e conexões ativas:
 
 	netstat -putan
 
+Um socket é uma interface de comunicação bidirecional entre processos, que permite que dois processos em uma rede se comuniquem. Ele é identificado por um endereço IP e um número de porta.
+
 Informando a rota dos pacotes:
 
 	<tracepath tracerouth> mullertec.com.br
