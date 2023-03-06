@@ -18,7 +18,7 @@ Caracteres literais:
 
 Caracteres especiais:
 
-Precisam ser escapados com uma barra invertida "\" se você quiser correspondê-los literalmente (grep). Alguns desses são:
+Precisam ser escapados com uma barra invertida " \ " se você quiser correspondê-los literalmente (grep). Alguns desses são:
 
     "."  Corresponde a qualquer caractere
 
