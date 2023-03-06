@@ -50,7 +50,7 @@ Conjuntos de caracteres:
 
 As âncoras básicas nas EREs são as mesmas que nas BREs, mas as EREs adicionam outras âncoras, alguns desses são:
 
-    "\b" Corresponde a uma fronteira de palavra.
+    "\b" Corresponde a uma fronteira de palavra
 
     "\w" Corresponde a qualquer caractere alfanumérico, similar a [A-Za-z0-9_]
 
