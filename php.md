@@ -1,3 +1,7 @@
+O PHP é uma linguagem de programação de código aberto, especialmente projetada para desenvolvimento web. Foi criada em 1995 e é amplamente utilizada para criar aplicativos web dinâmicos e interativos. O PHP é executado do lado do servidor, o que significa que é executado no servidor em vez do navegador do usuário.
+
+O PHP é usado principalmente para gerar conteúdo dinâmico para páginas web, como formulários de login, carrinhos de compras, fóruns de discussão e muito mais. Ele também pode ser usado para conectar aplicativos web a bancos de dados, realizar operações de arquivos e executar outras tarefas de servidor.
+
 ### Em Linux Debian 11
 
 Instalando o PHP:
