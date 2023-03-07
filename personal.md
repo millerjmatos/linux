@@ -39,3 +39,9 @@ Identificando e selecionando os serviços que carregam na inicialização:
     apt-get install rcconf
 
     rcconf
+
+CentOS, Fedora or RHEL:
+
+    yum install ntsysv
+
+    ntsysv
