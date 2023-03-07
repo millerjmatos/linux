@@ -1,3 +1,7 @@
+Em sistemas Linux, um "issue" é um arquivo que contém informações de identificação do sistema operacional, geralmente exibido na tela de login. O arquivo "issue" também pode ser usado para exibir uma mensagem personalizada para os usuários antes de efetuar login no sistema. Isso pode ser útil para exibir informações importantes ou para fornecer instruções para os usuários antes de acessarem o sistema.
+
+Já o arquivo MOTD (Message of the Day) é um arquivo de texto que contém uma mensagem que é exibida aos usuários quando eles fazem login no sistema.
+
 Editando o arquivo issue:
 
     cd /etc/
