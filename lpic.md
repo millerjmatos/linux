@@ -1047,17 +1047,21 @@ Principais Áreas de Conhecimento:
 
 Gerando o hash de um arquivo:
 
-	sha256sum linux-debian-amd64.iso
+	sha256sum linux.iso
 
-	sha512sum linux-debian-amd64.iso
+	sha512sum linux.iso
 
-	md5sum linux-debian-amd64.iso
+	md5sum linux.iso
 
 O código gerado é único, e garante que aquele arquivio é identico ao original.
 
 Para testar se o download de uma .iso não foi corrompido:
 
-	sha512sum -c SHA256SUMS
+	sha256sum -c SHA256SUM
+
+Na prática, a criação e teste ficam assim:
+
+	sha256sum centos.iso > sha256.txt ; cat sha256.txt ; sha256sum -c sha256.txt
 
 É preciso estar no mesmo diretório do aquivo hash e da .iso.
 
@@ -1105,7 +1109,13 @@ Imprimindo as últimas 15 linhas do /etc/passwd, com o nome do usuário e seu ID
 
 	tail -n 15 /etc/passwd | cut -d":" -f1,3 | sort -t ":" -k2 -g
 
-sort -t define o delimitador ; -k2 o campo referência para o ordenamento ; -g ordena como números ao invés de como caracteres
+sort -t define o delimitador;
+-k2 o campo referência para o ordenamento;
+-g ordena como números ao invés de como caracteres;
+
+O sort ordena alfabeticamente, para inverter:
+
+	sort -r
 
 Imprimindo o conteúdo de um texto de modo paginado:
 
@@ -1136,22 +1146,6 @@ O número de linhas do arquivo /etc/passwd sem contar linhas que contenham a pal
 O * imprime o resultado de todos os arquivos do diretório atual ou desejado:
 
 	cd /var/log && wc * | sort
-
-O sort ordena alfabeticamente, para inverter:
-
-	sort -r
-
-Ordenando pelo campo específico:
-
-	sort -k2 arquivo.txt
-
-O delimitador é o espaço vazio.
-
-Ordenando pelo campo e especificando um delimitador:
-
-	sort -t: -k2 -g
-
-O -g ordena como números ao invés de como caracteres.
 
 Imprime apenas os dados que ocorreram uma única vez:
 
@@ -1239,7 +1233,7 @@ Caracteres em posições específicos:
 
 	cut -c1,2,5 arquivo.txt
 
-De um caracter específico em diante:
+Do caractere específico em diante:
 
 	cut -c5- arquivo.txt
 
