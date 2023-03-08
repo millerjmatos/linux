@@ -919,27 +919,29 @@ Saiba o PID do shell atual:
 
 Saiba o PID do último processo executado em background:
 
-	$!
+	echo $!
 
 Saiba o exit code do último processo executado:
 
 	ls /tmp
 
-	$?
+	echo $?
 
 Se retornar 0 significa um comando correto e diferente disso deve ser um erro.
 
-Executando comandos em sequencia:
+Executando comandos em sequencia, independente do sucesso ou falha de cada comando:
 
 	date ; ls ; clear
 
-Executando sem pular erros:
+Executando comandos em sequencia, somente se o comando anterior for bem-sucedido:
 
 	ls /tmp/ && date && echo $USER
 
-Executando a sequência mesmo com erros:
+Executando um comando somente SE o comando anterior FALHAR:
 
-	ls /tmp/test || echo Linux
+	echo "Linux" || ls /root
+
+	ls /root || echo "Linux"
 
 Histórico dos últimos comandos da sessão:
 
@@ -955,6 +957,10 @@ Repetindo o último comando:
 
 	!!
 
+Localizando um comando no history através de pesquisa:
+
+	CTRL+R
+
 Limpando o arquivo de histórico:
 
 	history -c
@@ -965,23 +971,9 @@ Localizando o arquivo de histórico .bash_history:
 
 	cat /home/user/.bash_history
 
-Localizando um comando no history através de pesquisa:
-
-	CTRL+R
-
 Utilizando o manual do sistema para consultar comandos do sistema:
 
-	type cp
-
-	type cd
-
-	man cp
-
-	man cd
-
-	info cp
-
-	whatis ls
+	"(type)|(man)|(info)|(whatis)" comando
 
 Caso não haja manual o comando é do próprio bash:
 
@@ -1029,17 +1021,15 @@ Imprimindo todos os arquivos do diretório local:
 
 Protegendo caracteres especiais, quoting:
 
-	echo "*"
+	echo "."
 
-	echo "$<NOME_VARIAVEL>"
+	echo "$HOME"
 
-Lembre-se que "" NÃO protege $ ` \
+Apóstrofo '' e barra invertida \ protegem os caracteres sem excessão:
 
-Já '' e \ protegem todos os caracteres sem excessão:
+	echo \. && echo \$HOME && echo '.' && echo '$HOME'
 
-	echo '$<NOME_VARIAVEL>'
-
-	echo \$<NOME_VARIAVEL>
+	echo "\." && echo "$HOME"
 
 	echo "Curso     Linux   LPI1"
 
