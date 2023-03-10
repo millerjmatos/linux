@@ -30,13 +30,13 @@ Instalando o banco de dados:
 
 Defina a senha do root do banco de dados.
 
-Remover o acesso de usuários anônimos? Y
+Remover o acesso de usuários anônimos? Sim
 
-Permitir que o usuário root do banco de dados acesse remotamente? 
+Permitir que o usuário root do banco de dados acesse remotamente? Sim
 
-Remover o banco de dados teste? Y
+Remover o banco de dados teste? Sim
 
-Recarregar o sistema e aplicar as alterações de segurança? Y
+Recarregar o sistema e aplicar as alterações de segurança? Sim
 
     mysql -V
     mysql  Ver 15.1 Distrib 10.5.16-MariaDB, for Linux (x86_64) using  EditLine wrapper
