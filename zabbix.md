@@ -94,7 +94,7 @@ Liberação no firewall:
 
 Acessando a console, ex.:
 
-    http://srv-zabbix.intra/zabbix
+    http://SERVER_IP/zabbix
 
 Selecione o idioma; configure o banco; defina um nome.
 
