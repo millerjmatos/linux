@@ -751,6 +751,12 @@ Os camandos são praticamente os mesmos:
 
 	dnf list
 
+Removendo versões antigas de kernel:
+
+	rpm -q kerne ; uname -r
+
+	dnf remove -y --oldinstallonly --setopt installonly_limits=1 kernel	
+
 O gerenciador de pacotes no Suse é o zypper:
 
 	zypper --help
