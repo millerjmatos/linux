@@ -28,7 +28,9 @@ Instalando o banco de dados:
 
     mariadb-secure-installation
 
-Defina a senha do root do banco de dados.
+Alternar para autenticação unix_socket: Não
+
+Defina a senha do root do banco de dados: Sim
 
 Remover o acesso de usuários anônimos? Sim
 
