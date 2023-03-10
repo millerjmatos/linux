@@ -41,7 +41,7 @@ Recarregar o sistema e aplicar as alterações de segurança? Sim
     mysql -V
     mysql  Ver 15.1 Distrib 10.5.16-MariaDB, for Linux (x86_64) using  EditLine wrapper
 
-Instalando a ferramenta do zabbix:
+Instalando o zabbix:
 
 Atualmente a versão mais recente é a 6.2, mas vamos utilizar a versão 6.0 LTS!
 Site: https://www.zabbix.com/download
@@ -70,7 +70,7 @@ Acessando o banco mariaDB para criar a base de dados usada pelo zabbix:
 
         quit;
 
-Script para criar objetos em seu armazenamento de back-end, descompacta e encaminha a saída para execução:
+Script para criar os objetos em seu armazenamento back-end, descompacta e encaminha a saída para a execução:
 
     zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -uzabbix -p zabbix
 
@@ -84,7 +84,7 @@ Ativando os serviços:
 
     systemctl enable --now zabbix-server zabbix-agent httpd php-fpm
 
-Liberando no firewalld:
+Liberação no firewall:
 
     firewall-cmd --permanent --add-service=http
 
