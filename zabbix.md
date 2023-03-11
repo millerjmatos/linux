@@ -24,6 +24,8 @@ Instalando o banco de dados:
 
     dnf install -y mariadb-server mariadb
 
+    systemctl start mariadb
+    
     systemctl enable mariadb
 
     mariadb-secure-installation
@@ -66,7 +68,7 @@ Acessando o banco mariaDB para criar a base de dados usada pelo zabbix:
 
         create database zabbix character set utf8mb4 collate utf8mb4_bin;
 
-        create user zabbix@localhost identified by 'P@ssword';
+        create user zabbix@localhost identified by 'zabbix';
 
         grant all privileges on zabbix.* to zabbix@localhost;
 
