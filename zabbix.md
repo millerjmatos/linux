@@ -66,17 +66,19 @@ Acessando o banco mariaDB para criar a base de dados usada pelo zabbix:
 
     mysql -u root -p
 
-        create database zabbix character set utf8mb4 collate utf8mb4_bin;
+        create database zabbixdb character set utf8mb4 collate utf8mb4_bin;
 
-        create user zabbix@localhost identified by 'zabbix';
+        create user zabbixuser@localhost identified by 'P@ssword';
 
-        grant all privileges on zabbix.* to zabbix@localhost;
+        grant all privileges on zabbix.* to zabbixuser@localhost;
+
+        flush privileges;
 
         quit;
 
 Script para criar os objetos em seu armazenamento back-end, descompacta e encaminha a saída para a execução:
 
-    zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -uzabbix -p zabbix
+    zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -u zabbixuser -p zabbixdb
 
 Editando o arquivo de configuração:
 
