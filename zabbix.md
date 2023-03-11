@@ -70,7 +70,7 @@ Acessando o banco mariaDB para criar a base de dados usada pelo zabbix:
 
         create user zabbixuser@localhost identified by 'P@ssword';
 
-        grant all privileges on zabbix.* to zabbixuser@localhost;
+        grant all privileges on zabbixdb.* to zabbixuser@localhost;
 
         flush privileges;
 
