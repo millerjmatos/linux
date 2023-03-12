@@ -118,7 +118,7 @@ Liberação no firewall:
 
 Acessando a console, ex.:
 
-    http://SERVER_IP/zabbix
+    http://server_ip/zabbix
 
 Na console: 
 
@@ -134,7 +134,7 @@ Na console:
 
         Password: P@ssword
 
-A credêncial padrão é:
+Credêncial padrão:
 
     Admin
     zabbix
