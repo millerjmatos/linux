@@ -737,13 +737,13 @@ Verificando os pacotes instalados:
 
 	yum list installed | grep firewalld
 
-O dnf é uma melhoria do yum e já vem como padrão no Fedora:
+O dnf é uma melhoria do yum e já vem como padrão no Fedora/Rocky Linux:
 
 	which yum
 
 	ls -l /usr/bin/yum
 
-Os camandos são praticamente os mesmos:
+Os camandos dnf são praticamente os mesmos:
 
 	dnf <install remove search> <arquivo>
 
@@ -753,9 +753,11 @@ Os camandos são praticamente os mesmos:
 
 Removendo versões antigas de kernel:
 
-	rpm -q kerne ; uname -r
+	rpm -q kernel ; uname -r
 
-	dnf remove -y --oldinstallonly --setopt installonly_limits=1 kernel	
+	dnf remove -y --oldinstallonly --setopt installonly_limits=1 kernel
+
+	systemctl reboot
 
 O gerenciador de pacotes no Suse é o zypper:
 

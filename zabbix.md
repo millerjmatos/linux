@@ -2,31 +2,27 @@ O Zabbix é uma plataforma de monitoramento de rede de código aberto que permit
 
 ### Em Rocky Linux 9
 
-    cat /etc/redhat-release
-    Rocky Linux release 9.1 (Blue Onyx)
-
-    uname -r
-    5.14.0-162.18.1.el9_1.x86_64
-
 Definindo um FQDN (Fully Qualified Domain Name) para o servidor de monitoramento:
 
     hostnamectl set-hostname srv-zabbix.intra
 
 Atualizando o sistema:
 
-    dnf makecache --refresh
+    dnf makecache --refresh && dnf update -y
 
-    dnf update -y
+ATENÇÃO: se no procedimento acima ocorrer atualização de Kernel, você deverá reiniciar o sistema com a versão mais atual!
 
-Se no procedimento acima ocorrer atualização de Kernel, você deverá reiniciar o sistema!
+    cat /etc/redhat-release
+    Rocky Linux release 9.1 (Blue Onyx)
+
+    uname -r
+    5.14.0-162.18.1.el9_1.x86_64
 
 Instalando o banco de dados:
 
     dnf install -y mariadb-server mariadb
 
-    systemctl start mariadb
-    
-    systemctl enable mariadb
+    systemctl start mariadb && systemctl enable mariadb
 
     mariadb-secure-installation
 
@@ -62,7 +58,7 @@ Instalando o zabbix e os pacotes relacionados:
 
     dnf install -y zabbix-server-mysql zabbix-web-mysql zabbix-apache-conf zabbix-sql-scripts zabbix-selinux-policy zabbix-agent
 
-Acessando o banco mariaDB para criar a base de dados usada pelo zabbix:
+Acessando o banco mariaDB para criar a base de dados que será usada pelo zabbix:
 
     mysql -u root -p
 
@@ -86,6 +82,30 @@ Editando o arquivo de configuração:
 
         DBPassword=P@ssword
 
+        DBName=zabbixdb
+
+        DBUser=zabbixuser
+
+Editando o arquivo de configuração do PHP:
+
+    vim /etc/php.ini
+
+        post_max_size = 16M
+
+        max_execution_time 300
+
+        max_input_time = 300
+
+        date.timezone = America/Sao_Paulo
+
+        :x
+
+Consulte o seu timezone ideal em: https://www.php.net/manual/en/timezones.php
+
+Reiniciando o Apache daemon para refletir as alterações:
+
+    systemctl restart httpd.service
+
 Ativando os serviços:
 
     systemctl enable --now zabbix-server zabbix-agent httpd php-fpm
@@ -100,7 +120,7 @@ Acessando a console, ex.:
 
     http://SERVER_IP/zabbix
 
-Selecione o idioma; configure o banco; defina um nome.
+Na console: selecione o idioma, configure o banco com as informações que definimos e finalize.
 
 A credêncial padrão é:
 
