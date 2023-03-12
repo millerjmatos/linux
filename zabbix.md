@@ -120,7 +120,19 @@ Acessando a console, ex.:
 
     http://SERVER_IP/zabbix
 
-Na console: selecione o idioma, configure o banco com as informações que definimos e finalize.
+Na console: 
+
+    Configure DB connection
+
+        Database host: localhost
+
+        Database port: 0 (default)
+
+        Database name: zabbixdb
+
+        User: zabbixuser
+
+        Password: P@ssword
 
 A credêncial padrão é:
 
