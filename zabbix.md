@@ -76,7 +76,7 @@ Importando o esquema de banco de dados do zabbix no mysql com suporte a caracter
 
     zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -u zabbixuser -p zabbixdb
 
-Editando o arquivo de configuração:
+Editando o arquivo de configuração do zabbix:
 
     vim /etc/zabbix/zabbix_server.conf
 
