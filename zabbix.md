@@ -72,7 +72,7 @@ Acessando o banco mariaDB para criar a base de dados que será usada pelo zabbix
 
         quit;
 
-Script para criar os objetos em seu armazenamento back-end, descompacta e encaminha a saída para a execução:
+Importando o esquema de banco de dados do zabbix no mysql com suporte a caracteres unicode:
 
     zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -u zabbixuser -p zabbixdb
 
