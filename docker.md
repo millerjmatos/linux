@@ -21,7 +21,7 @@ Atualize o sistema:
 
 Instalando os pacotes necessários para permitir que o apt use um repositório HTTPS:
 
-    apt-install apt-transport-https ca-certificates curl gnupg2 software-properties-common -y
+    apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common -y
 
 Adicione a chave GPG oficial do docker ao sistema:
 
