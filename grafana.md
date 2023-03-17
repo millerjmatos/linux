@@ -30,6 +30,9 @@ Construindo o cache para o repositório yum:
 
     dnf makecache
 
+        Is this ok [y/N]: y
+        Metadata cache created.
+
 Instalando:
 
     dnf install -y grafana
