@@ -554,7 +554,7 @@ Imprimindo informações de pacotes instalados:
 
 	dpkg --get-selections | wc -l
 
-Imprimindo informações do pacote: 
+Imprimindo informações (--list, --status) do pacote: 
 
 	apt-cache show <pacote>
 
@@ -1507,6 +1507,24 @@ Descompactando o arquivo cpio.xz:
 Copiando uma partição, byte a byte:
 
 	dd if=/dev/sr0 of=imagem.iso
+
+Não é cobrado na certificação, mas conheça..
+
+Sobrescrever o conteúdo com dados aleatórios:
+
+	shred arquivo.txt
+
+	shred -n 2 -v /dev/sdc
+
+Sobrescrever o conteúdo com dados aleatórios e, em seguida, remove do sistema:
+
+	shred -u arquivo.txt
+
+Sobrescrever o conteúdo do diretório com dados aleatórios 5x e, em seguida, remove do sistema:
+
+	shred -uzn 5 /caminho/do/diretorio
+
+O parâmetro "-z" limpa o espaço livre em disco depois de sobrescrever os arquivos, garantindo que não haja dados remanescentes.
 
 ------------------------------------------------------------
 	* * * * * 103.4 Use streams, pipes and redirects * * * * *
