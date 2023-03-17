@@ -59,3 +59,11 @@ Credêncial padrão:
     admin
 
 Trocar a senha!
+
+Para integração com o zabbix:
+
+    grafana-cli plugins install alexanderzobnin-zabbix-app
+
+    systemctl restart grafana-server
+
+Habilitar o plugin na console!
