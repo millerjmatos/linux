@@ -26,9 +26,9 @@ Instalando o repositório yum do grafana:
         sslverify=1
         sslcacert=/etc/pki/tls/certs/ca-bundle.crt
 
-Construindo o cache do yum:
+Construindo o cache para o repositório yum:
 
-    yum makecache
+    dnf makecache
 
 Instalando:
 
