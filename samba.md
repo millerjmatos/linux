@@ -22,8 +22,7 @@ Editando:
 
     vim smb.conf
 
-        [global]
-        browseable = yes 
+        [global] 
         create mask = 2770    
         directory mask = 2770   
         encrypt passwords = yes 
