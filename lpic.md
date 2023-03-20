@@ -554,7 +554,7 @@ Imprimindo informações de pacotes instalados:
 
 	dpkg --get-selections | wc -l
 
-Imprimindo informações (--list, --status) do pacote: 
+Imprimindo informações do pacote: 
 
 	apt-cache show <pacote>
 
@@ -1384,6 +1384,8 @@ Imprimindo arquivos por nome:
 
 	find /home/ -name Linux
 
+	find /home/ -iname Linux
+
 Imprimindo arquivos de um usuário:
 
 	find /home/ -user liveuser
@@ -1400,7 +1402,7 @@ Imprimindo diretórios por tamanho:
 
 Imprimindo arquivos por extensão/string:
 
-	find . -type f -name '*.pst'
+	find . -type f -name "*.pst"
 
 	find /home/ -name "arq*csv"
 
@@ -1410,7 +1412,7 @@ Deletando arquivos e diretórios:
 
 Imprimindo arquivos acessados há 7 dias pelo usuário por extensão:
 
-	find /home/ -atime -7 -user muller -name '*.pdf'
+	find /home/ -atime -7 -user muller -name "*.pdf"
 
 Imprimindo arquivos alterados a 1 dia:
 
@@ -1426,11 +1428,19 @@ Imprimindo os arquivos e diretórios do /var com determinado nome e tempo de mod
 
 	find /var -name "*config*" -type d
 
-Agrupando o conteúdo do /tmp/ no diretório atual:
+Agrupando conteúdo do /tmp/ no diretório atual:
 
 	tar cpfv backup.tar /tmp/
 
 	tar tf backup.tar
+
+Agrupando conteúdo do /tmp/ em outro diretório:
+
+	cd /tmp/
+
+	tar cf /home/user/dir/arquivo.tar *
+
+	tar tf arquivo.tar
 
 Desagrupando o conteúdo do aqruivo .tar no diretório local:
 
@@ -1490,7 +1500,7 @@ Agrupando e compactando ao mesmo tempo com xz:
 
 Agrupando através de uma saída:
 
-	find /home/ -type f -name '*.pdf' | cpio -o > backup.cpio
+	find /home/ -type f -name "*.pdf" | cpio -o > backup.cpio
 
 Desagrupando o conteúdo do aqruivo .cpio no diretório local:
 
@@ -1498,7 +1508,7 @@ Desagrupando o conteúdo do aqruivo .cpio no diretório local:
 
 Agrupando e compactando através de uma saída ao mesmo tempo com xz:
 
-	find /home/ -type f -name '*.pdf' | cpio -o | xz > backup.cpio.zx
+	find /home/ -type f -name "*.pdf" | cpio -o | xz > backup.cpio.zx
 
 Descompactando o arquivo cpio.xz:
 
@@ -1507,24 +1517,6 @@ Descompactando o arquivo cpio.xz:
 Copiando uma partição, byte a byte:
 
 	dd if=/dev/sr0 of=imagem.iso
-
-Não é cobrado na certificação, mas conheça..
-
-Sobrescrever o conteúdo com dados aleatórios:
-
-	shred arquivo.txt
-
-	shred -n 2 -v /dev/sdc
-
-Sobrescrever o conteúdo com dados aleatórios e, em seguida, remove do sistema:
-
-	shred -u arquivo.txt
-
-Sobrescrever o conteúdo do diretório com dados aleatórios 5x e, em seguida, remove do sistema:
-
-	shred -uzn 5 /caminho/do/diretorio
-
-O parâmetro "-z" limpa o espaço livre em disco depois de sobrescrever os arquivos, garantindo que não haja dados remanescentes.
 
 ------------------------------------------------------------
 	* * * * * 103.4 Use streams, pipes and redirects * * * * *
