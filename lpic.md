@@ -1579,7 +1579,7 @@ Definindo o aquivo e imprimindo na saída padrão:
 
 Executando comandos recebidos pela entrada padrão:
 
-	find /home/ -type f -name '*.pdf' | xargs ls -l
+	find /home/ -type f -name "*.pdf" | xargs ls -l
 
 	find /home/ -type f -size +1G | xargs rm -v
 
