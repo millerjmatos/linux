@@ -1,6 +1,6 @@
 O rsync é uma ferramenta de linha de comando usada para sincronizar arquivos e diretórios entre dois locais diferentes, seja em uma mesma máquina ou em máquinas diferentes através da rede. Ele é frequentemente usado em ambientes de backup e transferência de arquivos, pois é capaz de transferir somente as partes dos arquivos que foram modificadas ou adicionadas, tornando as transferências mais rápidas e eficientes. O rsync é capaz de preservar as permissões, as datas de modificação, as propriedades dos arquivos e diretórios e outros atributos dos arquivos durante a transferência.
 
-Recomendado que em ambos, cliente e servidor, o openssh e rsync estajam instalados!
+Recomendado que em ambos, cliente e servidor, o openssh e rsync estajam instalados:
 
     whereis rsync
 
