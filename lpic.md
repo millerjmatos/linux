@@ -1861,6 +1861,8 @@ Principais Áreas de Conhecimento:
 
 Definindo a prioridade de um processo:
 
+	nice -<-20 ~ 19> firefox
+
 	nice -n 10 firefox &
 
 	nice -n -15 qps &
@@ -1975,7 +1977,7 @@ Pesquisando com o egrep:
 
 Imprimindo pelo final da linha:
 
-	egrep "^Linux$" arquivo.txt
+	egrep "Linux$" arquivo.txt
 
 Imprimindo pelo início da linha:
 
@@ -2023,17 +2025,17 @@ Principais Áreas de Conhecimento:
 	Noções de Emacs, nano e vim.
 	Configurar o editor padrão.
 
-Verificando a versão do vi:
+Verificando a versão do vi e abrindo com um buffer vazio:
 
 	vi --version
 
-Instalando o vi melhorado:
+	vim
 
-	apt install vim
+	vi
 
-Definindo o arquivo com o vi:
+Definindo o arquivo com o vim:
 
-	vi arquivo.txt
+	vim arquivo.txt
 
 Pesquisando Linux dentro do arquivo:
 
@@ -2096,10 +2098,6 @@ Posicionando o cursor no início da última linha:
 Numerando as linhas do arquivo:
 
 	:set number
-
-Abrindo o vi/vim com um buffer vazio:
-
-	vi
 
 Para sair e salvar o arquivo:
 
