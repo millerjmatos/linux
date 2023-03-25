@@ -691,7 +691,7 @@ Verificando a integridade de um pacote:
 
 Se retornar alguma mensagem, há algum erro.
 
-Desisntalando um programa:
+Desinstalando um programa:
 
 	rpm -evh NomeDoPrograma
 
@@ -743,7 +743,7 @@ O dnf é uma melhoria do yum e já vem como padrão no Fedora/Rocky Linux:
 
 	ls -l /usr/bin/yum
 
-Os camandos dnf são praticamente os mesmos:
+Os comandos dnf são praticamente os mesmos:
 
 	dnf <install remove search> <arquivo>
 
