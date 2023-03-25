@@ -727,7 +727,7 @@ Diretório do yum que armazena o cache de repositórios:
 
 	ll /var/cache/yum
 
-Removendo todo o cache de repositórios:
+Removendo todo o cache de repositórios (libera mais espaço):
 
 	yum clean all
 
