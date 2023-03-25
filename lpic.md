@@ -1677,8 +1677,6 @@ Encerrando um processo:
 
 	kill <PID>
 
-O kill sem nenhum parâmetro envia o sinal 15 SIGTERM.
-
 Encerrando processos através do nome:
 
 	killall firefox
