@@ -500,9 +500,17 @@ Removendo o pacote "embirrento":
 
 	apt-get -f remove
 
-Esvaziando o diretório de cache "/var/cache/apt/archives":
+Diretório do apt que armazena o cache de repositórios:
+
+	ll /var/cache/apt/archives
+
+Removendo todo o cache de repositórios (libera mais espaço):
 
 	apt-get clean
+
+Removendo apenas os pacotes desatualizados e obsoletos do cache de repositórios:
+
+	apt-get autoclean
 
 Pesquisando pacotes por nome: 
 
@@ -534,13 +542,9 @@ Removendo um pacote e sua base de dados:
 
 	apt-get purge <pacote>
 
-Removendo pacotes desnecessários (limpar dependências não utilizadas): 
+Removendo pacotes que se tornaram obsoletos, pois foram instalados como dependências de outros pacotes:
 
 	apt-get autoremove
-
-Removendo todos os arquivos em seu cache que estão desatualizados no repositório:
-
-	apt-get autoclean
 
 Imprimindo informações de pacotes instalados: 
 
@@ -719,9 +723,29 @@ Atualizando o sistema e removendo pacotes obsoletos:
 
 	yum update --obsolete
 
+Diretório do yum que armazena o cache de repositórios:
+
+	ll /var/cache/yum
+
+Removendo todo o cache de repositórios:
+
+	yum clean all
+
+Removendo apenas os pacotes desatualizados e obsoletos do cache de repositórios:
+
+	yum clean packages
+
+Removendo pacotes que se tornaram obsoletos, pois foram instalados como dependências de outros pacotes:
+
+	yum autoremove
+
+Pesquisando pacotes por nome: 
+
+	yum search <pacote>
+
 Instalando, removendo e pesquisando o pacote:
 
-	yum <erase install remove search> <arquivo>
+	yum <erase install remove> <pacote>
 
 Arquivo de configuração principal:
 
