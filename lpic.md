@@ -1117,13 +1117,21 @@ Imprimindo as últimas 15 linhas do /etc/passwd, com o nome do usuário e seu ID
 
 	tail -n 15 /etc/passwd | cut -d":" -f1,3 | sort -t ":" -k2 -g
 
-sort -t define o delimitador;
--k2 o campo referência para o ordenamento;
--g ordena como números ao invés de como caracteres;
+		"sort -t" Corresponde ao delimitador
+	
+		"-k2" Corresponde a referência para o ordenamento
+	
+		"-g" Ordena como números ao invés de como caracteres
 
 O sort ordena alfabeticamente, para inverter:
 
 	sort -r
+
+Ordenando por coluna:
+
+	df -h | sort -k2 -hr
+
+		"-hr" Ordena em formato legível e em ordem reversa (do maior para o menor)
 
 Imprimindo o conteúdo de um texto de modo paginado:
 
