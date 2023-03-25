@@ -16,13 +16,13 @@ Caracteres literais:
 
     "$" Corresponde ao final da linha
 
-Caracteres especiais:
+Quantificadores:
 
 Precisam ser escapados com uma barra invertida " \ " se você quiser correspondê-los literalmente (grep). Alguns desses são:
 
     "."  Corresponde a qualquer caractere
 
-    "|" Operador "OU"
+    "|"  Operador "OU"
 
     "*"  Corresponde a zero ou mais ocorrências do caractere anterior
 
@@ -31,6 +31,8 @@ Precisam ser escapados com uma barra invertida " \ " se você quiser correspond�
     "+"  Corresponde a uma ou mais ocorrências do caractere anterior
 
     "^$" Corresponde a uma string que não contém nenhum caractere, ou seja, linha vazia
+
+    ".*" Corresponde a qualquer caractere repetido zero ou mais vezes
 
 Conjuntos de caracteres:
 
