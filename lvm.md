@@ -1,24 +1,46 @@
 LVM, ou Logical Volume Manager, é um software de gerenciamento de armazenamento para sistemas operacionais Linux que permite criar e gerenciar partições lógicas em discos rígidos ou dispositivos de armazenamento em rede. O LVM funciona como uma camada de abstração entre o sistema de arquivos e o hardware de armazenamento, permitindo que as partições sejam facilmente redimensionadas, movidas e combinadas sem a necessidade de formatar ou desmontar o sistema de arquivos. O LVM também oferece recursos avançados, como espelhamento de disco para maior redundância e segurança, e snapshot para backups rápidos e consistentes. Com o LVM, os administradores de sistemas têm mais controle e flexibilidade sobre o gerenciamento de armazenamento em seus servidores Linux, permitindo a fácil expansão ou redução de partições sem interrupções no serviço.
 
+Layout, ex.:
+
+    LVM {
+
+        File Systems -> /home (ext3)        /data (xfs)
+
+            Logical Volume (LV) -> /dev/primeiro_vg/home_lv        /dev/primeiro_vg/data_lv
+
+                Volume Groups (VG) -> primeiro_vg
+
+                    Physical Volume (PV) -> /dev/sdb1        /dev/sdb2        /sdc1
+    
+        }
+    
+        Partições -> /dev/sdb1        /dev/sdb2        /sdc1
+
+            Discos -> /dev/sdb        /dev/sdc
+
 Imprimindo informações dos volumes físicos:
 
-    df -h
-
     pvdisplay
+
+    pvs
 
 Imprimindo informações dos grupos de volumes:
 
     vgdisplay
 
+    vgs
+
 Imprimindo informações dos volumes lógicos:
 
     lvdisplay
+
+    lvs
 
 Acrescente uma nova mídia vazia no sistema!
 
     fdisk -l
 
-    fdisk /desv/sdb
+    fdisk /dev/sdb
 
         Command: n
 
@@ -34,7 +56,7 @@ Acrescente uma nova mídia vazia no sistema!
 
         Command: w
 
-    fdisk /desv/sdb
+    fdisk /dev/sdb
 
         Command: t
 
