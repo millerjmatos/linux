@@ -96,11 +96,7 @@ Volume group "webserver_vg" successfully extended.
 
     df -h
 
-Vamos aumentar o espaço do diretório /var como ex.:
-
-    vgdisplay
-
-Procurar o LV Path que queremos expandir:
+Vamos aumentar o espaço do diretório /var (LV) como ex., referencie o LV Path:
 
     lvresize -L +5GB /dev/webserver_vg/var  
 
