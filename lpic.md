@@ -2722,7 +2722,7 @@ Criando um link simbólico para um diretório:
 
 	cd /home/
 
-	ls -s /var/ atalho_var
+	ln -s /var/ atalho_var
 
 Note a diferença no inode.
 
