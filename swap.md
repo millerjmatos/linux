@@ -61,3 +61,5 @@ Ativando a área de swap:
     reboot
 
 > Nesse caso no fstab a área de swap já estava referenciada, não foi preciso editá-lo.
+
+O local recomendado para criar o arquivo de swap é em /var, que é geralmente reservado para dados variáveis, como logs, bancos de dados e arquivos temporários. O arquivo de swap em /var pode ser chamado de /var/swap ou /var/swapfile.
