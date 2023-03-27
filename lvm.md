@@ -4,11 +4,11 @@ Layout, ex.:
 
     LVM {
 
-        File Systems -> /home (ext3)        /data (xfs)
+        File Systems -> /home (ext3)        /data (xfs)        /var (ext4)
 
-            Logical Volume (LV) -> /dev/primeiro_vg/home_lv        /dev/primeiro_vg/data_lv
+            Logical Volume (LV) -> /dev/primeiro_vg/home_lv        /dev/primeiro_vg/data_lv        
 
-                Volume Groups (VG) -> primeiro_vg
+                Volume Groups (VG) -> primeiro_vg        segundo_vg
 
                     Physical Volume (PV) -> /dev/sdb1        /dev/sdb2        /sdc1
     
@@ -36,7 +36,11 @@ Imprimindo informações dos volumes lógicos:
 
     lvs
 
-Acrescente uma nova mídia vazia no sistema!
+---
+
+Expandindo um diretório (LV)..
+
+Particionando uma nova mídia vazia:
 
     fdisk -l
 
@@ -86,7 +90,7 @@ Expandindo o grupo de volume lógico:
 
     vgextend <VG NAME> /dev/sdb1
 
-Volume group "webserver-vg" successfully extended.
+Volume group "webserver_vg" successfully extended.
 
     vgdisplay
 
@@ -98,15 +102,51 @@ Vamos aumentar o espaço do diretório /var como ex.:
 
 Procurar o LV Path que queremos expandir:
 
-    lvresize -L +5GB /dev/webserver-vg/var  
+    lvresize -L +5GB /dev/webserver_vg/var  
 
-Size of logical volume webserver-vg/var changed from 1,65 GiB (423 extents) to 6,65 GiB (1703 extents).
-Logical volume webserver-vg/var successfully resized.
+Size of logical volume webserver_vg/var changed from 1,65 GiB (423 extents) to 6,65 GiB (1703 extents).
+Logical volume webserver_vg/var successfully resized.
 
     df -h
 
-    resize2fs /dev/webserver-vg/var 
+Atualizando:
 
-Filesystem at /dev/webserver-vg/var is mounted on /var; on-line resizing required
+    resize2fs /dev/webserver_vg/var 
+
+Filesystem at /dev/webserver_vg/var is mounted on /var; on-line resizing required
 old_desc_blocks = 1, new_desc_blocks = 1
-The filesystem on /dev/webserver-vg/var is now 1743872 (4k) blocks long.
+The filesystem on /dev/webserver_vg/var is now 1743872 (4k) blocks long.
+
+---
+
+Adicionando uma área swap de 4GB em um segundo (VG)..
+
+Criando uma unidade de volume físico (PV):
+
+    pvcreate /dev/sdc1
+
+    pvs
+
+Adicionando o (PV) ao grupo de volume (VG):
+
+    vgcreate memory_vg /dev/sdc1
+
+    vgs
+
+A criação do (LV) requer um conjunto de informações que serão solicitadas ao aplicar o comando lvcreate:
+
+    lvcreate -L 4G -n swap2_lv memory_vg
+
+    lvs
+
+Montagem:
+
+    mkswap /dev/mapper/memory_vg/swap2_lv
+
+    free -h
+
+    swapon /dev/mapper/memory_vg/swap2_lv
+
+    free -h
+
+    swapon -s
