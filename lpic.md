@@ -2702,9 +2702,9 @@ Principais Áreas de Conhecimento:
 
 Criando um link físico para o arquivo:
 
-	ln script.sh Link-hard
+	ln script.sh link-hard
 
-	ls -li script.sh Link-hard
+	ls -li script.sh link-hard
 
 Note que ambos possuem o mesmo inode.
 
@@ -2714,15 +2714,21 @@ Não funciona em diretórios.
 
 Criando um link simbólico para o arquivo:
 
-	ln -s script.sh Link-simbolico
+	ln -s script.sh link-simbolico
 
-	ls -li script.sh Link-hard
+	ls -li script.sh link-hard
 
 Criando um link simbólico para um diretório:
 
 	cd /home/
 
 	ln -s /var/ atalho_var
+
+Removendo o link simbólico, nome sem "/" no final:
+
+	rm atalho_var
+		
+		y
 
 Note a diferença no inode.
 
