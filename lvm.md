@@ -1,6 +1,6 @@
 LVM, ou Logical Volume Manager, é um software de gerenciamento de armazenamento para sistemas operacionais Linux que permite criar e gerenciar partições lógicas em discos rígidos ou dispositivos de armazenamento em rede. O LVM funciona como uma camada de abstração entre o sistema de arquivos e o hardware de armazenamento, permitindo que as partições sejam facilmente redimensionadas, movidas e combinadas sem a necessidade de formatar ou desmontar o sistema de arquivos. O LVM também oferece recursos avançados, como espelhamento de disco para maior redundância e segurança, e snapshot para backups rápidos e consistentes. Com o LVM, os administradores de sistemas têm mais controle e flexibilidade sobre o gerenciamento de armazenamento em seus servidores Linux, permitindo a fácil expansão ou redução de partições sem interrupções no serviço.
 
-Layout, ex.:
+Layout para entendimento, ex.:
 
     LVM {
 
@@ -17,6 +17,8 @@ Layout, ex.:
         Partições -> /dev/sdb1        /dev/sdb2        /sdc1
 
             Discos -> /dev/sdb        /dev/sdc
+
+---
 
 Imprimindo informações dos volumes físicos:
 
@@ -38,7 +40,7 @@ Imprimindo informações dos volumes lógicos:
 
 ---
 
-Expandindo um diretório (LV)..
+### Redimensionar volume lógico
 
 Particionando uma nova mídia vazia:
 
@@ -76,7 +78,7 @@ O tipo da partição "Linux" foi alterado para "Linux LVM".
 
     fdisk -l
 
-Criando o volume físico:
+Criando volume físico:
 
     pvcreate /dev/sdb1
 
@@ -84,7 +86,7 @@ Physical volume "/dev/sdb1" successfully created.
 
     pvdisplay
 
-Expandindo o grupo de volume lógico:
+Expandindo grupo de volume:
 
     vgdisplay
 
@@ -96,7 +98,7 @@ Volume group "webserver_vg" successfully extended.
 
     df -h
 
-Vamos aumentar o espaço do diretório /var (LV) como ex., referencie o LV Path:
+Redimensionando volume lógico, como ex. /var, referenciando o LV Path:
 
     lvresize -L +5GB /dev/webserver_vg/var  
 
@@ -115,21 +117,21 @@ The filesystem on /dev/webserver_vg/var is now 1743872 (4k) blocks long.
 
 ---
 
-Adicionando uma área swap de 4GB em um segundo (VG)..
+### Adicionar área swap em um novo grupo de volume
 
-Criando uma unidade de volume físico (PV):
+Criando volume físico:
 
     pvcreate /dev/sdc1
 
     pvs
 
-Adicionando o (PV) ao grupo de volume (VG):
+Criando grupo de volume referenciando o volume físico:
 
     vgcreate memory_vg /dev/sdc1
 
     vgs
 
-A criação do (LV) requer um conjunto de informações que serão solicitadas ao aplicar o comando lvcreate:
+Criar volume lógico requer um conjunto de informações ao aplicar o comando lvcreate:
 
     lvcreate -L 4G -n swap2_lv memory_vg
 
@@ -153,4 +155,4 @@ Edite o fstab:
 
         /dev/mapper/memory_vg/swap2_lv        none    swap    sw      0       0
 
-Se você tiver espaço livre em um physical volume (PV), você pode usá-lo para criar um novo volume lógico (LV) ou estender um volume lógico existente!
+Se você tiver espaço livre em um volume físico (PV), você pode usá-lo para criar um novo volume lógico (LV) ou redimensionar um volume lógico existente!
