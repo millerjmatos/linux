@@ -2718,6 +2718,12 @@ Criando um link simbólico para o arquivo:
 
 	ls -li script.sh Link-hard
 
+Criando um link simbólico para um diretório:
+
+	cd /home/
+
+	ls -s /var/ atalho_var
+
 Note a diferença no inode.
 
 Similar a um atalho!
