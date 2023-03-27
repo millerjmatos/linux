@@ -1717,9 +1717,13 @@ Encerrando processos através do nome:
 
 	pkill firefox
 
+killall mata processos com base em seus nomes exatos.
+
+pkill mata processos com base em seu nome ou outras propriedades, como o usuário que o iniciou ou o grupo de processos ao qual ele pertence.
+
 Reiniciando um processo:
 
-	kill -1 samba
+	kill -1 <PID>
 
 	pkill -1 firefox -u muller
 
