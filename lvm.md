@@ -107,7 +107,7 @@ Logical volume primeiro_vg-data successfully resized.
 
     df -h
 
-Atualizando:
+Atualizando, opcional:
 
     resize2fs /dev/mapper/primeiro_vg-data 
 
