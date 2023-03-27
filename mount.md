@@ -20,6 +20,6 @@ Caso o sistema de arquivos seja NTFS:
 
     mount -t ntfs-3g /dev/sdc1 /mnt/hd_externo
 
-Demontando:
+Desmontando:
 
     umount /dev/sdb1 && umount /dev/sdc1
