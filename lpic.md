@@ -1550,8 +1550,6 @@ Copiando uma partição, byte a byte:
 
 	dd if=/dev/sr0 of=imagem.iso
 
-	error
-
 ------------------------------------------------------------
 	* * * * * 103.4 Use streams, pipes and redirects * * * * *
 ------------------------------------------------------------
