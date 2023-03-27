@@ -703,7 +703,7 @@ Ignorando dependências usadas por outro programa:
 
 	rpm -evh --nodeps NomeDoPrograma
 
-Descompactando arquivos .RPM:
+Descomprimindo arquivos .RPM:
 
 	rpm2cpio linux-5.x86_64.rpm > linux-5.cpio
 
@@ -1478,55 +1478,55 @@ Desagrupando o conteúdo do aqruivo .tar no diretório local:
 
 	tar xvf backup.tar
 
-Compactando com o gzip:
+Comprimindo com o gzip:
 
 	gzip backup.tar
 
 	gzip -k backup.tar
 
-Descompactando o arquivo tar.gz:
+Descomprimindo o arquivo tar.gz:
 
 	gunzip backup.tar.gz
 
 	gzip -d backup.tar.gz
 
-Agrupando e compactando ao mesmo tempo com gzip:
+Agrupando e comprimindo ao mesmo tempo com gzip:
 
 	tar zcpfv backup.tgz /tmp/
 
-Descompactando tar.gz com o tar para o diretório local:
+Descomprimindo tar.gz com o tar para o diretório local:
 
 	tar zxpfv backup.tgz -C .
 
-Compactando com o bzip2:
+Comprimindo com o bzip2:
 
 	bzip2 backup.tar
 
 	bzip2 -k backup.tar
 
-Descompactando o arquivo tar.bz2:
+Descomprimindo o arquivo tar.bz2:
 
 	bunzip2 backup.tar.bz2
 
 	bzip2 -d backup.tar.bz2
 
-Agrupando e compactando ao mesmo tempo com bzip2:
+Agrupando e comprimindo ao mesmo tempo com bzip2:
 
 	tar jcpfv backup.tbz /tmp/
 
-Compactando com o xz:
+Comprimindo com o xz:
 
 	xz backup.tar.xz
 
 	xz -k backup.tar.xz
 
-Descompactando o arquivo tar.xz
+Descomprimindo o arquivo tar.xz
 
 	unxz backup.tar.xz
 
 	xz -d backup.tar.xz
 
-Agrupando e compactando ao mesmo tempo com xz:
+Agrupando e comprimindo ao mesmo tempo com xz:
 
 	tar Jcpfv backup.txz /tmp/
 
@@ -1538,11 +1538,11 @@ Desagrupando o conteúdo do aqruivo .cpio no diretório local:
 
 	cpio -i < backup.cpio
 
-Agrupando e compactando através de uma saída ao mesmo tempo com xz:
+Agrupando e comprimindo através de uma saída ao mesmo tempo com xz:
 
 	find /home/ -type f -name "*.pdf" | cpio -o | xz > backup.cpio.zx
 
-Descompactando o arquivo cpio.xz:
+Descomprimindo o arquivo cpio.xz:
 
 	xz -c backup.cpio.zx | cpio -i
 
