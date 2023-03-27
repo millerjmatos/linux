@@ -150,3 +150,11 @@ Montagem:
     free -h
 
     swapon -s
+
+Edite o fstab:
+
+    vim /etc/fstab
+
+        /dev/mapper/memory_vg/swap2_lv        none    swap    sw      0       0
+
+Se você tiver espaço livre em um physical volume (PV), você pode usá-lo para criar um novo volume lógico (LV) ou estender um volume lógico existente!
