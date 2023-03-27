@@ -4,9 +4,9 @@ Layout para entendimento, ex.:
 
     LVM {
 
-        File Systems -> /home (ext3)        /data (xfs)        /var (ext4)
+        File Systems -> /home (ext3)        /data (xfs)
 
-            Logical Volume (LV) -> /dev/primeiro_vg/home_lv        /dev/primeiro_vg/data_lv        
+            Logical Volume (LV) -> /dev/mapper/primeiro_vg-home_lv        /dev/mapper/primeiro_vg-data_lv        
 
                 Volume Groups (VG) -> primeiro_vg        segundo_vg
 
@@ -92,28 +92,28 @@ Expandindo grupo de volume:
 
     vgextend <VG NAME> /dev/sdb1
 
-Volume group "webserver_vg" successfully extended.
+Volume group "primeiro_vg" successfully extended.
 
     vgdisplay
 
     df -h
 
-Redimensionando volume lógico, como ex. /var, referenciando o LV Path:
+Redimensionando volume lógico, como ex. /data, referenciando o LV Path:
 
-    lvresize -L +5GB /dev/webserver_vg/var  
+    lvresize -L +5GB /dev/mapper/primeiro_vg-data  
 
-Size of logical volume webserver_vg/var changed from 1,65 GiB (423 extents) to 6,65 GiB (1703 extents).
-Logical volume webserver_vg/var successfully resized.
+Size of logical volume primeiro_vg-data changed from 1,65 GiB (423 extents) to 6,65 GiB (1703 extents).
+Logical volume primeiro_vg-data successfully resized.
 
     df -h
 
 Atualizando:
 
-    resize2fs /dev/webserver_vg/var 
+    resize2fs /dev/mapper/primeiro_vg-data 
 
-Filesystem at /dev/webserver_vg/var is mounted on /var; on-line resizing required
+Filesystem at /dev/mapper/primeiro_vg-data is mounted on /data; on-line resizing required
 old_desc_blocks = 1, new_desc_blocks = 1
-The filesystem on /dev/webserver_vg/var is now 1743872 (4k) blocks long.
+The filesystem on /dev/mapper/primeiro_vg-data is now 1743872 (4k) blocks long.
 
 ---
 
@@ -139,11 +139,11 @@ Criar volume lógico requer um conjunto de informações ao aplicar o comando lv
 
 Montagem:
 
-    mkswap /dev/mapper/memory_vg/swap2_lv
+    mkswap /dev/mapper/memory_vg-swap2_lv
 
     free -h
 
-    swapon /dev/mapper/memory_vg/swap2_lv
+    swapon /dev/mapper/memory_vg-swap2_lv
 
     free -h
 
@@ -153,6 +153,6 @@ Edite o fstab:
 
     vim /etc/fstab
 
-        /dev/mapper/memory_vg/swap2_lv        none    swap    sw      0       0
+        /dev/mapper/memory_vg-swap2_lv        none    swap    sw      0       0
 
 Se você tiver espaço livre em um volume físico (PV), você pode usá-lo para criar um novo volume lógico (LV) ou redimensionar um volume lógico existente!
