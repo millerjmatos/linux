@@ -107,9 +107,13 @@ Logical volume primeiro_vg-data successfully resized.
 
     df -h
 
-Atualizando, opcional:
+Atualizando o sistema de arquivos redimensionado:
 
     resize2fs /dev/mapper/primeiro_vg-data 
+
+Em sistema de arquivos xfs:
+
+    xfs_growfs
 
 Filesystem at /dev/mapper/primeiro_vg-data is mounted on /data; on-line resizing required
 old_desc_blocks = 1, new_desc_blocks = 1
@@ -117,7 +121,9 @@ The filesystem on /dev/mapper/primeiro_vg-data is now 1743872 (4k) blocks long.
 
 ---
 
-### Adicionar área swap em um novo grupo de volume
+### Adicionar área swap em novo grupo de volume
+
+Particionar o disco com o fdisk e tipo 8e.
 
 Criando volume físico:
 
@@ -156,3 +162,9 @@ Edite o fstab:
         /dev/mapper/memory_vg-swap2_lv        none    swap    sw      0       0
 
 Se você tiver espaço livre em um volume físico (PV), você pode usá-lo para criar um novo volume lógico (LV) ou redimensionar um volume lógico existente!
+
+Interface gráfica para família Debian:
+
+    apt install system-config-lvm
+
+Família RHEL o cockpit permite gerenciar todos os aspectos do LVM.
