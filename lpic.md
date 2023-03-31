@@ -309,9 +309,9 @@ Imprimindo as informações de swap e memória:
 
 	swapon -s
 
-Desligando a unidade de swap atual:
+Desligando e religando a unidade de swap atual:
 
-	swapoff /dev/sdX
+	swapoff /dev/sdX && swapon /dev/sdX
 
 Habilitando todas as partições swap contidas em /etc/fstab:
 
@@ -2170,6 +2170,8 @@ Imprimindo os discos e as partições de cada um deles:
 	parted -l
 
 	lsblk
+
+	lsblk -f
 
 É preciso estar como root.
 
