@@ -3000,9 +3000,11 @@ Principais Áreas de Conhecimento:
 
 Adicionando um usuário no sistema:
 
-	useradd -m -d /home/user -s /bin/bash <user>
+	useradd -m user
 
-	useradd <user> -m -d /home/user -s /bin/bash
+	useradd -m user -s /bin/bash
+
+	useradd -m name_user -d /home/user -s /bin/bash
 
 	passwd <user>
 	
