@@ -430,28 +430,26 @@ Essa variável é usada pelo sistema operacional Linux para encontrar biblioteca
 
 Pode ser configurada para definir temporariamente a localização de uma biblioteca.
 
-Se a biblioteca está localizada em /home/usuario/minha_biblioteca:
+Se a biblioteca está localizada em /home/user/my_library:
 
-	export LD_LIBRARY_PATH=/home/usuario/minha_biblioteca
+	export LD_LIBRARY_PATH=/home/user/my_library
 
 Imprimindo todas as bibliotecas utilizadas pelo sistema:
 
 	ldconfig -p |less
 
-	ldconfig -p |head
-
 Adicionando o diretório e as bibliotecas contidas em: 
 
-	/etc/ld.so.cache
+	ls -l /etc/ld.so.cache
 
 	mkdir /tmp/lib
 
 	ldconfig -p |grep "/tmp/lib"
 
-	vi /etc/ld.so.conf
+	vim /etc/ld.so.conf
 
 		include /etc/ld.so.conf.d/*.conf
-		/temp/lib/
+		/tmp/lib/
 
 		:wq
 
@@ -461,7 +459,7 @@ Adicionando o diretório e as bibliotecas contidas em:
 
 	ls -l /etc/ld.so.cache
 
-Adicionando o diretório e as bibliotecas contidas, na sessão atual:
+Adicionando o diretório e as bibliotecas contidas na sessão atual:
 
 	export LD_LIBRARY_PATH=/tmp/lib/
 
