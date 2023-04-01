@@ -510,6 +510,10 @@ Removendo apenas os pacotes desatualizados e obsoletos do cache de repositórios
 
 	apt-get autoclean
 
+Removendo pacotes que se tornaram obsoletos, pois foram instalados como dependências de outros pacotes:
+
+	apt-get autoremove
+
 Pesquisando pacotes por nome: 
 
 	apt-cache search <pacote>
@@ -539,10 +543,6 @@ Removendo um pacote instalado:
 Removendo um pacote e sua base de dados:
 
 	apt-get purge <pacote>
-
-Removendo pacotes que se tornaram obsoletos, pois foram instalados como dependências de outros pacotes:
-
-	apt-get autoremove
 
 Imprimindo informações de pacotes instalados: 
 
