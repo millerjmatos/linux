@@ -641,6 +641,8 @@ Imprimindo informações de um pacote:
 
 	rpm -qi bash
 
+	rpm -qip arquivo.rpm
+
 Imprimindo os arquivos que pertencem/instalados pelo pacote:
 
 	rpm -ql bash
@@ -660,10 +662,6 @@ Imprimindo os arquivos de documentação da instalação:
 Imprimindo quais são os arquivos de um determinado pacote:
 
 	rpm -qlp arquivo.rpm
-
-Imprimindo informações de um pacote:
-
-	rpm -qip arquivo.rpm
 
 Instalando um pacote:
 
