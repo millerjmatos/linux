@@ -54,7 +54,7 @@ Atualizando o arquivo de configuração:
 
 #### RESOLVENDO FALHA NO DISCO:
 
-Verificar o status do array:
+Verificando o status do array:
 
 	cat /proc/mdstat
 
@@ -62,13 +62,17 @@ Simulando uma falha no array (via software):
 
 	mdadm --manage --set-faulty /dev/md0 /dev/sdc1
 
-Remover um disco com falha:
+Removendo um disco com falha:
+
+	mdadm --stop /dev/md0
 
 	mdadm --manage -r /dev/md0 /dev/sdc1
 
-Adicionar disco novo substituto ao array:
+Adicionando disco novo substituto ao array:
 
 	mdadm --manage -a /dev/md0 /dev/sdd1
+
+	mdadm --start /dev/md0
 
 #### DESFAZENDO O RAID:
 
@@ -76,15 +80,15 @@ Desmontando o array:
 
 	umount /raid
 
-Parar o array:
+Parando o array:
 
 	mdadm --stop /dev/md0
 
-Remover o array:
+Removendo o array:
 
 	mdadm --remove /dev/md0
 
-Excluir o superbloco em todos os drives do array:
+Excluindo o superbloco em todos os drives do array:
 
 	mdadm --zero-superblock /dev/sd[bc]1
 
