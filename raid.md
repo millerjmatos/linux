@@ -14,6 +14,8 @@ Instalando a ferramenta:
 
 	dnf in mdadm
 
+	apt-get install mdadm
+
 Discos do exemplo: 
 
 	/dev/sdb
@@ -54,7 +56,7 @@ Atualizando o arquivo de configuração:
 
 Verificar o status do array:
 
-	mdadm --detail /dev/md0 ; cat /proc/mdstat
+	cat /proc/mdstat
 
 Simulando uma falha no array (via software):
 
@@ -62,11 +64,11 @@ Simulando uma falha no array (via software):
 
 Remover um disco com falha:
 
-	mdadm /dev/md0 -r /dev/sdc1
+	mdadm --manage -r /dev/md0 /dev/sdc1
 
 Adicionar disco novo substituto ao array:
 
-	mdadm /dev/md0 -a /dev/
+	mdadm --manage -a /dev/md0 /dev/sdd1
 
 #### DESFAZENDO O RAID:
 
