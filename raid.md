@@ -12,8 +12,6 @@ O RAID 5 usa pelo menos três discos rígidos para dividir os dados em blocos e 
 
 Instalando a ferramenta:
 
-	dnf in mdadm
-
 	apt-get install mdadm
 
 Discos do exemplo: 
@@ -40,11 +38,11 @@ Verificando o RAID:
 
 Formatando e montando o RAID:
 
-	mkfs -t xfs /dev/md0
+	mkfs -t ext4 /dev/md0
 	
 	mkdir /raid
 	
-	mount -t xfs /dev/md0 /raid
+	mount -t ext4 /dev/md0 /raid
 	
 	df -h
 
@@ -64,6 +62,8 @@ Simulando uma falha no array (via software):
 
 Removendo um disco com falha:
 
+	umount /raid
+
 	mdadm --stop /dev/md0
 
 	mdadm --manage -r /dev/md0 /dev/sdc1
@@ -72,7 +72,7 @@ Adicionando disco novo substituto ao array:
 
 	mdadm --manage -a /dev/md0 /dev/sdd1
 
-	mdadm --start /dev/md0
+	mdadm --assemble /dev/md0
 
 #### DESFAZENDO O RAID:
 
