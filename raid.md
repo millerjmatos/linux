@@ -52,10 +52,6 @@ Atualizando o arquivo de configuração:
 
 #### RESOLVENDO FALHA NO DISCO:
 
-Verificando o status do array:
-
-	cat /proc/mdstat
-
 Simulando uma falha no array (via software):
 
 	mdadm --manage --set-faulty /dev/md0 /dev/sdc1
