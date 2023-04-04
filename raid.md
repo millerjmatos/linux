@@ -36,12 +36,6 @@ Formatando e montando o RAID:
 	
 	df -h
 
-Verificando o RAID:
-
-	cat /proc/mdstat
-
-	mdadm --detail /dev/md0
-
 Tornando persistente:
 
 	vim /etc/fstab
@@ -58,17 +52,21 @@ Simulando uma falha no array (via software):
 
 	mdadm --manage --set-faulty /dev/md0 /dev/sdc1
 
+	mdadm --detail /dev/md0
+
 Removendo um disco com falha:
 
 	umount /raid
 
 	mdadm --stop /dev/md0
 
-	mdadm --manage -r /dev/md0 /dev/sdc1
+	mdadm --manage /dev/md0 -r /dev/sdc1
 
 Adicionando disco novo substituto ao array:
 
-	mdadm --manage -a /dev/md0 /dev/sdd1
+	mdadm --manage /dev/md0 -a /dev/sdd1
+
+	mdadm --detail /dev/md0
 
 	mdadm --assemble /dev/md0 /dev/sdb1 /dev/sdd1
 
