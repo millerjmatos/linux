@@ -14,11 +14,7 @@ Instalando a ferramenta:
 
 	apt-get install mdadm
 
-Discos do exemplo: 
-
-	/dev/sdb
-	
-	/dev/sdc
+	systemctl reboot
 
 Criando as novas partições primárias com tamanhos iguais e tipo raid (fd):
 
@@ -30,12 +26,6 @@ Criando o dispositivo RAID /dev/md0:
 
 	mdadm --create /dev/md0 --level=1 --raid-devices=2 /dev/sd[b-c]1
 
-Verificando o RAID:
-
-	cat /proc/mdstat
-
-	mdadm --detail /dev/md0
-
 Formatando e montando o RAID:
 
 	mkfs -t ext4 /dev/md0
@@ -46,9 +36,21 @@ Formatando e montando o RAID:
 	
 	df -h
 
-Atualizando o arquivo de configuração:
+Verificando o RAID:
 
-	mdadm --detail --scan --verbose >> /etc/mdadm.conf
+	cat /proc/mdstat
+
+	mdadm --detail /dev/md0
+
+Tornando persistente:
+
+	vim /etc/fstab
+
+		/dev/md0		/raid		ext4		defaults		0	0	
+
+Salvando a configuração:
+
+	mdadm --detail --scan --verbose >> /etc/mdadm.conf	
 
 #### RESOLVENDO FALHA NO DISCO:
 
