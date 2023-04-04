@@ -70,7 +70,9 @@ Adicionando disco novo substituto ao array:
 
 	mdadm --manage -a /dev/md0 /dev/sdd1
 
-	mdadm --assemble /dev/md0 /dev/sdb1 /dev/sdd1	
+	mdadm --assemble /dev/md0 /dev/sdb1 /dev/sdd1
+
+	mount -t ext4 /dev/md0 /raid	
 
 #### DESFAZENDO O RAID:
 
