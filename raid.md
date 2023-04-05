@@ -26,6 +26,8 @@ Criando o dispositivo RAID /dev/md0:
 
 	mdadm --create /dev/md0 --level=1 --raid-devices=2 /dev/sd[b-c]1
 
+	cat /proc/mdstat
+
 Formatando e montando o RAID:
 
 	mkfs -t ext4 /dev/md0
