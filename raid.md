@@ -48,6 +48,8 @@ Salvando a configuração:
 
 	mdadm -D --scan >> /etc/mdadm/mdadm.conf	
 
+	update-initramfs -u
+
 #### RESOLVENDO FALHA NO DISCO:
 
 Simulando uma falha no array (via software):
