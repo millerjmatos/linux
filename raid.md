@@ -46,9 +46,7 @@ Tornando persistente:
 
 Salvando a configuração:
 
-	mdadm -D --scan >> /etc/mdadm/mdadm.conf	
-
-	update-initramfs -u
+	mdadm -D --scan >> /etc/mdadm/mdadm.conf
 
 #### RESOLVENDO FALHA NO DISCO:
 
