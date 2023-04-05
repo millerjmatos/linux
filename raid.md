@@ -24,7 +24,7 @@ Criando as novas partições primárias com tamanhos iguais e tipo raid (fd):
 
 Criando o dispositivo RAID /dev/md0:
 
-	mdadm --create /dev/md0 --level=1 --raid-devices=2 /dev/sd[b-c]1
+	mdadm -C /dev/md0 -l 1 -n 2 /dev/sd[b-c]1
 
 	cat /proc/mdstat
 
@@ -46,7 +46,7 @@ Tornando persistente:
 
 Salvando a configuração:
 
-	mdadm --detail --scan --verbose >> /etc/mdadm.conf	
+	mdadm -D --scan >> /etc/mdadm/mdadm.conf	
 
 #### RESOLVENDO FALHA NO DISCO:
 
@@ -54,13 +54,13 @@ Simulando uma falha no array (via software):
 
 	mdadm --manage --set-faulty /dev/md0 /dev/sdc1
 
-	mdadm --detail /dev/md0
+	mdadm -D /dev/md0
 
 Removendo um disco com falha:
 
 	umount /raid
 
-	mdadm --stop /dev/md0
+	mdadm -S /dev/md0
 
 	mdadm --manage /dev/md0 -r /dev/sdc1
 
@@ -68,9 +68,9 @@ Adicionando disco novo substituto ao array:
 
 	mdadm --manage /dev/md0 -a /dev/sdd1
 
-	mdadm --detail /dev/md0
+	mdadm -D /dev/md0
 
-	mdadm --assemble /dev/md0 /dev/sdb1 /dev/sdd1
+	mdadm -A /dev/md0 /dev/sdb1 /dev/sdd1
 
 	mount -t ext4 /dev/md0 /raid	
 
@@ -82,11 +82,11 @@ Desmontando o array:
 
 Parando o array:
 
-	mdadm --stop /dev/md0
+	mdadm -S /dev/md0
 
 Removendo o array:
 
-	mdadm --remove /dev/md0
+	mdadm -r /dev/md0
 
 Excluindo o superbloco em todos os drives do array:
 
