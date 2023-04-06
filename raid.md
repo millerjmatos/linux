@@ -52,7 +52,7 @@ Salvando a configuração:
 
 Simulando uma falha no array (via software):
 
-	mdadm --manage --set-faulty /dev/md0 /dev/sdc1
+	mdadm --manage -f /dev/md0 /dev/sdc1
 
 	mdadm -D /dev/md0
 
@@ -60,9 +60,11 @@ Removendo um disco com falha:
 
 	umount /raid
 
-	mdadm -S /dev/md0
-
 	mdadm --manage /dev/md0 -r /dev/sdc1
+
+O ideal aqui é desligar o sistema e remover o disco com falha:
+
+	systemctl poweroff
 
 Adicionando disco novo substituto ao array:
 
@@ -70,9 +72,7 @@ Adicionando disco novo substituto ao array:
 
 	mdadm -D /dev/md0
 
-	mdadm -A /dev/md0 /dev/sdb1 /dev/sdd1
-
-	mount -t ext4 /dev/md0 /raid	
+	mount -a
 
 #### DESFAZENDO O RAID:
 
@@ -91,7 +91,3 @@ Removendo o array:
 Excluindo o superbloco em todos os drives do array:
 
 	mdadm --zero-superblock /dev/sd[bc]1
-
-Editar o arquivo:
-
-	/etc/mdadm/mdadm.conf
