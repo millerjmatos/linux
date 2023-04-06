@@ -74,17 +74,19 @@ Adicionando disco novo substituto ao array:
 
 	mount -a
 
+É possível adicionar mais discos ao array!
+
 #### DESFAZENDO O RAID:
 
-Desmontando o array:
+Desmontando:
 
 	umount /raid
 
-Parando o array:
+Parando:
 
 	mdadm -S /dev/md0
 
-Removendo o array:
+Removendo:
 
 	mdadm -r /dev/md0
 
