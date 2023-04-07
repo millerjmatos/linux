@@ -48,8 +48,6 @@ Salvando a configuração:
 
 	mdadm -D --scan >> /etc/mdadm/mdadm.conf
 
-#### RESOLVENDO FALHA NO DISCO:
-
 Simulando uma falha no array (via software):
 
 	mdadm --manage -f /dev/md0 /dev/sdc1
@@ -76,15 +74,9 @@ Adicionando disco novo substituto ao array:
 
 É possível adicionar mais discos ao array!
 
-#### DESFAZENDO O RAID:
-
 Desmontando:
 
 	umount /raid
-
-Parando:
-
-	mdadm -S /dev/md0
 
 Removendo:
 
