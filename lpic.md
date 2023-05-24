@@ -3334,6 +3334,22 @@ Definindo o DNS da interface:
 
 	nmtui
 
+Localizando redes Wi-Fi:
+
+	nmcli device wifi list
+
+	nmcli device wifi rescan
+
+Ativando desativando redes Wi-Fi:
+
+	nmcli radio wifi <on off>
+
+Conectando desconectando no Wi-Fi:
+
+	nmcli device wifi <SSID> password <PASS>
+
+	nmcli device wifi disconnect <SSID>
+
 ------------------------------------------------------------
 	* * * * * 109.3 Basic network troubleshooting * * * * *
 ------------------------------------------------------------
