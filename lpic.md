@@ -3407,9 +3407,9 @@ Definindo uma rota:
 
 Informando a rota dos pacotes:
 
-	<tracepath tracerouth> mullertec.com.br
+	<tracepath traceroute> mullertec.com.br
 
-	<tracepath tracerouth> -n lpi.org
+	<tracepath traceroute> -n lpi.org
 
 Definindo MAC:
 
