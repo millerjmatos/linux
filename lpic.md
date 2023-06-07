@@ -3367,31 +3367,23 @@ Instalando o utilitário ifconfig:
 
 Reiniciando uma interface:
 
-	ifconfig ethX down ; ifconfig ethX up
-
 	ip link set ethX down ; ip link set ethX up
 
-Imprimindo informações de sockets e conexões ativas:
-
-	ss -tp
-
-	netstat -tp
-
-	netstat -putan
-
-Um socket é uma interface de comunicação bidirecional entre processos, que permite que dois processos em uma rede se comuniquem. Ele é identificado por um endereço IP e um número de porta.
-
-Informando a rota dos pacotes:
-
-	<tracepath tracerouth> mullertec.com.br
-
-	<tracepath tracerouth> -n lpi.org
+	ifconfig ethX down ; ifconfig ethX up
 
 Imprimindo o IP/MAC da interface:
 	
 	ip a show
 
 	ifconfig
+
+Definindo um IP para a interface:
+
+	ip a <add del> 192.168.100.200/24 dev enp0s8
+
+	ifconfig enp0s8 192.168.100.88 netmask 255.255.255.0
+
+	ip a flush dev enp0s8
 
 Imprimindo a tabela de roteamento:
 
@@ -3413,21 +3405,21 @@ Definindo uma rota:
 
 	ip route <add del> 172.16.30.0/24 via 10.0.0.1 dev ethX
 
-Definindo um IP para a interface:
+Informando a rota dos pacotes:
 
-	ip a <add del> 192.168.100.200/24 dev enp0s8
+	<tracepath tracerouth> mullertec.com.br
 
-	ip a flush dev enp0s8
+	<tracepath tracerouth> -n lpi.org
 
 Definindo MAC:
 
-	ifconfig ethX down
+	ip link set ethX down
 	
 	ip link set dev ethX address 1A:2B:3C:55:66:00
 	
-	ifconfig ethX up
+	ip link set ethX up
 
-Definindo o /etc/network/interfaces:
+Definindo o IP DHCP com arquivo de configuração /etc/network/interfaces:
 
 		auto lo
 		iface lo inet loopback
@@ -3440,6 +3432,16 @@ Definindo IP fixo:
 		netmask 255.255.x.x
 		gateway 192.168.x.x
 		dns-nameservers 8.8.8.8 8.8.4.4
+
+Imprimindo informações de sockets e conexões ativas:
+
+	ss -tp
+
+	netstat -tp
+
+	netstat -putan
+
+Um socket é uma interface de comunicação bidirecional entre processos, que permite que dois processos em uma rede se comuniquem. Ele é identificado por um endereço IP e um número de porta.
 
 Exibindo o IP externo:
 
