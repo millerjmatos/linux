@@ -1310,9 +1310,17 @@ Imprimindo recursivamente o conteúdo de cada diretório:
 
 	ls -lR
 
-Imprimindo todos os detalhes dos arquivos/diretórios, ordenados de forma que os arquivos mais novos apareçam no final da listagem:
+Imprimindo por tamanho:
 
-	ls -latr
+	ls -lS
+
+Imprimindo por tempo de modificação:
+
+	ls -lt
+
+Ordenados do mais recente para o mais antigo:
+
+	ls -ltr
 
 São comandos equivalentes:
 
