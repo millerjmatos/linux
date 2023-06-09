@@ -1546,6 +1546,10 @@ Copiando uma partição, byte a byte:
 
 	dd if=/dev/sr0 of=imagem.iso
 
+Redimensionando um arquivo:
+
+	truncate -s 10M arquivo.log
+
 ------------------------------------------------------------
 	* * * * * 103.4 Use streams, pipes and redirects * * * * *
 ------------------------------------------------------------
