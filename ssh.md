@@ -64,8 +64,8 @@ No servidor:
 
     systemctl restart sshd
 
-    systemctl status ssh.status
-
+    systemctl status sshd
+    
 Criando o par de chaves no lado cliente:
 
     ssh-keygen
