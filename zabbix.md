@@ -134,7 +134,7 @@ Na console:
 
         Password: P@ssword
 
-Credêncial padrão:
+Credencial padrão:
 
     Admin
     zabbix
