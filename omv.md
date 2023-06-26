@@ -5,10 +5,10 @@ Site oficial: https://www.openmediavault.org/
     Requisitos do exemplo: 1 disco SSD (system) e 2 discos HD (storage).
 
     O processo de instalação é semelhante ao do Debian.
+    
+    Você precisará de, no mínimo, 3 discos, pois uma unidade será usada para a instalação e as outras duas serão usadas para armazenar os arquivos.
 
     É importante observar que a senha do root não é a mesma usada para o acesso da console. Essa senha é usada para acessar o terminal do seu servidor OMV.
-
-    Você precisará de, no mínimo, 3 discos, pois uma unidade será usada para a instalação e as outras duas serão usadas para armazenar os arquivos.
 
     Após reiniciar o servidor, você poderá visualizar algumas informações, como o endereço IP da console.
 
@@ -17,25 +17,27 @@ Credencial padrão:
     admin
     openmediavault
 
-Configuração básica..
-
-Selecionar as unidades de disco para criar 1 (uma) unidade de armazenamento:
+Configuração básica, criando a unidade de armazenamento:
 
     Storage > Software RAID > Create
 
-    Apply
+    Level: Mirror
 
-Nomeando e selecionando o nível:
+    Devices: Selecione os dispositivos que serão usados ​​para criar o dispositivo RAID.
 
-    Mirror > Create
+    Save > Apply
 
 Caso esteja com 3 discos disponíveis você pode selecionar a opção RAID5, com 4 ou mais discos pode usar a opção RAID6. Leitura: https://www.datastorage.com.br/post/tudo-sobre-raid
 
 Unidade de armazenamento criada, devemos configurar o file system, selecione a unidade RAID criada anteriormente:
 
-    Storage > File system > Ok
+    Storage > File system > + Create and mount a file system
+
+    Type: EXT4
+
+    Device: Software RAID omv:0 [/dev/md0, raidX, 99,93 GiB]
     
-    Mount > Apply
+    Save
 
 Habilitando o servidor samba:
 
