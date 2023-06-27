@@ -31,30 +31,46 @@ Caso esteja com 3 discos disponíveis você pode selecionar a opção RAID5, com
 
 Unidade de armazenamento criada, devemos configurar o file system, selecione a unidade RAID criada anteriormente:
 
-    Storage > File system > + Create and mount a file system
+    Storage > File System > + Create and mount a file system.
 
     Type: EXT4
 
     Device: Software RAID omv:0 [/dev/md0, raidX, 99,93 GiB]
     
-    Save
+    Save > Apply
+
+    Storage > File System > Mount an existing file system.
+
+    File system: /dev/md0 [EXT4, /dev/md0]
+
+    Save > Apply
 
 Habilitando o servidor samba:
 
-    Services > SMB/CIFS
+    Services > SMB/CIFS > Settings
 
-    Active: Enable
+    Enabled: OK
+    
+    Save > Apply
 
 Criando diretório:
 
-    Gestão de Direito de Acesso > Pastas Partilhadas > Add
+    Storage > Shared Folders > Create
 
-    Keep > Apply
+    Name: Shared_Linux
+
+    File system: /dev/md0 [EXT4, 40,00KiB (1%) used, 99,93 GiB available]
+
+    Relative path: Shared_Linux/
+
+    Permissions: Administrator: read/write, Users: read/write, Others: read-only (default)
+
+    Save > Apply
 
 Compartilhando:
 
 Preencha as informações indicando a pasta que foi criada anteriormente e determine os privilégios.
 
-    Services > SMB/CIFS > Partilhas > Add
+    Services > SMB/CIFS > Shares > Create
 
-    Keep > Apply
+    Save > Apply
