@@ -799,10 +799,10 @@ Questões: 1
 
 Principais Áreas de Conhecimento:
 
-	Entender o conceito geral de máquinas virtuais e contêineres.
+	Entender o conceito geral de máquinas virtuais e containers.
 	Entender elementos comuns em máquinas virtuais numa nuvem IaaS, como instâncias computacionais, armazenamento em bloco e rede.
 	Entender as propriedades exclusivas de um sistema Linux que precisam ser alteradas quando um sistema é clonado ou utilizado como modelo.
-	Entender como imagens de sistema são utilizadas para implementar máquinas virtuais, instâncias de nuvem e contêineres.
+	Entender como imagens de sistema são utilizadas para implementar máquinas virtuais, instâncias de nuvem e containers.
 	Entender as extensões do Linux que integram o Linux com uma solução de virtualização.
 	Noções de cloud-init.
 
@@ -812,27 +812,47 @@ Imprimindo informações detalhadas sobre o hardware do sistema:
 
 	lshw -class system
 
-Listando os contêineres ativos e inativos no sistema:
+Criando e executando um container:
+
+	docker run ubuntu
+
+Criando e executando um comando em modo interativo:
+
+	docker run -it ubuntu bash
+
+Imprimindo os containers ativos:
+
+	docker ps
+
+Imprimindo os ativos e inativos:
 
 	docker ps -a
 
-Iniciando um container do CentOS usando o docker:
+Parando um container:
 
-	docker run -it centos
+	docker stop 91382406ec
 
-		exit
+Parando um container imediatamente:
 
-	docker run -it centos bash
+	docker stop -t=0 91382406ec
 
-Removendo uma imagem do docker do sistema:
+Iniciando:
 
-	docker images
+	docker start 91382406ec
 
-	docker rmi <IMAGE ID>
+Executando um comando com o container:
 
-Comando comuns são:
+	docker exec -it 91382406ec bash
 
-	docker <stop rm> <CONTAINER ID>
+	exit
+
+Menos agressivo que o stop:
+
+	docker <pause unpause> 91382406ec
+
+Removendo o container:
+
+	docker rm 91382406ec
 
 ------------------------------------------------------------
 
