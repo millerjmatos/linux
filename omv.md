@@ -59,7 +59,7 @@ Criando diretório:
 
     Name: Shared_Linux
 
-    File system: /dev/md0 [EXT4, 40,00KiB (1%) used, 99,93 GiB available]
+    File system: /dev/md0 [EXT4, 40,00 KiB (1%) used, 99,93 GiB available]
 
     Relative path: Shared_Linux/
 
