@@ -812,13 +812,29 @@ Imprimindo informações detalhadas sobre o hardware do sistema:
 
 	lshw -class system
 
-Criando e executando um container:
+Criando um container e executando:
 
 	docker run ubuntu
 
 Criando e executando um comando em modo interativo:
 
 	docker run -it ubuntu bash
+
+Criando um container e executando em background (detached):
+
+	docker run -d dockersamples/static-site
+
+Criando um container em background e mapeando todas as portas:
+
+	docker run -d -P dockersamples/static-site
+
+Criando um container em background e mapeando portas específicas:
+
+	docker run -d -p 8080:80 dockersamples/static-site
+
+Imprimindo as portas mapeadas do container:
+
+	docker port 91382406ec
 
 Imprimindo os containers ativos:
 
@@ -853,6 +869,10 @@ Menos agressivo que o stop:
 Removendo o container:
 
 	docker rm 91382406ec
+
+Removendo o container em execução:
+
+	docker rm 91382406ec --force
 
 ------------------------------------------------------------
 
