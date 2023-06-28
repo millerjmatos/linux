@@ -870,11 +870,11 @@ Removendo o container:
 
 	docker rm 91382406ec
 
-Removendo o container em execuçã o:
+Removendo o container em execução:
 
 	docker rm 91382406ec --force
 
-Imprimindo as imagens baixadas:
+Imprimindo as imagens locais:
 
 	docker images
 
@@ -882,9 +882,33 @@ Imprimindo informações de uma imagem:
 
 	docker <inspect history> 91382406ec
 
+Removendo uma imagem:
+
+	docker rmi 91382406ec
+
 Pesquisando imagens por nome:
 
 	docker search httpd
+
+Logando no docker hub:
+
+	docker login -u username
+
+Renomeando a imagem:
+
+	docker tag local-image:tagname new-repo:tagname
+
+Enviando:
+
+	docker push new-repo:tagname
+
+Removendo vários containers:
+
+	docker container rm $(docker container ls -aq)
+
+Removendo várias imagens:
+
+	docker rmi $(docker image ls -aq)
 
 ------------------------------------------------------------
 
