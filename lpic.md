@@ -840,7 +840,7 @@ Imprimindo os containers ativos:
 
 	docker ps
 
-Imprimindo os ativos e inativos:
+Imprimindo todos os containers:
 
 	docker ps -a
 
@@ -870,9 +870,21 @@ Removendo o container:
 
 	docker rm 91382406ec
 
-Removendo o container em execução:
+Removendo o container em execuçã o:
 
 	docker rm 91382406ec --force
+
+Imprimindo as imagens baixadas:
+
+	docker images
+
+Imprimindo informações de uma imagem:
+
+	docker <inspect history> 91382406ec
+
+Pesquisando imagens por nome:
+
+	docker search httpd
 
 ------------------------------------------------------------
 
