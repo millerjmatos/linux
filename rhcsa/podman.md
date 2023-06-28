@@ -4,72 +4,90 @@ Realizando o login para utilizar as imagens do registry:
 
     podman login registry.redhat.io
 
-Imprimindo contêineres ativos no sistema:
+Pesquisando imagens por nome:
+
+	podman search httpd
+
+Criando um container e executando:
+
+	podman run centos
+
+Criando e executando um comando em modo interativo:
+
+	podman run -it centos /bin/bash
+
+Criando um container e executando em background (detached):
+
+	podman run -d dockersamples/static-site
+
+Criando um container em background e mapeando todas as portas:
+
+	podman run -d -P dockersamples/static-site
+
+Criando um container em background e mapeando portas específicas:
+
+	podman run -d -p 6000:80 dockersamples/static-site --name container_name
+
+Imprimindo as portas mapeadas do container:
+
+	podman port nginx
+
+Imprimindo os containers ativos:
 
 	podman ps
 
     podman container ls
 
-Imprimindo todos os contêineres do sistema:
+Imprimindo todos os containers:
 
-    podman ps -a
+	podman ps -a
 
-Pesquisando por um container:
+Parando um container:
 
-    podman search ubuntu
+	podman stop nginx
 
-Iniciando uma imagem como um container:
+Parando um container imediatamente:
 
-	podman run -it -d docker.io/library/ubuntu:latest
+	podman stop -t=0 nginx
 
-Opção -d: inicia em segundo plano.
+Iniciando:
 
-Acessando o container:
+	podman start nginx
 
-    podman run -it docker.io/library/ubuntu:latest /bin/bash
+Executando um comando com o container:
 
-    podman exec -it <NAMES CONTAINER ID > bash  
+	podman exec -it nginx /bin/bash
 
-        exit
+	exit
 
-Removendo, parando e inciando um container:
+Menos agressivo que o stop:
 
-    podman <rm stop start> <CONTAINER ID>
+	podman <pause unpause> nginx
 
-    podman rm -f <CONTAINER ID>
+Removendo o container:
 
-    podman rm -f $(podman ps -qa)
+	podman rm nginx
 
-    podman ps
+Removendo o container em execução:
 
-    podman ps -a
+	podman rm nginx --force
 
-Baixando uma imagem:
-
-    podman pull <IMAGE>
-
-Removendo uma imagem do sistema:
+Imprimindo as imagens locais:
 
 	podman images
 
-	podman rmi <IMAGE ID>
+Imprimindo informações de uma imagem:
 
-Redirecionando portas:
+	podman <inspect history> nginx
 
-    podman run -it -d nginx
+Removendo uma imagem:
 
-    podman ps
+	podman rmi nginx
 
-    podman run -it -d -p6001:80 --name my-nginx <IMAGE>
+Removendo vários containers:
 
-Executando um comando sem acessar o container:
+	podman container rm $(podman container ls -aq)
 
-    podman exec -it my-nginx cat /etc/passwd
+Removendo várias imagens:
 
-    podman exec -it <CONTAINER ID> find / -name nginx
-
-Mapeando um volume:
-
-    podman run -it -d nginx
-
-    podman run -it -d -p8003:80 -v /root/site/:/usr/share/nginx/html/ --name map-nginx nginx
+	podman rmi $(podman image ls -aq)
