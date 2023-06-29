@@ -910,6 +910,28 @@ Removendo várias imagens:
 
 	docker rmi $(docker image ls -aq)
 
+Criando uma imagem:
+
+No diretório atual, onde está o arquivo Dockerfile.
+
+	docker build -t local-image:tagname .
+
+Criando um volume:
+
+	docker volume create meu-volume-ubuntu
+
+Mapeando o volume:
+
+Em /var/lib/docker/
+
+	docker run -it -v meu-volume-ubuntu:/dir ubuntu bash
+
+Usando o mount:
+
+Possibilitando criar um volume com a flag.
+
+	docker run -it --mount source=meu-novo-volume-ubuntu, target=/dir ubuntu bash
+
 ------------------------------------------------------------
 
 	* * * * * Topic 103: GNU and Unix Commands * * * * *
