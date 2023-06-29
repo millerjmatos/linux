@@ -20,13 +20,9 @@ Criando um container e executando em background (detached):
 
 	podman run -d dockersamples/static-site
 
-Criando um container em background e mapeando todas as portas:
-
-	podman run -d -P dockersamples/static-site
-
 Criando um container em background e mapeando portas específicas:
 
-	podman run -d -p 6000:80 dockersamples/static-site --name container_name
+	podman run -d -p 6000:80 dockersamples/static-site /bin/bash
 
 Imprimindo as portas mapeadas do container:
 
