@@ -4,8 +4,6 @@
 	* * * * * 101.1 Determine and configure hardware settings * * * * * 
 ------------------------------------------------------------
 
-Questões: 2
-
 Principais Áreas de Conhecimento:
 
 	Habilitar e desabilitar periféricos integrados.
@@ -125,8 +123,6 @@ Dameon responsável por tratar eventos relacionados ao gerenciamento de energia:
 	* * * * * 101.2 Boot the system	* * * * * 
 ------------------------------------------------------------
 
-Questões: 3
-
 Principais Áreas de Conhecimento:
 
 	Fornecer os comandos e opções mais comuns para o gerenciador de inicialização e para o kernel durante a inicialização.
@@ -174,8 +170,6 @@ O arquivo do /proc que contém os parâmetros enviados ao kernel no momento do b
 ------------------------------------------------------------
 	* * * * * 101.3 Change runlevels / boot targets and shutdown or reboot system * * * * * 
 ------------------------------------------------------------
-
-Questões: 3
 
 Principais Áreas de Conhecimento:
 
@@ -292,8 +286,6 @@ Enviando uma mensagem para todos os usuários do sistema:
 	* * * * * 102.1 Design hard disk layout * * * * *
 ------------------------------------------------------------
 
-Questões: 2
-
 Principais Áreas de Conhecimento:
 
 	Distribuir os sistemas de arquivos e o espaço de swap para separar partições ou discos.
@@ -320,8 +312,6 @@ Habilitando todas as partições swap contidas em /etc/fstab:
 ------------------------------------------------------------
 	* * * * * 102.2 Install a boot manager * * * * *
 ------------------------------------------------------------
-
-Questões: 2
 
 Principais Áreas de Conhecimento:
 
@@ -393,8 +383,6 @@ Restaurando o backup:
 ------------------------------------------------------------
 	* * * * * 102.3 Manage shared libraries * * * * *
 ------------------------------------------------------------
-
-Questões: 1
 
 Principais Áreas de Conhecimento:
 
@@ -468,8 +456,6 @@ Adicionando o diretório e as bibliotecas contidas na sessão atual:
 ------------------------------------------------------------
 	* * * * * 102.4 Use Debian package management * * * * *
 ------------------------------------------------------------	
-
-Questões: 3
 
 Principais Áreas de Conhecimento:
 
@@ -613,8 +599,6 @@ Imprimindo um menu gerenciador do apt:
 ------------------------------------------------------------
 	* * * * * 102.5 Use RPM and YUM pacoteage management * * * * *
 ------------------------------------------------------------
-
-Questões： 3
 
 Principais Áreas de Conhecimento:
 
@@ -795,8 +779,6 @@ Atualizando o sistema:
 	* * * * * 102.6 Linux as a virtualization guest * * * * *
 ------------------------------------------------------------
 
-Questões: 1
-
 Principais Áreas de Conhecimento:
 
 	Entender o conceito geral de máquinas virtuais e containers.
@@ -939,8 +921,6 @@ Possibilitando criar um volume com a flag.
 ------------------------------------------------------------
 	* * * * * 103.1 Work on the command line * * * * *
 ------------------------------------------------------------
-
-Questões: 4
 
 Principais Áreas de Conhecimento:
 
@@ -1165,8 +1145,6 @@ Apóstrofo '' e barra invertida \ protegem os caracteres sem excessão:
 	* * * * * 103.2 Process text streams using filters * * * * *
 ------------------------------------------------------------
 
-Questões: 2
-
 Principais Áreas de Conhecimento:
 
 	Enviar arquivos de texto e saídas de fluxo de textos através de filtros para modificar a saída usando comandos padrão UNIX encontrados no pacote GNU textutils.
@@ -1382,8 +1360,6 @@ Logins de todos os usuários do sistema contidos no arquivo passwd:
 ------------------------------------------------------------
 	* * * * * 103.3 Perform basic file management * * * * *
 ------------------------------------------------------------
-
-Questões: 4
 
 Principais Áreas de Conhecimento:
 
@@ -1660,8 +1636,6 @@ Redimensionando um arquivo:
 	* * * * * 103.4 Use streams, pipes and redirects * * * * *
 ------------------------------------------------------------
 
-Questões: 4
-
 Principais Áreas de Conhecimento:
 
 	Redirecionamento da entrada padrão, da saída padrão e dos erros padrão.
@@ -1730,8 +1704,6 @@ Imprimindo na saída padrão o resultado de um comando:
 ------------------------------------------------------------
 	 * * * * * 103.5 Create, monitor and kill processes  * * * * *
 ------------------------------------------------------------
-
-Questões: 4
 
 Principais Áreas de Conhecimento:
 
@@ -1989,8 +1961,6 @@ Acessando um tmux bg ou criando um novo:
 	* * * * * 103.6 Modify process execution priorities * * * * *
 ------------------------------------------------------------
 
-Questões: 2
-
 Principais Áreas de Conhecimento:
 
 	Saber a prioridade padrão de um processo que é criado.
@@ -2032,8 +2002,6 @@ Usando o comando top:
 ------------------------------------------------------------
 	* * * * * 103.7 Search text files using regular expressions * * * * *
 ------------------------------------------------------------
-
-Questões: 3
 
 Principais Áreas de Conhecimento:
 
@@ -2153,8 +2121,6 @@ Imprimindo linhas que contenham uma determinada palavra:
 	* * * * * 103.8 Basic file editing * * * * *
 ------------------------------------------------------------
 
-Questões: 3
-
 Principais Áreas de Conhecimento:
 
 	Navegar pelo documento usando o vi.
@@ -2247,8 +2213,6 @@ Definindo o editor padrão do sistema:
 
 	export EDITOR=vim
 
-	crontab -e
-
 ------------------------------------------------------------
 
 	* * * * * Topic 104: Devices, Linux arquivosystems, arquivosystem Hierarchy Standard * * * * *
@@ -2256,8 +2220,6 @@ Definindo o editor padrão do sistema:
 ------------------------------------------------------------
 	* * * * * 104.1 Create partitions and filesystems * * * * *
 ------------------------------------------------------------
-
-Questões: 2
 
 Principais Áreas de Conhecimento:
 
@@ -2489,8 +2451,6 @@ Utilizando exFAT em um pendrive previamente montado:
 	* * * * * 104.2 Maintain the integrity of filesystems * * * * *
 ------------------------------------------------------------
 
-Questões: 2
-
 Principais Áreas de Conhecimento:
 
 	Verificar a integridade dos sistemas de arquivos.
@@ -2589,8 +2549,6 @@ Funciona com o sistema de arquivos montado!
 	* * * * * 104.3 Control mounting and unmounting of filesystems * * * * *
 ------------------------------------------------------------
 
-Questões: 3
-
 Principais Áreas de Conhecimento:
 
 	Montar e desmontar manualmente sistemas de arquivos.
@@ -2658,8 +2616,6 @@ A partição de swap não precisa ser montada, portanto none!
 ------------------------------------------------------------
 	* * * * * 104.5 Manage file permissions and ownership * * * * *
 ------------------------------------------------------------
-
-Questões: 3
 
 Principais Áreas de Conhecimento:
 
@@ -2799,8 +2755,6 @@ Definindo o usuário e/ou o grupo dono do arquivo ou diretório:
 	* * * * * 104.6 Create and change hard and symbolic links * * * * *
 ------------------------------------------------------------
 
-Questões: 2
-
 Principais Áreas de Conhecimento:
 
 	Criar links.
@@ -2849,8 +2803,6 @@ Se deletar o link principal o simbólico estará quebrado.
 ------------------------------------------------------------
 	* * * * * 104.7 Find system files and place files in the correct location * * * * *
 ------------------------------------------------------------
-
-Questões: 2
 
 Principais Áreas de Conhecimento:
 
@@ -2924,8 +2876,6 @@ O comando type é utilizado para indicar se um determinado comando é interno ao
 	* * * * * 105.1 Customize and use the shell environment * * * * *
 ------------------------------------------------------------
 
-Questões: 4
-
 Principais Áreas de Conhecimento:
 
 	Definir variáveis de ambiente (por exemplo, PATH) no início da sessão ou quando abrir um novo shell.
@@ -2981,8 +2931,6 @@ Usando o comando function, ex.:
 ------------------------------------------------------------
 	* * * * * 105.2 Customize or write simple scripts * * * * *
 ------------------------------------------------------------
-
-Questões: 4
 
 Principais Áreas de Conhecimento:
 
@@ -3046,8 +2994,6 @@ ou
 	* * * * * 106.1 Install and configure X11 * * * * *
 ------------------------------------------------------------
 
-Questões: 2
-
 Principais Áreas de Conhecimento:
 
 	Entendimento da arquitetura do X11.
@@ -3060,8 +3006,6 @@ Principais Áreas de Conhecimento:
 ------------------------------------------------------------
 	* * * * * 106.2 Graphical Desktops * * * * *
 ------------------------------------------------------------
-
-Questões: 1
 
 Principais Áreas de Conhecimento:
 
@@ -3083,8 +3027,6 @@ Instalação:
 	* * * * * 106.3 Accessibility * * * * *
 ------------------------------------------------------------
 
-Questões: 1
-
 Principais Áreas de Conhecimento:
 
 	Conhecimento básico das configurações visuais e temas.
@@ -3097,8 +3039,6 @@ Principais Áreas de Conhecimento:
 ------------------------------------------------------------
 	* * * * * 107.1 Manage user and group accounts and related system files * * * * *
 ------------------------------------------------------------
-
-Questões: 5
 
 Principais Áreas de Conhecimento:
 
@@ -3190,8 +3130,6 @@ Imprimindo os grupos e seus usuários:
 	* * * * * 107.2 Automate system administration tasks by scheduling jobs * * * * *
 ------------------------------------------------------------
 
-Questões: 4
-
 Principais Áreas de Conhecimento:
 
 	Gerenciar tarefas usando cron e at.
@@ -3206,11 +3144,43 @@ Agendando uma tarefa semanal de backup sábado às 19h:
 
 	00 19 * * 6 root rsync -Cravzp --delete <origem> <destino>
 
+	M<0-59> H<0-23> D<1-31> M<1-12> W<0-6> USER SCRIPT
+
+A cada determinado tempo, horas ou minutos:
+
+	*/10
+
+Editando o arquivo de configuração:
+
+Em /etc/crontab
+
+	crontab -e
+
+Listando os agendamentos:
+
+	crontab -l
+
+Editando o arquivo:
+
+	:r! cat /etc/crontab
+
+Confirmando o horário:
+
+	:! date
+
+Permitindo e bloqueando usuários:
+
+	vim /etc/cron.allow
+
+	vim /etc/cron.deny
+
+		user
+
+		:x
+
 ------------------------------------------------------------
 	* * * * ** 107.3 Localisation and internationalisation * * * * **
 ------------------------------------------------------------
-
-Questões: 3
 
 Principais Áreas de Conhecimento:
 
@@ -3224,8 +3194,6 @@ Principais Áreas de Conhecimento:
 ------------------------------------------------------------
 	* * * * * 108.1 Maintain system time * * * * *
 ------------------------------------------------------------
-
-Questões: 3
 
 Principais Áreas de Conhecimento:
 
@@ -3259,8 +3227,6 @@ Verificando o status do serviço:
 	* * * * * 108.2 System logging * * * * *
 ------------------------------------------------------------
 
-Questões: 4
-
 Principais Áreas de Conhecimento:
 
 	Configuração básica do rsyslog.
@@ -3277,8 +3243,6 @@ Principais Áreas de Conhecimento:
 	* * * * * 108.3 Mail Transfer Agent (MTA) basics * * * * *
 ------------------------------------------------------------
 
-Questões: 3
-
 Principais Áreas de Conhecimento:
 
 	Criar aliases de e-mail.
@@ -3288,8 +3252,6 @@ Principais Áreas de Conhecimento:
 ------------------------------------------------------------
 	* * * * * 108.4 Manage printers and printing * * * * *
 ------------------------------------------------------------
-
-Questões: 2
 
 Principais Áreas de Conhecimento:
 
@@ -3305,8 +3267,6 @@ Principais Áreas de Conhecimento:
 ------------------------------------------------------------
 	* * * * * 109.1 Fundamentals of internet protocols * * * * * 
 ------------------------------------------------------------
-
-Questões: 4
 
 Principais Áreas de Conhecimento:
 
@@ -3324,8 +3284,6 @@ Protocolos importantes e suas portas:
 ------------------------------------------------------------
 	* * * * * 109.2 Persistent network configuration * * * * *
 ------------------------------------------------------------
-
-Questões: 4
 
 Principais Áreas de Conhecimento:
 
@@ -3462,8 +3420,6 @@ Conectando desconectando no Wi-Fi:
 	* * * * * 109.3 Basic network troubleshooting * * * * *
 ------------------------------------------------------------
 
-Questões: 4
-
 Principais Áreas de Conhecimento:
 
 	Configuração manual de interfaces de rede, incluindo verificar e alterar a configuração de interfaces de rede usando o iproute2.
@@ -3561,8 +3517,6 @@ Exibindo o IP externo:
 	* * * * * 109.4 Configure client side DNS * * * * *
 ------------------------------------------------------------
 
-Questões: 2
-
 Principais Áreas de Conhecimento:
 
 	Consultar servidores DNS remotos.
@@ -3586,8 +3540,6 @@ Limpando o cache de resolução de nomes do systemd-resolved:
 ------------------------------------------------------------
 	* * * * * 110.1 Perform security administration tasks * * * * *
 ------------------------------------------------------------
-
-Questões: 3
 
 Principais Áreas de Conhecimento:
 
@@ -3632,8 +3584,6 @@ Exibindo o SO de um alvo:
 	* * * * * 110.2 Setup host security * * * * *
 ------------------------------------------------------------
 
-Questões: 3
-
 Principais Áreas de Conhecimento:
 
 	Saber que existem senhas sombreadas (shadow) e como elas funcionam.
@@ -3643,8 +3593,6 @@ Principais Áreas de Conhecimento:
 ------------------------------------------------------------
 	* * * * * 110.3 Securing data with encryption * * * * *
 ------------------------------------------------------------
-
-Questões: 4
 
 Principais Áreas de Conhecimento:
 
