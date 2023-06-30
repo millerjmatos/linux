@@ -3178,6 +3178,18 @@ Permitindo e bloqueando usuários:
 
 		:x
 
+Agendando apenas uma vez:
+
+	at -h
+
+	at HH:MM DD/MM/AAAA
+
+		cat /usr/bin/date >> data.txt
+
+		CTRL + D
+
+	atq
+
 ------------------------------------------------------------
 	* * * * ** 107.3 Localisation and internationalisation * * * * **
 ------------------------------------------------------------
