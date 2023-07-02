@@ -224,6 +224,10 @@ Para trocar o runlevel (SysVinit):
 
 	telinit --help
 
+Imprimindo todos os serviços disponíveis:
+
+	systemctl -t services
+
 Imprimindo todas as unidades carregadas na memória:
 
 	systemctl list-unit-files
@@ -888,6 +892,10 @@ Removendo vários containers:
 
 	docker container rm $(docker container ls -aq)
 
+Removendo todos os containers parados:
+
+	docker container prune -f
+
 Removendo várias imagens:
 
 	docker rmi $(docker image ls -aq)
@@ -1519,6 +1527,8 @@ Imprimindo arquivos por extensão/string:
 Deletando arquivos e diretórios:
 
 	find /home/ -type f -size +500M -delete
+
+	find /caminho/do/diretorio -type f -mtime +120 -exec rm {} \;
 
 Imprimindo arquivos acessados há 7 dias pelo usuário por extensão:
 
