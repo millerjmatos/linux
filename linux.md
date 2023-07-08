@@ -918,8 +918,6 @@ Em /var/lib/docker/
 
 Usando o mount:
 
-Possibilitando criar um volume com a flag.
-
 	docker run -it --mount source=meu-novo-volume-ubuntu, target=/dir ubuntu bash
 
 ------------------------------------------------------------
