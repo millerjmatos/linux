@@ -918,7 +918,7 @@ Em /var/lib/docker/
 
 Usando o mount:
 
-	docker run -it --mount source=meu-novo-volume-ubuntu, target=/dir ubuntu bash
+	docker run -it --mount type=bind,source=meu-novo-volume-ubuntu,target=/dir ubuntu bash
 
 ------------------------------------------------------------
 
