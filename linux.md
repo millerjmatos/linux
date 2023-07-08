@@ -226,7 +226,7 @@ Para trocar o runlevel (SysVinit):
 
 Imprimindo todos os serviços disponíveis:
 
-	systemctl -t services
+	systemctl -t service
 
 Imprimindo todas as unidades carregadas na memória:
 
