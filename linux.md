@@ -920,6 +920,12 @@ Usando o mount:
 
 	docker run -it --mount type=bind,source=meu-novo-volume-ubuntu,target=/dir ubuntu bash
 
+Imprimindo as redes que o docker já tem no sistema:
+
+	docker network ls
+
+
+
 ------------------------------------------------------------
 
 	* * * * * Topic 103: GNU and Unix Commands * * * * *
