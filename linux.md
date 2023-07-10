@@ -180,7 +180,7 @@ Principais Áreas de Conhecimento:
 	Terminar apropriadamente os processos.
 	Noções de acpid.
 
-Exibindo o gerenciador de serviços/inicialização do sistema (systemd ou SysVinit):
+Imprimindo o gerenciador de serviços/inicialização do sistema (systemd ou SysVinit):
 
 	ps -p 1
 
@@ -3529,7 +3529,7 @@ Imprimindo informações de sockets e conexões ativas:
 
 Um socket é uma interface de comunicação bidirecional entre processos, que permite que dois processos em uma rede se comuniquem. Ele é identificado por um endereço IP e um número de porta.
 
-Exibindo o IP externo:
+Imprimindo o IP externo:
 
 	curl ifconfig.me
 
@@ -3570,25 +3570,39 @@ Principais Áreas de Conhecimento:
 	Determinar quais usuários se conectaram ao sistema ou estão conectados no momento.
 	Uso e configuração básica do sudo.
 
+	find
+	passwd
+	fuser
+	lsof
+	nmap
+	chage
+	netstat
+	sudo
+	/etc/sudoers
+	su
+	usermod
+	ulimit
+	who, w, last
+
 Imprimindo informações dos usuários que estão atualmente conectados ao sistema:
 
 	who
 
 	w
 
-Exibindo os hosts da rede:
+Imprimindo os hosts da rede:
 
 	nmap -sP 192.168.0.0/24
 
 	nmap -sP 192.168.0.*
 
-Exibindo as portas abertas de um alvo: 
+Imprimindo as portas abertas de um alvo: 
 
 	nmap -sT 192.168.0.10
 
 	nmap -Pn 192.168.0.20
 
-Exibindo se uma porta específica está aberta:
+Imprimindo se uma porta específica está aberta:
 
 	nmap -p 80 192.168.0.0/24
 
@@ -3596,9 +3610,25 @@ Exibindo se uma porta específica está aberta:
 
 	nmap -p 21 192.168.1.1
 
-Exibindo o SO de um alvo:
+Imprimindo o SO de um alvo:
 
 	nmap -0 192.168.1.5
+
+Imprimindo as portas que estão ouvindo no seu servidor:
+
+	lsof -i -P -n | grep LISTEN
+
+Imprimindo os arquivos abertos por um processo específico:
+
+	lsof -p <PID>
+
+Imprimindo os arquivos abertos em um diretório específico e subdiretórios:
+
+	lsof +D /caminho/do/diretório
+
+Imprimindo os arquivos abertos por um usuário específico:
+
+	lsof -u user
 
 ------------------------------------------------------------
 	* * * * * 110.2 Setup host security * * * * *
