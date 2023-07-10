@@ -68,7 +68,7 @@ Edite o arquivo de configuração:
 
 Criando um usuário que tenha permissão para se conectar de algo diferente de 'localhost':
 
-É comum criarem um usuário "admin" que possa se conectar de qualquer lugar (LAN).
+É comum criarem um usuário "admin" que possa se conectar de qualquer lugar da LAN..
 
         create user 'admin'@'172.22.22.%' identified by 'P@ssword';
 
