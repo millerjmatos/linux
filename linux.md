@@ -924,7 +924,9 @@ Imprimindo as redes que o docker já tem no sistema:
 
 	docker network ls
 
+Criando uma rede:
 
+	docker network create --driver bridge minha-bridge
 
 ------------------------------------------------------------
 
