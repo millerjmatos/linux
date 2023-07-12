@@ -58,4 +58,6 @@ Voltando para um determinado momento e enviando:
 
 	git restore --source <commit_code> .
 
-	git commit . -m "mensagem" && git push
+	git commit . -m "mensagem"
+	
+	git push
