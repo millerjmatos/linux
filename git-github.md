@@ -40,7 +40,7 @@ Salvando o estado atual do repositório:
 
 	git commit -m "mensagem"
 
-Enviando os dados para o repositório remoto:
+Enviando os dados para o github:
 
 	git push
 
@@ -61,3 +61,15 @@ Voltando para um determinado momento e enviando:
 	git commit . -m "mensagem"
 	
 	git push
+
+Criando uma branch:
+
+	git checkout -b <name_branch>
+
+Trocando de branch:
+
+	git switch <main|name_branch>
+
+Enviando os dados para o branch específico:
+
+	git push origin <name_branch>
