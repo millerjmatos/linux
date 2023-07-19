@@ -90,17 +90,17 @@ Mesclando a branch e seu histórico de commits:
 
 	git rebase <tittle_branch>
 
-Desfazendo todas as alterações:
+Desfazendo alterações não adicionadas:
 
 	git checkout -- <file_name>
 
-Desfazendo as alterações após 'git add':
+Desfazendo alterações após 'git add':
 
 	git reset HEAD <file_name>
 
 	git checkout -- <file_name>
 
-Desfazendo o commit:
+Desfazendo após commit:
 
 	git log
 
