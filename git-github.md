@@ -89,3 +89,23 @@ Mesclando a branch principal com a title e atualizando:
 Mesclando a branch e seu histórico de commits:
 
 	git rebase <tittle_branch>
+
+Desfazendo todas as alterações:
+
+	git checkout -- <file_name>
+
+Desfazendo as alterações após 'git add':
+
+	git reset HEAD <file_name>
+
+	git checkout -- <file_name>
+
+Desfazendo o commit:
+
+	git log
+
+	git revert 6991813e12a26b9ecb6898554732c90c
+
+		:x
+
+	git log
