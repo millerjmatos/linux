@@ -62,7 +62,7 @@ Voltando para um determinado momento e enviando:
 	
 	git push
 
-Criando uma branch e mudando para ela:
+Criando uma branch e alterando a localização:
 
 	git checkout -b <name_branch>
 
