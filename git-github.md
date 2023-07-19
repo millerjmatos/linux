@@ -66,6 +66,10 @@ Criando uma branch:
 
 	git checkout -b <name_branch>
 
+Listando os branches e a localização:
+
+	git branch
+
 Trocando de branch:
 
 	git switch <main|name_branch>
@@ -73,10 +77,6 @@ Trocando de branch:
 Enviando os dados para o branch específico:
 
 	git push origin <name_branch>
-
-Listando os branches e a localização:
-
-	git branch
 
 Mesclando a branch principal com a title e atualizando:
 
