@@ -109,3 +109,13 @@ Desfazendo após commit:
 		:x
 
 	git log
+
+Viajando no tempo:
+
+	git checkout 69918
+
+	git log --oneline
+
+Voltando para o estado atual:
+
+	git checkout main
