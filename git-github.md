@@ -85,3 +85,7 @@ Mesclando a branch principal com a title e atualizando:
 	git merge <title_branch>
 
 	git push origin main
+
+Mesclando a branch e seu histórico de commits:
+
+	git rebase <tittle_branch>
