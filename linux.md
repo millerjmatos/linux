@@ -2495,6 +2495,12 @@ Imprimindo o espaço utilizado em disco por diretórios ou arquivos:
 
 A partição não deve estar montada!
 
+Utilitário ncdu:
+
+Para análise de uso do disco, tamanhos de diretórios e arquivos:
+
+	ncdu -x /home
+
 Imprimindo as informações sobre o sistema de arquivos:
 
 	tune2fs -l /dev/sdb1 | less
