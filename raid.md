@@ -48,23 +48,25 @@ Salvando a configuração:
 
 	mdadm -D --scan >> /etc/mdadm/mdadm.conf
 
-Simulando uma falha no array (via software):
-
-	mdadm --manage -f /dev/md0 /dev/sdc1
+Imprimindo informações:
 
 	mdadm -D /dev/md0
 
-Removendo um disco com falha:
+Simulando uma falha no array (via software):
 
-	umount /raid
+	mdadm --manage /dev/md0 -f /dev/sdc1
+
+Removendo um disco com falha:
 
 	mdadm --manage /dev/md0 -r /dev/sdc1
 
-O ideal aqui é desligar o sistema e remover o disco com falha:
+Recomendado desligar o sistema e remover o disco com falha:
 
 	systemctl poweroff
 
-Adicionando disco novo substituto ao array:
+Adicionando novo disco substituto ao array:
+
+O disco deve estar formatado com o mesmo sistema de arquivos e tamanho, e ser do tipo RAID (FD).
 
 	mdadm --manage /dev/md0 -a /dev/sdd1
 
