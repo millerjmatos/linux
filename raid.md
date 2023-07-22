@@ -66,7 +66,7 @@ Recomendado desligar o sistema e remover o disco com falha:
 
 Adicionando novo disco substituto ao array:
 
-O disco deve estar formatado com o mesmo sistema de arquivos e tamanho, e ser do tipo RAID (FD).
+O disco deve ser particionado com o tipo RAID (fd), e ter o mesmo tamanho e sistema de arquivos.
 
 	mdadm --manage /dev/md0 -a /dev/sdd1
 
