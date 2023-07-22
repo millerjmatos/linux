@@ -72,8 +72,6 @@ O disco deve ser particionado com o tipo RAID (fd), e ter o mesmo tamanho e sist
 
 	mdadm -D /dev/md0
 
-	mount -a
-
 É possível adicionar mais discos ao array!
 
 Desmontando:
