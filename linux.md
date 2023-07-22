@@ -1530,6 +1530,10 @@ Imprimindo arquivos por extensão/string:
 
 	find /home/ -name "arq*csv"
 
+Imprimindo os arquivos do diretório local:
+
+	find . -type f -mtime +120 -exec ls -lha {} \;
+
 Deletando arquivos e diretórios:
 
 	find /home/ -type f -size +500M -delete
