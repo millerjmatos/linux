@@ -73,4 +73,8 @@ Preencha as informações indicando a pasta que foi criada anteriormente e deter
 
     Services > SMB/CIFS > Shares > Create
 
+    Enabled: OK
+
+    Shared folder: [on /dev/mdo, Shared_Linux/]
+
     Save > Apply
