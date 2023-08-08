@@ -69,8 +69,16 @@ Criando diretório:
 
 Compartilhando:
 
-Preencha as informações indicando a pasta que foi criada anteriormente e determine os privilégios.
+Preencha as informações indicando a pasta que foi criada anteriormente e algumas configurações.
 
     Services > SMB/CIFS > Shares > Create
 
+    Enabled: OK
+
+    Shared folder: [on /dev/mdo, Shared_Linux/]
+
     Save > Apply
+
+O controle de acesso é feito em:
+
+    Storage > Shared Folders > ACL

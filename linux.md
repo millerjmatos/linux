@@ -1530,6 +1530,10 @@ Imprimindo arquivos por extensão/string:
 
 	find /home/ -name "arq*csv"
 
+Imprimindo os arquivos do diretório local:
+
+	find . -type f -mtime +120 -exec ls -lha {} \;
+
 Deletando arquivos e diretórios:
 
 	find /home/ -type f -size +500M -delete
@@ -2494,6 +2498,12 @@ Imprimindo o espaço utilizado em disco por diretórios ou arquivos:
 	du -ah *
 
 A partição não deve estar montada!
+
+Utilitário ncdu:
+
+Para análise de uso do disco, tamanhos de diretórios e arquivos:
+
+	ncdu -x /home
 
 Imprimindo as informações sobre o sistema de arquivos:
 
