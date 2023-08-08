@@ -18,8 +18,6 @@ Layout para entendimento, ex.:
 
             Discos -> /dev/sdb        /dev/sdc
 
----
-
 Imprimindo informações dos volumes físicos:
 
     pvdisplay
@@ -37,8 +35,6 @@ Imprimindo informações dos volumes lógicos:
     lvdisplay
 
     lvs
-
----
 
 ### Redimensionar volume lógico
 
@@ -98,16 +94,20 @@ Volume group "primeiro_vg" successfully extended.
 
     df -h
 
-Redimensionando volume lógico, como ex. /data, referenciando o LV Path:
+Expandindo o LV, como ex. /data, referenciando o LV Path:
 
-    lvresize -L +5GB /dev/mapper/primeiro_vg-data  
+    lvresize -L +5GB /dev/mapper/primeiro_vg-data
+
+    lvextend -L +5GB -r /dev/mapper/primeiro_vg-data
+
+O parâmetro -r é específico para o comando lvextend. Isso permite aproveitar o espaço adicional no LV sem a necessidade dos comandos a seguir para redimensionamento manual.
 
 Size of logical volume primeiro_vg-data changed from 1,65 GiB (423 extents) to 6,65 GiB (1703 extents).
 Logical volume primeiro_vg-data successfully resized.
 
     df -h
 
-Atualizando o sistema de arquivos redimensionado:
+Redimensionando o sistema de arquivos:
 
     resize2fs /dev/mapper/primeiro_vg-data 
 
@@ -118,8 +118,6 @@ Em sistema de arquivos xfs:
 Filesystem at /dev/mapper/primeiro_vg-data is mounted on /data; on-line resizing required
 old_desc_blocks = 1, new_desc_blocks = 1
 The filesystem on /dev/mapper/primeiro_vg-data is now 1743872 (4k) blocks long.
-
----
 
 ### Adicionar área swap em novo grupo de volume
 
@@ -137,7 +135,7 @@ Criando grupo de volume referenciando o volume físico:
 
     vgs
 
-Criar volume lógico requer um conjunto de informações ao aplicar o comando lvcreate:
+Criar LV requer um conjunto de informações ao aplicar o comando lvcreate:
 
     lvcreate -L 4G -n swap2_lv memory_vg
 
@@ -161,7 +159,7 @@ Edite o fstab:
 
         /dev/mapper/memory_vg-swap2_lv        none    swap    sw      0       0
 
-Se você tiver espaço livre em um volume físico (PV), você pode usá-lo para criar um novo volume lógico (LV) ou redimensionar um volume lógico existente!
+Se você tiver espaço livre em um volume físico (PV), você pode usá-lo para criar um novo LV ou redimensionar um LV existente!
 
 Interface gráfica para família Debian:
 
