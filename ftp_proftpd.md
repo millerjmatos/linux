@@ -8,9 +8,21 @@ Instalando o servidor FTP:
 
     apt-get install proftpd
 
+Iniciando o serviço:
+
     systemctl status proftpd
 
+    systemctl start proftpd
+
     systemctl enable proftpd
+
+Usuário para administração do FTP:
+
+    useradd webmaster -m -d /var/www/html/ -s /bin/false
+
+    passwd webmaster
+
+    chown webmaster -R /var/www/html/
 
 Alterando o arquivo de configuração:
 
@@ -33,11 +45,3 @@ Alterando o arquivo de configuração:
 Após alterações, reiniciar o serviço:
 
     systemctl restart proftpd
-
-Usuário para administração do FTP:
-
-    useradd webmaster -m -d /var/www/html/ -s /bin/false
-
-    passwd webmaster
-
-    chown webmaster -R /var/www/html/

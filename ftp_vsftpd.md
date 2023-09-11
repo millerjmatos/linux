@@ -2,17 +2,30 @@ O vsftpd é um software de servidor FTP (File Transfer Protocol) para sistemas L
 
 ProFTPD é uma escolha para ambientes mais complexos e requer configurações avançadas já o vsftpd é uma boa escolha para ambientes menos complexos.
 
-### Em CentOS 7
+### Em Rocky Linux 9.2 
+#### vsftpd: version 3.0.5
 
 Instalando o ftp no CentOS:
 
-    dnf install vsftpd
+    dnf install vsftpd -y
+
+    vsftpd -version
+
+Iniciando o serviço:
 
     systemctl status vsftpd
 
     systemctl start vsftpd
 
     systemctl enable vsftpd
+
+Usuário para administração do FTP:
+
+    useradd webadmin -M && usermod -d /var/www/html/ webadmin
+
+    chown webadmin -R /var/www/html/
+
+    passwd webadmin
 
 Configurando o vsftpd:
 
@@ -24,37 +37,35 @@ Configurando o vsftpd:
 
         Linha 12: anonymous_enable=NO
 
-        Linha 60: idle_session_timeout=600
+        Linha 59: idle_session_timeout=600
 
-        Linha 101: chroot_local_user=YES
+        Linha 100: chroot_local_user=YES
 
-        Linha 115: listen=YES
+        Linha 114: listen=YES
 
-        Linha 124: listen_ipv6=NO
+        Linha 123: listen_ipv6=NO
+
+Incluir:
 
         Linha 129: allow_writeable_chroot=YES
 
         :wq
+
+Após alterações, reiniciar o serviço:
+
+    systemctl restart vsftpd
 
 Liberando o vsftpd no firewalld:
 
     firewall-cmd --add-service=ftp --permanent
 
     firewall-cmd --reload
-
-Após alterações, reiniciar o serviço:
-
-    systemctl restart vsftpd
+ 
+    firewall-cmd --permanent --list-all
 
 Imprimindo se o SELinux (Security-Enhanced Linux) está ativado ou desativado:
 
     sestatus
-
-Imprimindo os booleans disponíveis e seus estados atuais:
-
-    dnf install policycoreutils-python
-
-    semanage boolean -l
 
 Criando a regra de liberação no SELinux:
 
