@@ -2754,7 +2754,7 @@ Atualizando a base de dados do locate:
 
 O comando whereis é mais restrito, e não pesquisa no /home:
 
-	whreis fsck
+	whereis fsck
 
 	whereis ls
 
