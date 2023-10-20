@@ -3610,7 +3610,7 @@ Encriptando um arquivo (não necessita de chaves):
 
 	gpg -c arquivo.txt
 
-	gpg -ac arquivo.txt
+	gpgconf --reload gpg-agent
 
 Decriptando:
 
