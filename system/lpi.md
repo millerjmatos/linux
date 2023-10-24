@@ -1432,6 +1432,8 @@ Agrupando conteúdo do /tmp/ no diretório atual:
 
 	tar cpfv backup.tar /tmp/
 
+Exibindo o conteúdo do backup.tar:
+
 	tar tf backup.tar
 
 Agrupando conteúdo do /tmp/ em outro diretório:
@@ -1439,8 +1441,6 @@ Agrupando conteúdo do /tmp/ em outro diretório:
 	cd /tmp/
 
 	tar cf /home/user/dir/arquivo.tar *
-
-	tar tf arquivo.tar
 
 Desagrupando o conteúdo do aqruivo .tar no diretório local:
 
