@@ -68,9 +68,9 @@ Expandindo grupo de volume:
 
     vgdisplay
 
-    vgextend <VG NAME> /dev/sdb1
+    vgextend nome_do_volume_group_existente /dev/nome_do_pv
 
-Volume group "primeiro_vg" successfully extended.
+Volume group "nome_do_volume_group" successfully extended.
 
     vgdisplay
 
@@ -78,28 +78,28 @@ Volume group "primeiro_vg" successfully extended.
 
 Expandindo o LV, como ex. /data, referenciando o LV Path:
 
-    lvresize -L +5GB /dev/mapper/primeiro_vg-data
+    lvresize -L +5GB /dev/mapper/nome_do_logical_volume
 
-    lvextend -L +5GB -r /dev/mapper/primeiro_vg-data
+    lvextend -L +5GB -r /dev/mapper/nome_do_logical_volume
 
 O parâmetro -r é específico para o comando lvextend. Isso permite aproveitar o espaço adicional no LV sem a necessidade dos comandos a seguir para redimensionamento manual.
 
-Size of logical volume primeiro_vg-data changed from 1,65 GiB (423 extents) to 6,65 GiB (1703 extents).
-Logical volume primeiro_vg-data successfully resized.
+Size of logical volume nome_do_logical_volume changed from 1,65 GiB (423 extents) to 6,65 GiB (1703 extents).
+Logical volume nome_do_logical_volume successfully resized.
 
     df -h
 
 Redimensionando o sistema de arquivos:
 
-    resize2fs /dev/mapper/primeiro_vg-data 
+    resize2fs /dev/mapper/nome_do_logical_volume 
 
 Em sistema de arquivos xfs:
 
     xfs_growfs
 
-Filesystem at /dev/mapper/primeiro_vg-data is mounted on /data; on-line resizing required
+Filesystem at /dev/mapper/nome_do_logical_volume is mounted on /data; on-line resizing required
 old_desc_blocks = 1, new_desc_blocks = 1
-The filesystem on /dev/mapper/primeiro_vg-data is now 1743872 (4k) blocks long.
+The filesystem on /dev/mapper/nome_do_logical_volume is now 1743872 (4k) blocks long.
 
 ### Adicionar área swap em novo grupo de volume
 
@@ -127,11 +127,7 @@ Montagem:
 
     mkswap /dev/mapper/memory_vg-swap2_lv
 
-    free -h
-
     swapon /dev/mapper/memory_vg-swap2_lv
-
-    free -h
 
     swapon -s
 
@@ -141,7 +137,7 @@ Edite o fstab:
 
         /dev/mapper/memory_vg-swap2_lv        none    swap    sw      0       0
 
-Se você tiver espaço livre em um volume físico (PV), você pode usá-lo para criar um novo LV ou redimensionar um LV existente!
+Se houver espaço livre em um volume físico (PV), você pode usá-lo para criar um novo LV ou redimensionar um LV existente!
 
 Interface gráfica para família Debian:
 
