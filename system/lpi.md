@@ -3558,17 +3558,19 @@ Arquivo que contém os hosts conhecidos:
 
 O SSH usa dois arquivos de configuração principais, ssh_config e sshd_config. O arquivo ssh_config é o arquivo de configuração do cliente SSH. O arquivo sshd_config é o arquivo de configuração do servidor SSH.
 
-Enviando ou baixando um arquivo:
+Enviando um arquivo:
 
-	scp arquivo.txt user@linux-server:~/
+	scp /caminho/para/o/arquivo/local.txt user@host:/caminho/destino/no/host
 
-	scp user@linux-server:~/arquivo.txt /tmp
+Baixando um arquivo:
+
+	scp user@host:/caminho/para/o/arquivo/remoto /caminho/para/o/diretorio/local
 
 Gerando uma chave pública com o gpg:
 
 	gpg --gen-key
 
-	gpg --list-keys
+	gpg --list-keyss
 
 	gpg --expert --full-gen-key
 
