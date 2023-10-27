@@ -95,7 +95,7 @@ Redimensionando o sistema de arquivos:
 
 Em sistema de arquivos xfs:
 
-    xfs_growfs
+    xfs_growfs /dev/mapper/nome_do_logical_volume
 
 Filesystem at /dev/mapper/nome_do_logical_volume is mounted on /data; on-line resizing required
 old_desc_blocks = 1, new_desc_blocks = 1
