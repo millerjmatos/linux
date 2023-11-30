@@ -813,34 +813,6 @@ Principais Áreas de Conhecimento:
 	Usar e editar o histórico de comandos.
 	Invocar comandos de dentro e de fora do caminho definido
 
-Imprimindo o resultado na saída padrão:
-
-	echo Linux
-
-	echo "Linux"
-
-Imprimindo o conteúdo de uma variável:
-
-	echo $SHELL
-
-Trocando o shell para o bash:
-
-	bash
-
-Para desobrir o tipo de um comando:
-
-	type echo
-
-	type ls
-
-	type pwd
-
-Localizando os diretórios de consulta do seu PATH:
-
-	echo $PATH
-
-	env | grep "$PATH"
-
 Executando um arquivo no mesmo diretório, que não pertence ao $PATH ou shell:
 
 	./arquivo.sh
