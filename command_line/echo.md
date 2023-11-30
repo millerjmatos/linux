@@ -9,3 +9,25 @@ Imprimindo o conteúdo de uma variável:
 	echo $SHELL
 
 	echo $PATH
+
+Imprimindo o diretório home do usuário atual:
+
+	echo $HOME
+
+	echo ~
+
+Saiba o PID do shell atual:
+
+	echo $$
+
+	ps | grep bash
+
+Saiba o PID do último processo executado em background:
+
+	echo $!
+
+Saiba o exit code do último processo executado:
+
+	ls /tmp
+
+	echo $?
