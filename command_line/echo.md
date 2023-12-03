@@ -31,3 +31,23 @@ Saiba o exit code do último processo executado:
 	ls /tmp
 
 	echo $?
+
+Imprimindo todos os arquivos do diretório local:
+
+	echo *
+
+Protegendo caracteres especiais, quoting:
+
+	echo "."
+
+	echo "$HOME"
+
+Apóstrofo '' e barra invertida \ protegem os caracteres sem exceção:
+
+	echo \. && echo \$HOME && echo '.' && echo '$HOME'
+
+	echo "\." && echo "$HOME"
+
+	echo "Curso     Linux   LPI1"
+
+	echo Curso\ \ \ \ \ Linux\ \ \ LPI1
