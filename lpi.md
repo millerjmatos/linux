@@ -2478,22 +2478,9 @@ Imprimindo informações de sockets e conexões ativas:
 
 Um socket é uma interface de comunicação bidirecional entre processos, que permite que dois processos em uma rede se comuniquem. Ele é identificado por um endereço IP e um número de porta.
 
-Imprimindo o IP externo:
-
-	curl ifconfig.me
-
 ------------------------------------------------------------
 	* * * * * 109.4 Configure client side DNS * * * * *
 ------------------------------------------------------------
-
-Principais Áreas de Conhecimento:
-
-	Consultar servidores DNS remotos.
-	Configurar a resolução local de nomes e o uso de servidores DNS remotos.
-	Modificar a ordem em que a resolução de nomes é feita.
-	Identificar erros relacionados à resolução de nomes.
-	Noções do systemd-resolved.
-
 ------------------------------------------------------------
 
 	* * * * * Topic 110: Security * * * * * 
