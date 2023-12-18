@@ -80,6 +80,26 @@ Exportando, ex.:
 
 O utilitário irá criar o arquivo ~/.ssh/authorized_keys com a chave pública do cliente.
 
+---
+
 Conectar sem senha:
 
     ssh user@ip_or_host
+
+Conectando em um servidor ssh:
+
+	ssh muller@192.168.222.50
+
+	ssh manager@10.0.30.5:22
+
+	ssh user@172.16.1.80 -p 22443
+
+	ssh user@srv-linux -p 22
+
+Arquivo que contém os hosts conhecidos:
+
+	ls -la /home/user/.ssh/
+
+	cat known_hosts
+
+O SSH usa dois arquivos de configuração principais, ssh_config e sshd_config. O arquivo ssh_config é o arquivo de configuração do cliente SSH. O arquivo sshd_config é o arquivo de configuração do servidor SSH.

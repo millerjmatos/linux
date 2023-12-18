@@ -255,15 +255,7 @@ Principais Áreas de Conhecimento:
 
 Imprimindo as informações de swap e memória:
 
-	cat /proc/swaps
 
-	free -m
-
-	swapon -s
-
-Desligando e religando a unidade de swap atual:
-
-	swapoff /dev/sdX && swapon /dev/sdX
 
 Habilitando todas as partições swap contidas em /etc/fstab:
 
@@ -2517,86 +2509,9 @@ Limpando o cache de resolução de nomes do systemd-resolved:
 ------------------------------------------------------------
 	* * * * * 110.1 Perform security administration tasks * * * * *
 ------------------------------------------------------------
-
-Principais Áreas de Conhecimento:
-
-	Auditar um sistema para encontrar arquivos com os bits suid/sgid ligados.
-	Definir ou modificar as senhas dos usuários e as informações de expiração das senhas.
-	Ser capaz de usar o nmap e o netstat para descobrir portas abertas em um sistema.
-	Definir limites sobre os logins do usuário, processos e uso de memória.
-	Determinar quais usuários se conectaram ao sistema ou estão conectados no momento.
-	Uso e configuração básica do sudo.
-
-	find
-	passwd
-	fuser
-	lsof
-	nmap
-	chage
-	netstat
-	sudo
-	/etc/sudoers
-	su
-	usermod
-	ulimit
-	who, w, last
-
-Imprimindo informações dos usuários que estão atualmente conectados ao sistema:
-
-	who
-
-	w
-
-Imprimindo os hosts da rede:
-
-	nmap -sP 192.168.0.0/24
-
-	nmap -sP 192.168.0.*
-
-Imprimindo as portas abertas de um alvo: 
-
-	nmap -sT 192.168.0.10
-
-	nmap -Pn 192.168.0.20
-
-Imprimindo se uma porta específica está aberta:
-
-	nmap -p 80 192.168.0.0/24
-
-	nmap -p 80 localhost
-
-	nmap -p 21 192.168.1.1
-
-Imprimindo o SO de um alvo:
-
-	nmap -0 192.168.1.5
-
-Imprimindo as portas que estão ouvindo no seu servidor:
-
-	lsof -i -P -n | grep LISTEN
-
-Imprimindo os arquivos abertos por um processo específico:
-
-	lsof -p <PID>
-
-Imprimindo os arquivos abertos em um diretório específico e subdiretórios:
-
-	lsof +D /caminho/do/diretório
-
-Imprimindo os arquivos abertos por um usuário específico:
-
-	lsof -u user
-
 ------------------------------------------------------------
 	* * * * * 110.2 Setup host security * * * * *
 ------------------------------------------------------------
-
-Principais Áreas de Conhecimento:
-
-	Saber que existem senhas sombreadas (shadow) e como elas funcionam.
-	Desligar os serviços de rede que não estão em uso.
-	Entender a função do TCP wrappers.
-
 ------------------------------------------------------------
 	* * * * * 110.3 Securing data with encryption * * * * *
 ------------------------------------------------------------
@@ -2609,24 +2524,6 @@ Principais Áreas de Conhecimento:
 	Usar o GPG para criptografar, descriptografar e verificar arquivos.
 	Entender os túneis de porta do SSH (incluindo túneis X11).
 
-Conectando em um servidor ssh:
-
-	ssh muller@192.168.222.50
-
-	ssh manager@10.0.30.5:22
-
-	ssh user@172.16.1.80 -p 22443
-
-	ssh user@srv-linux -p 22
-
-Arquivo que contém os hosts conhecidos:
-
-	ls -la /home/user/.ssh/
-
-	cat known_hosts
-
-O SSH usa dois arquivos de configuração principais, ssh_config e sshd_config. O arquivo ssh_config é o arquivo de configuração do cliente SSH. O arquivo sshd_config é o arquivo de configuração do servidor SSH.
-
 Enviando um arquivo:
 
 	scp /caminho/para/o/arquivo/local.txt user@host:/caminho/destino/no/host
@@ -2634,55 +2531,3 @@ Enviando um arquivo:
 Baixando um arquivo:
 
 	scp user@host:/caminho/para/o/arquivo/remoto /caminho/para/o/diretorio/local
-
-Gerando uma chave pública com o gpg:
-
-	gpg --gen-key
-
-	gpg --list-keyss
-
-	gpg --expert --full-gen-key
-
-Arquivo que contém as informações das chaves:
-
-	ls -la /home/user/.gnupg/
-
-Exportando a chave pública:
-
-	gpg --list-keys
-
-	gpg --export "Muller Jorge" > key.muller.pub
-
-	gpg --export --armor "Muller Jorge" > key.muller.pub.asc
-
-	gpg --export --armor "Muller Jorge" --output key.muller.pub.asc
-
-Exportando a chave pública através de um servidor:
-
-	gpg --keyserver keys.openpgp.org --send-keys <ID>
-
-Desfazendo:
-
-	gpg --keyserver keys.openpgp.org --gen-revoke <ID>
-
-Importando a chave pública (máquina cliente):
-
-	gpg --import chave-muller.pub
-
-	gpg --list-keys
-
-Importando a chave pública através de um servidor (máquina cliente):
-
-	gpg --keyserver keys.openpgp.org --recv-keys <ID>
-
-	gpg --list-keys
-
-Encriptando um arquivo (não necessita de chaves):
-
-	gpg -c arquivo.txt
-
-	gpgconf --reload gpg-agent
-
-Decriptando:
-
-	gpg arquivo.txt.gpg

@@ -2,6 +2,10 @@ A área de swap (também chamada de espaço de troca, memória virtual ou arquiv
 
 Imprimindo as informações de swap e memória:
 
+	cat /proc/swaps
+
+	free -m
+
 	swapon -s
 
 > Incluindo área de swap em um sistema que não possui.
@@ -63,3 +67,7 @@ Ativando a área de swap:
 > Nesse caso no fstab a área de swap já estava referenciada, não foi preciso editá-lo.
 
 O local recomendado para criar o arquivo de swap é em /var, que é geralmente reservado para dados variáveis, como logs, bancos de dados e arquivos temporários. O arquivo de swap em /var pode ser chamado de /var/swap ou /var/swapfile.
+
+Desligando e religando unidade de swap atual:
+
+	swapoff /dev/sdX -a && swapon /dev/sdX -a
