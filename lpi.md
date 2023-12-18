@@ -2515,19 +2515,3 @@ Limpando o cache de resolução de nomes do systemd-resolved:
 ------------------------------------------------------------
 	* * * * * 110.3 Securing data with encryption * * * * *
 ------------------------------------------------------------
-
-Principais Áreas de Conhecimento:
-
-	Fazer uso e realizar a configuração básica do cliente OpenSSH 2.
-	Entender a finalidade das chaves de servidor no OpenSSH 2.
-	Configuração básica do GnuPG, seu uso e revogação.
-	Usar o GPG para criptografar, descriptografar e verificar arquivos.
-	Entender os túneis de porta do SSH (incluindo túneis X11).
-
-Enviando um arquivo:
-
-	scp /caminho/para/o/arquivo/local.txt user@host:/caminho/destino/no/host
-
-Baixando um arquivo:
-
-	scp user@host:/caminho/para/o/arquivo/remoto /caminho/para/o/diretorio/local
