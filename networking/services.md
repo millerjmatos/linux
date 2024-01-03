@@ -5,3 +5,5 @@ Imprimindo protocolos importantes e suas portas:
 Imprimindo todos os serviços disponíveis:
 
 	systemctl -t service
+
+	service --status-all
