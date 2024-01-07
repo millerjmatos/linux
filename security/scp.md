@@ -1,7 +1,15 @@
 Enviando um arquivo:
 
-	scp /caminho/para/o/arquivo/local.txt user@host:/caminho/destino/no/host
+	scp arquivo.txt user@host:/caminho/destino/remoto/
+
+Enviado um diretório:
+
+	scp -r diretório usuário@host:/caminho/destino/remoto/
 
 Baixando um arquivo:
 
-	scp user@host:/caminho/para/o/arquivo/remoto /caminho/para/o/diretorio/local
+	scp user@host:/caminho/origem/arquivo.txt /caminho/destino/local/
+
+Baixando um diretório:
+
+	scp -r user@host:/caminho/origem/diretório /caminho/destino/local/
