@@ -1520,12 +1520,6 @@ Imprimindo o espaço utilizado em disco por diretórios ou arquivos:
 
 A partição não deve estar montada!
 
-Utilitário ncdu:
-
-Para análise de uso do disco, tamanhos de diretórios e arquivos:
-
-	ncdu -x /home
-
 Imprimindo as informações sobre o sistema de arquivos:
 
 	tune2fs -l /dev/sdb1 | less
@@ -2374,8 +2368,6 @@ Imprimindo a tabela de roteamento:
 
 	ip route show
 
-	netstat -r
-
 Definindo a rota default manualmente:
 
 	ip route del default
@@ -2413,14 +2405,6 @@ Definindo IP fixo:
 		netmask 255.255.x.x
 		gateway 192.168.x.x
 		dns-nameservers 8.8.8.8 8.8.4.4
-
-Imprimindo informações de sockets e conexões ativas:
-
-	ss -tp
-
-	netstat -tp
-
-	netstat -putan
 
 Um socket é uma interface de comunicação bidirecional entre processos, que permite que dois processos em uma rede se comuniquem. Ele é identificado por um endereço IP e um número de porta.
 
