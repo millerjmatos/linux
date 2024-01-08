@@ -400,7 +400,6 @@ Adicionando o diretório e as bibliotecas contidas na sessão atual:
 ------------------------------------------------------------
 	* * * * * 102.5 Use RPM and YUM pacoteage management * * * * *
 ------------------------------------------------------------
-
 ------------------------------------------------------------
 	* * * * * 102.6 Linux as a virtualization guest * * * * *
 ------------------------------------------------------------
@@ -424,50 +423,9 @@ Imprimindo informações detalhadas sobre o hardware do sistema:
 ------------------------------------------------------------
 	* * * * * 103.3 Perform basic file management * * * * *
 ------------------------------------------------------------
-
-Principais Áreas de Conhecimento:
-
-	Copiar, mover e remover arquivos e diretórios individualmente.
-	Copiar múltiplos arquivos e diretórios recursivamente.
-	Remover arquivos e diretórios recursivamente.
-	Uso simples e avançado dos caracteres curinga nos comandos.
-	Usar o comando find para localizar e tratar arquivos tomando como base o tipo, o tamanho ou a data.
-	Uso dos utilitários tar, cpio e dd.
-
-Agrupando através de uma saída:
-
-	find /home/ -type f -name "*.pdf" | cpio -o > backup.cpio
-
-Desagrupando o conteúdo do aqruivo .cpio no diretório local:
-
-	cpio -i < backup.cpio
-
-Agrupando e comprimindo através de uma saída ao mesmo tempo com xz:
-
-	find /home/ -type f -name "*.pdf" | cpio -o | xz > backup.cpio.zx
-
-Descomprimindo o arquivo cpio.xz:
-
-	xz -c backup.cpio.zx | cpio -i
-
-Copiando uma partição, byte a byte:
-
-	dd if=/dev/sr0 of=imagem.iso
-
-Redimensionando um arquivo:
-
-	truncate -s 10M arquivo.log
-
 ------------------------------------------------------------
 	* * * * * 103.4 Use streams, pipes and redirects * * * * *
 ------------------------------------------------------------
-
-Principais Áreas de Conhecimento:
-
-	Redirecionamento da entrada padrão, da saída padrão e dos erros padrão.
-	Canalização (piping) da saída de um comando à entrada de outro comando.
-	Usar a saída de um comando como argumento para outro comando.
-	Enviar a saída de um comando simultaneamente para a saída padrão e um arquivo.
 
 Definindo a saída padrão:
 
@@ -530,14 +488,6 @@ Imprimindo na saída padrão o resultado de um comando:
 ------------------------------------------------------------
 	 * * * * * 103.5 Create, monitor and kill processes  * * * * *
 ------------------------------------------------------------
-
-Principais Áreas de Conhecimento:
-
-	Executar processos em primeiro e segundo plano.
-	Marcar um programa para que continue a rodar depois do logout.
-	Monitorar processos ativos.
-	Selecionar e ordenar processos para serem exibidos.
-	Enviar sinais para os processos.
 
 Imprimindo os processos ativos nesse terminal:
 
@@ -2080,24 +2030,9 @@ Principais Áreas de Conhecimento:
 ------------------------------------------------------------
 	* * * * * 108.3 Mail Transfer Agent (MTA) basics * * * * *
 ------------------------------------------------------------
-
-Principais Áreas de Conhecimento:
-
-	Criar aliases de e-mail.
-	Configurar o redirecionamento de e-mail.
-	Conhecimento sobre os programas MTA comumente usados (postfix, sendmail, qmail, exim) (não é cobrada a configuração desses programas)
-
 ------------------------------------------------------------
 	* * * * * 108.4 Manage printers and printing * * * * *
 ------------------------------------------------------------
-
-Principais Áreas de Conhecimento:
-
-	Configuração básica do CUPS (para impressoras locais e remotas).
-	Gerenciar a fila de impressão do usuário.
-	Resolução de problemas gerais de impressão.
-	Adicionar e remover trabalhos da fila de impressão de impressoras configuradas.
-
 ------------------------------------------------------------
 
 	* * * * * Topic 109: Networking Fundamentals * * * * *
