@@ -68,6 +68,8 @@ Ativando a área de swap:
 
 O local recomendado para criar o arquivo de swap é em /var, que é geralmente reservado para dados variáveis, como logs, bancos de dados e arquivos temporários. O arquivo de swap em /var pode ser chamado de /var/swap ou /var/swapfile.
 
-Desligando e religando unidade de swap atual:
+Desligando e religando a unidade de swap atual:
 
-	swapoff /dev/sdX -a && swapon /dev/sdX -a
+	swapoff -a && swapon -a
+
+Serve para esvaziar a área de swap, transferindo o uso para a memória principal.
