@@ -473,12 +473,6 @@ Definindo o aquivo e imprimindo na saída padrão:
 
 	ls -l ~ | tee list.out
 
-Executando comandos recebidos pela entrada padrão:
-
-	find /home/ -type f -name "*.pdf" | xargs ls -l
-
-	find /home/ -type f -size +1G | xargs rm -v
-
 Imprimindo na saída padrão o resultado de um comando:
 
 	echo "A versão do kernel é: " `uname -r`
