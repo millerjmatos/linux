@@ -10,4 +10,4 @@ Reiniciando uma interface:
 
 Definindo um IP para a interface:
 
-	ifconfig e<nome-da-interface> 192.168.100.88 netmask 255.255.255.0
+	ifconfig <nome-da-interface> 192.168.100.88 netmask 255.255.255.0

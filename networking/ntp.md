@@ -9,7 +9,7 @@ Definindo o arquivo /etc/ntp.conf:
 
 		servers pool.ntp.br
 
-		/etc/init.d ntp restart
+	/etc/init.d ntp restart
 
 Verificando o status do serviço:
 
