@@ -1216,25 +1216,3 @@ Diretórios que podem ser montados em outras partições:
 		/var/log
 
 		/var/mail
-
-O locate utiliza uma base de dados interna que contém a localização de todos os arquivos do sistema.
-
-Imprimindo a busca com o locate:
-
-	locate rpm *.pdf
-
-Atualizando a base de dados do locate:
-
-	updatedb
-
-O comando whereis é mais restrito, e não pesquisa no /home:
-
-	whereis fsck
-
-	whereis ls
-
-O whereis localiza os arquivos binarios, bibliotecas, códigos-fonte e manuais.
-
-O comando type é utilizado para indicar se um determinado comando é interno ao shell, externo ou até mesmo se é um alias:
-
-	type bash
