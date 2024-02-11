@@ -1,3 +1,11 @@
+Para realizar uma pesquisa com uma palavra:
+
+	/pesquisa
+
+O n busca a nova ocorrência. SHIFT+N busca a anterior.
+
+CTRL+G informa onde você está no arquivo.
+
 Verificando a versão do vi e abrindo com um buffer vazio:
 
 	vi --version
@@ -81,3 +89,4 @@ Definindo o editor padrão do sistema:
 	select-editor
 
 	export EDITOR=vim
+
