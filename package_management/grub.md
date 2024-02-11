@@ -57,3 +57,25 @@ Realizando o backup do grub:
 Restaurando o backup:
 
 	dd if=copia.mbr of=/dev/sda
+
+Em sistemas que utilizam a BIOS, as informações utilizadas durante a fase do boot estão em:
+
+	MBR (Master Boot Record)
+
+Onde inclui as informações das tabelas de partições e do bootloader (GRUB).
+
+O particionamento MBR permite no máximo 4 partições primárias, ou 3 primárias e 1 estendida. Na partição estendida são associadas as partições lógicas.
+
+Durante o processo de inicialização de um Linux, o processo responsável por selecionar e executar o kernel e o initrd é o bootloader:
+
+	Bios > MBR > Bootloader > Kernel > Initrd, Init > Runlevel
+
+O UEFI obtém as informações dos BootLoader diretamente da partição ESP (EFI System Partition), que é por padrão montada em:
+
+	 /boot/efi/*
+	 
+Ele é utilizado no lugar da BIOS e não utiliza MBR.
+
+O arquivo do /proc que contém os parâmetros enviados ao kernel no momento do boot:
+
+	cmdline
