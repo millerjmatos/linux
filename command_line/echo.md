@@ -51,3 +51,9 @@ Apóstrofo '' e barra invertida \ protegem os caracteres sem exceção:
 	echo "Curso     Linux   LPI1"
 
 	echo Curso\ \ \ \ \ Linux\ \ \ LPI1
+
+Imprimindo na saída padrão o resultado de um comando:
+
+	echo "A versão do kernel é: " `uname -r`
+
+	echo "A versão do kernel é: $(uname -r)
