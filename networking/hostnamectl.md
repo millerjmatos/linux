@@ -1,3 +1,7 @@
+Imprimindo o IP:
+
+	hostname -I
+
 Imprimindo o nome da máquina:
 
 	cat /etc/hostname

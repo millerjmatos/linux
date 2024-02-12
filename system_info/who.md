@@ -3,3 +3,5 @@ Imprimindo informações dos usuários que estão atualmente conectados ao siste
 	who
 
 	w
+
+	whoami
