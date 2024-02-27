@@ -2,6 +2,10 @@ Imprimindo os processos ativos nesse terminal:
 
 	ps
 
+Imprimindo os processos de forma hierárquica:
+
+	ps -ef
+
 Incluindo os processos associados ao usuário atual:
 
 	ps -u
@@ -12,7 +16,7 @@ Incluindo processos não associados ao terminal:
 
 Incluindo todos os processos do sistema:
 
-	ps aux | less
+	ps -aux | less
 
 Imprimindo os processos em formato de "árvore":
 
@@ -25,11 +29,3 @@ Imprimindo os processos em formato de "árvore":
 Filtrando processos:
 
 	ps -aux | grep java
-
-Imprimindo o ID do processo:
-
-	pgrep bash
-
-	pgrep bash -u root
-
-	pgrep --help
