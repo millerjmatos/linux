@@ -49,5 +49,3 @@ Sem nenhum parâmetro o kill, killall e pkill enviam o sinal de código 15 SIGTE
 Reiniciando um processo:
 
 	kill -1 <PID>
-
-	pkill -1 firefox -u muller
