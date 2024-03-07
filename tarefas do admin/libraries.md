@@ -1,4 +1,4 @@
-Imprimindo quais/quantas bibliotecas utilizadas pelo programa:
+Imprimindo quais/quantas bibliotecas são utilizadas pelo programa:
 
 	whereis vi
 
@@ -6,7 +6,7 @@ Imprimindo quais/quantas bibliotecas utilizadas pelo programa:
 
 	ldd /usr/bin/vi | wc -l
 
-Todos os arquivos terminados em .so são bibliotecas!
+Todos os arquivos terminados em .so são bibliotecas.
 
 O comando ldconfig atualiza as configurações em:
 
