@@ -68,7 +68,7 @@ Expandindo grupo de volume:
 
     vgdisplay
 
-    vgextend nome_do_volume_group_existente /dev/nome_do_pv
+    vgextend <nome-do-volume-group-existente> /dev/<nome-do-pv>
 
 Volume group "nome_do_volume_group" successfully extended.
 
