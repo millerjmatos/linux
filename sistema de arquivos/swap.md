@@ -68,8 +68,20 @@ Ativando a área de swap:
 
 O local recomendado para criar o arquivo de swap é em /var, que é geralmente reservado para dados variáveis, como logs, bancos de dados e arquivos temporários. O arquivo de swap em /var pode ser chamado de /var/swap ou /var/swapfile.
 
-Desligando e religando a unidade de swap atual:
+Desligando o swap temporariamente para transferir os dados para a memória principal, caso haja espaço disponível na memória principal:
 
-	swapoff -a && swapon -a
+    swapoff -a && swapon -a
 
-Serve para esvaziar a área de swap, transferindo o uso para a memória principal.
+Alterando o valor de swappiness. Para diminuir a utilização de swap:
+
+    cat /proc/sys/vm/swappiness
+
+    sysctl -w vm.swappiness=10
+
+Para tornar permanente (não necessário), adicione a entrada:
+
+    vim /etc/sysctl.conf
+
+        vm.swappiness=10
+
+    sysctl -p
