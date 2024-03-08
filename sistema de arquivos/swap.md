@@ -78,10 +78,8 @@ Alterando o valor de swappiness. Para diminuir a utilização de swap:
 
     sysctl -w vm.swappiness=10
 
-Para tornar permanente (não necessário), adicione a entrada:
+Para tornar permanente:
 
-    vim /etc/sysctl.conf
+    echo 'vm.swappiness=10' >> /etc/sysctl.d/99-swappiness.conf
 
-        vm.swappiness=10
-
-    sysctl -p
+    systemctl reboot
