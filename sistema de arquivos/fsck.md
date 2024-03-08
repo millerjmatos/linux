@@ -1,4 +1,3 @@
-
 Verificando a integridade do sistema de arquivos:
 
 	fsck /dev/sdb1

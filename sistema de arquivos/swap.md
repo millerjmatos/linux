@@ -34,7 +34,7 @@ Tornando a configuração permanente:
 
         o
 
-        /minha_area_swap    none    swap    sw  0 0        
+        /minha_area_swap    none    swap    sw  0   0           
 
         :wc
 
