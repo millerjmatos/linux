@@ -1,62 +1,48 @@
-Imprimindo arquivos por nome:
+Imprimindo por nome:
 
-	find /home/ -name Linux
+	find <diretório/> -name Linux
 
-	find /home/ -iname Linux
+	find <diretório/> -iname Linux
 
 Imprimindo arquivos de um usuário:
 
-	find /home/ -user liveuser
+	find <diretório/> -user liveuser
 
-Imprimindo arquivos por tamanho:
+Imprimindo por tamanho:
 		
-	find /home/ -type f -size +1G
+	find <diretório/> -type f -size +1G
 
-Imprimindo diretórios por tamanho:
-
-	find /home/ -type d -size +100M
+	find <diretório/> -type d -size +100M
 	
 	find . -type d -size -5M
 
-Imprimindo arquivos por extensão/string:
+Imprimindo por extensão/string:
 
 	find . -type f -name "*.pst"
 
-	find /home/ -name "arq*csv"
+	find <diretório/> -name "arq*csv"
 
-Imprimindo os arquivos do diretório local:
+Imprimindo por tempo:
+
+	find <diretório/> -ctime -1
 
 	find . -type f -mtime +120 -exec ls -lha {} \;
 
-Imprimindo arquivos acessados há 7 dias pelo usuário por extensão:
-
-	find /home/ -atime -7 -user muller -name "*.pdf"
-
-Imprimindo arquivos alterados a 1 dia:
-
-	find /home/ -ctime -1
-
-Imprimindo arquivos alterados a mais de 2 dias:
-
-	find /var/spool/ -ctime -2 | wc -l
-
-Imprimindo arquivos modificados entre 30 e 90 dias pelo grupo vendas:
+	find <diretório/> -atime -7 -user muller -name "*.pdf"
 	
-	find /home/ -type f -mtime +30 -mtime -90 -group vendas
+	find <diretório/> -type f -mtime +30 -mtime -90 -group vendas
 
-Imprimindo os arquivos e diretórios com determinado nome e tempo de modificação:
+	find <diretório/> -type f -name "*.gz" -mtime -2
 
-	find /var -type f -name "*.gz" -mtime -2
+	find <diretório/> -type d -name "*config*"
 
-	find /var -name "*config*" -type d
+	find <diretório/> -type f -name "*.pdf" | xargs ls -l
 
-	find /home/ -type f -name "*.pdf" | xargs ls -l
+Deletando:
 
-Deletando arquivos e diretórios:
+	find <diretório/> -type f -size +500M -delete
 
-	find /home/ -type f -size +500M -delete
-
-	find /caminho/do/diretorio -type f -mtime +120 -exec rm -f {} \;
+	find <diretório> -type f -mtime +120 -exec rm -f {} \;
 
 	find . -ctime +2 -exec rm -f {} \;
 
@@ -66,4 +52,4 @@ Deletando arquivos e diretórios:
 
     find . -type d -empty -delete
 
-	find /home/ -type f -size +1G | xargs rm -v
+	find <diretório/> -type f -size +1G | xargs rm -v
