@@ -10,7 +10,7 @@ Instalando o serviço:
 
     ssh -V
 
-Perminto acesso via usuário root:
+Permitindo acesso via usuário root:
 
     cd /etc/ssh/
 

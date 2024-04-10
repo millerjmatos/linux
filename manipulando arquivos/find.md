@@ -36,6 +36,10 @@ Imprimindo arquivos alterados a 1 dia:
 
 	find /home/ -ctime -1
 
+Imprimindo arquivos alterados a mais de 2 dias:
+
+	find /var/spool/ -ctime -2 | wc -l
+
 Imprimindo arquivos modificados entre 30 e 90 dias pelo grupo vendas:
 	
 	find /home/ -type f -mtime +30 -mtime -90 -group vendas
@@ -52,7 +56,9 @@ Deletando arquivos e diretórios:
 
 	find /home/ -type f -size +500M -delete
 
-	find /caminho/do/diretorio -type f -mtime +120 -exec rm {} \;
+	find /caminho/do/diretorio -type f -mtime +120 -exec rm -f {} \;
+
+	find . -ctime +2 -exec rm -f {} \;
 
 	find . -size +100M -exec truncate -s 50M {} \;
 
