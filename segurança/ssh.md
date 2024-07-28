@@ -78,6 +78,12 @@ Exportando, ex.:
 
     ssh-copy-id muller@192.168.0.100
 
+ou:
+
+    cd ~/.ssh
+
+    ssh-copy-id -i key.pub muller@192.168.0.100
+
 O utilitário irá criar o arquivo ~/.ssh/authorized_keys com a chave pública do cliente.
 
 ---
