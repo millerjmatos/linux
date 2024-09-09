@@ -1,6 +1,6 @@
-Imprimindo os processos ativos nesse terminal:
+Imprimindo os maiores processos em execução:
 
-	ps
+	ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head -10
 
 Imprimindo os processos de forma hierárquica:
 
