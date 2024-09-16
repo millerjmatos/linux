@@ -90,3 +90,6 @@ Definindo o editor padrão do sistema:
 
 	export EDITOR=vim
 
+Substituir todas as ocorrências de uma string no arquivo:
+
+	:%s/antiga/nova/g

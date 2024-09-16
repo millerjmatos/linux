@@ -6,4 +6,4 @@ Imprimindo todos os serviços disponíveis:
 
 	service --status-all
 
-	service --status-all | grep "+"
+	service --status-all | grep "running"
