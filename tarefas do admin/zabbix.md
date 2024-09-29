@@ -222,7 +222,7 @@ sed -i 's/max_input_time =.*/max_input_time = 300/' /etc/php.ini
 sed -i 's/;date.timezone =/date.timezone = America\/Sao_Paulo/' /etc/php.ini
 
 # Reiniciar Apache para aplicar mudanças no PHP
-systemctl restart httpd.service
+systemctl restart zabbix-server zabbix-agent httpd php-fpm
 
 # Ativar e iniciar serviços Zabbix, Apache e PHP-FPM
 systemctl enable --now zabbix-server zabbix-agent httpd php-fpm
