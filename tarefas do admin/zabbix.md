@@ -168,23 +168,30 @@ dnf install -y mariadb-server mariadb
 # Iniciar e habilitar MariaDB
 systemctl start mariadb && systemctl enable mariadb
 
-# Configurar a segurança do MariaDB
-mariadb-secure-installation <<EOF
-
-y
-P@ssword
-P@ssword
-y
-y
-y
-y
+# Configurar a senha do root no MariaDB
+mysql -u root <<EOF
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'P@ssword';
+FLUSH PRIVILEGES;
 EOF
 
+# Configurar a segurança do MariaDB automaticamente
+mariadb-secure-installation <<SECURE_EOF
+
+y
+P@ssword
+P@ssword
+y
+y
+y
+y
+SECURE_EOF
+
 # Verificar versão do MariaDB
-mysql -V
+mysql -u root -p 'P@ssword' -e "SELECT VERSION();"
 
 # Instalar o repositório Zabbix 6.0 LTS
 rpm -Uvh https://repo.zabbix.com/zabbix/6.0/rhel/9/x86_64/zabbix-release-6.0-4.el9.noarch.rpm
+dnf clean all
 
 # Construir cache dos novos repositórios
 dnf makecache
@@ -193,7 +200,7 @@ dnf makecache
 dnf install -y zabbix-server-mysql zabbix-web-mysql zabbix-apache-conf zabbix-sql-scripts zabbix-selinux-policy zabbix-agent
 
 # Configurar o banco de dados do Zabbix
-mysql -u root -p <<MYSQL_SCRIPT
+mysql -u root -p'P@ssword' <<MYSQL_SCRIPT
 CREATE DATABASE zabbixdb CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 CREATE USER 'zabbixuser'@'localhost' IDENTIFIED BY 'P@ssword';
 GRANT ALL PRIVILEGES ON zabbixdb.* TO 'zabbixuser'@'localhost';
