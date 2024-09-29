@@ -138,3 +138,90 @@ Credencial padrão:
 
     Admin
     zabbix
+
+---
+
+#!/bin/bash
+
+# Definir FQDN para o servidor de monitoramento
+hostnamectl set-hostname srv-zabbix.intra
+
+# Atualizar o sistema
+dnf makecache --refresh && dnf update -y
+
+# Verificar a versão do sistema e do Kernel
+echo "Sistema Operacional:"
+cat /etc/redhat-release
+echo "Kernel Atual:"
+uname -r
+
+# Verificar se houve atualização do Kernel e informar para reiniciar o sistema se necessário
+new_kernel=$(dnf list kernel --showduplicates | grep installed | awk '{print $2}' | tail -1)
+current_kernel=$(uname -r)
+if [[ "$new_kernel" != "$current_kernel" ]]; then
+    echo "ATENÇÃO: O Kernel foi atualizado. Por favor, reinicie o sistema para usar a versão mais recente!"
+fi
+
+# Instalar MariaDB
+dnf install -y mariadb-server mariadb
+
+# Iniciar e habilitar MariaDB
+systemctl start mariadb && systemctl enable mariadb
+
+# Configurar a segurança do MariaDB
+mariadb-secure-installation <<EOF
+
+y
+P@ssword
+P@ssword
+y
+y
+y
+y
+EOF
+
+# Verificar versão do MariaDB
+mysql -V
+
+# Instalar o repositório Zabbix 6.0 LTS
+rpm -Uvh https://repo.zabbix.com/zabbix/6.0/rhel/9/x86_64/zabbix-release-6.0-4.el9.noarch.rpm
+
+# Construir cache dos novos repositórios
+dnf makecache
+
+# Instalar Zabbix e pacotes relacionados
+dnf install -y zabbix-server-mysql zabbix-web-mysql zabbix-apache-conf zabbix-sql-scripts zabbix-selinux-policy zabbix-agent
+
+# Configurar o banco de dados do Zabbix
+mysql -u root -p <<MYSQL_SCRIPT
+CREATE DATABASE zabbixdb CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
+CREATE USER 'zabbixuser'@'localhost' IDENTIFIED BY 'P@ssword';
+GRANT ALL PRIVILEGES ON zabbixdb.* TO 'zabbixuser'@'localhost';
+FLUSH PRIVILEGES;
+MYSQL_SCRIPT
+
+# Importar esquema de banco de dados Zabbix
+zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -u zabbixuser -p'P@ssword' zabbixdb
+
+# Configurar arquivo do Zabbix
+sed -i 's/# DBPassword=/DBPassword=P@ssword/' /etc/zabbix/zabbix_server.conf
+sed -i 's/# DBName=/DBName=zabbixdb/' /etc/zabbix/zabbix_server.conf
+sed -i 's/# DBUser=/DBUser=zabbixuser/' /etc/zabbix/zabbix_server.conf
+
+# Configurar arquivo php.ini
+sed -i 's/post_max_size =.*/post_max_size = 16M/' /etc/php.ini
+sed -i 's/max_execution_time =.*/max_execution_time = 300/' /etc/php.ini
+sed -i 's/max_input_time =.*/max_input_time = 300/' /etc/php.ini
+sed -i 's/;date.timezone =/date.timezone = America\/Sao_Paulo/' /etc/php.ini
+
+# Reiniciar Apache para aplicar mudanças no PHP
+systemctl restart httpd.service
+
+# Ativar e iniciar serviços Zabbix, Apache e PHP-FPM
+systemctl enable --now zabbix-server zabbix-agent httpd php-fpm
+
+# Configurar firewall para permitir acesso HTTP
+firewall-cmd --permanent --add-service=http
+firewall-cmd --reload
+
+echo "Instalação do Zabbix concluída com sucesso!"
