@@ -18,12 +18,6 @@ Definindo o arquivo com o vim:
 
 	vim arquivo.txt
 
-Pesquisando Linux dentro do arquivo:
-
-	/Linux
-
-A cada Enter o cursor irá a próxima ocorrência.
-
 Busca uma ocorrência no sentido do início (baixo para cima):
 
 	SHIFT+N
@@ -46,10 +40,6 @@ Recortando uma linha e entrando no modo de inserção:
 
 	cc
 
-Colando o recorte no local do cursor:
-
-	p
-
 Recortando uma ou mais linhas sem entrar no modo de inserção:
 
 	dd
@@ -62,7 +52,11 @@ Copiando uma ou mais linhas:
 
 	yy
 
-	y3y
+	3yy
+
+Colando o recorte no local do cursor:
+
+	p
 
 Salvando e saindo do arquivo:
 
@@ -80,15 +74,9 @@ Numerando as linhas do arquivo:
 
 	:set number
 
-Para sair e salvar o arquivo:
-
-	:wq nome_do_arquivo.txt
-
 Definindo o editor padrão do sistema:
 
 	select-editor
-
-	export EDITOR=vim
 
 Substituir todas as ocorrências de uma string no arquivo:
 
